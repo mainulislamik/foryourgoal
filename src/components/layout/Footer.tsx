@@ -5,8 +5,8 @@ import { ShieldCheck, Lock, Clock, CheckCircle2, Mail, MapPin, ArrowRight } from
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200 text-slate-600 pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-slate-50 border-t border-slate-200 text-slate-600 pt-16 pb-12 w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-12">
         {/* Top Feature Badges Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pb-12 border-b border-slate-200">
           <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">

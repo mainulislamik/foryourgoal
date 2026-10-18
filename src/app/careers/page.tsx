@@ -38,20 +38,20 @@ export default function CareersPage() {
   ];
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-white text-slate-900">
-      <div className="text-center max-w-2xl mx-auto mb-16">
+    <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
+      <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3 border border-indigo-200">
-          <span>Join Our Craft</span>
+          <span>Global Production Team</span>
         </div>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-          Careers at Foryourgoal
+          Join Our Precision Imaging Studio
         </h1>
-        <p className="mt-4 text-base text-slate-600">
-          We are always looking for passionate Photoshop artists, colorists, and client production supervisors who pride themselves on pixel perfection.
+        <p className="mt-4 text-base sm:text-lg text-slate-600">
+          We operate 24/7 post-production facilities delivering hand-drawn clipping paths, retouching, and 3D compositing for world-class brands.
         </p>
       </div>
 
-      <div className="space-y-6 max-w-4xl mx-auto mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-16">
         {jobs.map((job, idx) => (
           <div
             key={idx}

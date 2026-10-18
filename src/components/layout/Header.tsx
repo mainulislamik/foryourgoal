@@ -108,8 +108,8 @@ export function Header() {
           : "bg-white/80 backdrop-blur-sm py-4 border-b border-slate-100"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <Logo showTagline={!isScrolled} />
 

@@ -42,7 +42,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-white text-slate-900">
+    <div className="py-12 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-slate-500 mb-8 font-mono">
         <Link href="/" className="hover:text-indigo-600 transition-colors">

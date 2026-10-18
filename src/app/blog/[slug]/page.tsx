@@ -67,7 +67,7 @@ export default async function BlogPostDetailPage({ params }: Props) {
   };
 
   return (
-    <article className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full bg-white text-slate-900">
+    <article className="py-12 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}

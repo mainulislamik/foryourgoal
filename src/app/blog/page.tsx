@@ -12,20 +12,20 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-white text-slate-900">
+    <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3 border border-indigo-200">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">
           <span>Editorial & Guides</span>
         </div>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-          Image Post-Production Knowledge Base
+          E-Commerce Imaging & Studio Intelligence
         </h1>
         <p className="mt-4 text-base sm:text-lg text-slate-600">
-          In-depth guides on marketplace compliance, non-destructive retouching techniques, and high-volume studio operations.
+          Insights on clipping path standards, marketplace specs (Amazon, Shopify), batch production optimization, and color fidelity.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {blogPostsData.map((post) => (
           <article
             key={post.slug}

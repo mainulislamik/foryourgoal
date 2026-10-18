@@ -146,7 +146,7 @@ export default function RequestQuotePage() {
   }
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full bg-white text-slate-900">
+    <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
       {/* Title */}
       <div className="text-center max-w-2xl mx-auto mb-10">
         <span className="text-xs font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-3 py-1 rounded border border-indigo-200">

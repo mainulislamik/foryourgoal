@@ -78,7 +78,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   };
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-white text-slate-900">
+    <div className="py-12 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
@@ -211,11 +211,11 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* Service-Specific FAQs */}
       {service.faqs && service.faqs.length > 0 && (
-        <div className="my-16 max-w-4xl mx-auto">
+        <div className="my-16 w-full">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">
             Frequently Asked Questions About {service.title}
           </h2>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
             {service.faqs.map((faq, idx) => (
               <div key={idx} className="p-6 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                 <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">

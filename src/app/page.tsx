@@ -24,10 +24,10 @@ export default function HomePage() {
   return (
     <div className="flex flex-col gap-0 overflow-hidden bg-white text-slate-900">
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[85vh] flex items-center justify-center pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80">
+      <section className="relative min-h-[85vh] flex items-center justify-center pt-24 pb-20 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(79,70,229,0.06),rgba(255,255,255,0))] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
           {/* Left Column: Editorial Value Proposition */}
           <div className="lg:col-span-7 flex flex-col gap-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 self-center lg:self-start px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wide uppercase">
@@ -112,8 +112,8 @@ export default function HomePage() {
       </section>
 
       {/* 2. STATS & REASSURANCE BANNER */}
-      <section className="bg-slate-50 border-b border-slate-200 py-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="bg-slate-50 border-b border-slate-200 py-10 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
+        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="flex flex-col items-center justify-center p-3">
             <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-mono">5,000+</div>
             <div className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">Images Processed Daily</div>
@@ -134,7 +134,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. CORE SERVICES GRID */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">
             <span>Specialized Capabilities</span>
@@ -147,7 +147,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {servicesData.map((service) => (
             <div
               key={service.slug}
@@ -226,8 +226,8 @@ export default function HomePage() {
       </section>
 
       {/* 4. INDUSTRIES WE EMPOWER */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 bg-slate-50 border-y border-slate-200 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
+        <div className="w-full">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
               B2B Market Sectors
@@ -240,7 +240,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {industriesData.map((ind) => (
               <div
                 key={ind.slug}
@@ -278,7 +278,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. HOW IT WORKS (4 STEPS) */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
             Seamless Outsourcing
@@ -329,8 +329,8 @@ export default function HomePage() {
       </section>
 
       {/* 6. CONFIDENTIALITY & ENTERPRISE SECURITY */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="py-20 bg-slate-50 border-t border-slate-200 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
             <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
               Data Protection & Compliance
@@ -383,8 +383,8 @@ export default function HomePage() {
       </section>
 
       {/* 7. FREQUENTLY ASKED QUESTIONS */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
-        <div className="text-center mb-16">
+      <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
             Answers & Clarity
           </span>
@@ -396,7 +396,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {faqsData.slice(0, 6).map((faq) => (
             <div
               key={faq.id}
@@ -427,8 +427,8 @@ export default function HomePage() {
       </section>
 
       {/* 8. FINAL QUOTE CTA BANNER */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl text-center space-y-6">
+      <section className="py-20 px-4 sm:px-6 lg:px-10 xl:px-12 bg-slate-50 border-t border-slate-200 w-full">
+        <div className="w-full p-8 sm:p-12 lg:p-16 rounded-3xl bg-white border border-slate-200 shadow-xl text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
             <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>Test Us With 2 Free Images</span>
