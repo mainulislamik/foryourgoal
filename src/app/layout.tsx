@@ -1,0 +1,146 @@
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const viewport: Viewport = {
+  themeColor: "#101321",
+  width: "device-width",
+  initialScale: 1,
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://foryourgoal.com"),
+  title: {
+    default: "Professional Image Editing & Photo Retouching Services | Foryourgoal",
+    template: "%s | Foryourgoal",
+  },
+  description:
+    "Expert hand-drawn clipping paths, high-end product retouching, ghost mannequin, and jewelry photo editing for e-commerce, global brands, and commercial photographers.",
+  keywords: [
+    "clipping path service",
+    "photo retouching services",
+    "product image editing",
+    "ghost mannequin service",
+    "background removal service",
+    "jewelry retouching",
+    "ecommerce photo editing outsourcing",
+    "bulk image editing",
+  ],
+  authors: [{ name: "Foryourgoal Studio", url: "https://foryourgoal.com" }],
+  creator: "Foryourgoal",
+  publisher: "Foryourgoal",
+  alternates: {
+    canonical: "https://foryourgoal.com",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://foryourgoal.com",
+    siteName: "Foryourgoal",
+    title: "Professional Image Editing & Photo Retouching Services | Foryourgoal",
+    description:
+      "Hand-crafted clipping paths, high-end product retouching, and enterprise e-commerce image editing. 6–24 hour guaranteed turnaround.",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Foryourgoal Professional Image Editing Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Professional Image Editing & Photo Retouching Services | Foryourgoal",
+    description:
+      "Hand-crafted clipping paths, high-end product retouching, and enterprise e-commerce image editing. 6–24 hour guaranteed turnaround.",
+    images: ["/images/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Foryourgoal",
+    url: "https://foryourgoal.com",
+    logo: "https://foryourgoal.com/images/foryourgoal-logo.png",
+    image: "https://foryourgoal.com/images/og-image.jpg",
+    description:
+      "Professional image editing and photo retouching studio providing high-volume clipping path, product retouching, and ghost mannequin services for global e-commerce and creative brands.",
+    priceRange: "$$",
+    email: "support@foryourgoal.com",
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "Worldwide",
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+    },
+  };
+
+  return (
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+    >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-[#101321] text-slate-100 font-sans selection:bg-[#745CFF] selection:text-white">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#D6FF70] text-[#101321] font-bold rounded-lg"
+        >
+          Skip to main content
+        </a>
+        <Header />
+        <main id="main-content" className="flex-1 pt-20">
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy: #101321;
+    --brand-navy-light: #181C2E;
+    --brand-navy-card: #1D233A;
+    --brand-border: #2A3150;
+    --brand-ivory: #F6F5F0;
+    --brand-violet: #745CFF;
+    --brand-violet-hover: #6046F0;
+    --brand-lime: #D6FF70;
+    --brand-lime-hover: #C5F554;
+    --brand-text-muted: #94A3B8;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #101321;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A3150;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #745CFF;
+}
+
+/* Accessible focus states */
+:focus-visible {
+  outline: 2px solid #745CFF;
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Editorial typography and utility styles */
+.text-balance {
+  text-wrap: balance;
+}
+
+.gradient-text-brand {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, #745CFF 0%, #D6FF70 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-violet {
+  box-shadow: 0 0 40px -10px rgba(116, 92, 255, 0.35);
+}
+
+.glow-lime {
+  box-shadow: 0 0 35px -8px rgba(214, 255, 112, 0.4);
+}
