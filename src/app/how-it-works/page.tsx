@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "How It Works | Foryourgoal Outsourced Image Production",
   description:
     "Learn about our simple 4-step B2B photo editing workflow: secure upload, free calibration sample, 24/7 dedicated studio production, and 3-tier quality control.",
+  alternates: {
+    canonical: "/how-it-works",
+  },
+  openGraph: {
+    title: "How It Works | Foryourgoal Outsourced Image Production",
+    description:
+      "Learn about our simple 4-step B2B photo editing workflow: secure upload, free pilot, 24/7 production, and 3-tier QA.",
+    url: "https://foryourgoal.com/how-it-works",
+  },
 };
 
 export default function HowItWorksPage() {

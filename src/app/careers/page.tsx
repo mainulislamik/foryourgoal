@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "Careers | Join the Foryourgoal Studio Team",
   description:
     "Explore career opportunities for senior Photoshop artists, quality assurance leads, and client account managers at Foryourgoal.",
+  alternates: {
+    canonical: "/careers",
+  },
+  openGraph: {
+    title: "Careers | Join the Foryourgoal Studio Team",
+    description:
+      "Explore career opportunities for senior Photoshop artists and retouching leads.",
+    url: "https://foryourgoal.com/careers",
+  },
 };
 
 export default function CareersPage() {

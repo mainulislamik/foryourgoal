@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy & NDA Commitment | Foryourgoal",
   description: "Foryourgoal's privacy policy, data protection, client asset confidentiality, and automated 14-day file deletion protocol.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

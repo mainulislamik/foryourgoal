@@ -70,7 +70,7 @@ export default function RequestQuotePage() {
 
       setUploadedFiles((prev) => [
         ...prev,
-        { id: json.fileId, name: json.originalName, size: json.size },
+        { id: json.fileId, name: json.originalName, size: json.sizeBytes || json.size || 0 },
       ]);
     } catch (err: any) {
       setErrorMessage(err.message || "Failed to upload file");

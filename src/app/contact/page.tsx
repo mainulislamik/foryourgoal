@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "Contact Us | Foryourgoal Studio",
   description:
     "Get in touch with Foryourgoal's enterprise image-editing specialists. Guaranteed 45-minute response for quotes and partnership inquiries.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Us | Foryourgoal Studio",
+    description:
+      "Get in touch with Foryourgoal's enterprise image-editing specialists.",
+    url: "https://foryourgoal.com/contact",
+  },
 };
 
 export default function ContactPage() {

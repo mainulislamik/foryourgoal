@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: "Transparent B2B Pricing & Volume Calculator | Foryourgoal",
   description:
     "Calculate instant volume estimates for clipping path, ghost mannequin, photo retouching, and jewelry editing. Volume discounts up to 35% on high monthly throughput.",
+  alternates: {
+    canonical: "/pricing",
+  },
+  openGraph: {
+    title: "Transparent B2B Pricing & Volume Calculator | Foryourgoal Studio",
+    description:
+      "Instant volume cost calculator for high-volume commercial post-production.",
+    url: "https://foryourgoal.com/pricing",
+  },
 };
 
 export default function PricingPage() {

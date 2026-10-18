@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: "Industry Guides & Visual Standards | Foryourgoal Blog",
   description:
     "Expert technical articles, e-commerce photo standards, clipping path guides, and retouching workflows from Foryourgoal's post-production team.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    title: "Industry Guides & Visual Standards | Foryourgoal Blog",
+    description:
+      "Expert technical articles, e-commerce photo standards, and retouching workflows.",
+    url: "https://foryourgoal.com/blog",
+  },
 };
 
 export default function BlogPage() {

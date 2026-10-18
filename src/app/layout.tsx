@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   creator: "Foryourgoal",
   publisher: "Foryourgoal",
   alternates: {
-    canonical: "https://foryourgoal.com",
+    canonical: "/",
   },
   icons: {
     icon: [

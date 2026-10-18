@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: "About Us | Foryourgoal Dedicated Image Production Studio",
   description:
     "Learn about Foryourgoal's mission, our 24/7 dedicated image-editing artists, pen-tool craftsmanship, and strict data security protocols.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Us | Foryourgoal Dedicated Image Production Studio",
+    description:
+      "Learn about our 24/7 dedicated digital retouching artisans and strict data security protocols.",
+    url: "https://foryourgoal.com/about",
+  },
 };
 
 export default function AboutPage() {

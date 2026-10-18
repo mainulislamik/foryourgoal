@@ -14,6 +14,10 @@ services:
       - HOSTNAME=0.0.0.0
       - NEXT_PUBLIC_SITE_URL=https://foryourgoal.com
       - COMPANY_EMAIL=info@foryourgoal.com
+      - SMTP_HOST=172.17.0.1
+      - SMTP_PORT=25
+    volumes:
+      - ./data:/app/data
     deploy:
       resources:
         limits:

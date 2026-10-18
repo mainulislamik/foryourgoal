@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: "Professional Image Editing Services | Clipping Path, Retouching & Ghost Mannequin",
   description:
     "Explore our complete suite of commercial photo editing and retouching services: 100% hand-drawn clipping paths, invisible ghost mannequin, high-end beauty/jewelry retouching, and shadow creation.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Professional Image Editing Services | Foryourgoal Studio",
+    description:
+      "Hand-drawn clipping path, high-end retouching, ghost mannequin, and e-commerce image post-production services.",
+    url: "https://foryourgoal.com/services",
+  },
 };
 
 export default function ServicesPage() {

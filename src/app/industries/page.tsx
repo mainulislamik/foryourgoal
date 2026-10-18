@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: "B2B Industries Served | E-commerce, Fashion, Jewelry & Studios",
   description:
     "Tailored photo editing workflows for specialized sectors: Amazon/Shopify retailers, high-fashion apparel brands, luxury jewelry studios, and commercial photographers.",
+  alternates: {
+    canonical: "/industries",
+  },
+  openGraph: {
+    title: "B2B Industries Served | Foryourgoal Studio",
+    description:
+      "Commercial image editing tailored for fashion, e-commerce, luxury jewelry, and photography studios.",
+    url: "https://foryourgoal.com/industries",
+  },
 };
 
 export default function IndustriesPage() {

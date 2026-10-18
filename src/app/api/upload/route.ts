@@ -1,18 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
+import fs from "node:fs";
+import path from "node:path";
 
-// Supported secure MIME signatures (Magic Bytes)
-const MAGIC_SIGNATURES: { [key: string]: string[] } = {
-  // JPEG: FF D8 FF
-  jpeg: ["ffd8ffe0", "ffd8ffe1", "ffd8ffe2", "ffd8ffe3", "ffd8ffe8", "ffd8ffdb"],
-  // PNG: 89 50 4E 47
+// Allowed MIME types and corresponding extensions for production B2B imaging
+const ALLOWED_EXTENSIONS = new Set([
+  "jpg",
+  "jpeg",
+  "png",
+  "webp",
+  "tif",
+  "tiff",
+  "psd",
+  "raw",
+  "cr2",
+  "nef",
+  "arw",
+  "dng",
+]);
+
+// Magic number signatures (first bytes in hex) for deep file inspection
+const MAGIC_SIGNATURES: Record<string, string[]> = {
+  jpeg: ["ffd8ffe0", "ffd8ffe1", "ffd8ffe2", "ffd8ffdb", "ffd8ffee"],
   png: ["89504e47"],
-  // TIFF: 49 49 2A 00 (LE) or 4D 4D 00 2A (BE)
-  tiff: ["49492a00", "4d4d002a"],
-  // PSD: 38 42 50 53 ('8BPS')
-  psd: ["38425053"],
-  // ZIP: 50 4B 03 04 ('PK..')
-  zip: ["504b0304"],
+  webp: ["52494646"], // RIFF header for WebP
+  tiff: ["49492a00", "4d4d002a"], // Little-endian II and Big-endian MM
+  psd: ["38425053"], // 8BPS Photoshop
 };
+
+const UPLOADS_DIR = path.join(process.cwd(), "data", "uploads");
 
 export async function POST(req: NextRequest) {
   try {
@@ -23,30 +38,28 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
 
-    // 1. File Size Verification (Max 50MB per file)
+    // 50MB per file ceiling
     const MAX_SIZE = 50 * 1024 * 1024;
     if (file.size > MAX_SIZE) {
       return NextResponse.json(
-        { error: `File exceeds maximum allowed size of 50MB (received ${(file.size / (1024 * 1024)).toFixed(1)}MB)` },
+        { error: "File exceeds 50MB limit. For larger batches, please provide a WeTransfer or Google Drive link in project notes." },
         { status: 400 }
       );
     }
 
-    // 2. Extension check
     const rawName = file.name.toLowerCase();
-    const allowedExts = [".jpg", ".jpeg", ".png", ".tiff", ".tif", ".psd", ".zip", ".cr2", ".nef", ".arw"];
-    const matchedExt = allowedExts.find((ext) => rawName.endsWith(ext));
+    const ext = rawName.split(".").pop();
 
-    if (!matchedExt) {
+    if (!ext || !ALLOWED_EXTENSIONS.has(ext)) {
       return NextResponse.json(
-        { error: "Invalid file extension. Allowed formats: JPG, PNG, TIFF, PSD, RAW (CR2/NEF/ARW), ZIP." },
+        { error: "Unsupported format. Allowed: JPG, PNG, PSD, TIFF, RAW, CR2, NEF, ARW, DNG" },
         { status: 400 }
       );
     }
 
-    // 3. Deep Magic Byte Inspection for first 8 bytes
-    const buffer = await file.arrayBuffer();
-    const uint8 = new Uint8Array(buffer.slice(0, 8));
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+    const uint8 = new Uint8Array(bytes.slice(0, 16));
     const hexHeader = Array.from(uint8)
       .map((b) => b.toString(16).padStart(2, "0"))
       .join("");
@@ -62,8 +75,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Handle RAW camera files where signatures vary
-    if (!isValidSignature && (rawName.endsWith(".cr2") || rawName.endsWith(".nef") || rawName.endsWith(".arw"))) {
-      // Canon CR2 starts with II (49492a00), Nikon NEF with 4d4d002a
+    if (!isValidSignature && (rawName.endsWith(".cr2") || rawName.endsWith(".nef") || rawName.endsWith(".arw") || rawName.endsWith(".dng"))) {
       if (hexHeader.startsWith("4949") || hexHeader.startsWith("4d4d")) {
         isValidSignature = true;
       }
@@ -79,6 +91,13 @@ export async function POST(req: NextRequest) {
     // Safe sanitized file reference
     const safeId = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
     const sanitizedName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+
+    // Ensure staging directory exists and write file
+    if (!fs.existsSync(UPLOADS_DIR)) {
+      fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+    }
+    const targetPath = path.join(UPLOADS_DIR, `${safeId}_${sanitizedName}`);
+    fs.writeFileSync(targetPath, buffer);
 
     return NextResponse.json({
       success: true,

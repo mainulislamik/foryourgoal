@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | Foryourgoal",
   description: "Foryourgoal's terms of service, SLA standards, payment terms, and client revision policy.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {
