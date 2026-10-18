@@ -38,15 +38,15 @@ export default function CareersPage() {
   ];
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-white text-slate-900">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-violet/15 text-brand-violet text-xs font-semibold tracking-wider uppercase mb-3">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3 border border-indigo-200">
           <span>Join Our Craft</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-brand-ivory tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
           Careers at Foryourgoal
         </h1>
-        <p className="mt-4 text-base text-brand-ivory/70">
+        <p className="mt-4 text-base text-slate-600">
           We are always looking for passionate Photoshop artists, colorists, and client production supervisors who pride themselves on pixel perfection.
         </p>
       </div>
@@ -55,31 +55,31 @@ export default function CareersPage() {
         {jobs.map((job, idx) => (
           <div
             key={idx}
-            className="p-8 rounded-2xl bg-brand-navy-card border border-brand-border hover:border-brand-lime/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-6"
+            className="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-indigo-300 shadow-sm transition-all flex flex-col md:flex-row md:items-center justify-between gap-6"
           >
             <div className="space-y-2">
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-                <span className="text-brand-lime bg-brand-lime/10 px-2 py-0.5 rounded border border-brand-lime/20">
+                <span className="text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200 font-semibold">
                   {job.department}
                 </span>
-                <span className="text-brand-ivory/50">&bull;</span>
-                <span className="text-brand-ivory/70">{job.location}</span>
-                <span className="text-brand-ivory/50">&bull;</span>
-                <span className="text-brand-ivory/70">{job.type}</span>
+                <span className="text-slate-400">&bull;</span>
+                <span className="text-slate-600">{job.location}</span>
+                <span className="text-slate-400">&bull;</span>
+                <span className="text-slate-600">{job.type}</span>
               </div>
 
-              <h2 className="text-xl font-bold text-brand-ivory">{job.title}</h2>
-              <p className="text-xs text-brand-ivory/70 max-w-xl leading-relaxed">
+              <h2 className="text-xl font-bold text-slate-900">{job.title}</h2>
+              <p className="text-xs text-slate-600 max-w-xl leading-relaxed">
                 {job.desc}
               </p>
             </div>
 
             <a
               href="mailto:careers@foryourgoal.com"
-              className="whitespace-nowrap px-6 py-3 rounded-xl bg-brand-navy border border-brand-border text-brand-ivory font-semibold text-xs hover:border-brand-lime hover:text-brand-lime transition-all inline-flex items-center justify-center gap-2"
+              className="whitespace-nowrap px-6 py-3 rounded-xl bg-white border border-slate-300 text-slate-800 font-semibold text-xs hover:border-indigo-500 hover:text-indigo-600 hover:bg-slate-50 shadow-sm transition-all inline-flex items-center justify-center gap-2"
             >
               <span>Apply via Email</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 text-indigo-500" />
             </a>
           </div>
         ))}

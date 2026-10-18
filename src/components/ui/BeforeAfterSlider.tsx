@@ -89,12 +89,12 @@ export function BeforeAfterSlider({
   };
 
   return (
-    <div className={`relative select-none overflow-hidden rounded-2xl border border-[#2A3150] bg-[#181C2E] shadow-2xl ${className}`}>
+    <div className={`relative select-none overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-xl ${className}`}>
       {/* Visual Controls Header */}
       <div className="absolute top-3 right-3 z-30 flex items-center gap-2">
         <button
           onClick={() => setIsZoomed(!isZoomed)}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#101321]/80 backdrop-blur-md border border-[#2A3150] text-slate-200 hover:text-white hover:border-[#745CFF] transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 backdrop-blur-md border border-slate-300 text-slate-700 hover:text-slate-900 hover:border-indigo-500 shadow-sm transition-colors"
           aria-label={isZoomed ? "Reset Zoom" : "Zoom in 1.5x"}
         >
           {isZoomed ? <ZoomOut className="w-3.5 h-3.5" /> : <ZoomIn className="w-3.5 h-3.5" />}
@@ -128,8 +128,8 @@ export function BeforeAfterSlider({
             priority
           />
           {/* After Label Badge */}
-          <div className="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#101321]/85 backdrop-blur-md text-[#D6FF70] border border-[#D6FF70]/30 shadow-lg">
-            <Sparkles className="w-3.5 h-3.5 text-[#D6FF70]" />
+          <div className="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/95 backdrop-blur-md text-emerald-700 border border-emerald-300 shadow-md">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>{afterLabel}</span>
           </div>
         </div>
@@ -150,14 +150,14 @@ export function BeforeAfterSlider({
             />
           </div>
           {/* Before Label Badge */}
-          <div className="absolute bottom-4 left-4 z-20 px-3 py-1 rounded-full text-xs font-medium bg-[#101321]/85 backdrop-blur-md text-slate-300 border border-[#2A3150] shadow-lg">
+          <div className="absolute bottom-4 left-4 z-20 px-3 py-1 rounded-full text-xs font-medium bg-white/95 backdrop-blur-md text-slate-700 border border-slate-300 shadow-md">
             <span>{beforeLabel}</span>
           </div>
         </div>
 
         {/* Divider Handle */}
         <div
-          className="absolute top-0 bottom-0 z-20 w-1 bg-white cursor-ew-resize will-change-[left] shadow-[0_0_15px_rgba(0,0,0,0.8)]"
+          className="absolute top-0 bottom-0 z-20 w-1 bg-white cursor-ew-resize will-change-[left] shadow-[0_0_10px_rgba(0,0,0,0.4)]"
           style={{ left: `${sliderPosition}%` }}
           role="slider"
           tabIndex={0}
@@ -168,19 +168,19 @@ export function BeforeAfterSlider({
           onKeyDown={handleKeyDown}
         >
           {/* Center Circular Grip Button */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#101321] border-2 border-white shadow-xl flex items-center justify-center text-[#D6FF70] group-hover:scale-110 transition-transform">
-            <MoveHorizontal className="w-5 h-5 text-white" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-indigo-600 shadow-xl flex items-center justify-center text-indigo-600 group-hover:scale-110 transition-transform">
+            <MoveHorizontal className="w-5 h-5 text-indigo-600" />
           </div>
         </div>
       </div>
 
       {/* Instructional Footer */}
-      <div className="px-4 py-2.5 bg-[#101321] border-t border-[#2A3150] flex items-center justify-between text-xs text-slate-400">
+      <div className="px-4 py-2.5 bg-slate-100 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
         <span className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#D6FF70] animate-pulse"></span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           Drag slider or use arrow keys to inspect retouching quality
         </span>
-        <span className="font-mono text-slate-500">100% Hand-Crafted Paths</span>
+        <span className="font-mono text-slate-500 font-medium">100% Hand-Crafted Paths</span>
       </div>
     </div>
   );

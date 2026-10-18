@@ -51,26 +51,26 @@ export function PricingCalculator() {
   const totalPrice = unitPrice * volume;
 
   return (
-    <div className="rounded-3xl border border-[#2A3150] bg-[#141829] p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+    <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 lg:p-10 shadow-xl relative overflow-hidden">
       {/* Decorative background glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#745CFF]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10">
         {/* Left: Interactive Controls */}
         <div className="lg:col-span-7 space-y-8">
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#D6FF70]" />
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-indigo-600" />
               Interactive Volume Calculator
             </h3>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-slate-600">
               Customize your service, expected batch volume, and turnaround requirements for real-time rates.
             </p>
           </div>
 
           {/* 1. Choose Service */}
           <div>
-            <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-3">
+            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
               1. Select Editing Service
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -81,12 +81,12 @@ export function PricingCalculator() {
                   onClick={() => setSelectedService(tier.id)}
                   className={`text-left p-3 rounded-xl border text-sm font-medium transition-all flex items-center justify-between ${
                     selectedService === tier.id
-                      ? "bg-[#1E243D] border-[#745CFF] text-white shadow-[0_0_15px_rgba(116,92,255,0.2)]"
-                      : "bg-[#101321]/60 border-[#2A3150] text-slate-300 hover:border-slate-500"
+                      ? "bg-indigo-50 border-indigo-600 text-indigo-950 shadow-sm font-semibold"
+                      : "bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-100"
                   }`}
                 >
                   <span className="truncate pr-2">{tier.name}</span>
-                  <span className="text-xs font-mono text-[#D6FF70] shrink-0">
+                  <span className="text-xs font-mono text-indigo-600 font-bold shrink-0">
                     from ${tier.baseRate.toFixed(2)}
                   </span>
                 </button>
@@ -97,10 +97,10 @@ export function PricingCalculator() {
           {/* 2. Choose Image Volume */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+              <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                 2. Monthly Image Volume
               </label>
-              <div className="text-sm font-mono font-bold text-[#D6FF70]">
+              <div className="text-sm font-mono font-bold text-indigo-600">
                 {volume.toLocaleString()} images / batch
               </div>
             </div>
@@ -111,9 +111,9 @@ export function PricingCalculator() {
               step="10"
               value={volume}
               onChange={(e) => setVolume(Number(e.target.value))}
-              className="w-full h-2 bg-[#2A3150] rounded-lg appearance-none cursor-pointer accent-[#745CFF]"
+              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
+            <div className="flex justify-between text-[11px] text-slate-500 font-mono mt-1">
               <span>10</span>
               <span>500</span>
               <span>1,000</span>
@@ -121,8 +121,8 @@ export function PricingCalculator() {
             </div>
 
             {discountPct > 0 && (
-              <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#D6FF70]/10 text-[#D6FF70] border border-[#D6FF70]/20">
-                <Zap className="w-3.5 h-3.5" />
+              <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                <Zap className="w-3.5 h-3.5 text-emerald-600" />
                 Volume Tier Applied: {(discountPct * 100).toFixed(0)}% Savings
               </div>
             )}
@@ -130,7 +130,7 @@ export function PricingCalculator() {
 
           {/* 3. Turnaround SLA */}
           <div>
-            <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-3">
+            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
               3. Guaranteed Turnaround Speed (SLA)
             </label>
             <div className="grid grid-cols-3 gap-3">
@@ -139,12 +139,12 @@ export function PricingCalculator() {
                 onClick={() => setTurnaround(24)}
                 className={`p-3 rounded-xl border text-center transition-all ${
                   turnaround === 24
-                    ? "bg-[#1E243D] border-[#745CFF] text-white shadow-md"
-                    : "bg-[#101321]/60 border-[#2A3150] text-slate-300 hover:border-slate-500"
+                    ? "bg-indigo-50 border-indigo-600 text-indigo-950 shadow-sm font-bold"
+                    : "bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-100"
                 }`}
               >
                 <div className="text-sm font-bold">24 Hours</div>
-                <div className="text-xs text-slate-400">Standard Rate</div>
+                <div className="text-xs text-slate-500">Standard Rate</div>
               </button>
 
               <button
@@ -152,12 +152,12 @@ export function PricingCalculator() {
                 onClick={() => setTurnaround(12)}
                 className={`p-3 rounded-xl border text-center transition-all ${
                   turnaround === 12
-                    ? "bg-[#1E243D] border-[#745CFF] text-white shadow-md"
-                    : "bg-[#101321]/60 border-[#2A3150] text-slate-300 hover:border-slate-500"
+                    ? "bg-indigo-50 border-indigo-600 text-indigo-950 shadow-sm font-bold"
+                    : "bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-100"
                 }`}
               >
                 <div className="text-sm font-bold">12 Hours</div>
-                <div className="text-xs text-[#D6FF70]">Fast Track (+15%)</div>
+                <div className="text-xs text-indigo-700 font-semibold">Fast Track (+15%)</div>
               </button>
 
               <button
@@ -165,81 +165,81 @@ export function PricingCalculator() {
                 onClick={() => setTurnaround(6)}
                 className={`p-3 rounded-xl border text-center transition-all ${
                   turnaround === 6
-                    ? "bg-[#1E243D] border-[#745CFF] text-white shadow-md"
-                    : "bg-[#101321]/60 border-[#2A3150] text-slate-300 hover:border-slate-500"
+                    ? "bg-indigo-50 border-indigo-600 text-indigo-950 shadow-sm font-bold"
+                    : "bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-100"
                 }`}
               >
                 <div className="text-sm font-bold">6 Hours</div>
-                <div className="text-xs text-amber-400">Lightning (+35%)</div>
+                <div className="text-xs text-amber-700 font-semibold">Lightning (+35%)</div>
               </button>
             </div>
           </div>
         </div>
 
         {/* Right: Calculated Output Card */}
-        <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-[#101321] border border-[#2A3150] shadow-xl">
+        <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-md">
           <div className="space-y-6">
-            <div className="border-b border-[#2A3150] pb-4">
-              <div className="text-xs font-mono text-slate-400 uppercase tracking-widest">
+            <div className="border-b border-slate-200 pb-4">
+              <div className="text-xs font-mono text-slate-500 uppercase tracking-widest font-semibold">
                 Estimated Project Total
               </div>
-              <div className="text-3xl sm:text-4xl font-black text-white mt-2 flex items-baseline gap-2">
+              <div className="text-3xl sm:text-4xl font-black text-slate-900 mt-2 flex items-baseline gap-2">
                 <span>{formatPrice(totalPrice)}</span>
-                <span className="text-xs font-normal text-slate-400 font-sans">USD est.</span>
+                <span className="text-xs font-normal text-slate-500 font-sans">USD est.</span>
               </div>
-              <div className="text-xs text-[#D6FF70] font-mono mt-1 flex items-center gap-1.5">
+              <div className="text-xs text-emerald-700 font-mono mt-1 flex items-center gap-1.5 font-bold">
                 <Check className="w-3.5 h-3.5" />
                 Only {formatPrice(unitPrice)} per image
               </div>
             </div>
 
-            <div className="space-y-3 text-xs text-slate-300">
-              <div className="flex items-center justify-between py-1 border-b border-[#2A3150]/60">
-                <span className="text-slate-400">Selected Service:</span>
-                <span className="font-semibold text-white">{currentService.name}</span>
+            <div className="space-y-3 text-xs text-slate-600">
+              <div className="flex items-center justify-between py-1 border-b border-slate-200">
+                <span className="text-slate-500">Selected Service:</span>
+                <span className="font-semibold text-slate-900">{currentService.name}</span>
               </div>
-              <div className="flex items-center justify-between py-1 border-b border-[#2A3150]/60">
-                <span className="text-slate-400">Batch Quantity:</span>
-                <span className="font-semibold text-white">{volume} Images</span>
+              <div className="flex items-center justify-between py-1 border-b border-slate-200">
+                <span className="text-slate-500">Batch Quantity:</span>
+                <span className="font-semibold text-slate-900">{volume} Images</span>
               </div>
-              <div className="flex items-center justify-between py-1 border-b border-[#2A3150]/60">
-                <span className="text-slate-400">Guaranteed Turnaround:</span>
-                <span className="font-semibold text-[#D6FF70]">{turnaround} Hours Delivery</span>
+              <div className="flex items-center justify-between py-1 border-b border-slate-200">
+                <span className="text-slate-500">Guaranteed Turnaround:</span>
+                <span className="font-semibold text-indigo-700">{turnaround} Hours Delivery</span>
               </div>
-              <div className="flex items-center justify-between py-1 border-b border-[#2A3150]/60">
-                <span className="text-slate-400">Quality Guarantee:</span>
-                <span className="font-semibold text-white">Unlimited Free Revisions</span>
+              <div className="flex items-center justify-between py-1 border-b border-slate-200">
+                <span className="text-slate-500">Quality Guarantee:</span>
+                <span className="font-semibold text-slate-900">Unlimited Free Revisions</span>
               </div>
               <div className="flex items-center justify-between py-1">
-                <span className="text-slate-400">Data Security:</span>
-                <span className="font-semibold text-white">Full NDA Compliance</span>
+                <span className="text-slate-500">Data Security:</span>
+                <span className="font-semibold text-slate-900">Full NDA Compliance</span>
               </div>
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-[#2A3150] space-y-3">
+          <div className="mt-8 pt-6 border-t border-slate-200 space-y-3">
             <Link
               href={`/request-a-quote?service=${selectedService}&volume=${volume}&turnaround=${turnaround}`}
-              className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm bg-gradient-to-r from-[#D6FF70] to-[#bbf738] text-[#101321] hover:shadow-[0_0_25px_rgba(214,255,112,0.4)] transition-all transform hover:-translate-y-0.5"
+              className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm bg-slate-900 text-white hover:bg-slate-800 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
             >
               <span>Lock In This Rate</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-emerald-400" />
             </Link>
 
             <Link
               href="/request-a-quote?type=sample"
-              className="w-full block text-center py-2.5 px-4 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-[#141829] border border-[#2A3150] hover:border-[#745CFF] transition-colors"
+              className="w-full block text-center py-2.5 px-4 rounded-xl text-xs font-semibold text-slate-700 hover:text-slate-900 bg-white border border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-colors shadow-sm"
             >
               Test Our Quality: Free 2-Image Sample Trial
             </Link>
 
             <div className="flex items-center justify-center gap-4 text-[11px] text-slate-500 pt-1">
               <span className="flex items-center gap-1">
-                <Clock className="w-3 h-3 text-[#D6FF70]" /> 24/7 Production
+                <Clock className="w-3 h-3 text-emerald-600" /> 24/7 Production
               </span>
               <span>•</span>
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-[#745CFF]" /> No Upfront Card Required
+                <ShieldCheck className="w-3 h-3 text-indigo-600" /> No Upfront Card Required
               </span>
             </div>
           </div>

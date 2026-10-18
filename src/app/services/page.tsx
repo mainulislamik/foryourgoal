@@ -14,16 +14,16 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-white text-slate-900">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-violet/15 text-brand-violet text-xs font-semibold tracking-wider uppercase mb-3">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">
           <span>Enterprise Editing Capabilities</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-brand-ivory tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
           Commercial Image Post-Production Services
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-brand-ivory/70">
+        <p className="mt-4 text-base sm:text-lg text-slate-600">
           Engineered for e-commerce brands, high-volume catalogs, and commercial photography studios requiring pixel-level perfection.
         </p>
       </div>
@@ -33,10 +33,10 @@ export default function ServicesPage() {
         {servicesData.map((service) => (
           <div
             key={service.slug}
-            className="flex flex-col justify-between p-6 rounded-2xl bg-brand-navy-card/80 border border-brand-border hover:border-brand-violet/50 transition-all duration-300"
+            className="flex flex-col justify-between p-6 rounded-2xl bg-white border border-slate-200 hover:border-indigo-400 hover:shadow-xl transition-all duration-300"
           >
             <div>
-              <div className="w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-brand-border/60">
+              <div className="w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-slate-200">
                 <BeforeAfterSlider
                   beforeImage={service.beforeImage}
                   afterImage={service.afterImage}
@@ -47,43 +47,43 @@ export default function ServicesPage() {
               </div>
 
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-mono text-brand-lime bg-brand-lime/10 px-2 py-0.5 rounded border border-brand-lime/20">
+                <span className="text-xs font-mono text-indigo-700 font-bold bg-indigo-50 px-2.5 py-0.5 rounded border border-indigo-200">
                   Starting at {formatPrice(service.startingPrice)}/img
                 </span>
-                <span className="text-xs text-brand-ivory/50 flex items-center gap-1 font-mono">
-                  <Clock className="w-3.5 h-3.5" /> ~{service.turnaroundHours}h
+                <span className="text-xs text-slate-500 flex items-center gap-1 font-mono">
+                  <Clock className="w-3.5 h-3.5 text-slate-400" /> ~{service.turnaroundHours}h
                 </span>
               </div>
 
-              <h2 className="text-xl font-bold text-brand-ivory hover:text-brand-lime transition-colors">
+              <h2 className="text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors">
                 <Link href={`/services/${service.slug}`}>{service.title}</Link>
               </h2>
 
-              <p className="mt-2.5 text-sm text-brand-ivory/70 line-clamp-3 leading-relaxed">
+              <p className="mt-2.5 text-sm text-slate-600 line-clamp-3 leading-relaxed">
                 {service.shortDesc}
               </p>
 
               <div className="mt-4 space-y-1.5">
                 {service.features.slice(0, 4).map((feat, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs text-brand-ivory/80">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-lime shrink-0" />
+                  <div key={i} className="flex items-center gap-2 text-xs text-slate-700">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                     <span>{feat}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+            <div className="mt-8 pt-4 border-t border-slate-200 flex items-center justify-between">
               <Link
                 href={`/services/${service.slug}`}
-                className="text-xs font-semibold text-brand-ivory hover:text-brand-lime inline-flex items-center gap-1.5 transition-colors"
+                className="text-xs font-semibold text-slate-700 hover:text-indigo-600 inline-flex items-center gap-1.5 transition-colors"
               >
                 <span>Service Details</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+                <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
               </Link>
               <Link
                 href={`/request-a-quote?service=${service.slug}`}
-                className="text-xs font-semibold text-brand-violet hover:text-brand-ivory transition-colors"
+                className="text-xs font-bold text-indigo-600 hover:text-indigo-800 transition-colors"
               >
                 Get Quote &rarr;
               </Link>
@@ -93,20 +93,20 @@ export default function ServicesPage() {
       </div>
 
       {/* Free Sample Banner */}
-      <div className="mt-20 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-brand-navy-card via-brand-violet/20 to-brand-navy-card border border-brand-border flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="mt-20 p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lime/10 text-brand-lime text-xs font-semibold mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold mb-2 border border-emerald-200">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>Zero-Cost Test</span>
           </div>
-          <h3 className="text-2xl font-bold text-brand-ivory">Want to test our quality on your own files?</h3>
-          <p className="text-sm text-brand-ivory/70 mt-1 max-w-xl">
+          <h3 className="text-2xl font-bold text-slate-900">Want to test our quality on your own files?</h3>
+          <p className="text-sm text-slate-600 mt-1 max-w-xl">
             Upload up to 2 raw images. We will edit them free of charge within 4 hours to calibrate to your style guidelines.
           </p>
         </div>
         <Link
           href="/request-a-quote"
-          className="whitespace-nowrap px-8 py-4 rounded-xl bg-brand-lime text-brand-navy font-bold text-sm hover:bg-lime-400 transition-all shadow-lg"
+          className="whitespace-nowrap px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all"
         >
           Request Free Sample Test
         </Link>

@@ -38,48 +38,48 @@ export default function HowItWorksPage() {
   ];
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-white text-slate-900">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-violet/15 text-brand-violet text-xs font-semibold tracking-wider uppercase mb-3">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">
           <span>Operational Excellence</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-brand-ivory tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
           How Our Production Pipeline Works
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-brand-ivory/70">
+        <p className="mt-4 text-base sm:text-lg text-slate-600">
           A predictable, secure, and battle-tested workflow designed for enterprise e-commerce managers, fashion brands, and commercial photography studios.
         </p>
       </div>
 
       {/* Step by Step Breakdown */}
-      <div className="space-y-12">
+      <div className="space-y-8">
         {steps.map((s, idx) => (
           <div
             key={idx}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-10 rounded-2xl bg-brand-navy-card/80 border border-brand-border"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all"
           >
             <div className="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between">
-              <span className="text-6xl font-extrabold font-mono text-brand-lime">
+              <span className="text-6xl font-extrabold font-mono text-indigo-600/30">
                 {s.num}
               </span>
-              <span className="text-xs font-mono text-brand-ivory/50 uppercase tracking-widest mt-2">
+              <span className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-2 font-bold">
                 Phase {idx + 1}
               </span>
             </div>
 
             <div className="lg:col-span-5">
-              <h2 className="text-2xl font-bold text-brand-ivory mb-3">{s.title}</h2>
-              <p className="text-sm text-brand-ivory/75 leading-relaxed">{s.desc}</p>
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">{s.title}</h2>
+              <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
             </div>
 
-            <div className="lg:col-span-4 p-5 rounded-xl bg-brand-navy/80 border border-brand-border/60">
-              <div className="text-xs font-semibold uppercase tracking-wider text-brand-violet mb-3">
+            <div className="lg:col-span-4 p-5 rounded-xl bg-slate-50 border border-slate-200">
+              <div className="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-3">
                 Key Inclusions:
               </div>
               <div className="space-y-2">
                 {s.details.map((d, dIdx) => (
-                  <div key={dIdx} className="flex items-center gap-2 text-xs text-brand-ivory/80">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-lime shrink-0" />
+                  <div key={dIdx} className="flex items-center gap-2 text-xs text-slate-700">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                     <span>{d}</span>
                   </div>
                 ))}
@@ -91,46 +91,46 @@ export default function HowItWorksPage() {
 
       {/* SLA Guarantees */}
       <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="p-6 rounded-xl bg-brand-navy-card border border-brand-border">
-          <Clock className="w-8 h-8 text-brand-lime mb-4" />
-          <h3 className="text-lg font-bold text-brand-ivory mb-2">Guaranteed Turnarounds</h3>
-          <p className="text-xs text-brand-ivory/70 leading-relaxed">
+        <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+          <Clock className="w-8 h-8 text-indigo-600 mb-4" />
+          <h3 className="text-lg font-bold text-slate-900 mb-2">Guaranteed Turnarounds</h3>
+          <p className="text-xs text-slate-600 leading-relaxed">
             Standard delivery within 24 hours. Express rush queues available for 4-hour and 12-hour turnarounds during urgent campaign deadlines.
           </p>
         </div>
 
-        <div className="p-6 rounded-xl bg-brand-navy-card border border-brand-border">
-          <Lock className="w-8 h-8 text-brand-violet mb-4" />
-          <h3 className="text-lg font-bold text-brand-ivory mb-2">Enterprise Security & NDA</h3>
-          <p className="text-xs text-brand-ivory/70 leading-relaxed">
+        <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+          <Lock className="w-8 h-8 text-indigo-600 mb-4" />
+          <h3 className="text-lg font-bold text-slate-900 mb-2">Enterprise Security & NDA</h3>
+          <p className="text-xs text-slate-600 leading-relaxed">
             All production workstations are isolated without external drive access. Your unreleased product imagery is safeguarded under bilateral non-disclosure agreements.
           </p>
         </div>
 
-        <div className="p-6 rounded-xl bg-brand-navy-card border border-brand-border">
-          <ShieldCheck className="w-8 h-8 text-emerald-400 mb-4" />
-          <h3 className="text-lg font-bold text-brand-ivory mb-2">Unlimited Free Revisions</h3>
-          <p className="text-xs text-brand-ivory/70 leading-relaxed">
+        <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+          <ShieldCheck className="w-8 h-8 text-emerald-600 mb-4" />
+          <h3 className="text-lg font-bold text-slate-900 mb-2">Unlimited Free Revisions</h3>
+          <p className="text-xs text-slate-600 leading-relaxed">
             If any returned file does not 100% adhere to your calibration style guide, our QA leads revise it immediately at no additional charge.
           </p>
         </div>
       </div>
 
       {/* CTA */}
-      <div className="mt-16 text-center p-10 rounded-2xl bg-gradient-to-r from-brand-navy via-brand-violet/20 to-brand-navy border border-brand-border">
-        <h2 className="text-2xl font-bold text-brand-ivory">
+      <div className="mt-16 text-center p-10 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+        <h2 className="text-2xl font-bold text-slate-900">
           Ready to experience the Foryourgoal advantage?
         </h2>
-        <p className="mt-2 text-sm text-brand-ivory/70 max-w-lg mx-auto">
+        <p className="mt-2 text-sm text-slate-600 max-w-lg mx-auto">
           Start your free 2-image calibration test today. No credit card required.
         </p>
         <div className="mt-6">
           <Link
             href="/request-a-quote"
-            className="px-8 py-3.5 rounded-xl bg-brand-lime text-brand-navy font-bold text-sm hover:bg-lime-400 transition-all inline-flex items-center gap-2"
+            className="px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all inline-flex items-center gap-2"
           >
             <span>Start Free Calibration Test</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-indigo-400" />
           </Link>
         </div>
       </div>

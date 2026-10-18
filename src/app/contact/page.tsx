@@ -11,15 +11,15 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-white text-slate-900">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <span className="text-xs font-semibold uppercase tracking-wider text-brand-lime bg-brand-lime/10 px-3 py-1 rounded border border-brand-lime/20">
+        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-3 py-1 rounded border border-indigo-200">
           Direct Studio Communication
         </span>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-brand-ivory mt-3">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mt-3">
           Get in Touch With Our Team
         </h1>
-        <p className="mt-3 text-base text-brand-ivory/70">
+        <p className="mt-3 text-base text-slate-600">
           Whether you need a custom high-volume enterprise SLA, dedicated retouchers, or have a question about our turnaround times, we are here to help.
         </p>
       </div>
@@ -27,49 +27,49 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto">
         {/* Contact Info Cards */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="p-6 rounded-2xl bg-brand-navy-card border border-brand-border">
-            <Mail className="w-6 h-6 text-brand-lime mb-3" />
-            <div className="text-xs uppercase font-mono text-brand-ivory/50">Official Inquiry Email</div>
-            <div className="text-base font-bold text-brand-ivory mt-1">support@foryourgoal.com</div>
-            <div className="text-xs text-brand-ivory/60 mt-1">Monitored 24/7 by our operations desk</div>
+          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+            <Mail className="w-6 h-6 text-indigo-600 mb-3" />
+            <div className="text-xs uppercase font-mono text-slate-500">Official Inquiry Email</div>
+            <div className="text-base font-bold text-slate-900 mt-1">support@foryourgoal.com</div>
+            <div className="text-xs text-slate-500 mt-1">Monitored 24/7 by our operations desk</div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-brand-navy-card border border-brand-border">
-            <Clock className="w-6 h-6 text-brand-violet mb-3" />
-            <div className="text-xs uppercase font-mono text-brand-ivory/50">Operating Hours</div>
-            <div className="text-base font-bold text-brand-ivory mt-1">24 Hours / 7 Days a Week</div>
-            <div className="text-xs text-brand-ivory/60 mt-1">Shift rotations ensure zero downtime</div>
+          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+            <Clock className="w-6 h-6 text-indigo-600 mb-3" />
+            <div className="text-xs uppercase font-mono text-slate-500">Operating Hours</div>
+            <div className="text-base font-bold text-slate-900 mt-1">24 Hours / 7 Days a Week</div>
+            <div className="text-xs text-slate-500 mt-1">Shift rotations ensure zero downtime</div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-brand-navy-card border border-brand-border">
-            <ShieldCheck className="w-6 h-6 text-emerald-400 mb-3" />
-            <div className="text-xs uppercase font-mono text-brand-ivory/50">Rapid SLA</div>
-            <div className="text-base font-bold text-brand-ivory mt-1">&lt; 45 Minute Response</div>
-            <div className="text-xs text-brand-ivory/60 mt-1">All new business inquiries answered swiftly</div>
+          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+            <ShieldCheck className="w-6 h-6 text-emerald-600 mb-3" />
+            <div className="text-xs uppercase font-mono text-slate-500">Rapid SLA</div>
+            <div className="text-base font-bold text-slate-900 mt-1">&lt; 45 Minute Response</div>
+            <div className="text-xs text-slate-500 mt-1">All new business inquiries answered swiftly</div>
           </div>
         </div>
 
         {/* Action Callout */}
-        <div className="lg:col-span-7 p-8 sm:p-10 rounded-2xl bg-brand-navy-card/90 border border-brand-border flex flex-col justify-between">
+        <div className="lg:col-span-7 p-8 sm:p-10 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-brand-ivory mb-3">
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">
               Need a Quote or Free Sample First?
             </h2>
-            <p className="text-sm text-brand-ivory/70 leading-relaxed mb-6">
+            <p className="text-sm text-slate-600 leading-relaxed mb-6">
               Our multi-step quotation wizard allows you to upload raw test images directly and specify your desired clipping path styles, layer naming conventions, and file formats.
             </p>
 
             <div className="space-y-3 mb-8">
-              <div className="text-xs text-brand-ivory/80 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-brand-lime" />
+              <div className="text-xs text-slate-700 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-indigo-600" />
                 <span>Upload up to 2 sample files for free calibration</span>
               </div>
-              <div className="text-xs text-brand-ivory/80 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-brand-lime" />
+              <div className="text-xs text-slate-700 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-indigo-600" />
                 <span>Receive custom tiered volume pricing</span>
               </div>
-              <div className="text-xs text-brand-ivory/80 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-brand-lime" />
+              <div className="text-xs text-slate-700 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-indigo-600" />
                 <span>Non-Disclosure Agreement signed upon request</span>
               </div>
             </div>
@@ -77,10 +77,10 @@ export default function ContactPage() {
 
           <Link
             href="/request-a-quote"
-            className="w-full py-4 rounded-xl bg-brand-violet text-white font-semibold text-sm hover:shadow-lg transition-all flex items-center justify-center gap-2"
+            className="w-full py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2"
           >
             <span>Proceed to Quote & Sample Request</span>
-            <ArrowRight className="w-4 h-4 text-brand-lime" />
+            <ArrowRight className="w-4 h-4 text-indigo-400" />
           </Link>
         </div>
       </div>

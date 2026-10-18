@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-white text-slate-900">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-violet/15 text-brand-violet text-xs font-semibold tracking-wider uppercase mb-3">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3 border border-indigo-200">
           <span>Editorial & Guides</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-brand-ivory tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
           Image Post-Production Knowledge Base
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-brand-ivory/70">
+        <p className="mt-4 text-base sm:text-lg text-slate-600">
           In-depth guides on marketplace compliance, non-destructive retouching techniques, and high-volume studio operations.
         </p>
       </div>
@@ -29,32 +29,32 @@ export default function BlogPage() {
         {blogPostsData.map((post) => (
           <article
             key={post.slug}
-            className="flex flex-col justify-between p-6 rounded-2xl bg-brand-navy-card/80 border border-brand-border hover:border-brand-violet/50 transition-all duration-300"
+            className="flex flex-col justify-between p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-indigo-300 shadow-sm hover:shadow-md transition-all duration-300"
           >
             <div>
-              <div className="flex items-center justify-between text-xs text-brand-ivory/60 mb-3 font-mono">
-                <span className="text-brand-lime bg-brand-lime/10 px-2 py-0.5 rounded border border-brand-lime/20">
+              <div className="flex items-center justify-between text-xs text-slate-500 mb-3 font-mono">
+                <span className="text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200 font-semibold">
                   {post.category}
                 </span>
                 <span className="flex items-center gap-1">
-                  <Clock className="w-3 h-3" /> {post.readingTime}
+                  <Clock className="w-3 h-3 text-slate-400" /> {post.readingTime}
                 </span>
               </div>
 
-              <h2 className="text-xl font-bold text-brand-ivory hover:text-brand-lime transition-colors">
+              <h2 className="text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors">
                 <Link href={`/blog/${post.slug}`}>{post.title}</Link>
               </h2>
 
-              <p className="mt-3 text-sm text-brand-ivory/70 line-clamp-3 leading-relaxed">
+              <p className="mt-3 text-sm text-slate-600 line-clamp-3 leading-relaxed">
                 {post.excerpt}
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs">
-              <span className="text-brand-ivory/50">{post.author.name}</span>
+            <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
+              <span className="text-slate-500">{post.author.name}</span>
               <Link
                 href={`/blog/${post.slug}`}
-                className="font-semibold text-brand-lime hover:underline inline-flex items-center gap-1"
+                className="font-semibold text-indigo-600 hover:underline inline-flex items-center gap-1"
               >
                 <span>Read Guide</span> &rarr;
               </Link>
