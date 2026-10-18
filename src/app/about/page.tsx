@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ShieldCheck, Award, Users, CheckCircle2, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -25,13 +26,52 @@ export default function AboutPage() {
         </p>
       </div>
 
+      {/* Brand Identity & Golden Ratio Showcase */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 mb-20 shadow-sm">
+        <div className="lg:col-span-5 flex justify-center">
+          <div className="p-8 rounded-2xl bg-white border border-slate-200 shadow-md">
+            <Image
+              src="/brand/for-your-goal-main-light-background.svg"
+              alt="FOR YOUR GOAL - Official Brand Identity"
+              width={340}
+              height={260}
+              className="w-full max-w-[260px] h-auto object-contain"
+            />
+          </div>
+        </div>
+        <div className="lg:col-span-7">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">
+            <span>Golden Ratio Architecture (φ = 1.618)</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">
+            The Philosophy Behind Our Identity
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
+            Our official mark unites the geometric monogram <strong className="text-slate-900">“F”</strong> and <strong className="text-slate-900">“G”</strong> within an artboard proportion of 500 × 309 units—harmonizing closely with the Golden Ratio (φ = 1.618). The forward slant embodies speed, discipline, and execution.
+          </p>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+            The ascending blue arrow cutting through the circular aperture conveys upward mobility, commercial growth, and performance trajectory—reinforcing our commitment to elevate your e-commerce visuals toward their ultimate goal.
+          </p>
+          <div className="grid grid-cols-2 gap-4 text-xs font-mono text-slate-600">
+            <div className="p-3.5 rounded-xl bg-white border border-slate-200">
+              <span className="block text-slate-400 uppercase text-[10px]">Symbol Artboard</span>
+              <span className="text-slate-900 font-bold">500 × 309 (φ = 1.618)</span>
+            </div>
+            <div className="p-3.5 rounded-xl bg-white border border-slate-200">
+              <span className="block text-slate-400 uppercase text-[10px]">Color Harmonization</span>
+              <span className="text-indigo-600 font-bold">Electric Blue & Charcoal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Pillars */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
         <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
           <Award className="w-10 h-10 text-indigo-600 mb-4" />
           <h2 className="text-xl font-bold text-slate-900 mb-2">100% Handcrafted Precision</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            While automated AI tools produce fuzzy, jagged halos around complex edges, our retouchers draw every vector clipping path manually with Photoshop's Pen Tool.
+            While automated AI tools produce fuzzy, jagged halos around complex edges, our retouchers draw every vector clipping path manually with Photoshop&apos;s Pen Tool.
           </p>
         </div>
 
