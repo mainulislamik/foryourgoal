@@ -778,6 +778,30 @@
   ],
   "mediaGallery": [
     {
+      "url": "/uploads/cms/1792410578055-bicycle.jpg",
+      "name": "bicycle.jpg",
+      "size": "768.9 KB",
+      "uploadedAt": "2026-10-19T11:49:38.058Z"
+    },
+    {
+      "url": "/uploads/cms/1792410569466-Clipping_Path.jpg",
+      "name": "Clipping Path.jpg",
+      "size": "185.3 KB",
+      "uploadedAt": "2026-10-19T11:49:29.468Z"
+    },
+    {
+      "url": "/uploads/cms/1792409478762-bicycle.jpg",
+      "name": "bicycle.jpg",
+      "size": "768.9 KB",
+      "uploadedAt": "2026-10-19T11:31:18.766Z"
+    },
+    {
+      "url": "/uploads/cms/1792409500911-Clipping_Path.jpg",
+      "name": "Clipping Path.jpg",
+      "size": "185.3 KB",
+      "uploadedAt": "2026-10-19T11:31:40.912Z"
+    },
+    {
       "url": "/images/portfolio/jewelry-retouch-before.jpg",
       "name": "Jewelry Retouch (Before)",
       "size": "2.4 MB",
