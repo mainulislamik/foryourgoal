@@ -64,8 +64,8 @@
         "shortDesc": "Pixel-perfect hand-drawn Photoshop pen tool paths for crisp, sharp product isolation.",
         "fullDesc": "Our master retouchers use Adobe Photoshop's pen tool exclusively to create razor-sharp vector clipping paths around your products. Unlike automated AI magic wands that introduce ragged edge artifacts, hand-drawn paths isolate subjects with flawless curves, crisp geometry, and natural contours ready for any catalog or composite.",
         "turnaroundHours": 6,
-        "beforeImage": "/images/portfolio/clipping-path-before.jpg",
-        "afterImage": "/images/portfolio/clipping-path-after.jpg",
+        "beforeImage": "/uploads/cms/1792416013922-bicycle.jpg",
+        "afterImage": "/uploads/cms/1792416028851-Clipping_Path.jpg",
         "features": [
           "100% hand-drawn vector paths via Photoshop Pen Tool",
           "Zero halos, pixel fringing, or rough pixelated edges",

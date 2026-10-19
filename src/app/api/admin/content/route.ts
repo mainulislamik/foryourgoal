@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { getSessionFromRequest } from "@/lib/admin-auth";
 import {
   getSiteContent,
@@ -51,10 +52,23 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
+    // Function to purge public caches safely
+    const purgeCaches = () => {
+      try {
+        revalidatePath("/", "layout");
+        revalidatePath("/");
+        revalidatePath("/services");
+        revalidatePath("/portfolio");
+      } catch (err) {
+        console.warn("revalidatePath warning:", err);
+      }
+    };
+
     // Reset action
     if (body.action === "reset") {
       const defaults = getDefaultSiteContent();
       await saveSiteContent(defaults);
+      purgeCaches();
       return NextResponse.json({
         success: true,
         message: "Content reset to defaults",
@@ -66,6 +80,7 @@ export async function POST(req: NextRequest) {
     if (body.section && body.data !== undefined) {
       const section = body.section as keyof SiteContent;
       const updated = await updateSiteContentSection(section, body.data);
+      purgeCaches();
       return NextResponse.json({
         success: true,
         message: `Section ${section} updated successfully`,
@@ -77,6 +92,7 @@ export async function POST(req: NextRequest) {
     // Full content replacement
     if (body.content) {
       const updated = await saveSiteContent(body.content);
+      purgeCaches();
       return NextResponse.json({
         success: true,
         message: "Full site content updated successfully",

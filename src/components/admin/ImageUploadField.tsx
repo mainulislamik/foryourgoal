@@ -23,6 +23,7 @@ export function ImageUploadField({
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
   const [imgError, setImgError] = useState(false);
+  const [uploadedNotice, setUploadedNotice] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -58,6 +59,7 @@ export function ImageUploadField({
       }
 
       setImgError(false);
+      setUploadedNotice(true);
       onChange(uploadedUrl);
       if (onUploaded && data.mediaItem) {
         onUploaded(data.mediaItem);
@@ -164,6 +166,12 @@ export function ImageUploadField({
             </button>
           </div>
           {error && <p className="text-[11px] text-rose-600 font-medium">{error}</p>}
+          {uploadedNotice && !error && (
+            <p className="text-[11px] text-emerald-700 font-semibold flex items-center gap-1.5 mt-1 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 animate-in fade-in">
+              <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-600" />
+              <span>Uploaded to server! Click &apos;Save Changes&apos; to publish live.</span>
+            </p>
+          )}
         </div>
       </div>
     </div>
