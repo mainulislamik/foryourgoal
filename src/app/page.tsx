@@ -115,17 +115,25 @@ export default async function HomePage() {
             {/* CTA & Trust Triggers */}
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-1">
               <Link
-                href={hero.primaryCtaLink || "/request-a-quote"}
-                className="btn-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-base shadow-lg shadow-slate-900/10 hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.99] transition-all"
+                href={
+                  hero.primaryCtaLink && hero.primaryCtaLink !== "/request-a-quote"
+                    ? hero.primaryCtaLink
+                    : "/request-free-trial"
+                }
+                className="btn-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-base shadow-lg shadow-red-600/25 hover:shadow-red-600/35 hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.99] transition-all group"
               >
-                <span>{hero.primaryCtaText}</span>
-                <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+                <span>
+                  {hero.primaryCtaText && !hero.primaryCtaText.toLowerCase().includes("quote")
+                    ? hero.primaryCtaText
+                    : "Request a Free Trial"}
+                </span>
+                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href={hero.secondaryCtaLink || "/portfolio"}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 font-medium border border-slate-300 hover:border-indigo-400 hover:scale-[1.02] active:scale-[0.99] transition-all shadow-sm"
+                href={hero.secondaryCtaLink || "/services"}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 font-medium border border-slate-300 hover:border-red-400 hover:scale-[1.02] active:scale-[0.99] transition-all shadow-sm"
               >
-                <span>{hero.secondaryCtaText}</span>
+                <span>{hero.secondaryCtaText || "Explore Services"}</span>
               </Link>
             </div>
 

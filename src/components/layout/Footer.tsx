@@ -223,8 +223,8 @@ export function Footer() {
             <Link href="/terms" className="hover:text-slate-700 transition-colors">
               Terms & Conditions
             </Link>
-            <Link href="/request-a-quote" className="text-indigo-600 font-bold hover:underline flex items-center gap-1">
-              Request a Quote <ArrowRight className="w-3 h-3" />
+            <Link href="/request-free-trial" className="text-red-600 font-bold hover:underline flex items-center gap-1">
+              Request a Free Trial <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
         </div>
