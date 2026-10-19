@@ -916,7 +916,7 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                       {/* Before / After Images for this service */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-white rounded-xl border border-slate-200">
                         <ImageUploadField
-                          label="Before Image (Original)"
+                          label="Primary Before Image (Original)"
                           value={service.beforeImage}
                           onChange={(url) => {
                             const next = [...content.servicesSection.services];
@@ -933,7 +933,7 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                           category="services"
                         />
                         <ImageUploadField
-                          label="After Image (Retouched)"
+                          label="Primary After Image (Retouched)"
                           value={service.afterImage}
                           onChange={(url) => {
                             const next = [...content.servicesSection.services];
@@ -949,6 +949,155 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                           }}
                           category="services"
                         />
+                      </div>
+
+                      {/* Additional Comparison Samples (Category-wise) */}
+                      <div className="p-4 bg-slate-50/90 rounded-xl border border-slate-200 space-y-4">
+                        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                          <div>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800">
+                              Additional Comparison Samples (Category-wise)
+                            </h4>
+                            <p className="text-[11px] text-slate-500">
+                              Add extra Before &amp; After comparisons for this service. If no samples are added, this section stays completely hidden on the website.
+                            </p>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const next = [...content.servicesSection.services];
+                              const currentSamples = next[index].samples || [];
+                              next[index] = {
+                                ...next[index],
+                                samples: [
+                                  ...currentSamples,
+                                  {
+                                    id: `sample-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
+                                    categoryTitle: "Sample Comparison",
+                                    beforeImage: "",
+                                    afterImage: "",
+                                  },
+                                ],
+                              };
+                              setContent((prev) =>
+                                !prev
+                                  ? prev
+                                  : {
+                                      ...prev,
+                                      servicesSection: { ...prev.servicesSection, services: next },
+                                    }
+                              );
+                            }}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-sm transition-all cursor-pointer self-start sm:self-auto"
+                          >
+                            <Plus className="w-3.5 h-3.5" />
+                            <span>Add Sample</span>
+                          </button>
+                        </div>
+
+                        {(!service.samples || service.samples.length === 0) ? (
+                          <div className="p-3 text-center border border-dashed border-slate-300 rounded-lg bg-white/60 text-xs text-slate-500 font-medium">
+                            No additional sample images added. Only the primary before/after image above will be displayed on the website.
+                          </div>
+                        ) : (
+                          <div className="space-y-4">
+                            {service.samples.map((sample, sIdx) => (
+                              <div
+                                key={sample.id || sIdx}
+                                className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs space-y-3"
+                              >
+                                <div className="flex items-center justify-between gap-3">
+                                  <div className="flex-1">
+                                    <label className="text-[11px] font-bold text-slate-600 uppercase">
+                                      Sample #{sIdx + 1} Category / Title
+                                    </label>
+                                    <input
+                                      type="text"
+                                      value={sample.categoryTitle}
+                                      placeholder="e.g. Cosmetic Bottle Retouch, Leather Footwear, Diamond Ring Close-up"
+                                      onChange={(e) => {
+                                        const next = [...content.servicesSection.services];
+                                        const samples = [...(next[index].samples || [])];
+                                        samples[sIdx] = { ...samples[sIdx], categoryTitle: e.target.value };
+                                        next[index] = { ...next[index], samples };
+                                        setContent((prev) =>
+                                          !prev
+                                            ? prev
+                                            : {
+                                                ...prev,
+                                                servicesSection: { ...prev.servicesSection, services: next },
+                                              }
+                                        );
+                                      }}
+                                      className="w-full mt-1 px-3 py-1.5 border border-slate-300 rounded-lg text-xs font-semibold bg-white"
+                                    />
+                                  </div>
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      const next = [...content.servicesSection.services];
+                                      const samples = (next[index].samples || []).filter((_, i) => i !== sIdx);
+                                      next[index] = { ...next[index], samples };
+                                      setContent((prev) =>
+                                        !prev
+                                          ? prev
+                                          : {
+                                              ...prev,
+                                              servicesSection: { ...prev.servicesSection, services: next },
+                                            }
+                                      );
+                                    }}
+                                    className="mt-4 p-2 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Remove this sample"
+                                  >
+                                    <Trash2 className="w-4 h-4" />
+                                  </button>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                  <ImageUploadField
+                                    label="Sample Before (Original)"
+                                    value={sample.beforeImage}
+                                    onChange={(url) => {
+                                      const next = [...content.servicesSection.services];
+                                      const samples = [...(next[index].samples || [])];
+                                      samples[sIdx] = { ...samples[sIdx], beforeImage: url };
+                                      next[index] = { ...next[index], samples };
+                                      setContent((prev) =>
+                                        !prev
+                                          ? prev
+                                          : {
+                                              ...prev,
+                                              servicesSection: { ...prev.servicesSection, services: next },
+                                            }
+                                      );
+                                    }}
+                                    category="services"
+                                  />
+                                  <ImageUploadField
+                                    label="Sample After (Retouched)"
+                                    value={sample.afterImage}
+                                    onChange={(url) => {
+                                      const next = [...content.servicesSection.services];
+                                      const samples = [...(next[index].samples || [])];
+                                      samples[sIdx] = { ...samples[sIdx], afterImage: url };
+                                      next[index] = { ...next[index], samples };
+                                      setContent((prev) =>
+                                        !prev
+                                          ? prev
+                                          : {
+                                              ...prev,
+                                              servicesSection: { ...prev.servicesSection, services: next },
+                                            }
+                                      );
+                                    }}
+                                    category="services"
+                                  />
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
                       {/* SEO Meta */}

@@ -67,6 +67,14 @@ export interface CtaBanner {
   trialBtnText: string;
 }
 
+export interface ServiceSampleItem {
+  id: string;
+  categoryTitle: string;
+  beforeImage: string;
+  afterImage: string;
+  description?: string;
+}
+
 export interface ServiceItem {
   slug: string;
   title: string;
@@ -82,6 +90,10 @@ export interface ServiceItem {
   faqs?: { q: string; a: string }[];
   metaTitle: string;
   metaDesc: string;
+  samples?: ServiceSampleItem[];
+  technicalWorkflow?: { step: number; title: string; desc: string }[];
+  industryUseCases?: string[];
+  qualityAssuranceChecklist?: string[];
 }
 
 export interface PortfolioItem {

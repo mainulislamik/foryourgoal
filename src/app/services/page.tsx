@@ -125,7 +125,7 @@ export default async function ServicesPage() {
               </p>
 
               <div className="mt-4 space-y-1.5">
-                {service.features.slice(0, 4).map((feat, i) => (
+                {service.features.slice(0, 4).map((feat: string, i: number) => (
                   <div key={i} className="flex items-center gap-2 text-xs text-slate-700">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                     <span>{feat}</span>

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { servicesData, getServiceBySlug } from "@/data/services";
-import { getDynamicServiceBySlug } from "@/lib/site-content";
+import { getDynamicServiceBySlug, ServiceItem, ServiceSampleItem } from "@/lib/site-content";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
 
 export const dynamic = "force-dynamic";
@@ -16,6 +16,7 @@ import {
   Sparkles,
   Zap,
   HelpCircle,
+  Layers,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -80,7 +81,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
   const dynamicService = await getDynamicServiceBySlug(slug);
-  const service = dynamicService || getServiceBySlug(slug);
+  const fallbackService = getServiceBySlug(slug);
+  const service: ServiceItem | undefined = dynamicService || fallbackService;
 
   if (!service) {
     notFound();
@@ -240,6 +242,140 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </div>
 
+      {/* Conditional Additional Comparison Samples (Category-wise) */}
+      {service.samples && service.samples.filter((s: ServiceSampleItem) => s.beforeImage && s.afterImage).length > 0 && (
+        <div className="my-16 w-full">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-slate-200">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold uppercase tracking-wider mb-2">
+                <span>Interactive Client Portfolio Samples</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                Category-Wise Production Samples
+              </h2>
+              <p className="text-sm text-slate-600 mt-1">
+                Slide back and forth to inspect raw source files versus our studio finished retouched deliverables.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {service.samples
+              .filter((s: ServiceSampleItem) => s.beforeImage && s.afterImage)
+              .map((sample: ServiceSampleItem, sIdx: number) => (
+                <div
+                  key={sample.id || sIdx}
+                  className="p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-sm font-bold text-slate-900 truncate">
+                        {sample.categoryTitle || `Sample ${sIdx + 1}`}
+                      </h3>
+                      <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white border border-slate-200 text-slate-600">
+                        Studio Sample #{sIdx + 1}
+                      </span>
+                    </div>
+                    <BeforeAfterSlider
+                      beforeImage={sample.beforeImage}
+                      afterImage={sample.afterImage}
+                      title={sample.categoryTitle || service.title}
+                      category={service.title}
+                      className="w-full aspect-[4/3] rounded-xl overflow-hidden shadow-inner"
+                    />
+                  </div>
+                  <div className="mt-3 pt-2 text-center text-xs text-slate-500 border-t border-slate-200/60">
+                    Drag slider to inspect before &amp; after
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+
+      {/* Technical Production Pipeline (Workflow) */}
+      {service.technicalWorkflow && service.technicalWorkflow.length > 0 && (
+        <div className="my-16 w-full">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-2">
+              <span>Engineered For Precision</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+              Technical Production Pipeline
+            </h2>
+            <p className="text-sm text-slate-600 mt-2">
+              How our senior Adobe Photoshop specialists execute every {service.title.toLowerCase()} order with microscopic QA.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {service.technicalWorkflow.map((item: { step: number; title: string; desc: string }) => (
+              <div
+                key={item.step}
+                className="p-6 rounded-2xl bg-slate-50 border border-slate-200 relative shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white font-extrabold text-base flex items-center justify-center mb-4 shadow-sm">
+                    0{item.step}
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Target Industries & Quality Control Protocol */}
+      {(service.industryUseCases || service.qualityAssuranceChecklist) && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+          {service.industryUseCases && service.industryUseCases.length > 0 && (
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+              <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Layers className="w-5 h-5 text-indigo-600" />
+                <span>Target Industries &amp; Commercial Applications</span>
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {service.industryUseCases.map((useCase: string, idx: number) => (
+                  <div
+                    key={idx}
+                    className="p-3.5 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-800 flex items-center gap-2.5 shadow-2xs"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-indigo-500 shrink-0" />
+                    <span>{useCase}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {service.qualityAssuranceChecklist && service.qualityAssuranceChecklist.length > 0 && (
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+              <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-emerald-600" />
+                <span>Quality Control Protocol (300% Zoom Standard)</span>
+              </h2>
+              <div className="space-y-3">
+                {service.qualityAssuranceChecklist.map((qaItem: string, idx: number) => (
+                  <div
+                    key={idx}
+                    className="p-3.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 flex items-start gap-2.5 shadow-2xs"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{qaItem}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Technical Features & Deliverables */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
         <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
@@ -248,7 +384,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             <span>Key Capabilities & Inclusions</span>
           </h2>
           <div className="space-y-4">
-            {service.features.map((feat, i) => (
+            {service.features.map((feat: string, i: number) => (
               <div key={i} className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <span className="text-sm text-slate-700 leading-relaxed">{feat}</span>

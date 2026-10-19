@@ -94,8 +94,44 @@
             "a": "We comfortably process 5,000+ images per day across our 24/7 dedicated production shifts."
           }
         ],
-        "metaTitle": "Hand-Drawn Clipping Path Services | ForYourGoal Studio",
-        "metaDesc": "Pixel-perfect hand-drawn Photoshop pen tool clipping paths for sharp product cutouts. Fast turnaround and dedicated retouching teams. Request a custom quote."
+        "metaTitle": "Hand-Drawn Clipping Path Services | Precision Photoshop Vector Cutouts",
+        "metaDesc": "Enterprise hand-drawn clipping path services by master Adobe Photoshop artists. Pixel-perfect vector pen tool isolation, zero halos, and multi-path segmentation.",
+        "technicalWorkflow": [
+          {
+            "step": 1,
+            "title": "RAW Ingestion & Anchor Geometry Strategy",
+            "desc": "Every image is inspected at 200% zoom to determine optimal bezier anchor density, avoiding over-sampling or harsh straight-line approximations."
+          },
+          {
+            "step": 2,
+            "title": "100% Manual Pen Tool Vector Tracing",
+            "desc": "Master retouchers hand-draw continuous vector paths using the Adobe Photoshop Pen Tool with an intentional 0.3px inward offset to guarantee zero background halo."
+          },
+          {
+            "step": 3,
+            "title": "Multi-Path Layer Separation",
+            "desc": "Complex subjects are mapped into distinct component paths (body, hardware, wheels, straps) allowing downstream editors to isolate sub-elements instantly."
+          },
+          {
+            "step": 4,
+            "title": "300% Zoom QA & Alpha Verification",
+            "desc": "Senior supervisors test extracted subjects against high-contrast solid backgrounds (#000000, #FFFFFF, and 50% neutral gray) to verify immaculate perimeter cleanliness."
+          }
+        ],
+        "industryUseCases": [
+          "E-Commerce Catalog Platforms (Amazon, Shopify, Zalando)",
+          "High-End Commercial Print & Packaging",
+          "Fashion Apparel Lookbooks & Accessories",
+          "Automotive & Industrial Hardware Catalogs",
+          "Global Creative & Advertising Agencies"
+        ],
+        "qualityAssuranceChecklist": [
+          "Zero automated AI magic wand artifacts or ragged raster borders",
+          "Strict 0.2px - 0.4px inner-edge boundary inset to eliminate background fringe",
+          "Closed vector paths with optimal control anchor points for smooth bezier curves",
+          "Embedded active clipping paths compatible with InDesign, Illustrator, and Photoshop"
+        ],
+        "samples": []
       },
       {
         "slug": "product-photo-retouching",
@@ -128,8 +164,44 @@
             "a": "Yes. We use advanced frequency separation and dodge & burn techniques to clean surfaces while retaining 100% of the authentic tactile texture."
           }
         ],
-        "metaTitle": "Commercial Product Photo Retouching | ForYourGoal Studio",
-        "metaDesc": "High-end commercial product retouching: blemish cleanup, dust removal, color balance, and texture preservation for premium brands. Request your custom quote."
+        "metaTitle": "Commercial Product Photo Retouching Services | Studio E-Commerce Editing",
+        "metaDesc": "High-end commercial product retouching services. Micro-scratch removal, frequency separation texture preservation, label alignment, and studio-grade color balancing.",
+        "technicalWorkflow": [
+          {
+            "step": 1,
+            "title": "Surface Defect Mapping & Sensor Dust Removal",
+            "desc": "High-resolution sensor spotting, micro-scratch eradication, and fingerprint elimination across matte, glossy, and transparent substrates."
+          },
+          {
+            "step": 2,
+            "title": "Frequency Separation & Texture Preservation",
+            "desc": "Spatial frequency splitting isolates surface texture from underlying luminance gradients, preventing plastic or over-smoothed artifacts."
+          },
+          {
+            "step": 3,
+            "title": "Geometry Alignment & Label Straightening",
+            "desc": "Lens distortion compensation, perspective correction, and microscopic label alignment ensuring brand typography sits true to the container form."
+          },
+          {
+            "step": 4,
+            "title": "Color Calibration & D65 White Balancing",
+            "desc": "Standardized daylight white balancing and ICC profile embedding ensuring strict fidelity between physical product packaging and digital catalog displays."
+          }
+        ],
+        "industryUseCases": [
+          "Cosmetics, Skincare & Luxury Fragrance Brands",
+          "Consumer Electronics, Appliances & Wearables",
+          "Packaged Consumer Goods (CPG) & Beverages",
+          "Amazon & Shopify Plus Power Merchants",
+          "Commercial Product Design & 3D Render Post-Production"
+        ],
+        "qualityAssuranceChecklist": [
+          "Original material grain, brushed metal, and glass clarity preserved with zero blur",
+          "Brand logos, barcodes, and regulatory micro-text remain 100% sharp and legible",
+          "Studio highlight gradients smoothed without color banding (16-bit processing)",
+          "Exported with standardized sRGB / Adobe RGB 1998 color profiles"
+        ],
+        "samples": []
       },
       {
         "slug": "ghost-mannequin",
@@ -161,8 +233,44 @@
             "a": "Provide the main photo on the mannequin plus a separate shot of the inner collar/neck label shot inside-out or flat on a table."
           }
         ],
-        "metaTitle": "Ghost Mannequin & Neck Joint Services | ForYourGoal Studio",
-        "metaDesc": "Expert invisible ghost mannequin and neck joint editing for apparel brands. Combine multi-angle shots into realistic 3D volume. Request your custom quote."
+        "metaTitle": "Ghost Mannequin & Neck Joint Services | Invisible Mannequin Photo Editing",
+        "metaDesc": "Professional invisible mannequin photo editing. 3D hollow body composite, symmetric neck joint stitching, interior collar tag alignment, and natural fabric drapery.",
+        "technicalWorkflow": [
+          {
+            "step": 1,
+            "title": "Component Extraction & Bilateral Alignment",
+            "desc": "Front garment capture and secondary inner-neck/liner exposure are aligned along the anatomical vertical axis and shoulder seam markers."
+          },
+          {
+            "step": 2,
+            "title": "3D Hollow Body Synthesis & Seam Stitching",
+            "desc": "Seamless blending of inner collar lining, size tags, and interior fabric texture using precise warping and pen-tool joint integration."
+          },
+          {
+            "step": 3,
+            "title": "Natural Interior Depth Shadow Simulation",
+            "desc": "Graduated ambient occlusion shadows applied beneath the collar rim to provide authentic three-dimensional volume and fabric depth."
+          },
+          {
+            "step": 4,
+            "title": "Hemline, Placket & Sleeve Symmetry QA",
+            "desc": "Micro-level warping ensures sleeve openings, button plackets, and bottom hemlines hang naturally with perfect bilateral symmetry."
+          }
+        ],
+        "industryUseCases": [
+          "Fast-Fashion & Luxury Apparel Retailers",
+          "Sports Performance, Athleisure & Activewear",
+          "Swimwear, Lingerie & Undergarment Catalogs",
+          "Designer Runway & Wholesale Lookbooks",
+          "Apparel Contract Manufacturers & Exporters"
+        ],
+        "qualityAssuranceChecklist": [
+          "Brand label and size tags centered and crisp with zero distortion",
+          "Interior neck fabric color and weave identical to exterior lighting",
+          "Natural 3D depth shadows with gradual falloff, avoiding flat cutout appearances",
+          "Bilateral garment symmetry preserved along central zipper/button plackets"
+        ],
+        "samples": []
       },
       {
         "slug": "jewelry-retouching",
@@ -193,8 +301,44 @@
             "a": "Yes, we can perform focus-stack compositing if you provide multiple focus bracket shots, or sharpen depth-of-field falloff manually."
           }
         ],
-        "metaTitle": "High-End Jewelry Photo Retouching | ForYourGoal Studio",
-        "metaDesc": "Master jewelry and gemstone photo retouching. Eliminate macro scratches, restore precious metal luster, and maximize diamond sparkle. Request a custom quote."
+        "metaTitle": "Luxury Jewelry & Gemstone Retouching Services | High-End Diamond Photo Editing",
+        "metaDesc": "Elite jewelry retouching services for diamonds, precious gems, gold, and platinum. Facet brilliance enhancement, scratch polishing, and studio reflection clearing.",
+        "technicalWorkflow": [
+          {
+            "step": 1,
+            "title": "Focus Stacking Merge & Micro Cleanse",
+            "desc": "Multi-depth focus bracket merging to achieve infinite depth-of-field, followed by ultrasonic dust and handling smudge eradication."
+          },
+          {
+            "step": 2,
+            "title": "Precious Metal Polishing & Prong Refinement",
+            "desc": "Micro-scratches smoothed on gold, platinum, and rhodium surfaces while retaining authentic metal specular highlights and razor-sharp prong tips."
+          },
+          {
+            "step": 3,
+            "title": "Gemstone Brilliance & Facet Enhancement",
+            "desc": "Individual facet contrast enhancement, internal reflection balance, and true-to-life refractive sparkle restoration without artificial CGI flare."
+          },
+          {
+            "step": 4,
+            "title": "High-Gloss Shadow & Reflection Modeling",
+            "desc": "Custom elliptical contact shadow and high-gloss ground reflection rendering to position pieces elegantly on high-key or dark-luxe surfaces."
+          }
+        ],
+        "industryUseCases": [
+          "Fine Jewelry Maisons & Diamond Traders",
+          "Luxury Swiss Watchmakers & Horology Boutiques",
+          "High-End Auction Houses & Estate Jewelers",
+          "Bridal & Engagement Ring E-Commerce Retailers",
+          "Precious Metal Craftsmen & Gemological Labs"
+        ],
+        "qualityAssuranceChecklist": [
+          "Diamond facets maintain crisp internal geometry and true spectral dispersion",
+          "Gold, rose gold, silver, and platinum reflect authentic alloy color tones",
+          "Prongs and pavé settings retain razor-sharp physical contour definition",
+          "Studio lightboxes, photographer reflections, and camera glare completely eradicated"
+        ],
+        "samples": []
       },
       {
         "slug": "background-removal",
@@ -224,8 +368,44 @@
             "a": "Absolutely. Provide your exact brand hex code (e.g., #F6F5F0) and margin rules, and every image will be formatted uniformly."
           }
         ],
-        "metaTitle": "E-Commerce Background Removal Services | ForYourGoal Studio",
-        "metaDesc": "High-volume background removal and cutout services for Amazon, Shopify, and catalogs. Pure white #FFFFFF, transparent PNGs, and backdrops. Get a custom quote."
+        "metaTitle": "Bulk Background Removal Services | Pure White & Transparent Cutouts",
+        "metaDesc": "High-volume bulk background removal services. 100% Amazon/Google Shopping compliant white (#FFFFFF) backgrounds, transparent PNGs, and custom environmental backdrops.",
+        "technicalWorkflow": [
+          {
+            "step": 1,
+            "title": "Asset Triage & Boundary Profiling",
+            "desc": "Automated batch pre-sorting separates hard-surface products from organic and hair elements, routing each to specialized specialist artists."
+          },
+          {
+            "step": 2,
+            "title": "Vector Separation & Edge Refinement",
+            "desc": "Sub-pixel path tracing isolates the subject with zero loss of edge detail, preserving subtle contact bevels and product silhouettes."
+          },
+          {
+            "step": 3,
+            "title": "Color Cast & Ambient Spill Cleanse",
+            "desc": "Decontamination algorithms eradicate background ambient color bounce on reflective and semi-gloss product perimeter surfaces."
+          },
+          {
+            "step": 4,
+            "title": "Standardized Marketplace Canvas Padding",
+            "desc": "Automated dimension conforming, centering, and margin calibration (85% frame ratio for Amazon, Google Shopping, and eBay compliance)."
+          }
+        ],
+        "industryUseCases": [
+          "High-Volume Marketplace Retailers (Amazon, Walmart, eBay)",
+          "Omnichannel Big-Box Department Stores",
+          "Industrial Distributors with 20k+ SKU Inventories",
+          "Enterprise DAM & PIM Asset Management Pipelines",
+          "Wholesale B2B Catalog Publishers"
+        ],
+        "qualityAssuranceChecklist": [
+          "Pure #FFFFFF (RGB 255, 255, 255) background with zero gray vignette perimeter",
+          "Subject perfectly centered with uniform border margins matching marketplace guidelines",
+          "Product boundary edge contrast preserved with zero pixel erosion or clipping",
+          "Standard sRGB IEC61966-2.1 color profile embedded across all exported assets"
+        ],
+        "samples": []
       },
       {
         "slug": "shadow-reflection",
@@ -254,8 +434,44 @@
             "a": "A drop shadow creates a soft diffused cushion directly underneath the item, whereas a cast shadow replicates directional lighting throwing a realistic elongated shadow across the floor."
           }
         ],
-        "metaTitle": "Shadow & Reflection Creation | ForYourGoal Studio",
-        "metaDesc": "Natural drop shadows, directional cast shadows, and mirror reflections for product cutouts. Ground your catalog visuals naturally. Request a custom quote."
+        "metaTitle": "Professional Shadow & Reflection Creation | Natural, Drop & Cast Shadows",
+        "metaDesc": "Realistic shadow creation and mirror reflection services. Natural drop shadows, directional cast shadows, and floating product grounding for e-commerce photos.",
+        "technicalWorkflow": [
+          {
+            "step": 1,
+            "title": "Light Direction & Horizon Calculation",
+            "desc": "Studio lighting angle, intensity, and elevation are mapped from internal product reflections to establish authentic shadow trajectory."
+          },
+          {
+            "step": 2,
+            "title": "Multi-Tier Ambient Occlusion Layering",
+            "desc": "Dense contact shadow placed immediately beneath footprint anchors the product to the plane, eliminating floating appearances."
+          },
+          {
+            "step": 3,
+            "title": "Progressive Gaussian Falloff & Scatter",
+            "desc": "Cast shadow opacity and softness scaled exponentially with distance from base, mimicking real-world atmospheric diffusion."
+          },
+          {
+            "step": 4,
+            "title": "Subsurface Reflection & Texture Bleed",
+            "desc": "For glossy surfaces, a faded mirror reflection is layered with realistic surface distortion and opacity falloff gradient."
+          }
+        ],
+        "industryUseCases": [
+          "Footwear & Athletic Sneaker Brands",
+          "Cosmetics, Skincare Jars & Glass Perfume Flacons",
+          "Furniture, Lighting & Home Decor Retailers",
+          "Consumer Technology & Desktop Peripherals",
+          "E-Commerce Hero Banner Designers"
+        ],
+        "qualityAssuranceChecklist": [
+          "Firm contact shadow grounds base, eliminating floating product syndrome",
+          "Shadow softness expands proportionally as distance from object increases",
+          "Shadow color temperature respects ambient studio bounce, avoiding flat black",
+          "Mirrored reflections fade gracefully without abrupt opacity cutoffs"
+        ],
+        "samples": []
       },
       {
         "slug": "color-correction",
@@ -283,8 +499,44 @@
             "a": "Yes, send us your Pantone formulas or HEX/RGB swatches and we will calibrate the digital files to match."
           }
         ],
-        "metaTitle": "Color Correction & Color Matching | ForYourGoal Studio",
-        "metaDesc": "Accurate color correction and multi-colorway generation. Match physical Pantone swatches from one master capture. Consistent apparel and e-commerce colors."
+        "metaTitle": "Color Correction & Multi-Color Recolor Services | Accurate E-Commerce Colorways",
+        "metaDesc": "Master color correction and multi-color recoloring services. Match physical Pantone swatches, produce all apparel colorway SKUs from a single master shot, and minimize return rates.",
+        "technicalWorkflow": [
+          {
+            "step": 1,
+            "title": "Color Target Profiling & Spectro Calibration",
+            "desc": "Target Pantone codes, RGB coordinates, or physical fabric swatches ingested and matched under standardized D65 lighting profiles."
+          },
+          {
+            "step": 2,
+            "title": "Non-Destructive LAB / Selective Color Mapping",
+            "desc": "Separation of chroma and luma channels allows complete recoloring of garments while keeping highlight and shadow textures intact."
+          },
+          {
+            "step": 3,
+            "title": "Highlight & Shadow Micro-Texture Preservation",
+            "desc": "Dark dyes and bright pastels retain 100% of underlying textile weave, thread stitching, and natural crease contrast."
+          },
+          {
+            "step": 4,
+            "title": "Delta-E Color Accuracy Verification",
+            "desc": "Quality control inspects recolored assets with colorimeter sampling to ensure Delta-E remains below strict commercial tolerance thresholds."
+          }
+        ],
+        "industryUseCases": [
+          "Fashion Apparel & Footwear Variant Colorways",
+          "Home Textiles, Bedding & Upholstery Catalogs",
+          "Automotive Paint, Leather & Trim Configurations",
+          "Consumer Packaged Goods Variant SKUs",
+          "High-Fashion Editorial & Advertising Campaigns"
+        ],
+        "qualityAssuranceChecklist": [
+          "Delta-E variance maintained strictly below 2.0 against brand Pantone targets",
+          "Fine fabric knit, denim twill, and leather grain 100% visible across all shades",
+          "Highlights reflect neutral studio light without unnatural tint contamination",
+          "Zero color fringe bleeding onto neutral backgrounds or model skin tones"
+        ],
+        "samples": []
       },
       {
         "slug": "image-masking",
@@ -313,8 +565,44 @@
             "a": "A clipping path is a hard vector outline ideal for solid smooth edges like shoes or electronics. Image masking uses pixel alpha values, making it essential for fine hair, fur, and semi-transparent objects."
           }
         ],
-        "metaTitle": "Advanced Image Masking Services | ForYourGoal Studio",
-        "metaDesc": "Advanced alpha channel, fur, flyaway hair, and translucent fabric masking. Flawless edge isolation where standard clipping paths fail. Request a custom quote."
+        "metaTitle": "Advanced Image Masking Services | Alpha Channel & Complex Hair Isolation",
+        "metaDesc": "Complex Photoshop image masking services. Alpha channel masking, flyaway hair isolation, transparent fur, smoke, and translucent chiffon fabric extraction.",
+        "technicalWorkflow": [
+          {
+            "step": 1,
+            "title": "Luminosity Channel Analysis & Edge Mapping",
+            "desc": "High-contrast channel isolation locates subtle boundary transitions between fine fibers/hair and varying studio backgrounds."
+          },
+          {
+            "step": 2,
+            "title": "Custom Alpha Channel Painting & Refinement",
+            "desc": "Hand-painted alpha channel masks capture individual hair strands down to single-pixel translucency with zero edge clumping."
+          },
+          {
+            "step": 3,
+            "title": "Decontamination & Spill Suppression",
+            "desc": "Specialized color neutralizers strip green/blue studio bounce and backdrop reflections from semi-transparent edges."
+          },
+          {
+            "step": 4,
+            "title": "Multi-Background Verification & Stress Test",
+            "desc": "Extracted mask validated across white, dark, colored, and complex lifestyle backgrounds to guarantee zero halos or fringing."
+          }
+        ],
+        "industryUseCases": [
+          "High-Fashion & Modeling Editorial Publications",
+          "Pet Products, Animal Care & Fur Apparel Catalogs",
+          "Bridal, Wedding & Fine Art Portrait Studios",
+          "Entertainment Key Art & Movie Poster Compositing",
+          "Global Creative Studios & Retouching Houses"
+        ],
+        "qualityAssuranceChecklist": [
+          "Individual flyaway hair strands isolated with natural opacity falloff",
+          "Translucent fabrics (veil, lace, chiffon) preserve authentic background transmission",
+          "Background color spill completely eradicated from subject perimeter",
+          "Delivered with 16-bit alpha channel layer preserved in master PSD"
+        ],
+        "samples": []
       }
     ]
   },

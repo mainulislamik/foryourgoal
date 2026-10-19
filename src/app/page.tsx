@@ -243,9 +243,11 @@ export default async function HomePage() {
 
               <div className="p-5 flex flex-col flex-grow justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
-                    {service.title}
-                  </h3>
+                  <Link href={`/services/${service.slug}`} className="block">
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                      {service.title}
+                    </h3>
+                  </Link>
                   <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
                     {service.shortDesc}
                   </p>
