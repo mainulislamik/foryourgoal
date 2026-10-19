@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "node:fs";
 import path from "node:path";
+import { checkRateLimit } from "@/lib/security";
 
 // Allowed MIME types and corresponding extensions for production B2B imaging
 const ALLOWED_EXTENSIONS = new Set([
@@ -31,6 +32,20 @@ const UPLOADS_DIR = path.join(process.cwd(), "data", "uploads");
 
 export async function POST(req: NextRequest) {
   try {
+    const clientIp =
+      req.headers.get("cf-connecting-ip")?.trim() ||
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip")?.trim() ||
+      "127.0.0.1";
+
+    const rate = checkRateLimit(`upload_${clientIp}`, 10, 60000);
+    if (!rate.allowed) {
+      return NextResponse.json(
+        { error: "Upload rate limit exceeded. Please wait a moment." },
+        { status: 429 }
+      );
+    }
+
     const formData = await req.formData();
     const file = formData.get("file") as File | null;
 

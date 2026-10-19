@@ -14,6 +14,7 @@ export async function POST(req: NextRequest) {
   try {
     // 1. IP Rate Limiting (5 requests per 1 minute per IP)
     const clientIp =
+      req.headers.get("cf-connecting-ip")?.trim() ||
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
       req.headers.get("x-real-ip")?.trim() ||
       "127.0.0.1";
