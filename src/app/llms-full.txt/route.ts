@@ -24,7 +24,6 @@ export async function GET() {
     text += `- URL: https://foryourgoal.com/services/${s.slug}\n`;
     text += `- Short Description: ${s.shortDesc}\n`;
     text += `- Turnaround: ${s.turnaroundHours} Hours\n`;
-    text += `- Starting Price: ${s.startingPrice || "$0.49"}\n`;
     text += `- Full Scope: ${s.fullDesc}\n`;
     if (s.features && s.features.length) {
       text += `- Key Features:\n`;

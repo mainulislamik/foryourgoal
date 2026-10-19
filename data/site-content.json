@@ -94,7 +94,6 @@
             "a": "We comfortably process 5,000+ images per day across our 24/7 dedicated production shifts."
           }
         ],
-        "startingPrice": "$0.49",
         "metaTitle": "Hand-Drawn Clipping Path Services | ForYourGoal Studio",
         "metaDesc": "Pixel-perfect hand-drawn Photoshop pen tool clipping paths for sharp product cutouts. Fast turnaround and dedicated retouching teams. Request a custom quote."
       },
@@ -129,7 +128,6 @@
             "a": "Yes. We use advanced frequency separation and dodge & burn techniques to clean surfaces while retaining 100% of the authentic tactile texture."
           }
         ],
-        "startingPrice": "$1.49",
         "metaTitle": "Commercial Product Photo Retouching | ForYourGoal Studio",
         "metaDesc": "High-end commercial product retouching: blemish cleanup, dust removal, color balance, and texture preservation for premium brands. Request your custom quote."
       },
@@ -163,7 +161,6 @@
             "a": "Provide the main photo on the mannequin plus a separate shot of the inner collar/neck label shot inside-out or flat on a table."
           }
         ],
-        "startingPrice": "$0.99",
         "metaTitle": "Ghost Mannequin & Neck Joint Services | ForYourGoal Studio",
         "metaDesc": "Expert invisible ghost mannequin and neck joint editing for apparel brands. Combine multi-angle shots into realistic 3D volume. Request your custom quote."
       },
@@ -196,7 +193,6 @@
             "a": "Yes, we can perform focus-stack compositing if you provide multiple focus bracket shots, or sharpen depth-of-field falloff manually."
           }
         ],
-        "startingPrice": "$3.99",
         "metaTitle": "High-End Jewelry Photo Retouching | ForYourGoal Studio",
         "metaDesc": "Master jewelry and gemstone photo retouching. Eliminate macro scratches, restore precious metal luster, and maximize diamond sparkle. Request a custom quote."
       },
@@ -228,7 +224,6 @@
             "a": "Absolutely. Provide your exact brand hex code (e.g., #F6F5F0) and margin rules, and every image will be formatted uniformly."
           }
         ],
-        "startingPrice": "$0.39",
         "metaTitle": "E-Commerce Background Removal Services | ForYourGoal Studio",
         "metaDesc": "High-volume background removal and cutout services for Amazon, Shopify, and catalogs. Pure white #FFFFFF, transparent PNGs, and backdrops. Get a custom quote."
       },
@@ -259,7 +254,6 @@
             "a": "A drop shadow creates a soft diffused cushion directly underneath the item, whereas a cast shadow replicates directional lighting throwing a realistic elongated shadow across the floor."
           }
         ],
-        "startingPrice": "$0.79",
         "metaTitle": "Shadow & Reflection Creation | ForYourGoal Studio",
         "metaDesc": "Natural drop shadows, directional cast shadows, and mirror reflections for product cutouts. Ground your catalog visuals naturally. Request a custom quote."
       },
@@ -289,7 +283,6 @@
             "a": "Yes, send us your Pantone formulas or HEX/RGB swatches and we will calibrate the digital files to match."
           }
         ],
-        "startingPrice": "$0.99",
         "metaTitle": "Color Correction & Color Matching | ForYourGoal Studio",
         "metaDesc": "Accurate color correction and multi-colorway generation. Match physical Pantone swatches from one master capture. Consistent apparel and e-commerce colors."
       },
@@ -320,7 +313,6 @@
             "a": "A clipping path is a hard vector outline ideal for solid smooth edges like shoes or electronics. Image masking uses pixel alpha values, making it essential for fine hair, fur, and semi-transparent objects."
           }
         ],
-        "startingPrice": "$1.29",
         "metaTitle": "Advanced Image Masking Services | ForYourGoal Studio",
         "metaDesc": "Advanced alpha channel, fur, flyaway hair, and translucent fabric masking. Flawless edge isolation where standard clipping paths fail. Request a custom quote."
       }
@@ -744,7 +736,7 @@
       "id": "faq-12",
       "category": "services",
       "question": "Can you follow proprietary brand style guides and custom cropping margins?",
-      "answer": "Absolutely. We maintain client-specific digital production dossiers detailing exact canvas dimensions, product alignment percentages (e.g. 85% vertical fill), drop shadow elevation angles (e.g. 120\u00b0 light source at 25% opacity), and automated SKU metadata tagging to ensure 100% uniformity across your multi-channel catalog."
+      "answer": "Absolutely. We maintain client-specific digital production dossiers detailing exact canvas dimensions, product alignment percentages (e.g. 85% vertical fill), drop shadow elevation angles (e.g. 120° light source at 25% opacity), and automated SKU metadata tagging to ensure 100% uniformity across your multi-channel catalog."
     }
   ],
   "testimonials": [

@@ -830,8 +830,6 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                           <span className="font-mono text-indigo-600">/{service.slug}</span>
                           <span>•</span>
                           <span>{service.turnaroundHours}h Turnaround</span>
-                          <span>•</span>
-                          <span className="font-semibold text-emerald-700">{service.startingPrice}</span>
                         </div>
                       </div>
                     </div>
@@ -856,45 +854,21 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
 
                   {isExpanded && (
                     <div className="p-6 pt-2 border-t border-slate-100 bg-slate-50/40 space-y-5">
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="md:col-span-2">
-                          <label className="text-xs font-bold text-slate-700 uppercase">Service Title</label>
-                          <input
-                            type="text"
-                            value={service.title}
-                            onChange={(e) => {
-                              const next = [...content.servicesSection.services];
-                              next[index].title = e.target.value;
-                              setContent({
-                                ...content,
-                                servicesSection: { ...content.servicesSection, services: next },
-                              });
-                            }}
-                            className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-sm font-semibold bg-white"
-                          />
-                        </div>
-
-                        <div>
-                          <label className="text-xs font-bold text-slate-700 uppercase">Starting Price</label>
-                          <input
-                            type="text"
-                            value={service.startingPrice || ""}
-                            placeholder="$0.49"
-                            onChange={(e) => {
-                              const next = [...content.servicesSection.services];
-                              next[index] = { ...next[index], startingPrice: e.target.value };
-                              setContent((prev) =>
-                                !prev
-                                  ? prev
-                                  : {
-                                      ...prev,
-                                      servicesSection: { ...prev.servicesSection, services: next },
-                                    }
-                              );
-                            }}
-                            className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-sm font-bold text-emerald-700 bg-white"
-                          />
-                        </div>
+                      <div>
+                        <label className="text-xs font-bold text-slate-700 uppercase">Service Title</label>
+                        <input
+                          type="text"
+                          value={service.title}
+                          onChange={(e) => {
+                            const next = [...content.servicesSection.services];
+                            next[index].title = e.target.value;
+                            setContent({
+                              ...content,
+                              servicesSection: { ...content.servicesSection, services: next },
+                            });
+                          }}
+                          className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-sm font-semibold bg-white"
+                        />
                       </div>
 
                       <div>

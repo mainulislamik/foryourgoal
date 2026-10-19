@@ -75,7 +75,7 @@ export interface ServiceItem {
   beforeImage: string;
   afterImage: string;
   turnaroundHours: number;
-  startingPrice: string;
+  startingPrice?: string;
   features: string[];
   deliverables?: string[];
   idealFor?: string[];

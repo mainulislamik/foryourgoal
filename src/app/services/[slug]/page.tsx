@@ -103,10 +103,8 @@ export default async function ServiceDetailPage({ params }: Props) {
       serviceType: service.title,
       offers: {
         "@type": "Offer",
-        priceCurrency: "USD",
-        price: service.startingPrice?.replace(/[^0-9.]/g, "") || "0.49",
-        availability: "https://schema.org/InStock",
         url: `https://foryourgoal.com/services/${service.slug}`,
+        availability: "https://schema.org/InStock",
       },
     },
     {
