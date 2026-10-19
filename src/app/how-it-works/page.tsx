@@ -4,16 +4,16 @@ import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Zap, Lock } from "lucide-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How It Works | Foryourgoal Outsourced Image Production",
+  title: "Enterprise Image Production Workflow",
   description:
-    "Learn about our simple 4-step B2B photo editing workflow: secure upload, free calibration sample, 24/7 dedicated studio production, and 3-tier quality control.",
+    "Simple 4-step B2B photo editing workflow: secure upload, free calibration sample, 24/7 dedicated studio production, and 3-tier QA. Request your custom quote.",
   alternates: {
     canonical: "/how-it-works",
   },
   openGraph: {
-    title: "How It Works | Foryourgoal Outsourced Image Production",
+    title: "How It Works | Foryourgoal",
     description:
-      "Learn about our simple 4-step B2B photo editing workflow: secure upload, free pilot, 24/7 production, and 3-tier QA.",
+      "Simple 4-step B2B photo editing workflow: secure upload, free calibration sample, 24/7 production, and 3-tier QA.",
     url: "https://foryourgoal.com/how-it-works",
   },
 };
@@ -46,8 +46,46 @@ export default function HowItWorksPage() {
     },
   ];
 
+  const schemasJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: "How Foryourgoal Commercial Image Production Works",
+      description:
+        "A predictable, secure 4-step B2B photo editing workflow: secure upload, calibration pilot, batch production, and 3-tier QA delivery.",
+      step: steps.map((s, idx) => ({
+        "@type": "HowToStep",
+        position: idx + 1,
+        name: s.title,
+        text: s.desc,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://foryourgoal.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "How It Works",
+          item: "https://foryourgoal.com/how-it-works",
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemasJsonLd) }}
+      />
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">
           <span>Operational Excellence</span>

@@ -2,10 +2,17 @@ import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy & NDA Commitment | Foryourgoal",
-  description: "Foryourgoal's privacy policy, data protection, client asset confidentiality, and automated 14-day file deletion protocol.",
+  title: "Privacy Policy & NDA Commitment",
+  description:
+    "Foryourgoal client confidentiality commitment: enterprise NDA enforcement, encrypted file transit, strict access control, and automated 14-day file purges.",
   alternates: {
     canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy & NDA Commitment | Foryourgoal",
+    description:
+      "Foryourgoal client confidentiality commitment: enterprise NDA enforcement, encrypted file transit, strict access control, and automated 14-day file purges.",
+    url: "https://foryourgoal.com/privacy-policy",
   },
 };
 

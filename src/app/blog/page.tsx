@@ -5,23 +5,46 @@ import { Clock, Calendar, ArrowRight, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Industry Guides & Visual Standards | Foryourgoal Blog",
+  title: "E-Commerce Photo Editing & Retouching Guides",
   description:
-    "Expert technical articles, e-commerce photo standards, clipping path guides, and retouching workflows from Foryourgoal's post-production team.",
+    "In-depth guides on Photoshop clipping paths, Amazon image compliance, ghost mannequin editing, and high-volume studio production. Read our expert guides.",
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Industry Guides & Visual Standards | Foryourgoal Blog",
+    title: "E-Commerce Photo Editing & Retouching Guides | Foryourgoal",
     description:
-      "Expert technical articles, e-commerce photo standards, and retouching workflows.",
+      "In-depth guides on Photoshop clipping paths, Amazon image compliance, ghost mannequin editing, and high-volume studio production.",
     url: "https://foryourgoal.com/blog",
   },
 };
 
 export default function BlogPage() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://foryourgoal.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://foryourgoal.com/blog",
+      },
+    ],
+  };
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">
           <span>Editorial & Guides</span>

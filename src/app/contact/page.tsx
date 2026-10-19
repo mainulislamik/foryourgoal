@@ -4,23 +4,46 @@ import { Mail, Clock, MapPin, ShieldCheck, ArrowRight, Phone } from "lucide-reac
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Foryourgoal Studio",
+  title: "Contact Production & Support Team",
   description:
-    "Get in touch with Foryourgoal's enterprise image-editing specialists. Guaranteed 45-minute response for quotes and partnership inquiries.",
+    "Contact Foryourgoal image production specialists. Guaranteed 45-minute response for B2B quotes, high-volume SLAs, and studio partnerships. Reach out today.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
-    title: "Contact Us | Foryourgoal Studio",
+    title: "Contact Production & Support Team | Foryourgoal",
     description:
-      "Get in touch with Foryourgoal's enterprise image-editing specialists.",
+      "Contact Foryourgoal image production specialists. Guaranteed 45-minute response for B2B quotes, high-volume SLAs, and studio partnerships.",
     url: "https://foryourgoal.com/contact",
   },
 };
 
 export default function ContactPage() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://foryourgoal.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact",
+        item: "https://foryourgoal.com/contact",
+      },
+    ],
+  };
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="text-center max-w-2xl mx-auto mb-16">
         <span className="text-xs font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-3 py-1 rounded border border-indigo-200">
           Direct Studio Communication

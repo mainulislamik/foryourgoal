@@ -20,17 +20,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
-    return { title: "Article Not Found | Foryourgoal" };
+    return { title: "Article Not Found" };
   }
 
   return {
-    title: `${post.title} | Foryourgoal Guide`,
+    title: post.title,
     description: post.excerpt,
     alternates: {
       canonical: `https://foryourgoal.com/blog/${post.slug}`,
     },
     openGraph: {
-      title: post.title,
+      title: `${post.title} | Foryourgoal`,
       description: post.excerpt,
       type: "article",
       publishedTime: post.publishedAt,
@@ -47,30 +47,56 @@ export default async function BlogPostDetailPage({ params }: Props) {
     notFound();
   }
 
-  // Schema.org BlogPosting
-  const blogJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.publishedAt,
-    author: {
-      "@type": "Person",
-      name: post.author.name,
-      jobTitle: post.author.role,
+  // Schema.org BlogPosting & BreadcrumbList
+  const schemasJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.publishedAt,
+      author: {
+        "@type": "Person",
+        name: post.author.name,
+        jobTitle: post.author.role,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Foryourgoal",
+        url: "https://foryourgoal.com",
+      },
     },
-    publisher: {
-      "@type": "Organization",
-      name: "Foryourgoal",
-      url: "https://foryourgoal.com",
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://foryourgoal.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: "https://foryourgoal.com/blog",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: post.title,
+          item: `https://foryourgoal.com/blog/${post.slug}`,
+        },
+      ],
     },
-  };
+  ];
 
   return (
     <article className="py-12 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemasJsonLd) }}
       />
 
       {/* Breadcrumb */}

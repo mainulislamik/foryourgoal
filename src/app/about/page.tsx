@@ -5,23 +5,46 @@ import { ShieldCheck, Award, Users, CheckCircle2, ArrowRight } from "lucide-reac
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Foryourgoal Dedicated Image Production Studio",
+  title: "About Our Commercial Retouching Studio",
   description:
-    "Learn about Foryourgoal's mission, our 24/7 dedicated image-editing artists, pen-tool craftsmanship, and strict data security protocols.",
+    "International commercial photo editing studio combining master pen-tool artisans with high-throughput cloud delivery pipelines. Request your custom quote.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Us | Foryourgoal Dedicated Image Production Studio",
+    title: "About Our Commercial Retouching Studio | Foryourgoal",
     description:
-      "Learn about our 24/7 dedicated digital retouching artisans and strict data security protocols.",
+      "International commercial photo editing studio combining master pen-tool artisans with high-throughput cloud delivery pipelines.",
     url: "https://foryourgoal.com/about",
   },
 };
 
 export default function AboutPage() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://foryourgoal.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: "https://foryourgoal.com/about",
+      },
+    ],
+  };
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">

@@ -62,4 +62,32 @@ export const faqsData: FAQItem[] = [
     answer:
       "Never without explicit, written client consent. Client confidentiality is sacred in commercial production, especially for pre-release fashion lookbooks and patented tech prototypes.",
   },
+  {
+    id: "faq-9",
+    category: "services",
+    question: "How do you manage color management, ICC profiles, and display calibration?",
+    answer:
+      "Our studio workstations utilize hardware-calibrated EIZO ColorEdge monitors set to standardized D65 5000K white points. We preserve and embed specific ICC color profiles including sRGB IEC61966-2.1 for web, Adobe RGB (1998) for high-end catalog print, or ProPhoto RGB for studio RAW pipelines, guaranteeing exact Pantone fidelity across all digital displays and physical packaging.",
+  },
+  {
+    id: "faq-10",
+    category: "general",
+    question: "Can we transfer high-volume batches via SFTP, Amazon S3, or cloud storage?",
+    answer:
+      "Yes. For enterprise clients and agencies processing thousands of weekly assets, we provide dedicated high-speed SFTP access, direct Amazon S3 bucket synchronization, Aspera endpoints, or shared Google Drive/Dropbox enterprise connections. Automated folder watch scripts notify our production queue the moment new raw batches land.",
+  },
+  {
+    id: "faq-11",
+    category: "terms",
+    question: "What invoicing options and enterprise payment terms do you support?",
+    answer:
+      "We offer flexible B2B corporate billing including Net-15 and Net-30 payment terms for approved enterprise accounts, monthly consolidated invoicing, wire transfers (SWIFT/ACH), and major international credit cards. Every invoice features detailed per-project SKU breakdowns for simplified accounting.",
+  },
+  {
+    id: "faq-12",
+    category: "services",
+    question: "Can you follow proprietary brand style guides and custom cropping margins?",
+    answer:
+      "Absolutely. We maintain client-specific digital production dossiers detailing exact canvas dimensions, product alignment percentages (e.g. 85% vertical fill), drop shadow elevation angles (e.g. 120° light source at 25% opacity), and automated SKU metadata tagging to ensure 100% uniformity across your multi-channel catalog.",
+  },
 ];

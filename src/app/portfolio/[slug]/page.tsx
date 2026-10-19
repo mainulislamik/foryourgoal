@@ -21,14 +21,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getPortfolioBySlug(slug);
 
   if (!item) {
-    return { title: "Portfolio Item Not Found | Foryourgoal" };
+    return { title: "Portfolio Item Not Found" };
   }
 
   return {
-    title: `${item.title} Case Study | Foryourgoal Portfolio`,
+    title: `${item.title} Case Study`,
     description: item.description,
     alternates: {
       canonical: `https://foryourgoal.com/portfolio/${item.slug}`,
+    },
+    openGraph: {
+      title: `${item.title} Case Study | Foryourgoal`,
+      description: item.description,
+      url: `https://foryourgoal.com/portfolio/${item.slug}`,
     },
   };
 }
@@ -41,8 +46,37 @@ export default async function PortfolioDetailPage({ params }: Props) {
     notFound();
   }
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://foryourgoal.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Portfolio",
+        item: "https://foryourgoal.com/portfolio",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: item.title,
+        item: `https://foryourgoal.com/portfolio/${item.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-slate-500 mb-8 font-mono">
         <Link href="/" className="hover:text-indigo-600 transition-colors">
@@ -65,6 +99,9 @@ export default async function PortfolioDetailPage({ params }: Props) {
             </span>
             <span className="text-xs text-slate-500 font-mono">
               Turnaround: {item.turnaroundTime}
+            </span>
+            <span className="text-xs text-slate-500 font-mono">
+              Batch: {item.volume}
             </span>
           </div>
 
@@ -113,6 +150,45 @@ export default async function PortfolioDetailPage({ params }: Props) {
               category="Before & After Comparison"
               className="w-full aspect-[4/3] rounded-xl overflow-hidden"
             />
+          </div>
+        </div>
+      </div>
+
+      {/* Technical Workflow & Production Deep-Dive */}
+      <div className="border-t border-slate-200 pt-16 mt-16 max-w-5xl">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-8">
+          Technical Production Breakdown & Quality Verification
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 mb-4">
+              <Clock className="w-5 h-5" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 mb-2">The Production Challenge</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Commercial studio raw captures frequently arrive with unpredictable micro-imperfections, lens distortion, uneven lighting gradients, and uncalibrated white balances. In high-velocity e-commerce and luxury lookbooks, manual precision is required to isolate intricate edges without the harsh aliasing or plastic softening common in automated algorithmic magic wands.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 mb-4">
+              <CheckCircle2 className="w-5 h-5" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 mb-2">Manual Artisan Execution</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Every curve, bevel, and silhouette was traced with Adobe Photoshop&apos;s Bézier pen tool at 300% zoom. Our artists separated complex highlights, rebuilt natural drop shadows using organic gradients, and applied frequency separation to preserve authentic tactile textures while eliminating camera sensor dust and studio handling artifacts.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 mb-4">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 mb-2">SLA Quality Assurance</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Completed files underwent strict 3-tier inspection by senior QA directors. We audited pixel padding, aspect ratio consistency, ICC color profile embedding (sRGB / Adobe RGB 1998), and vector path closure before packaging deliverables into multi-channel export archives ready for global omnichannel publishing.
+            </p>
           </div>
         </div>
       </div>

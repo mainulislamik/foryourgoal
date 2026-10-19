@@ -2,10 +2,17 @@ import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Foryourgoal",
-  description: "Foryourgoal's terms of service, SLA standards, payment terms, and client revision policy.",
+  title: "Terms of Service",
+  description:
+    "Foryourgoal commercial terms of service: production scoping, client SLA standards, monthly Net-30 invoicing, copyright retention, and unlimited revisions.",
   alternates: {
     canonical: "/terms",
+  },
+  openGraph: {
+    title: "Terms of Service | Foryourgoal",
+    description:
+      "Foryourgoal commercial terms of service: production scoping, client SLA standards, monthly Net-30 invoicing, copyright retention, and unlimited revisions.",
+    url: "https://foryourgoal.com/terms",
   },
 };
 

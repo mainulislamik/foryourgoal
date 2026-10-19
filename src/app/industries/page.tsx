@@ -5,14 +5,14 @@ import { CheckCircle2, ChevronRight, ArrowRight, Building2 } from "lucide-react"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "B2B Industries Served | E-commerce, Fashion, Jewelry & Studios",
+  title: "B2B Image Post-Production by Industry",
   description:
-    "Tailored photo editing workflows for specialized sectors: Amazon/Shopify retailers, high-fashion apparel brands, luxury jewelry studios, and commercial photographers.",
+    "Tailored photo editing workflows for specialized sectors: Amazon retailers, high-fashion apparel brands, luxury jewelry, and commercial photography studios.",
   alternates: {
     canonical: "/industries",
   },
   openGraph: {
-    title: "B2B Industries Served | Foryourgoal Studio",
+    title: "B2B Industries Served | Foryourgoal",
     description:
       "Commercial image editing tailored for fashion, e-commerce, luxury jewelry, and photography studios.",
     url: "https://foryourgoal.com/industries",
@@ -20,8 +20,31 @@ export const metadata: Metadata = {
 };
 
 export default function IndustriesPage() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://foryourgoal.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Industries",
+        item: "https://foryourgoal.com/industries",
+      },
+    ],
+  };
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">
           <span>Target Market Verticals</span>

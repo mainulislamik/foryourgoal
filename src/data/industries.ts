@@ -16,7 +16,7 @@ export const industriesData: IndustryItem[] = [
     title: "E-Commerce Brands & Marketplace Retailers",
     tagline: "High-velocity image preparation built for Amazon, Shopify & Google Shopping compliance.",
     shortDesc:
-      "Scale your product listings with 100% compliant, white-background cutouts, consistent margins, and optimized zoom-ready files that increase conversion rates and eliminate platform rejections.",
+      "Scale e-commerce listings with compliant white-background cutouts, consistent margins, and zoom-ready files that eliminate platform rejections. Get a quote.",
     heroImage: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80",
     challenges: [
       {
@@ -45,7 +45,7 @@ export const industriesData: IndustryItem[] = [
     title: "Fashion Brands & Apparel Catalogs",
     tagline: "Showcase fit, fabric texture, and authentic drape with flawless ghost mannequin and lookbook retouching.",
     shortDesc:
-      "Transform flat-lays, on-model captures, and mannequin shots into high-fashion catalog assets with realistic 3D hollow effects, wrinkle softening, and true-to-life textile reproduction.",
+      "Transform apparel flat-lays and mannequin shots into high-fashion catalog assets with realistic 3D hollow effects and true textile colors. Request a quote.",
     heroImage: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80",
     challenges: [
       {
@@ -74,7 +74,7 @@ export const industriesData: IndustryItem[] = [
     title: "Jewelry Houses & Luxury Accessories",
     tagline: "Microscopic perfection for fine jewelry, precious metals, and luminous gemstones.",
     shortDesc:
-      "Fine jewelry demands meticulous macro craftsmanship. We eradicate micro-scratches, balance hot-spot reflections, enhance gemstone facet dispersion, and deliver captivating brilliance.",
+      "Fine jewelry retouching for luxury houses: macro craftsmanship, scratch removal, reflection balancing, and diamond facet dispersion. Request a custom quote.",
     heroImage: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80",
     challenges: [
       {
@@ -103,7 +103,7 @@ export const industriesData: IndustryItem[] = [
     title: "Commercial Photographers & Creative Studios",
     tagline: "Your invisible 24/7 post-production back-office so you can focus on shooting.",
     shortDesc:
-      "Stop spending late nights in Photoshop after a full day on set. Hand off your raw captures to our dedicated retouchers and receive calibrated, client-ready deliverables before your morning coffee.",
+      "Post-production outsourcing for commercial photographers. Hand off RAW captures and receive calibrated, client-ready assets before call time. Get a quote.",
     heroImage: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1200&q=80",
     challenges: [
       {
@@ -132,7 +132,7 @@ export const industriesData: IndustryItem[] = [
     title: "Advertising & Digital Marketing Agencies",
     tagline: "Scalable creative production for multi-channel omnichannel ad campaigns.",
     shortDesc:
-      "When creative campaigns demand hundreds of banner variants, high-res billboard cutouts, and localized promotional graphics, Foryourgoal delivers prompt, pixel-accurate visual executions.",
+      "Rapid visual execution for creative campaigns: high-res cutouts, banner variants, and localized promotional graphics delivered on deadline. Request a quote.",
     heroImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80",
     challenges: [
       {

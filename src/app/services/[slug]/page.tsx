@@ -25,25 +25,46 @@ export async function generateStaticParams() {
   }));
 }
 
+const serviceMetaDescriptions: Record<string, string> = {
+  "clipping-path":
+    "Pixel-perfect hand-drawn Photoshop pen tool clipping paths for sharp product cutouts. Fast turnaround and dedicated retouching teams. Request a custom quote.",
+  "product-photo-retouching":
+    "High-end commercial product retouching: blemish cleanup, dust removal, color balance, and texture preservation for premium brands. Request your custom quote.",
+  "ghost-mannequin":
+    "Expert invisible ghost mannequin and neck joint editing for apparel brands. Combine multi-angle shots into realistic 3D volume. Request your custom quote.",
+  "jewelry-retouching":
+    "Master jewelry and gemstone photo retouching. Eliminate macro scratches, restore precious metal luster, and maximize diamond sparkle. Request a custom quote.",
+  "background-removal":
+    "High-volume background removal and cutout services for Amazon, Shopify, and catalogs. Pure white #FFFFFF, transparent PNGs, and backdrops. Get a custom quote.",
+  "shadow-reflection":
+    "Natural drop shadows, directional cast shadows, and mirror reflections for product cutouts. Ground your catalog visuals naturally. Request a custom quote.",
+  "color-correction":
+    "Accurate color correction and multi-colorway generation. Match physical Pantone swatches from one master capture. Consistent apparel and e-commerce colors.",
+  "image-masking":
+    "Advanced alpha channel, fur, flyaway hair, and translucent fabric masking. Flawless edge isolation where standard clipping paths fail. Request a custom quote.",
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
 
   if (!service) {
     return {
-      title: "Service Not Found | Foryourgoal",
+      title: "Service Not Found",
     };
   }
 
+  const desc = serviceMetaDescriptions[service.slug] || service.shortDesc;
+
   return {
-    title: `${service.title} | Foryourgoal Commercial Image Editing`,
-    description: service.shortDesc,
+    title: service.title,
+    description: desc,
     alternates: {
       canonical: `https://foryourgoal.com/services/${service.slug}`,
     },
     openGraph: {
       title: `${service.title} | Foryourgoal Studio`,
-      description: service.shortDesc,
+      description: desc,
       url: `https://foryourgoal.com/services/${service.slug}`,
       images: [{ url: service.afterImage }],
     },
@@ -58,24 +79,50 @@ export default async function ServiceDetailPage({ params }: Props) {
     notFound();
   }
 
-  // Schema.org Service JSON-LD
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: service.title,
-    description: service.shortDesc,
-    provider: {
-      "@type": "Organization",
-      name: "Foryourgoal",
-      url: "https://foryourgoal.com",
+  // Schema.org Service & BreadcrumbList JSON-LD
+  const schemasJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: service.title,
+      description: serviceMetaDescriptions[service.slug] || service.shortDesc,
+      provider: {
+        "@type": "Organization",
+        name: "Foryourgoal",
+        url: "https://foryourgoal.com",
+      },
     },
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://foryourgoal.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: "https://foryourgoal.com/services",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: service.title,
+          item: `https://foryourgoal.com/services/${service.slug}`,
+        },
+      ],
+    },
+  ];
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemasJsonLd) }}
       />
 
       {/* Breadcrumb */}

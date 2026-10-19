@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import { faqsData } from "@/data/faqs";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | SLAs, Quality Control & Security",
+  title: "Frequently Asked Questions & SLAs",
   description:
-    "Find answers to common questions about Foryourgoal image editing services, turnaround SLAs, NDA security protocols, batch billing, and file format deliveries.",
+    "Answers about Foryourgoal image editing SLAs, Photoshop pen-tool QA, NDA security protocols, batch file delivery, and free pilot trials. Request a quote.",
   alternates: {
     canonical: "/faq",
   },
   openGraph: {
-  title: "Frequently Asked Questions | Foryourgoal Studio",
-  description:
-    "Everything you need to know about turnaround speeds, quality assurance, SLAs, and confidentiality.",
-  url: "https://foryourgoal.com/faq",
+    title: "Frequently Asked Questions & SLAs | Foryourgoal",
+    description:
+      "Answers about Foryourgoal image editing SLAs, Photoshop pen-tool QA, NDA security protocols, batch file delivery, and free pilot trials.",
+    url: "https://foryourgoal.com/faq",
   },
 };
 
@@ -20,5 +21,45 @@ export default function FAQLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqsData.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://foryourgoal.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "FAQ",
+        item: "https://foryourgoal.com/faq",
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([faqJsonLd, breadcrumbJsonLd]) }}
+      />
+      {children}
+    </>
+  );
 }

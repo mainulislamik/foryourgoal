@@ -23,11 +23,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://foryourgoal.com"),
   title: {
-    default: "Professional Image Editing & Photo Retouching Services | Foryourgoal",
+    default: "Professional Image Editing & Photo Retouching | Foryourgoal",
     template: "%s | Foryourgoal",
   },
   description:
-    "Expert hand-drawn clipping paths, high-end product retouching, ghost mannequin, and jewelry photo editing for e-commerce, global brands, and commercial photographers.",
+    "Expert hand-drawn clipping paths, high-end product retouching, ghost mannequin, and jewelry photo editing for global e-commerce brands and studios.",
   keywords: [
     "clipping path service",
     "photo retouching services",
@@ -97,36 +97,56 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Foryourgoal",
-    url: "https://foryourgoal.com",
-    logo: "https://foryourgoal.com/images/foryourgoal-logo.png",
-    image: "https://foryourgoal.com/images/og-image.jpg",
-    description:
-      "Professional image editing and photo retouching studio providing high-volume clipping path, product retouching, and ghost mannequin services for global e-commerce and creative brands.",
-    priceRange: "$$",
-    email: "support@foryourgoal.com",
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "Worldwide",
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: "Foryourgoal",
+      url: "https://foryourgoal.com",
+      logo: "https://foryourgoal.com/images/foryourgoal-logo.png",
+      image: "https://foryourgoal.com/images/og-image.jpg",
+      description:
+        "Professional image editing and photo retouching studio providing high-volume clipping path, product retouching, and ghost mannequin services for global e-commerce and creative brands.",
+      email: "support@foryourgoal.com",
+      areaServed: {
+        "@type": "AdministrativeArea",
+        name: "Worldwide",
+      },
+      knowsAbout: [
+        "Photoshop Clipping Path",
+        "E-Commerce Image Editing",
+        "High-End Jewelry Retouching",
+        "Ghost Mannequin Composite",
+        "Alpha Channel Masking",
+        "Color Correction & Grading",
       ],
-      opens: "00:00",
-      closes: "23:59",
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
+      },
     },
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Foryourgoal",
+      url: "https://foryourgoal.com",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://foryourgoal.com/services?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ];
 
   return (
     <html

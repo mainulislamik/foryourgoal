@@ -28,14 +28,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ind = getIndustryBySlug(slug);
 
   if (!ind) {
-    return { title: "Industry Not Found | Foryourgoal" };
+    return { title: "Industry Not Found" };
   }
 
   return {
-    title: `${ind.title} Photo Editing Services | Foryourgoal`,
+    title: `${ind.title} Photo Editing Services`,
     description: ind.shortDesc,
     alternates: {
       canonical: `https://foryourgoal.com/industries/${ind.slug}`,
+    },
+    openGraph: {
+      title: `${ind.title} Photo Editing Services | Foryourgoal`,
+      description: ind.shortDesc,
+      url: `https://foryourgoal.com/industries/${ind.slug}`,
     },
   };
 }
@@ -48,8 +53,37 @@ export default async function IndustryDetailPage({ params }: Props) {
     notFound();
   }
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://foryourgoal.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Industries",
+        item: "https://foryourgoal.com/industries",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: ind.title,
+        item: `https://foryourgoal.com/industries/${ind.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-slate-500 mb-8 font-mono">
         <Link href="/" className="hover:text-indigo-600 transition-colors">

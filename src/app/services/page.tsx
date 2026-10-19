@@ -6,23 +6,46 @@ import { Clock, ArrowRight, CheckCircle2, ChevronRight, Sparkles } from "lucide-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Professional Image Editing Services | Clipping Path, Retouching & Ghost Mannequin",
+  title: "Commercial Photo Editing & Retouching Services",
   description:
-    "Explore our complete suite of commercial photo editing and retouching services: 100% hand-drawn clipping paths, invisible ghost mannequin, high-end beauty/jewelry retouching, and shadow creation.",
+    "Professional commercial photo editing: 100% hand-drawn clipping paths, ghost mannequin, high-end jewelry retouching, and shadows. Request a custom quote.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: "Professional Image Editing Services | Foryourgoal Studio",
+    title: "Commercial Photo Editing Services | Foryourgoal",
     description:
-      "Hand-drawn clipping path, high-end retouching, ghost mannequin, and e-commerce image post-production services.",
+      "Professional commercial photo editing: 100% hand-drawn clipping paths, ghost mannequin, and high-end retouching.",
     url: "https://foryourgoal.com/services",
   },
 };
 
 export default function ServicesPage() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://foryourgoal.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://foryourgoal.com/services",
+      },
+    ],
+  };
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wider uppercase mb-3">

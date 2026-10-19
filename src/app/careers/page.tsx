@@ -4,16 +4,16 @@ import { Briefcase, Clock, MapPin, ArrowRight, CheckCircle2 } from "lucide-react
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Careers | Join the Foryourgoal Studio Team",
+  title: "Careers & Senior Retouching Openings",
   description:
-    "Explore career opportunities for senior Photoshop artists, quality assurance leads, and client account managers at Foryourgoal.",
+    "Explore career opportunities for senior Photoshop artists, QA leads, and studio account managers at Foryourgoal. View open roles and apply today.",
   alternates: {
     canonical: "/careers",
   },
   openGraph: {
-    title: "Careers | Join the Foryourgoal Studio Team",
+    title: "Careers & Senior Retouching Openings | Foryourgoal",
     description:
-      "Explore career opportunities for senior Photoshop artists and retouching leads.",
+      "Explore career opportunities for senior Photoshop artists, QA leads, and studio account managers at Foryourgoal.",
     url: "https://foryourgoal.com/careers",
   },
 };

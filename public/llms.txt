@@ -1,0 +1,28 @@
+# Foryourgoal Studio
+
+> High-throughput commercial image post-production studio specializing in 100% hand-drawn clipping paths, high-end product retouching, ghost mannequin composite, and jewelry editing for global e-commerce brands, catalog retailers, and commercial photographers.
+
+## Core Capabilities
+- **Clipping Path & Cutouts**: 100% Adobe Photoshop pen-tool vector paths with smooth bezier curves. Zero automated AI wand artifacts.
+- **Product Photo Retouching**: Dust, scratch, surface blemish removal, symmetry correction, color balancing, and texture preservation.
+- **Ghost Mannequin / Invisible Neck Joint**: Realistic 3D garment volume from multiple flat-lay or mannequin shots.
+- **High-End Jewelry Retouching**: Macro scratch removal, metal luster restoration, hot-spot suppression, and gemstone facet brilliance.
+- **Background Removal**: Pure white (#FFFFFF) Amazon/Google compliance, transparent PNGs, neutral grays, and contextual backdrops.
+- **Shadow Creation & Reflection**: Natural soft drop shadows, directional cast shadows, and mirror reflections.
+- **Color Correction & Multi-Colorway**: Pantone swatch matching and recoloring from a single master capture.
+- **Image Masking**: Multi-channel alpha masking for flyaway hair, animal fur, lace, and semi-transparent glass.
+
+## Operational Standards
+- **Turnaround SLA**: Flexible 6-hour, 12-hour, and 24-hour turnaround windows.
+- **Quality Assurance**: 3-tier inspection protocol (Artist self-check, QA Supervisor review, Technical Director sign-off).
+- **Security & NDA**: Enterprise-grade confidentiality, encrypted file transit, 14-day automated file purge.
+- **High-Volume Capacity**: Scalable infrastructure supporting 5,000+ images per day.
+
+## Direct Links
+- Services Overview: https://foryourgoal.com/services
+- Request a Custom Quote: https://foryourgoal.com/request-a-quote
+- Portfolio Case Studies: https://foryourgoal.com/portfolio
+- Production Workflow: https://foryourgoal.com/how-it-works
+- Frequently Asked Questions: https://foryourgoal.com/faq
+- Company Background: https://foryourgoal.com/about
+- Technical Guides & Blog: https://foryourgoal.com/blog
