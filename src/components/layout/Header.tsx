@@ -146,6 +146,17 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+            <Link
+              href="/"
+              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+                pathname === "/"
+                  ? "text-indigo-600 font-semibold bg-indigo-50/60"
+                  : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
+              }`}
+            >
+              Home
+            </Link>
+
             {/* Services Dropdown */}
             <div
               ref={servicesRef}
@@ -392,6 +403,15 @@ export function Header() {
             <div className="pt-2 border-t border-slate-200">
               <div className="font-semibold text-xs text-slate-500 uppercase tracking-wider mb-2">Navigation</div>
               <div className="flex flex-col space-y-3 pl-2">
+                <Link
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-sm font-medium transition-colors ${
+                    pathname === "/" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600"
+                  }`}
+                >
+                  Home
+                </Link>
                 <Link
                   href="/industries"
                   onClick={() => setMobileMenuOpen(false)}
