@@ -23,6 +23,14 @@ export async function generateStaticParams() {
   }));
 }
 
+const industrySeoTitles: Record<string, string> = {
+  "ecommerce-marketplaces": "E-Commerce & Retail Photo Editing",
+  "fashion-apparel": "Fashion & Apparel Photo Editing",
+  "jewelry-luxury": "Fine Jewelry & Luxury Retouching",
+  "photographers-studios": "Studio Photographers Photo Editing",
+  "advertising-agencies": "Agency & Ad Campaign Retouching",
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const ind = getIndustryBySlug(slug);
@@ -31,14 +39,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Industry Not Found" };
   }
 
+  const seoTitle = industrySeoTitles[ind.slug] || `${ind.title} Photo Editing`;
+
   return {
-    title: `${ind.title} Photo Editing Services`,
+    title: seoTitle,
     description: ind.shortDesc,
     alternates: {
       canonical: `https://foryourgoal.com/industries/${ind.slug}`,
     },
     openGraph: {
-      title: `${ind.title} Photo Editing Services | Foryourgoal`,
+      title: `${seoTitle} | Foryourgoal`,
       description: ind.shortDesc,
       url: `https://foryourgoal.com/industries/${ind.slug}`,
     },

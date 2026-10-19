@@ -15,6 +15,12 @@ export async function generateStaticParams() {
   }));
 }
 
+const blogSeoTitles: Record<string, string> = {
+  "amazon-product-image-requirements-2026": "Amazon Product Image Guidelines 2026",
+  "clipping-path-vs-image-masking-differences": "Clipping Path vs Image Masking Guide",
+  "ghost-mannequin-photography-guide-fashion-brands": "How to Shoot for Ghost Mannequin",
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
@@ -23,14 +29,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Article Not Found" };
   }
 
+  const seoTitle = blogSeoTitles[post.slug] || post.title;
+
   return {
-    title: post.title,
+    title: seoTitle,
     description: post.excerpt,
     alternates: {
       canonical: `https://foryourgoal.com/blog/${post.slug}`,
     },
     openGraph: {
-      title: `${post.title} | Foryourgoal`,
+      title: `${seoTitle} | Foryourgoal`,
       description: post.excerpt,
       type: "article",
       publishedTime: post.publishedAt,
