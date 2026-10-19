@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import { Upload, CheckCircle2, Image as ImageIcon, Loader2 } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
+import { Upload, CheckCircle2, Image as ImageIcon, Loader2, ExternalLink, X } from "lucide-react";
 
 interface ImageUploadFieldProps {
   label: string;
@@ -9,6 +9,7 @@ interface ImageUploadFieldProps {
   onChange: (url: string) => void;
   description?: string;
   category?: string;
+  onUploaded?: (item: any) => void;
 }
 
 export function ImageUploadField({
@@ -17,10 +18,16 @@ export function ImageUploadField({
   onChange,
   description,
   category = "general",
+  onUploaded,
 }: ImageUploadFieldProps) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
+  const [imgError, setImgError] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [value]);
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -46,6 +53,9 @@ export function ImageUploadField({
       }
 
       onChange(data.url);
+      if (onUploaded && data.mediaItem) {
+        onUploaded(data.mediaItem);
+      }
     } catch (err: any) {
       setError(err?.message || "Failed to upload file");
     } finally {
@@ -69,32 +79,58 @@ export function ImageUploadField({
 
       <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
         {/* Preview thumbnail */}
-        <div className="w-20 h-16 rounded-xl border border-slate-200 bg-slate-100 overflow-hidden relative shrink-0 flex items-center justify-center shadow-inner">
-          {value ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={value}
-              alt={label}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                (e.target as HTMLElement).style.display = "none";
-              }}
-            />
+        <div className="w-20 h-16 rounded-xl border border-slate-200 bg-slate-100 overflow-hidden relative shrink-0 flex items-center justify-center shadow-inner group">
+          {value && !imgError ? (
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={value}
+                alt={label}
+                className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                onError={() => setImgError(true)}
+              />
+              <a
+                href={value}
+                target="_blank"
+                rel="noreferrer"
+                className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition-opacity"
+                title="Open image preview"
+              >
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </>
           ) : (
-            <ImageIcon className="w-6 h-6 text-slate-400" />
+            <div className="flex flex-col items-center justify-center text-slate-400">
+              <ImageIcon className="w-5 h-5 text-slate-400" />
+              {imgError && (
+                <span className="text-[9px] text-rose-500 font-bold mt-0.5">404</span>
+              )}
+            </div>
           )}
         </div>
 
         {/* Input & Upload Button */}
         <div className="flex-1 w-full space-y-1.5">
           <div className="flex gap-2">
-            <input
-              type="text"
-              value={value || ""}
-              onChange={(e) => onChange(e.target.value)}
-              placeholder="e.g. /images/... or https://..."
-              className="flex-1 px-3 py-2 bg-white border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-mono shadow-sm"
-            />
+            <div className="relative flex-1">
+              <input
+                type="text"
+                value={value || ""}
+                onChange={(e) => onChange(e.target.value)}
+                placeholder="e.g. /images/... or https://..."
+                className="w-full px-3 py-2 pr-7 bg-white border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-mono shadow-sm"
+              />
+              {value && (
+                <button
+                  type="button"
+                  onClick={() => onChange("")}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5 rounded"
+                  title="Clear input"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
             <input
               type="file"
               ref={fileInputRef}

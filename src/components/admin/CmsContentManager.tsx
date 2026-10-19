@@ -22,6 +22,12 @@ import {
   ExternalLink,
   ChevronDown,
   ChevronUp,
+  Upload,
+  Eye,
+  X,
+  Search,
+  RefreshCw,
+  ZoomIn,
 } from "lucide-react";
 
 interface CmsContentManagerProps {
@@ -48,6 +54,15 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
 
   // Copy notification for media URLs
   const [copiedUrl, setCopiedUrl] = useState<string | null>(null);
+
+  // Direct Gallery Upload State
+  const [galleryUploading, setGalleryUploading] = useState(false);
+  const [galleryUploadError, setGalleryUploadError] = useState("");
+  const galleryFileInputRef = React.useRef<HTMLInputElement | null>(null);
+
+  // Lightbox Preview Modal State
+  const [previewModalUrl, setPreviewModalUrl] = useState<string | null>(null);
+  const [previewModalTitle, setPreviewModalTitle] = useState<string>("");
 
   useEffect(() => {
     fetchContent();
@@ -125,6 +140,63 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
     navigator.clipboard.writeText(text);
     setCopiedUrl(text);
     setTimeout(() => setCopiedUrl(null), 2500);
+  };
+
+  const handleGalleryUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    setGalleryUploading(true);
+    setGalleryUploadError("");
+
+    try {
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("category", "gallery");
+        formData.append("title", file.name.replace(/\.[^/.]+$/, ""));
+
+        const res = await fetch("/api/admin/media", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          throw new Error(data.error || `Failed to upload ${file.name}`);
+        }
+      }
+
+      // Refresh content to update media gallery
+      await fetchContent();
+    } catch (err: any) {
+      setGalleryUploadError(err?.message || "Failed to upload image");
+    } finally {
+      setGalleryUploading(false);
+      if (galleryFileInputRef.current) {
+        galleryFileInputRef.current.value = "";
+      }
+    }
+  };
+
+  const handleDeleteMedia = async (url: string) => {
+    if (!confirm("Are you sure you want to delete this media item?")) return;
+    try {
+      const res = await fetch("/api/admin/media", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        await fetchContent();
+      } else {
+        alert(data.error || "Failed to delete media");
+      }
+    } catch (err: any) {
+      alert(err?.message || "Error deleting media");
+    }
   };
 
   if (loading) {
@@ -1325,17 +1397,57 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
       {/* 6. MEDIA GALLERY TAB */}
       {activeSubTab === "media" && (
         <div className="space-y-5">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-white p-4 rounded-xl border border-slate-200">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
             <div>
-              <h4 className="text-sm font-bold text-slate-900">CMS Asset Storage Gallery</h4>
-              <p className="text-xs text-slate-500">
-                Uploaded images are saved in <code className="text-indigo-600 font-mono">/public/uploads/cms/</code> with high-speed CDN delivery.
+              <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <FolderOpen className="w-4 h-4 text-indigo-600" />
+                CMS Asset Storage & Media Gallery
+              </h4>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Upload new photos directly to server storage (<code className="text-indigo-600 font-mono">/public/uploads/cms/</code>) or copy URLs to paste into any Service/Portfolio field.
               </p>
             </div>
-            <span className="text-xs font-mono font-bold px-2.5 py-1 bg-slate-100 rounded-lg text-slate-700">
-              {content.mediaGallery?.length || 0} Assets Stored
-            </span>
+            
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-mono font-bold px-3 py-1.5 bg-slate-100 rounded-xl text-slate-700 border border-slate-200">
+                {content.mediaGallery?.length || 0} Assets Stored
+              </span>
+              
+              <input
+                type="file"
+                ref={galleryFileInputRef}
+                onChange={handleGalleryUpload}
+                accept="image/*"
+                multiple
+                className="hidden"
+              />
+              <button
+                type="button"
+                disabled={galleryUploading}
+                onClick={() => galleryFileInputRef.current?.click()}
+                className="px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm flex items-center gap-2 transition-all disabled:opacity-50"
+              >
+                {galleryUploading ? (
+                  <>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    <span>Uploading Image...</span>
+                  </>
+                ) : (
+                  <>
+                    <Upload className="w-3.5 h-3.5" />
+                    <span>Upload New Image</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
+
+          {galleryUploadError && (
+            <div className="p-3.5 bg-rose-50 border border-rose-200 rounded-xl text-rose-700 text-xs font-semibold flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+              <span>{galleryUploadError}</span>
+            </div>
+          )}
 
           {copiedUrl && (
             <div className="p-3 bg-indigo-50 border border-indigo-200 rounded-xl text-indigo-700 text-xs font-semibold flex items-center gap-2">
@@ -1344,12 +1456,28 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
             </div>
           )}
 
+          {/* Direct Drag & Drop or Click Upload Banner */}
+          <div
+            onClick={() => galleryFileInputRef.current?.click()}
+            className="border-2 border-dashed border-indigo-200 hover:border-indigo-400 bg-indigo-50/40 hover:bg-indigo-50/80 rounded-2xl p-6 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-2"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center shadow-sm">
+              <Upload className="w-6 h-6" />
+            </div>
+            <div className="text-sm font-bold text-slate-800">
+              Click or drag images here to upload
+            </div>
+            <p className="text-xs text-slate-500 max-w-md">
+              Supports JPEG, PNG, WEBP, SVG up to 25MB. Images are saved instantly and get an ultra-fast CDN URL.
+            </p>
+          </div>
+
           {(!content.mediaGallery || content.mediaGallery.length === 0) ? (
             <div className="p-12 text-center bg-white rounded-2xl border border-slate-200 space-y-2">
               <FolderOpen className="w-10 h-10 text-slate-300 mx-auto" />
               <div className="text-sm font-bold text-slate-700">No Custom Uploads Stored Yet</div>
               <p className="text-xs text-slate-400 max-w-sm mx-auto">
-                When you use the upload button in any section (Hero, Services, Portfolio), images will automatically register here with permanent URLs.
+                Use the upload button above to add images directly to the media gallery.
               </p>
             </div>
           ) : (
@@ -1365,11 +1493,42 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                       src={item.url}
                       alt={item.name || "asset"}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src =
+                          "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=400&q=80";
+                      }}
                     />
-                    <div className="absolute top-2 right-2">
+                    <div className="absolute top-2 right-2 flex items-center gap-1">
                       <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900/80 text-white">
-                        {item.size}
+                        {item.size || "Image"}
                       </span>
+                    </div>
+
+                    {/* Quick View Button on Hover */}
+                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setPreviewModalUrl(item.url);
+                          setPreviewModalTitle(item.name || "Preview");
+                        }}
+                        className="p-2 bg-white/90 hover:bg-white text-slate-800 rounded-lg shadow transition-colors"
+                        title="View Full Preview"
+                      >
+                        <ZoomIn className="w-4 h-4" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          copyToClipboard(item.url);
+                        }}
+                        className="p-2 bg-white/90 hover:bg-white text-indigo-600 rounded-lg shadow transition-colors"
+                        title="Copy URL"
+                      >
+                        <Copy className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
 
@@ -1379,19 +1538,86 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                     </div>
                     <div className="flex items-center justify-between text-[11px] text-slate-400">
                       <span>{item.uploadedAt ? new Date(item.uploadedAt).toLocaleDateString() : ""}</span>
-                      <button
-                        type="button"
-                        onClick={() => copyToClipboard(item.url)}
-                        className="p-1 text-slate-500 hover:text-indigo-600 rounded hover:bg-slate-100 flex items-center gap-1 transition-colors"
-                        title="Copy Relative URL"
-                      >
-                        <Copy className="w-3.5 h-3.5" />
-                        <span className="text-[10px]">Copy</span>
-                      </button>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => copyToClipboard(item.url)}
+                          className="p-1 text-slate-500 hover:text-indigo-600 rounded hover:bg-slate-100 flex items-center gap-1 transition-colors"
+                          title="Copy Relative URL"
+                        >
+                          <Copy className="w-3.5 h-3.5" />
+                          <span className="text-[10px]">Copy</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleDeleteMedia(item.url)}
+                          className="p-1 text-slate-400 hover:text-rose-600 rounded hover:bg-rose-50 transition-colors"
+                          title="Delete from Media Library"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* Full Screen Image Preview Modal */}
+          {previewModalUrl && (
+            <div
+              className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in"
+              onClick={() => setPreviewModalUrl(null)}
+            >
+              <div
+                className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="p-4 border-b border-slate-100 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <ImageIcon className="w-4 h-4 text-indigo-600" />
+                    <span className="text-sm font-bold text-slate-900 truncate">{previewModalTitle}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => copyToClipboard(previewModalUrl)}
+                      className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center gap-1.5"
+                    >
+                      <Copy className="w-3.5 h-3.5" />
+                      <span>Copy URL</span>
+                    </button>
+                    <a
+                      href={previewModalUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 text-slate-500 hover:text-indigo-600 rounded-lg hover:bg-slate-100"
+                      title="Open in new tab"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setPreviewModalUrl(null)}
+                      className="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-100"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+                <div className="p-4 bg-slate-950 flex items-center justify-center overflow-auto max-h-[75vh]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={previewModalUrl}
+                    alt={previewModalTitle}
+                    className="max-h-[70vh] w-auto max-w-full object-contain rounded-lg shadow-lg"
+                  />
+                </div>
+                <div className="p-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-mono">
+                  <span>URL: {previewModalUrl}</span>
+                </div>
+              </div>
             </div>
           )}
         </div>
