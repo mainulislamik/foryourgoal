@@ -347,30 +347,24 @@ export function Header() {
             </Link>
           </nav>
 
-          {/* Desktop CTA Action Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Desktop CTA Action Button */}
+          <div className="hidden lg:flex items-center">
             <Link
               href="/request-a-quote?type=sample"
-              className="btn-shimmer px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-slate-900 bg-white border border-slate-300 hover:border-indigo-400 hover:bg-slate-50 hover:scale-[1.02] transition-all shadow-sm"
+              className="btn-shimmer relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/25 hover:shadow-lg hover:shadow-red-600/35 transition-all transform hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-100"
             >
-              Free Trial
-            </Link>
-            <Link
-              href="/request-a-quote"
-              className="btn-shimmer relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-slate-900 hover:bg-slate-800 shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-100"
-            >
-              <span>Get a Quote</span>
-              <ArrowRight className="w-4 h-4 text-emerald-400" />
+              <span>Free Trial</span>
+              <ArrowRight className="w-4 h-4 text-white/90" />
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-2">
             <Link
-              href="/request-a-quote"
-              className="px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-slate-900"
+              href="/request-a-quote?type=sample"
+              className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-white bg-red-600 hover:bg-red-700 shadow-sm"
             >
-              Quote
+              Free Trial
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -474,20 +468,14 @@ export function Header() {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-200 flex flex-col gap-3">
+            <div className="pt-4 border-t border-slate-200">
               <Link
                 href="/request-a-quote?type=sample"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 rounded-xl text-sm font-semibold bg-slate-50 border border-slate-300 text-slate-700 hover:bg-slate-100"
+                className="btn-shimmer w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold bg-red-600 text-white hover:bg-red-700 shadow-md shadow-red-600/25 transition-all"
               >
-                Free 2-Image Sample Trial
-              </Link>
-              <Link
-                href="/request-a-quote"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 rounded-xl text-sm font-bold bg-slate-900 text-white hover:bg-slate-800"
-              >
-                Request an Instant Quote
+                <span>Request Free Trial (2 Free Samples)</span>
+                <ArrowRight className="w-4 h-4 text-white/90" />
               </Link>
             </div>
           </div>
