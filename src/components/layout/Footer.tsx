@@ -1,9 +1,16 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { ShieldCheck, Lock, Clock, CheckCircle2, Mail, MapPin, ArrowRight } from "lucide-react";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/imon")) {
+    return null;
+  }
   return (
     <footer className="bg-slate-50 border-t border-slate-200 text-slate-600 pt-16 pb-12 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-12">

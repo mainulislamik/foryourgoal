@@ -1,0 +1,53 @@
+[
+  {
+    "id": "lead-trial-314820",
+    "referenceId": "FYG-TRIAL-314820",
+    "type": "trial",
+    "fullName": "David Miller",
+    "email": "david.miller@ecomfashion.co.uk",
+    "company": "Miller Studio UK",
+    "phone": "+44 7911 123456",
+    "serviceType": "Ghost Mannequin & Neck Joint",
+    "instructions": "Need hollow neck joint and symmetrical hem alignment on 100% white background.",
+    "driveLink": "https://drive.google.com/drive/folders/test-sample-sample",
+    "fileCount": 2,
+    "fileNames": ["sample_front.jpg", "sample_inner_neck.jpg"],
+    "clientIp": "163.227.239.114",
+    "status": "In Production",
+    "createdAt": "2026-10-18T20:30:00.000Z"
+  },
+  {
+    "id": "lead-trial-892110",
+    "referenceId": "FYG-TRIAL-892110",
+    "type": "trial",
+    "fullName": "Sarah Jenkins",
+    "email": "sarah.j@nordicapparel.se",
+    "company": "Nordic Apparel Stockholm",
+    "phone": "+46 8 123 4567",
+    "serviceType": "Clipping Path (Razor Edge Hand-Drawn)",
+    "instructions": "Precision path around woven knitwear fibers. Zero halo, transparent PNG.",
+    "driveLink": "—",
+    "fileCount": 3,
+    "fileNames": ["knitwear_01.jpg", "knitwear_02.jpg", "knitwear_03.jpg"],
+    "clientIp": "185.199.108.153",
+    "status": "Pending",
+    "createdAt": "2026-10-19T02:15:00.000Z"
+  },
+  {
+    "id": "lead-quote-442195",
+    "referenceId": "FYG-QUOTE-442195",
+    "type": "quote",
+    "fullName": "Alexander Wright",
+    "email": "alex.wright@diamonddirect.com",
+    "company": "Diamond Direct NYC",
+    "phone": "+1 212 555 0198",
+    "serviceType": "High-End Jewelry Retouching",
+    "instructions": "Volume quote for 1,500 diamond ring SKUs/month. Need focus stacking cleanup.",
+    "driveLink": "https://wetransfer.com/downloads/diamond-sample-batch",
+    "fileCount": 5,
+    "fileNames": ["ring_focus_01.tif", "ring_focus_02.tif"],
+    "clientIp": "198.51.100.24",
+    "status": "Contacted",
+    "createdAt": "2026-10-18T18:00:00.000Z"
+  }
+]

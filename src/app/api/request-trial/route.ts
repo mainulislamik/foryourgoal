@@ -7,6 +7,7 @@ import {
   isSafeUrl,
   validateUploadedFile,
 } from "@/lib/security";
+import { addLead } from "@/lib/leads-store";
 
 export const dynamic = "force-dynamic";
 
@@ -314,6 +315,26 @@ export async function POST(req: NextRequest) {
       });
     } catch (clientErr) {
       console.warn("Client confirmation email failed:", clientErr);
+    }
+
+    try {
+      await addLead({
+        referenceId,
+        type: "trial",
+        fullName: name,
+        email,
+        company: "—",
+        phone: "—",
+        serviceType: "Free Trial (Sample Retouching)",
+        instructions: message || "No special instructions provided.",
+        driveLink: driveLink || undefined,
+        fileCount: attachments.length,
+        fileNames: attachments.map((a) => a.filename),
+        clientIp,
+        status: "Pending",
+      });
+    } catch (dbErr) {
+      console.warn("Failed to save lead to store:", dbErr);
     }
 
     return NextResponse.json({
