@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     canonical: "/faq",
   },
   openGraph: {
-    title: "Frequently Asked Questions | Foryourgoal Studio",
-    description:
-      "Everything you need to know about turnaround speeds, quality assurance, pricing, and confidentiality.",
-    url: "https://foryourgoal.com/faq",
+  title: "Frequently Asked Questions | Foryourgoal Studio",
+  description:
+    "Everything you need to know about turnaround speeds, quality assurance, SLAs, and confidentiality.",
+  url: "https://foryourgoal.com/faq",
   },
 };
 

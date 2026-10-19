@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { servicesData, getServiceBySlug } from "@/data/services";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
-import { formatPrice } from "@/lib/utils";
 import {
   Clock,
   ArrowRight,
@@ -70,11 +69,6 @@ export default async function ServiceDetailPage({ params }: Props) {
       name: "Foryourgoal",
       url: "https://foryourgoal.com",
     },
-    offers: {
-      "@type": "Offer",
-      price: service.startingPrice,
-      priceCurrency: "USD",
-    },
   };
 
   return (
@@ -114,18 +108,9 @@ export default async function ServiceDetailPage({ params }: Props) {
           </p>
 
           <div className="flex flex-wrap items-center gap-6 pt-2">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-extrabold font-mono text-indigo-700">
-                {formatPrice(service.startingPrice)}
-              </span>
-              <span className="text-xs text-slate-500">/ per image</span>
-            </div>
-
-            <div className="h-6 w-px bg-slate-200" />
-
             <div className="flex items-center gap-2 text-sm text-slate-700 font-mono">
               <Clock className="w-4 h-4 text-indigo-600" />
-              <span>~{service.turnaroundHours} Hours Turnaround</span>
+              <span>~{service.turnaroundHours} Hours Turnaround SLA</span>
             </div>
 
             <div className="h-6 w-px bg-slate-200" />
@@ -133,6 +118,13 @@ export default async function ServiceDetailPage({ params }: Props) {
             <div className="flex items-center gap-2 text-sm text-emerald-700 font-mono">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
               <span>Unlimited Revisions</span>
+            </div>
+
+            <div className="h-6 w-px bg-slate-200" />
+
+            <div className="flex items-center gap-2 text-sm text-indigo-700 font-mono font-medium">
+              <CheckCircle2 className="w-4 h-4 text-indigo-600" />
+              <span>Custom Enterprise Scope</span>
             </div>
           </div>
 

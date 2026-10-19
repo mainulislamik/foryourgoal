@@ -6,7 +6,6 @@ import { portfolioData } from "@/data/portfolio";
 import { faqsData } from "@/data/faqs";
 import { blogPostsData } from "@/data/blogs";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
-import { formatPrice } from "@/lib/utils";
 import {
   ArrowRight,
   ShieldCheck,
@@ -166,10 +165,10 @@ export default function HomePage() {
 
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-mono text-indigo-700 font-bold bg-indigo-50 px-2.5 py-0.5 rounded border border-indigo-200">
-                    From {formatPrice(service.startingPrice)}/img
+                    Dedicated Team
                   </span>
                   <span className="text-xs text-slate-500 flex items-center gap-1 font-mono">
-                    <Clock className="w-3 h-3 text-slate-400" /> ~{service.turnaroundHours}h
+                    <Clock className="w-3 h-3 text-slate-400" /> ~{service.turnaroundHours}h SLA
                   </span>
                 </div>
 

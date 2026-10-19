@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { servicesData } from "@/data/services";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
-import { formatPrice } from "@/lib/utils";
 import { Clock, ArrowRight, CheckCircle2, ChevronRight, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -57,10 +56,10 @@ export default function ServicesPage() {
 
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-mono text-indigo-700 font-bold bg-indigo-50 px-2.5 py-0.5 rounded border border-indigo-200">
-                  Starting at {formatPrice(service.startingPrice)}/img
+                  Dedicated Artist Team
                 </span>
                 <span className="text-xs text-slate-500 flex items-center gap-1 font-mono">
-                  <Clock className="w-3.5 h-3.5 text-slate-400" /> ~{service.turnaroundHours}h
+                  <Clock className="w-3.5 h-3.5 text-slate-400" /> ~{service.turnaroundHours}h SLA
                 </span>
               </div>
 
