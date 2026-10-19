@@ -68,7 +68,7 @@ export function Footer() {
             <div className="flex flex-col space-y-2 text-xs text-slate-600 pt-2">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-indigo-600" />
-                <a href="mailto:support@foryourgoal.com" className="hover:text-indigo-600 transition-colors font-medium">
+                <a href="mailto:support@foryourgoal.com" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block font-medium">
                   support@foryourgoal.com
                 </a>
               </div>
@@ -84,42 +84,42 @@ export function Footer() {
             <div className="text-xs font-bold text-slate-900 uppercase tracking-wider font-mono">Core Services</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/services/clipping-path" className="hover:text-indigo-600 transition-colors">
+                <Link href="/services/clipping-path" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Clipping Path
                 </Link>
               </li>
               <li>
-                <Link href="/services/background-removal" className="hover:text-indigo-600 transition-colors">
+                <Link href="/services/background-removal" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Background Removal
                 </Link>
               </li>
               <li>
-                <Link href="/services/product-photo-retouching" className="hover:text-indigo-600 transition-colors">
+                <Link href="/services/product-photo-retouching" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Product Photo Retouching
                 </Link>
               </li>
               <li>
-                <Link href="/services/ghost-mannequin" className="hover:text-indigo-600 transition-colors">
+                <Link href="/services/ghost-mannequin" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Ghost Mannequin
                 </Link>
               </li>
               <li>
-                <Link href="/services/jewelry-retouching" className="hover:text-indigo-600 transition-colors">
+                <Link href="/services/jewelry-retouching" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Jewelry Retouching
                 </Link>
               </li>
               <li>
-                <Link href="/services/shadow-reflection" className="hover:text-indigo-600 transition-colors">
+                <Link href="/services/shadow-reflection" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Shadows & Reflections
                 </Link>
               </li>
               <li>
-                <Link href="/services/color-correction" className="hover:text-indigo-600 transition-colors">
+                <Link href="/services/color-correction" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Color Correction
                 </Link>
               </li>
               <li>
-                <Link href="/services/image-masking" className="hover:text-indigo-600 transition-colors">
+                <Link href="/services/image-masking" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Image Masking
                 </Link>
               </li>
@@ -131,32 +131,32 @@ export function Footer() {
             <div className="text-xs font-bold text-slate-900 uppercase tracking-wider font-mono">Industries</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/industries/ecommerce-marketplaces" className="hover:text-indigo-600 transition-colors">
+                <Link href="/industries/ecommerce-marketplaces" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   E-Commerce Marketplaces
                 </Link>
               </li>
               <li>
-                <Link href="/industries/fashion-apparel" className="hover:text-indigo-600 transition-colors">
+                <Link href="/industries/fashion-apparel" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Fashion & Apparel
                 </Link>
               </li>
               <li>
-                <Link href="/industries/jewelry-luxury" className="hover:text-indigo-600 transition-colors">
+                <Link href="/industries/jewelry-luxury" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Jewelry & Luxury Goods
                 </Link>
               </li>
               <li>
-                <Link href="/industries/photographers-studios" className="hover:text-indigo-600 transition-colors">
+                <Link href="/industries/photographers-studios" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Photographers & Studios
                 </Link>
               </li>
               <li>
-                <Link href="/industries/advertising-agencies" className="hover:text-indigo-600 transition-colors">
+                <Link href="/industries/advertising-agencies" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Advertising Agencies
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="hover:text-indigo-600 transition-colors font-medium">
+                <Link href="/portfolio" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block font-medium">
                   Client Portfolio
                 </Link>
               </li>
@@ -168,42 +168,42 @@ export function Footer() {
             <div className="text-xs font-bold text-slate-900 uppercase tracking-wider font-mono">Studio & Trust</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/how-it-works" className="hover:text-indigo-600 transition-colors">
+                <Link href="/how-it-works" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-indigo-600 transition-colors">
+                <Link href="/about" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   About Our Studio
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-indigo-600 transition-colors">
+                <Link href="/blog" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Insights & Guides
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:text-indigo-600 transition-colors">
+                <Link href="/careers" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Careers & Hiring
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-indigo-600 transition-colors">
+                <Link href="/faq" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Frequently Asked Questions
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-indigo-600 transition-colors">
+                <Link href="/contact" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Contact Support
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="hover:text-indigo-600 transition-colors">
+                <Link href="/privacy-policy" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Privacy Policy & NDA
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-indigo-600 transition-colors">
+                <Link href="/terms" className="hover:text-indigo-600 hover:translate-x-1.5 transition-all duration-200 inline-block">
                   Terms of Service & SLA
                 </Link>
               </li>
@@ -213,8 +213,16 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div>
-            &copy; {new Date().getFullYear()} Foryourgoal. All rights reserved. Professional Image Editing & Retouching Outsourcing.
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1.5 text-emerald-600 font-semibold">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              All Systems Operational
+            </span>
+            <span className="text-slate-300">·</span>
+            <span>&copy; {new Date().getFullYear()} Foryourgoal. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-slate-700 transition-colors">

@@ -152,7 +152,7 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
             <Link
               href="/"
-              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
                 pathname === "/"
                   ? "text-indigo-600 font-semibold bg-indigo-50/60"
                   : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
@@ -192,8 +192,7 @@ export function Header() {
               </button>
 
               {/* Mega Menu Dropdown */}
-              {servicesOpen && (
-                <div className="absolute top-full left-0 w-[620px] pt-2 z-50 animate-in fade-in-0 zoom-in-95 duration-150">
+              <div className={`absolute top-full left-0 w-[620px] pt-2 z-50 transition-all duration-200 ease-out transform ${servicesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
                   <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xl ring-1 ring-black/5">
                     <div className="grid grid-cols-2 gap-2">
                       {servicesList.map((svc) => (
@@ -231,7 +230,6 @@ export function Header() {
                     </div>
                   </div>
                 </div>
-              )}
             </div>
 
             {/* Industries Dropdown */}
@@ -263,8 +261,7 @@ export function Header() {
                 />
               </button>
 
-              {industriesOpen && (
-                <div className="absolute top-full left-0 w-84 pt-2 z-50 animate-in fade-in-0 zoom-in-95 duration-150">
+              <div className={`absolute top-full left-0 w-84 pt-2 z-50 transition-all duration-200 ease-out transform ${industriesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
                   <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-2xl ring-1 ring-black/5 space-y-1">
                     {industriesList.map((ind) => (
                       <Link
@@ -293,12 +290,11 @@ export function Header() {
                     </div>
                   </div>
                 </div>
-              )}
             </div>
 
             <Link
               href="/how-it-works"
-              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
                 pathname === "/how-it-works" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
@@ -308,7 +304,7 @@ export function Header() {
 
             <Link
               href="/portfolio"
-              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
                 pathname.startsWith("/portfolio") ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
@@ -318,7 +314,7 @@ export function Header() {
 
             <Link
               href="/about"
-              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
                 pathname === "/about" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
@@ -328,7 +324,7 @@ export function Header() {
 
             <Link
               href="/blog"
-              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
                 pathname.startsWith("/blog") ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
@@ -338,7 +334,7 @@ export function Header() {
 
             <Link
               href="/contact"
-              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
                 pathname === "/contact" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
@@ -351,7 +347,7 @@ export function Header() {
           <div className="hidden lg:flex items-center">
             <Link
               href="/request-a-quote?type=sample"
-              className="btn-shimmer relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/25 hover:shadow-lg hover:shadow-red-600/35 transition-all transform hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-100"
+              className="btn-shimmer relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/20 hover:shadow-lg hover:shadow-red-600/35 transition-all transform hover:scale-105 active:scale-95 duration-200"
             >
               <span>Free Trial</span>
               <ArrowRight className="w-4 h-4 text-white/90" />
@@ -379,7 +375,7 @@ export function Header() {
 
       {/* Accessible Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bottom-0 bg-white border-t border-slate-200 p-6 overflow-y-auto z-40 shadow-xl">
+        <div className="lg:hidden fixed inset-x-0 top-[65px] bottom-0 bg-white border-t border-slate-200 p-6 overflow-y-auto z-40 shadow-xl animate-in slide-in-from-top-2 fade-in duration-200">
           <div className="flex flex-col space-y-4">
             <div className="font-semibold text-xs text-slate-500 uppercase tracking-wider">Services</div>
             <div className="grid grid-cols-1 gap-2 pl-2">

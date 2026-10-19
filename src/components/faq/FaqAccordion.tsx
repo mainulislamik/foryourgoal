@@ -84,11 +84,17 @@ export function FaqAccordion({ initialFaqs }: Props) {
                 />
               </button>
 
-              {isOpen && (
-                <div className="px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 bg-white">
-                  {item.answer}
+              <div
+                className={`grid transition-all duration-300 ease-in-out ${
+                  isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 pb-6 pt-2 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 bg-white">
+                    {item.answer}
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           );
         })}

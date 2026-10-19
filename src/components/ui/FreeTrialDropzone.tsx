@@ -316,10 +316,10 @@ export function FreeTrialDropzone({
                   }
                 }}
                 onClick={() => fileInputRef.current?.click()}
-                className={`w-full p-8 border-2 border-dashed rounded-2xl cursor-pointer transition-all flex flex-col items-center justify-center text-center ${
+                className={`w-full p-8 border-2 border-dashed rounded-2xl cursor-pointer transition-all duration-300 flex flex-col items-center justify-center text-center ${
                   isDragging
-                    ? "border-indigo-400 bg-indigo-950/40 scale-[1.01] drag-active"
-                    : "border-slate-700 bg-slate-950/60 hover:border-slate-600 hover:bg-slate-950/80"
+                    ? "border-indigo-400 bg-indigo-950/60 scale-[1.01] shadow-[0_0_25px_rgba(99,102,241,0.3)] ring-2 ring-indigo-400/30"
+                    : "border-slate-700 bg-slate-950/60 hover:border-indigo-500/50 hover:bg-slate-950/80 hover:shadow-lg"
                 }`}
               >
                 <input
@@ -335,7 +335,9 @@ export function FreeTrialDropzone({
                   className="hidden"
                 />
 
-                <div className="w-14 h-14 rounded-full bg-slate-800/80 border border-slate-700 text-indigo-400 flex items-center justify-center mb-3 shadow-inner">
+                <div className={`w-14 h-14 rounded-full bg-slate-800/80 border border-slate-700 text-indigo-400 flex items-center justify-center mb-3 shadow-inner transition-transform duration-300 ${
+                  isDragging ? "animate-bounce text-indigo-300 scale-110" : "hover:scale-110"
+                }`}>
                   <UploadCloud className="w-7 h-7" />
                 </div>
                 <div className="text-sm font-bold text-white">

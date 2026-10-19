@@ -4,6 +4,14 @@ import { getSiteContent } from "@/lib/site-content";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
 import { FreeTrialDropzone } from "@/components/ui/FreeTrialDropzone";
 import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  HoverCard,
+  AnimatedNumber,
+  PulseBadge,
+} from "@/components/ui/MotionWrappers";
+import {
   ArrowRight,
   ShieldCheck,
   Zap,
@@ -100,20 +108,24 @@ export default async function HomePage() {
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
           {/* Left Column: Editorial Value Proposition */}
-          <div className="lg:col-span-7 flex flex-col gap-6 lg:gap-7 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] sm:leading-[1.12]">
-              {hero.headingPrefix}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-indigo-600 to-indigo-800">
-                {hero.headingGradient}
-              </span>
-            </h1>
+          <FadeIn className="lg:col-span-7 flex flex-col gap-6 lg:gap-7 text-center lg:text-left">
+            <FadeIn delay={0.05}>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] sm:leading-[1.12]">
+                {hero.headingPrefix}{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-indigo-600 to-indigo-800">
+                  {hero.headingGradient}
+                </span>
+              </h1>
+            </FadeIn>
 
-            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              {hero.subheading}
-            </p>
+            <FadeIn delay={0.15}>
+              <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                {hero.subheading}
+              </p>
+            </FadeIn>
 
             {/* CTA & Trust Triggers */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-1">
+            <FadeIn delay={0.25} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-1">
               <Link
                 href={
                   hero.primaryCtaLink && hero.primaryCtaLink !== "/request-a-quote"
@@ -135,10 +147,10 @@ export default async function HomePage() {
               >
                 <span>{hero.secondaryCtaText || "Explore Services"}</span>
               </Link>
-            </div>
+            </FadeIn>
 
             {/* Trust Badges */}
-            <div className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
+            <FadeIn delay={0.35} className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
               <div className="flex items-center gap-2.5">
                 <Clock className="w-5 h-5 text-indigo-600 shrink-0" />
                 <div className="text-left">
@@ -160,12 +172,12 @@ export default async function HomePage() {
                   <div className="text-[11px] text-slate-600">{hero.trustPill3Sub}</div>
                 </div>
               </div>
-            </div>
-          </div>
+            </FadeIn>
+          </FadeIn>
 
           {/* Right Column: Interactive Before/After Visual Proof */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="w-full max-w-md lg:max-w-none rounded-2xl bg-white p-3 border border-slate-200/90 shadow-2xl shadow-slate-200/50">
+          <FadeIn direction="left" delay={0.2} className="lg:col-span-5 flex flex-col items-center">
+            <div className="animate-float-slow w-full max-w-md lg:max-w-none rounded-2xl bg-white p-3 border border-slate-200/90 shadow-2xl shadow-indigo-200/40 [filter:drop-shadow(0_0_24px_rgba(99,102,241,0.18))]">
               <BeforeAfterSlider
                 beforeImage={hero.featuredBeforeImage || "/images/services/color-correction-before.jpg"}
                 afterImage={hero.featuredAfterImage || "/images/services/color-correction-after.jpg"}
@@ -180,29 +192,59 @@ export default async function HomePage() {
                 <span className="font-semibold text-slate-800">
                   {hero.featuredTitle}
                 </span>
-                <span className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                <PulseBadge color="bg-emerald-500" className="font-mono text-[10px] uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                   {hero.featuredBadge}
-                </span>
+                </PulseBadge>
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* 2. STATS & CAPACITY BAR */}
       <section className="border-b border-slate-200 bg-slate-50 py-10 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
-        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {stats.map((stat, i) => (
-            <div key={i} className="card-hover-elevated flex flex-col items-center justify-center p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
+        <StaggerContainer className="w-full grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <StaggerItem>
+            <HoverCard className="card-hover-elevated flex flex-col items-center justify-center p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs h-full">
               <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                {stat.value}
+                <AnimatedNumber value={5000} suffix="+" />
               </div>
               <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
-                {stat.label}
+                Daily Processing Capacity
               </div>
-            </div>
-          ))}
-        </div>
+            </HoverCard>
+          </StaggerItem>
+          <StaggerItem>
+            <HoverCard className="card-hover-elevated flex flex-col items-center justify-center p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs h-full">
+              <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                <AnimatedNumber value={99.8} suffix="%" />
+              </div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
+                First-Pass Acceptance Rate
+              </div>
+            </HoverCard>
+          </StaggerItem>
+          <StaggerItem>
+            <HoverCard className="card-hover-elevated flex flex-col items-center justify-center p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs h-full">
+              <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                <AnimatedNumber value={4} suffix="h Avg" />
+              </div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
+                Express Turnaround Available
+              </div>
+            </HoverCard>
+          </StaggerItem>
+          <StaggerItem>
+            <HoverCard className="card-hover-elevated flex flex-col items-center justify-center p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs h-full">
+              <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                <AnimatedNumber value={100} suffix="%" />
+              </div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
+                Hand-Crafted Vector Precision
+              </div>
+            </HoverCard>
+          </StaggerItem>
+        </StaggerContainer>
       </section>
 
       {/* 3. CORE SERVICES GRID */}
@@ -229,52 +271,51 @@ export default async function HomePage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.slice(0, 8).map((service) => (
-            <div
-              key={service.slug}
-              className="card-hover-elevated group flex flex-col rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:border-indigo-400/80 transition-all duration-300"
-            >
-              <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
-                <BeforeAfterSlider
-                  beforeImage={service.beforeImage}
-                  afterImage={service.afterImage}
-                  aspectRatio="custom"
-                  className="w-full h-full"
-                  title={service.title}
-                  category="Commercial Photo Editing"
-                />
-              </div>
-
-              <div className="p-5 flex flex-col flex-grow justify-between gap-4">
-                <div>
-                  <Link href={`/services/${service.slug}`} className="block">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
-                      {service.title}
-                    </h3>
-                  </Link>
-                  <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
-                    {service.shortDesc}
-                  </p>
+            <StaggerItem key={service.slug}>
+              <HoverCard className="card-hover-elevated group flex flex-col rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:border-indigo-400/80 transition-all duration-300 h-full">
+                <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
+                  <BeforeAfterSlider
+                    beforeImage={service.beforeImage}
+                    afterImage={service.afterImage}
+                    aspectRatio="custom"
+                    className="w-full h-full group-hover:scale-105 transition-transform duration-500"
+                    title={service.title}
+                    category="Commercial Photo Editing"
+                  />
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs text-slate-500 font-medium flex items-center gap-1.5 font-mono">
-                    <Clock className="w-3.5 h-3.5 text-indigo-500" />
-                    <span>~{service.turnaroundHours}h Turnaround</span>
-                  </span>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-indigo-600 group-hover:text-indigo-800 transition-colors"
-                  >
-                    <span>Details</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                <div className="p-5 flex flex-col flex-grow justify-between gap-4">
+                  <div>
+                    <Link href={`/services/${service.slug}`} className="block">
+                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                        {service.title}
+                      </h3>
+                    </Link>
+                    <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
+                      {service.shortDesc}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-xs text-slate-500 font-medium flex items-center gap-1.5 font-mono">
+                      <Clock className="w-3.5 h-3.5 text-indigo-500" />
+                      <span>~{service.turnaroundHours}h Turnaround</span>
+                    </span>
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-indigo-600 group-hover:text-indigo-800 transition-colors"
+                    >
+                      <span>Details</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </HoverCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </section>
 
       {/* 4. BEFORE & AFTER SHOWCASE GALLERY */}
@@ -292,34 +333,33 @@ export default async function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {portfolio.slice(0, 3).map((item) => (
-            <div
-              key={item.id}
-              className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3"
-            >
-              <div className="relative aspect-square rounded-xl overflow-hidden bg-slate-100">
-                <BeforeAfterSlider
-                  beforeImage={item.beforeImage}
-                  afterImage={item.afterImage}
-                  beforeLabel="Raw Input"
-                  afterLabel="Retouched"
-                  aspectRatio="custom"
-                  className="w-full h-full"
-                />
-              </div>
-              <div className="px-1 py-1">
-                <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="font-bold text-slate-900">{item.title}</span>
-                  <span className="font-mono text-[10px] text-slate-600 uppercase bg-slate-100 px-2 py-0.5 rounded">
-                    {item.category}
-                  </span>
+            <StaggerItem key={item.id}>
+              <HoverCard className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3 h-full">
+                <div className="relative aspect-square rounded-xl overflow-hidden bg-slate-100">
+                  <BeforeAfterSlider
+                    beforeImage={item.beforeImage}
+                    afterImage={item.afterImage}
+                    beforeLabel="Raw Input"
+                    afterLabel="Retouched"
+                    aspectRatio="custom"
+                    className="w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <p className="text-xs text-slate-600 line-clamp-2">{item.description}</p>
-              </div>
-            </div>
+                <div className="px-1 py-1">
+                  <div className="flex items-center justify-between text-xs mb-1">
+                    <span className="font-bold text-slate-900">{item.title}</span>
+                    <span className="font-mono text-[10px] text-slate-600 uppercase bg-slate-100 px-2 py-0.5 rounded">
+                      {item.category}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-600 line-clamp-2">{item.description}</p>
+                </div>
+              </HoverCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         <div className="mt-12 text-center">
           <Link
@@ -347,25 +387,25 @@ export default async function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+          <div className="hidden md:block flowing-line absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-indigo-200 via-indigo-400 to-indigo-200 z-0" />
           {(howItWorks?.steps || []).map((s, i) => (
-            <div
-              key={i}
-              className="relative p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col"
-            >
-              <div className="text-3xl font-black text-indigo-600 mb-4 font-mono">
-                {s.step}
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{s.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
-            </div>
+            <StaggerItem key={i}>
+              <HoverCard className="relative p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col z-10">
+                <div className="text-3xl font-black text-indigo-600 mb-4 font-mono animate-pulse-subtle">
+                  {s.step}
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{s.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+              </HoverCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </section>
 
       {/* 6. CONFIDENTIALITY & ENTERPRISE SECURITY */}
       <section className="py-20 bg-slate-50 border-t border-slate-200 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <FadeIn className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
             <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
               {security?.badge || "Data Protection & Compliance"}
@@ -378,83 +418,86 @@ export default async function HomePage() {
                 "We work with unreleased fashion collections, patent-pending consumer hardware, and embargoed campaign imagery. Your IP security is built into our operational contracts."}
             </p>
 
-            <div className="space-y-3 pt-2">
+            <StaggerContainer className="space-y-3 pt-2">
               {(security?.bulletPoints || []).map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span className="text-sm text-slate-700 font-medium">{item}</span>
-                </div>
+                <StaggerItem key={i}>
+                  <div className="flex items-start gap-3">
+                    <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span className="text-sm text-slate-700 font-medium">{item}</span>
+                  </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
 
           <div className="lg:col-span-6">
-            <div className="p-8 rounded-2xl bg-white border border-slate-200 shadow-xl">
+            <HoverCard className="p-8 rounded-2xl bg-white border border-slate-200 shadow-xl">
               <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <Lock className="w-5 h-5 text-indigo-600" />
                 <span>{security?.cardTitle || "Enterprise SLA Guarantees"}</span>
               </h3>
-              <div className="space-y-4 text-sm text-slate-600">
+              <StaggerContainer className="space-y-4 text-sm text-slate-600">
                 {(security?.cardMetrics || []).map((metric, i) => (
-                  <div key={i} className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
-                    <div className="font-semibold text-slate-900">{metric.label}</div>
-                    <div className="text-xs font-mono font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded border border-indigo-200">
-                      {metric.value}
+                  <StaggerItem key={i}>
+                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                      <div className="font-semibold text-slate-900">{metric.label}</div>
+                      <div className="text-xs font-mono font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded border border-indigo-200">
+                        {metric.value}
+                      </div>
                     </div>
-                  </div>
+                  </StaggerItem>
                 ))}
-              </div>
-            </div>
+              </StaggerContainer>
+            </HoverCard>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* 7. TESTIMONIALS / CLIENT TRUST */}
       {testimonials.length > 0 && (
         <section className="py-20 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white border-t border-slate-200">
-          <div className="text-center mb-16 max-w-3xl mx-auto">
+          <FadeIn className="text-center mb-16 max-w-3xl mx-auto">
             <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
               Client Feedback
             </span>
             <h2 className="text-3xl font-extrabold text-slate-900 mt-2">
               Trusted by High-Volume Studios & Brands
             </h2>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             {testimonials.map((test) => (
-              <div
-                key={test.id}
-                className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center gap-1 text-amber-500 mb-3">
-                    {[...Array(test.rating || 5)].map((_, idx) => (
-                      <Star key={idx} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-slate-700 italic leading-relaxed mb-6">
-                    &ldquo;{test.content}&rdquo;
-                  </p>
-                </div>
-                <div className="flex items-center gap-3 pt-4 border-t border-slate-200">
-                  <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center font-bold text-indigo-700 text-sm">
-                    {test.name.charAt(0)}
-                  </div>
+              <StaggerItem key={test.id}>
+                <HoverCard className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between h-full">
                   <div>
-                    <div className="text-sm font-bold text-slate-900">{test.name}</div>
-                    <div className="text-xs text-slate-500">{test.role}, {test.company}</div>
+                    <div className="flex items-center gap-1 text-amber-500 mb-3">
+                      {[...Array(test.rating || 5)].map((_, idx) => (
+                        <Star key={idx} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    <p className="text-sm text-slate-700 italic leading-relaxed mb-6">
+                      &ldquo;{test.content}&rdquo;
+                    </p>
                   </div>
-                </div>
-              </div>
+                  <div className="flex items-center gap-3 pt-4 border-t border-slate-200">
+                    <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center font-bold text-indigo-700 text-sm">
+                      {test.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-slate-900">{test.name}</div>
+                      <div className="text-xs text-slate-500">{test.role}, {test.company}</div>
+                    </div>
+                  </div>
+                </HoverCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </section>
       )}
 
       {/* 8. FREQUENTLY ASKED QUESTIONS */}
       <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 w-full border-t border-slate-200">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <FadeIn className="text-center mb-16 max-w-3xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
             Answers & Clarity
           </span>
@@ -464,41 +507,42 @@ export default async function HomePage() {
           <p className="mt-3 text-sm sm:text-base text-slate-600">
             Everything you need to know about turnaround speeds, quality control, file formats, and free trial samples.
           </p>
-        </div>
+        </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {faqs.slice(0, 6).map((faq) => (
-            <div
-              key={faq.id}
-              className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm"
-            >
-              <h3 className="text-base font-bold text-slate-900 flex items-center justify-between">
-                <span>{faq.question}</span>
-                <span className="text-indigo-700 text-xs uppercase font-mono px-2.5 py-0.5 rounded-full bg-indigo-50 border border-indigo-200 font-semibold">
-                  {faq.category}
-                </span>
-              </h3>
-              <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                {faq.answer}
-              </p>
-            </div>
+            <StaggerItem key={faq.id}>
+              <HoverCard className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm h-full">
+                <h3 className="text-base font-bold text-slate-900 flex items-center justify-between">
+                  <span>{faq.question}</span>
+                  <span className="text-indigo-700 text-xs uppercase font-mono px-2.5 py-0.5 rounded-full bg-indigo-50 border border-indigo-200 font-semibold">
+                    {faq.category}
+                  </span>
+                </h3>
+                <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </HoverCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         <div className="text-center mt-10">
           <Link
             href="/faq"
-            className="text-xs font-bold text-indigo-600 hover:text-indigo-800 inline-flex items-center gap-1.5 transition-colors"
+            className="text-xs font-bold text-indigo-600 hover:text-indigo-800 inline-flex items-center gap-1.5 transition-colors group"
           >
             <span>Read all frequently asked questions</span>
-            <ChevronRight className="w-3.5 h-3.5" />
+            <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>
 
       {/* 9. INTERACTIVE FREE TRIAL ONBOARDING & CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-10 xl:px-12 bg-slate-50 border-t border-slate-200 w-full" id="free-trial">
-        <FreeTrialDropzone />
+        <FadeIn>
+          <FreeTrialDropzone />
+        </FadeIn>
       </section>
     </div>
   );

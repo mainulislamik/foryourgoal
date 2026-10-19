@@ -360,7 +360,8 @@ export function BeforeAfterSlider({
               aria-label="Before and after image comparison slider"
               onKeyDown={handleKeyDown}
             >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border-2 border-indigo-600 shadow-xl flex items-center justify-center text-indigo-600 pointer-events-none">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border-2 border-indigo-600 shadow-xl flex items-center justify-center text-indigo-600 pointer-events-none group-hover:scale-110 transition-transform duration-200">
+                <span className="absolute -inset-1 rounded-full bg-indigo-500/20 animate-ping -z-10" />
                 <MoveHorizontal className="w-4 h-4 text-indigo-600" />
               </div>
             </div>
