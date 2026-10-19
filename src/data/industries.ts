@@ -35,7 +35,7 @@ export const industriesData: IndustryItem[] = [
     keyBenefits: [
       "Zero marketplace listing rejections",
       "Overnight turnaround for peak seasonal sales",
-      "Volume discounts starting at 50+ images",
+      "Scalable high-throughput delivery for 500+ daily assets",
       "Custom padding and metadata formatting",
     ],
     recommendedServices: ["clipping-path", "background-removal", "shadow-reflection", "product-photo-retouching"],
