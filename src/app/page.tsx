@@ -94,18 +94,13 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchemasJsonLd) }}
       />
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[85vh] flex items-center justify-center pt-24 pb-20 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
+      <section className="relative flex items-center justify-center pt-20 sm:pt-24 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(79,70,229,0.06),rgba(255,255,255,0))] pointer-events-none" />
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
           {/* Left Column: Editorial Value Proposition */}
-          <div className="lg:col-span-7 flex flex-col gap-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 self-center lg:self-start px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold tracking-wide uppercase">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-              <span>{hero.badgeText}</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
+          <div className="lg:col-span-7 flex flex-col gap-6 lg:gap-7 text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] sm:leading-[1.12]">
               {hero.headingPrefix}{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-indigo-600 to-indigo-800">
                 {hero.headingGradient}
@@ -117,7 +112,7 @@ export default async function HomePage() {
             </p>
 
             {/* CTA & Trust Triggers */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-2">
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-1">
               <Link
                 href={hero.primaryCtaLink || "/request-a-quote"}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-base shadow-lg shadow-slate-900/10 hover:-translate-y-0.5 transition-all"
