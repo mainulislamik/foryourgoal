@@ -173,7 +173,7 @@ export function BeforeAfterSlider({
   return (
     <div className={`${baseContainerStyle} ${className}`}>
       {/* Top Interactive Mode Navigation Toolbar */}
-      <div className="absolute top-3 left-3 z-30 flex items-center gap-1.5 p-1 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/20 shadow-lg text-[11px] font-semibold text-white">
+      <div className="absolute top-3 left-3 z-30 flex items-center gap-1 p-0.5 sm:gap-1.5 sm:p-1 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/20 shadow-lg text-[10px] sm:text-[11px] font-semibold text-white">
         <button
           type="button"
           onClick={(e) => {
@@ -205,7 +205,8 @@ export function BeforeAfterSlider({
           title="Press & Hold to Compare Original vs Retouched"
         >
           <Eye className="w-3 h-3" />
-          <span>Hold View</span>
+          <span className="sm:hidden">Hold</span>
+          <span className="hidden sm:inline">Hold View</span>
         </button>
 
         <button
@@ -222,7 +223,7 @@ export function BeforeAfterSlider({
           title="300% Zoom Micro Inspection Loupe"
         >
           <Search className="w-3 h-3" />
-          <span>300% Loupe</span>
+          <span className="hidden sm:inline">300% Loupe</span>
         </button>
       </div>
 
@@ -350,7 +351,7 @@ export function BeforeAfterSlider({
 
             {/* Divider Handle */}
             <div
-              className="absolute top-0 bottom-0 z-20 w-0.5 bg-white cursor-ew-resize will-change-[left] shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+              className="absolute top-0 bottom-0 z-20 w-0.5 bg-white cursor-ew-resize will-change-[left] shadow-[0_0_10px_rgba(0,0,0,0.5)] before:absolute before:inset-y-0 before:-left-3 before:-right-3 before:content-['']"
               style={{ left: `${sliderPosition}%` }}
               role="slider"
               tabIndex={0}
@@ -488,10 +489,10 @@ export function BeforeAfterSlider({
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             {activeMode === "slider" && (
-              <span>Drag slider left/right or use arrow keys to inspect retouching quality</span>
+              <span>Drag slider or swipe to inspect retouching quality</span>
             )}
             {activeMode === "hold" && (
-              <span>Click &amp; hold on the image to view raw file; release to see retouched</span>
+              <span>Tap and hold on image to view raw file; release to see retouched</span>
             )}
             {activeMode === "loupe" && (
               <span>Move cursor over subject to view 300% microscopic texture and vector path</span>

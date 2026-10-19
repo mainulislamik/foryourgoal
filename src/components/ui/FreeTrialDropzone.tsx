@@ -299,7 +299,7 @@ export function FreeTrialDropzone({
             {/* Drag & Drop Upload Zone */}
             <div className="space-y-3">
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-300">
-                2. Drag &amp; Drop Your 1 or 2 Test Photos:
+                2. Upload 1 or 2 Test Photos (Tap to browse or drop files):
               </label>
 
               <div
@@ -341,7 +341,7 @@ export function FreeTrialDropzone({
                   <UploadCloud className="w-7 h-7" />
                 </div>
                 <div className="text-sm font-bold text-white">
-                  Drop your files here, or <span className="text-indigo-400 underline underline-offset-4">browse</span>
+                  Tap to select photos, or drop files here
                 </div>
                 <div className="text-xs text-slate-400 mt-1">
                   JPG, PNG, WebP, TIFF, or PSD (Max 2 files, up to 3.5MB each)
@@ -392,7 +392,7 @@ export function FreeTrialDropzone({
                 </div>
                 <input
                   type="url"
-                  placeholder="https://drive.google.com/drive/folders/... or Dropbox link"
+                  placeholder="Paste Google Drive, Dropbox, or WeTransfer link"
                   value={driveLink}
                   onChange={(e) => setDriveLink(e.target.value)}
                   className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"

@@ -152,7 +152,7 @@ export default async function HomePage() {
             </FadeIn>
 
             {/* Trust Badges */}
-            <FadeIn delay={0.35} className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
+            <FadeIn delay={0.35} className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
               <div className="flex items-center gap-2.5">
                 <Clock className="w-5 h-5 text-indigo-600 shrink-0" />
                 <div className="text-left">
