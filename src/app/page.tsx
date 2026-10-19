@@ -21,6 +21,8 @@ import {
   Lock,
   ChevronRight,
   Star,
+  UploadCloud,
+  Layers,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -373,7 +375,7 @@ export default async function HomePage() {
       </section>
 
       {/* 5. HOW IT WORKS / SLAS */}
-      <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
+      <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 w-full" id="how-it-works">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
             {howItWorks?.badge || "Seamless Outsourcing"}
@@ -388,18 +390,27 @@ export default async function HomePage() {
         </div>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-          <div className="hidden md:block flowing-line absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-indigo-200 via-indigo-400 to-indigo-200 z-0" />
-          {(howItWorks?.steps || []).map((s, i) => (
-            <StaggerItem key={i}>
-              <HoverCard className="relative p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col z-10">
-                <div className="text-3xl font-black text-indigo-600 mb-4 font-mono animate-pulse-subtle">
-                  {s.step}
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{s.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
-              </HoverCard>
-            </StaggerItem>
-          ))}
+          <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-indigo-300 via-indigo-600 to-emerald-400 z-0 animate-pulse" />
+          {(howItWorks?.steps || []).map((s, i) => {
+            const stepIcons = [UploadCloud, Sparkles, Layers, ShieldCheck];
+            const StepIcon = stepIcons[i % stepIcons.length] || CheckCircle2;
+            return (
+              <StaggerItem key={i}>
+                <HoverCard className="relative p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md flex flex-col z-10 h-full group transition-all duration-300">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200/70 text-indigo-700 flex items-center justify-center font-mono font-black text-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                      {s.step}
+                    </div>
+                    <div className="w-9 h-9 rounded-lg bg-slate-50 border border-slate-200/60 flex items-center justify-center text-slate-500 group-hover:text-indigo-600 group-hover:scale-110 transition-all duration-300">
+                      <StepIcon className="w-5 h-5" />
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">{s.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed flex-1">{s.desc}</p>
+                </HoverCard>
+              </StaggerItem>
+            );
+          })}
         </StaggerContainer>
       </section>
 
@@ -539,7 +550,7 @@ export default async function HomePage() {
       </section>
 
       {/* 9. INTERACTIVE FREE TRIAL ONBOARDING & CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-10 xl:px-12 bg-slate-50 border-t border-slate-200 w-full" id="free-trial">
+      <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 bg-slate-50 border-t border-slate-200 w-full scroll-mt-24" id="free-trial">
         <FadeIn>
           <FreeTrialDropzone />
         </FadeIn>
