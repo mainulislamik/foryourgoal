@@ -1,16 +1,38 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendEmail, MailAttachment } from "@/lib/mailer";
+import {
+  checkRateLimit,
+  escapeHtml,
+  sanitizeHeader,
+  isSafeUrl,
+  validateUploadedFile,
+} from "@/lib/security";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
+    // 1. IP Rate Limiting (5 requests per 1 minute per IP)
+    const clientIp =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip")?.trim() ||
+      "127.0.0.1";
+
+    const rate = checkRateLimit(clientIp, 5, 60000);
+    if (!rate.allowed) {
+      return NextResponse.json(
+        { error: "Too many requests. Please wait a moment before trying again." },
+        { status: 429 }
+      );
+    }
+
     const contentType = req.headers.get("content-type") || "";
 
     let name = "";
     let email = "";
     let message = "";
     let driveLink = "";
+    let honeypot = "";
     const attachments: MailAttachment[] = [];
     const fileSummaries: { name: string; size: string }[] = [];
 
@@ -20,13 +42,23 @@ export async function POST(req: NextRequest) {
       email = (formData.get("email") || "").toString().trim();
       message = (formData.get("message") || "").toString().trim();
       driveLink = (formData.get("driveLink") || "").toString().trim();
+      honeypot = (formData.get("website") || "").toString().trim();
 
-      // Collect up to 5 files
+      // Bot honeypot check: If the hidden honeypot field has a value, silently drop the submission
+      if (honeypot) {
+        return NextResponse.json({
+          success: true,
+          referenceId: "FYG-TRIAL-" + Math.floor(100000 + Math.random() * 900000),
+          message: "Free trial request submitted successfully.",
+        });
+      }
+
+      // Collect up to 5 files with security checks
       const fileKeys = ["file_1", "file_2", "file_3", "file_4", "file_5"];
       for (let i = 0; i < fileKeys.length; i++) {
         const file = formData.get(fileKeys[i]);
         if (file && typeof file === "object" && "arrayBuffer" in file && file.size > 0) {
-          // Check 3MB limit (3 * 1024 * 1024 = 3,145,728 bytes)
+          // Check 3MB limit (3.5MB boundary)
           if (file.size > 3.5 * 1024 * 1024) {
             return NextResponse.json(
               { error: `File "${file.name}" exceeds the 3MB size limit. Please use a cloud drive link.` },
@@ -36,6 +68,16 @@ export async function POST(req: NextRequest) {
 
           const arrayBuffer = await file.arrayBuffer();
           const buffer = Buffer.from(arrayBuffer);
+
+          // Deep file security validation (extension check, double-extension, magic byte check)
+          const fileCheck = validateUploadedFile(file.name, buffer);
+          if (!fileCheck.valid) {
+            return NextResponse.json(
+              { error: `Security check failed for "${file.name}": ${fileCheck.reason}` },
+              { status: 400 }
+            );
+          }
+
           const sizeKb = (file.size / 1024).toFixed(1) + " KB";
 
           attachments.push({
@@ -57,9 +99,20 @@ export async function POST(req: NextRequest) {
       email = (json.email || "").toString().trim();
       message = (json.message || "").toString().trim();
       driveLink = (json.driveLink || "").toString().trim();
+      honeypot = (json.website || "").toString().trim();
+
+      if (honeypot) {
+        return NextResponse.json({
+          success: true,
+          referenceId: "FYG-TRIAL-" + Math.floor(100000 + Math.random() * 900000),
+          message: "Free trial request submitted successfully.",
+        });
+      }
     }
 
-    if (!email || !email.includes("@")) {
+    // Email format validation (strict regex)
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+    if (!email || !emailRegex.test(email)) {
       return NextResponse.json(
         { error: "A valid email address is required." },
         { status: 400 }
@@ -70,6 +123,14 @@ export async function POST(req: NextRequest) {
       name = "Prospective Client";
     }
 
+    // Validate drive link if provided
+    if (driveLink && !isSafeUrl(driveLink)) {
+      return NextResponse.json(
+        { error: "Drive link must be a valid public HTTP or HTTPS web link." },
+        { status: 400 }
+      );
+    }
+
     const referenceId = "FYG-TRIAL-" + Math.floor(100000 + Math.random() * 900000);
     const timestamp = new Date().toLocaleString("en-US", {
       timeZone: "Asia/Dhaka",
@@ -77,12 +138,15 @@ export async function POST(req: NextRequest) {
       timeStyle: "medium",
     });
 
-    const clientIp =
-      req.headers.get("x-forwarded-for")?.split(",")[0] ||
-      req.headers.get("x-real-ip") ||
-      "Unknown IP";
+    // Sanitized inputs for safe HTML email rendering
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeMessage = escapeHtml(message);
+    const safeDriveLink = escapeHtml(driveLink);
+    const safeHeaderName = sanitizeHeader(name);
+    const safeHeaderEmail = sanitizeHeader(email);
 
-    // Format HTML email for imon.khan@foryourgoal.com
+    // Format secure HTML email for imon.khan@foryourgoal.com
     const emailHtml = `
 <!DOCTYPE html>
 <html>
@@ -98,82 +162,83 @@ export async function POST(req: NextRequest) {
     .content { padding: 32px; }
     .field-group { margin-bottom: 20px; }
     .field-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 4px; letter-spacing: 0.5px; }
-    .field-value { font-size: 15px; color: #0f172a; line-height: 1.5; }
-    .client-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 24px; }
-    .instructions-box { background: #f8fafc; border-left: 4px solid #2563eb; padding: 16px; border-radius: 4px; font-size: 14px; white-space: pre-wrap; line-height: 1.6; color: #334155; }
-    .drive-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 18px; margin: 20px 0; }
-    .drive-btn { display: inline-block; background: #2563eb; color: #ffffff !important; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; margin-top: 10px; }
-    .files-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
-    .files-table th { text-align: left; padding: 8px 12px; background: #f1f5f9; color: #475569; font-weight: 600; border-bottom: 1px solid #e2e8f0; }
-    .files-table td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; color: #1e293b; }
-    .footer { background: #f8fafc; padding: 20px 32px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #64748b; text-align: center; }
+    .field-value { font-size: 15px; color: #0f172a; }
+    .instructions-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; font-size: 14px; line-height: 1.6; color: #334155; white-space: pre-wrap; }
+    .drive-link-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px 16px; margin-top: 6px; }
+    .files-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; }
+    .files-table th { background: #f8fafc; text-align: left; padding: 10px; border: 1px solid #e2e8f0; color: #475569; font-weight: 600; }
+    .files-table td { padding: 10px; border: 1px solid #e2e8f0; color: #1e293b; }
+    .footer { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 18px 32px; font-size: 12px; color: #64748b; text-align: center; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <div class="badge">Direct Studio Inquiry</div>
-      <h1>New Free Trial & Quote Request</h1>
-      <p>Reference: <strong>${referenceId}</strong> • Received: ${timestamp}</p>
+      <div class="badge">New Lead Notification</div>
+      <h1>Free Trial Request Received</h1>
+      <p>Ref: <strong>${escapeHtml(referenceId)}</strong> • Submitted on ${escapeHtml(timestamp)}</p>
     </div>
 
     <div class="content">
-      <div class="client-card">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-          <div>
-            <div class="field-label">Client Name</div>
-            <div class="field-value" style="font-weight: 700; font-size: 16px;">${name}</div>
-          </div>
-          <div>
-            <div class="field-label">Sender Email</div>
-            <div class="field-value"><a href="mailto:${email}" style="color: #2563eb; text-decoration: none; font-weight: 600;">${email}</a></div>
-          </div>
-        </div>
-        <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #cbd5e1; font-size: 12px; color: #64748b;">
-          Client IP: <code>${clientIp}</code> • Quick Action: Hit <strong>Reply</strong> to directly message this client.
+      <div class="field-group">
+        <div class="field-label">Client Name</div>
+        <div class="field-value" style="font-weight: 700; font-size: 16px;">${safeName}</div>
+      </div>
+
+      <div class="field-group">
+        <div class="field-label">Client Business Email</div>
+        <div class="field-value">
+          <a href="mailto:${safeEmail}" style="color: #2563eb; text-decoration: none; font-weight: 600;">${safeEmail}</a>
+          <span style="font-size: 12px; color: #64748b; margin-left: 8px;">(Reply directly to this email to reach client)</span>
         </div>
       </div>
 
       <div class="field-group">
-        <div class="field-label">Message / Editing Instructions</div>
-        <div class="instructions-box">${message ? message : "(No special instructions provided)"}</div>
+        <div class="field-label">Client IP Address</div>
+        <div class="field-value" style="font-family: monospace; font-size: 13px; color: #64748b;">${escapeHtml(clientIp)}</div>
+      </div>
+
+      <div class="field-group">
+        <div class="field-label">Editing Instructions & Specifications</div>
+        <div class="instructions-box">${safeMessage ? safeMessage : "<em>(No special instructions provided)</em>"}</div>
       </div>
 
       ${
         driveLink
           ? `
-      <div class="drive-box">
-        <div style="font-size: 13px; font-weight: 700; color: #1e40af; text-transform: uppercase;">Public Cloud Drive Link Provided</div>
-        <p style="margin: 6px 0 0 0; font-size: 13px; color: #3b82f6; word-break: break-all;">
-          <a href="${driveLink}" target="_blank" rel="noopener noreferrer" style="color: #1d4ed8; font-weight: 600;">${driveLink}</a>
-        </p>
-        <a href="${driveLink}" target="_blank" rel="noopener noreferrer" class="drive-btn">Open Cloud Drive Link →</a>
+      <div class="field-group">
+        <div class="field-label">Public Cloud Drive / Dropbox Link</div>
+        <div class="drive-link-box">
+          <a href="${safeDriveLink}" target="_blank" rel="noopener noreferrer" style="color: #1d4ed8; font-weight: 600; word-break: break-all;">
+            ${safeDriveLink}
+          </a>
+        </div>
       </div>
       `
           : ""
       }
 
-      <div class="field-group" style="margin-top: 24px;">
-        <div class="field-label">Uploaded Sample Files (${attachments.length} attached)</div>
+      <div class="field-group">
+        <div class="field-label">Uploaded Sample Files (${attachments.length} files)</div>
         ${
           attachments.length > 0
             ? `
           <table class="files-table">
             <thead>
               <tr>
+                <th>#</th>
                 <th>File Name</th>
-                <th>Size</th>
-                <th>Status</th>
+                <th>File Size</th>
               </tr>
             </thead>
             <tbody>
               ${fileSummaries
                 .map(
-                  (f) => `
+                  (f, idx) => `
                 <tr>
-                  <td><strong>${f.name}</strong></td>
-                  <td>${f.size}</td>
-                  <td><span style="color: #16a34a; font-weight: 600;">Attached to this Email</span></td>
+                  <td style="width: 32px; text-align: center; color: #64748b;">${idx + 1}</td>
+                  <td style="font-weight: 500;">${escapeHtml(f.name)}</td>
+                  <td style="color: #64748b; width: 90px;">${escapeHtml(f.size)}</td>
                 </tr>
               `
                 )
@@ -205,8 +270,8 @@ export async function POST(req: NextRequest) {
     const sent = await sendEmail({
       from: '"Foryourgoal Free Trial" <noreply@foryourgoal.com>',
       to: process.env.TRIAL_NOTIFICATION_EMAIL || "imon.khan@foryourgoal.com",
-      replyTo: name ? `"${name}" <${email}>` : email,
-      subject: `[Free Trial Request] ${name} (${email}) - ${referenceId}`,
+      replyTo: safeHeaderName ? `"${safeHeaderName}" <${safeHeaderEmail}>` : safeHeaderEmail,
+      subject: `[Free Trial Request] ${safeHeaderName} (${safeHeaderEmail}) - ${referenceId}`,
       html: emailHtml,
       text: `New Free Trial Request from ${name} (${email})\n\nReference: ${referenceId}\nDrive Link: ${driveLink}\nMessage: ${message}\nAttached Files: ${attachments.length}`,
       attachments,
@@ -216,7 +281,7 @@ export async function POST(req: NextRequest) {
       console.warn("SMTP send returned false. Notification might have failed.");
     }
 
-    // 2. Optionally send confirmation email to client
+    // 2. Send confirmation auto-responder to client
     try {
       await sendEmail({
         from: '"Foryourgoal Studio" <noreply@foryourgoal.com>',
@@ -225,9 +290,9 @@ export async function POST(req: NextRequest) {
         subject: `We've received your Free Trial request! (Ref: ${referenceId}) | Foryourgoal`,
         html: `
 <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #0f172a;">
-  <h2 style="color: #0f172a; margin-top: 0;">Thank you for requesting a Free Trial with Foryourgoal, ${name}!</h2>
+  <h2 style="color: #0f172a; margin-top: 0;">Thank you for requesting a Free Trial with Foryourgoal, ${safeName}!</h2>
   <p style="font-size: 14px; line-height: 1.6; color: #334155;">
-    Our senior production team has received your submission and trial assets (Reference: <strong>${referenceId}</strong>).
+    Our senior production team has received your submission and trial assets (Reference: <strong>${escapeHtml(referenceId)}</strong>).
   </p>
   <div style="background: #f8fafc; border-left: 4px solid #2563eb; padding: 14px; margin: 18px 0; font-size: 13px; color: #475569;">
     <strong>Next Steps & SLA:</strong><br>

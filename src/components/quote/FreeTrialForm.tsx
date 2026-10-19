@@ -22,6 +22,7 @@ export default function FreeTrialForm() {
 
   // 5 slots matching Stencil exactly
   const [files, setFiles] = useState<(File | null)[]>([null, null, null, null, null]);
+  const [honeypot, setHoneypot] = useState("");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -87,6 +88,7 @@ export default function FreeTrialForm() {
       formData.append("email", email);
       formData.append("message", message);
       formData.append("driveLink", driveLink);
+      formData.append("website", honeypot);
 
       // Attach any non-null files
       files.forEach((file, idx) => {
@@ -161,6 +163,18 @@ export default function FreeTrialForm() {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm space-y-6">
+      {/* Bot Honeypot (Hidden) */}
+      <div className="hidden" aria-hidden="true" style={{ display: "none" }}>
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
+
       {errorMessage && (
         <div className="bg-rose-50 border border-rose-200 rounded-xl p-4 flex items-start gap-3 text-rose-800 text-sm">
           <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-rose-600" />
