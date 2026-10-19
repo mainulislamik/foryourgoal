@@ -2,7 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { servicesData, getServiceBySlug } from "@/data/services";
+import { getDynamicServiceBySlug } from "@/lib/site-content";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 import {
   Clock,
   ArrowRight,
@@ -46,7 +50,8 @@ const serviceMetaDescriptions: Record<string, string> = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const dynamicService = await getDynamicServiceBySlug(slug);
+  const service = dynamicService || getServiceBySlug(slug);
 
   if (!service) {
     return {
@@ -73,7 +78,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const dynamicService = await getDynamicServiceBySlug(slug);
+  const service = dynamicService || getServiceBySlug(slug);
 
   if (!service) {
     notFound();
@@ -255,7 +261,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             Frequently Asked Questions About {service.title}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-            {service.faqs.map((faq, idx) => (
+            {service.faqs.map((faq: { q: string; a: string }, idx: number) => (
               <div key={idx} className="p-6 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                 <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
                   <HelpCircle className="w-4 h-4 text-indigo-600 shrink-0" />

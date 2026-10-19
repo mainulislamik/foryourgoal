@@ -31,7 +31,9 @@ import {
   ChevronRight,
   TrendingUp,
   ShieldAlert,
+  Globe,
 } from "lucide-react";
+import { CmsContentManager } from "@/components/admin/CmsContentManager";
 
 interface Lead {
   id: string;
@@ -72,7 +74,7 @@ export default function AdminPage() {
   const [loginLoading, setLoginLoading] = useState(false);
 
   // Active dashboard tab
-  const [activeTab, setActiveTab] = useState<"overview" | "leads" | "blogs" | "security" | "shortcuts">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "leads" | "cms" | "blogs" | "security" | "shortcuts">("overview");
 
   // Leads state
   const [leads, setLeads] = useState<Lead[]>([]);
@@ -429,6 +431,23 @@ export default function AdminPage() {
           </button>
 
           <button
+            onClick={() => setActiveTab("cms")}
+            className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+              activeTab === "cms"
+                ? "bg-indigo-600 text-white shadow-md shadow-indigo-600/30"
+                : "text-slate-400 hover:text-white hover:bg-slate-800/60"
+            }`}
+          >
+            <div className="flex items-center gap-3">
+              <Globe className="w-4 h-4" />
+              <span>Site Visual CMS</span>
+            </div>
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/30 text-indigo-300 border border-indigo-400/30">
+              Live
+            </span>
+          </button>
+
+          <button
             onClick={() => setActiveTab("blogs")}
             className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
               activeTab === "blogs"
@@ -505,6 +524,7 @@ export default function AdminPage() {
             <h2 className="text-lg font-black text-slate-900 tracking-tight">
               {activeTab === "overview" && "Dashboard Overview"}
               {activeTab === "leads" && "CRM Inquiries & Sample Submissions"}
+              {activeTab === "cms" && "Live Website Visual CMS & Content Management"}
               {activeTab === "blogs" && "Content Management (Blogs & Articles)"}
               {activeTab === "security" && "System Infrastructure & Security Logs"}
               {activeTab === "shortcuts" && "Quick Shortcuts & Services"}
@@ -806,6 +826,13 @@ export default function AdminPage() {
                 </table>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* TAB 2.5: VISUAL SITE CMS */}
+        {activeTab === "cms" && (
+          <div className="p-6 sm:p-8">
+            <CmsContentManager />
           </div>
         )}
 

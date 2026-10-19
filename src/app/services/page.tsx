@@ -1,9 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { servicesData } from "@/data/services";
+import { getDynamicServices } from "@/lib/site-content";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
 import { Clock, ArrowRight, CheckCircle2, ChevronRight, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: "Commercial Photo Editing & Retouching Services",
@@ -20,7 +24,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const dynamicServices = await getDynamicServices();
+  const services = dynamicServices.length > 0 ? dynamicServices : servicesData;
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -61,7 +68,7 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {servicesData.map((service) => (
+        {services.map((service) => (
           <div
             key={service.slug}
             className="flex flex-col justify-between p-6 rounded-2xl bg-white border border-slate-200 hover:border-indigo-400 hover:shadow-xl transition-all duration-300"
