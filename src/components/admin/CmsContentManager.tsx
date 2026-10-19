@@ -598,6 +598,32 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                 </div>
               </div>
             </div>
+
+            {/* In-Card Save Hero Action */}
+            <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-xs text-slate-500 flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                Instant ISR Cache Revalidation on save
+              </span>
+              <button
+                type="button"
+                onClick={() => handleSaveAll()}
+                disabled={saving}
+                className="w-full sm:w-auto px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold shadow-md shadow-indigo-600/20 flex items-center justify-center gap-2 transition-all disabled:opacity-60 active:scale-95"
+              >
+                {saving ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>Saving Live...</span>
+                  </>
+                ) : (
+                  <>
+                    <Save className="w-4 h-4" />
+                    <span>Save Hero Section Changes</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Stats Bar */}

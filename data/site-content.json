@@ -30,9 +30,9 @@
     "trustPill2Sub": "100% Confidential",
     "trustPill3Title": "3-Tier QC",
     "trustPill3Sub": "Zero Defect Policy",
-    "featuredBeforeImage": "/images/portfolio/jewelry-retouch-before.jpg",
-    "featuredAfterImage": "/images/portfolio/jewelry-retouch-after.jpg",
-    "featuredTitle": "Jewelry Glare Removal & Stone Enhancement",
+    "featuredBeforeImage": "/images/services/color-correction-before.jpg",
+    "featuredAfterImage": "/images/services/color-correction-after.jpg",
+    "featuredTitle": "Color Grading & White-Balance Correction",
     "featuredBadge": "100% Handcrafted"
   },
   "stats": [

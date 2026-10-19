@@ -162,12 +162,14 @@ export default async function HomePage() {
           <div className="lg:col-span-5 flex flex-col items-center">
             <div className="w-full max-w-md lg:max-w-none rounded-2xl bg-white p-3 border border-slate-200/90 shadow-2xl shadow-slate-200/50">
               <BeforeAfterSlider
-                beforeImage={hero.featuredBeforeImage || "/images/portfolio/jewelry-retouch-before.jpg"}
-                afterImage={hero.featuredAfterImage || "/images/portfolio/jewelry-retouch-after.jpg"}
+                beforeImage={hero.featuredBeforeImage || "/images/services/color-correction-before.jpg"}
+                afterImage={hero.featuredAfterImage || "/images/services/color-correction-after.jpg"}
                 beforeLabel="Original RAW"
                 afterLabel="Retouched Asset"
                 aspectRatio="aspect-square"
                 className="rounded-xl overflow-hidden shadow-inner"
+                title={hero.featuredTitle || "Color Grading & White-Balance Correction"}
+                category="Color Correction & Grading"
               />
               <div className="mt-3 px-2 flex items-center justify-between text-xs text-slate-600">
                 <span className="font-semibold text-slate-800">
