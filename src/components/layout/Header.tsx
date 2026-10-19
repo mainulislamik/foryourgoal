@@ -361,23 +361,42 @@ export function Header() {
 
             {/* Desktop CTA Action Button */}
             <div className="hidden lg:flex items-center">
-              <Link
-                href="/request-a-quote?type=sample"
-                className="btn-shimmer relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/20 hover:shadow-lg hover:shadow-red-600/35 transition-all transform hover:scale-105 active:scale-95 duration-200"
-              >
-                <span>Free Trial</span>
-                <ArrowRight className="w-4 h-4 text-white/90" />
-              </Link>
+              {pathname === "/request-a-quote" || pathname === "/request-free-trial" ? (
+                <Link
+                  href="/contact"
+                  className="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all duration-200"
+                >
+                  <span>Contact Us</span>
+                  <ArrowRight className="w-4 h-4 text-slate-500" />
+                </Link>
+              ) : (
+                <Link
+                  href="/request-a-quote?type=sample"
+                  className="btn-shimmer relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/20 hover:shadow-lg hover:shadow-red-600/35 transition-all transform hover:scale-105 active:scale-95 duration-200"
+                >
+                  <span>Free Trial</span>
+                  <ArrowRight className="w-4 h-4 text-white/90" />
+                </Link>
+              )}
             </div>
 
             {/* Mobile Header Actions */}
             <div className="lg:hidden flex items-center gap-2">
-              <Link
-                href="/request-a-quote?type=sample"
-                className="px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-xs rounded-lg font-bold text-white bg-red-600 hover:bg-red-700 shadow-sm"
-              >
-                Free Trial
-              </Link>
+              {pathname === "/request-a-quote" || pathname === "/request-free-trial" ? (
+                <Link
+                  href="/contact"
+                  className="px-3 py-1.5 text-xs rounded-lg font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 shadow-sm"
+                >
+                  Contact
+                </Link>
+              ) : (
+                <Link
+                  href="/request-a-quote?type=sample"
+                  className="px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-xs rounded-lg font-bold text-white bg-red-600 hover:bg-red-700 shadow-sm"
+                >
+                  Free Trial
+                </Link>
+              )}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-slate-700 hover:text-slate-900 bg-slate-100 border border-slate-300"
