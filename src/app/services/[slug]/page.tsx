@@ -313,7 +313,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             {service.technicalWorkflow.map((item: { step: number; title: string; desc: string }) => (
               <div
                 key={item.step}
-                className="p-6 rounded-2xl bg-slate-50 border border-slate-200 relative shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+                className="card-hover-elevated p-6 rounded-2xl bg-slate-50 border border-slate-200 relative shadow-sm flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white font-extrabold text-base flex items-center justify-center mb-4 shadow-sm">

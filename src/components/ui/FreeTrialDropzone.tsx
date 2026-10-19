@@ -280,10 +280,10 @@ export function FreeTrialDropzone({
                       key={srv}
                       type="button"
                       onClick={() => toggleService(srv)}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
+                      className={`pill-spring px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
                         isSelected
-                          ? "bg-indigo-600 text-white border border-indigo-400 shadow-md shadow-indigo-600/30"
-                          : "bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700"
+                          ? "bg-indigo-600 text-white border border-indigo-400 shadow-md shadow-indigo-600/30 scale-[1.02]"
+                          : "bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700 hover:border-slate-600"
                       }`}
                     >
                       <CheckCircle2
@@ -318,7 +318,7 @@ export function FreeTrialDropzone({
                 onClick={() => fileInputRef.current?.click()}
                 className={`w-full p-8 border-2 border-dashed rounded-2xl cursor-pointer transition-all flex flex-col items-center justify-center text-center ${
                   isDragging
-                    ? "border-indigo-400 bg-indigo-950/40 scale-[1.01]"
+                    ? "border-indigo-400 bg-indigo-950/40 scale-[1.01] drag-active"
                     : "border-slate-700 bg-slate-950/60 hover:border-slate-600 hover:bg-slate-950/80"
                 }`}
               >
@@ -476,7 +476,7 @@ export function FreeTrialDropzone({
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-sm shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02] disabled:opacity-50 disabled:pointer-events-none"
+                className="btn-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-sm shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02] disabled:opacity-50 disabled:pointer-events-none"
               >
                 {loading ? (
                   <>

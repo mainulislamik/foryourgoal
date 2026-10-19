@@ -94,7 +94,7 @@ export default async function ServicesPage() {
         {services.map((service) => (
           <div
             key={service.slug}
-            className="flex flex-col justify-between p-6 rounded-2xl bg-white border border-slate-200 hover:border-indigo-400 hover:shadow-xl transition-all duration-300"
+            className="card-hover-elevated group flex flex-col justify-between p-6 rounded-2xl bg-white border border-slate-200 hover:border-indigo-400 transition-all duration-300"
           >
             <div>
               <div className="w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-slate-200">
@@ -137,10 +137,10 @@ export default async function ServicesPage() {
             <div className="mt-8 pt-4 border-t border-slate-200 flex items-center justify-between">
               <Link
                 href={`/services/${service.slug}`}
-                className="text-xs font-semibold text-slate-700 hover:text-indigo-600 inline-flex items-center gap-1.5 transition-colors"
+                className="text-xs font-semibold text-slate-700 hover:text-indigo-600 inline-flex items-center gap-1.5 transition-colors group/link"
               >
                 <span>Service Details</span>
-                <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+                <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href={`/request-a-quote?service=${service.slug}`}

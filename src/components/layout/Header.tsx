@@ -152,13 +152,14 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
             <Link
               href="/"
-              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
                 pathname === "/"
                   ? "text-indigo-600 font-semibold bg-indigo-50/60"
                   : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
               Home
+              <span className={`absolute bottom-0.5 left-3.5 right-3.5 h-0.5 rounded-full bg-indigo-600 transition-transform duration-200 origin-left ${ pathname === "/" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100" }`} />
             </Link>
 
             {/* Services Dropdown */}
@@ -297,47 +298,52 @@ export function Header() {
 
             <Link
               href="/how-it-works"
-              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
                 pathname === "/how-it-works" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
               How It Works
+              <span className={`absolute bottom-0.5 left-3.5 right-3.5 h-0.5 rounded-full bg-indigo-600 transition-transform duration-200 origin-left ${ pathname === "/how-it-works" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100" }`} />
             </Link>
 
             <Link
               href="/portfolio"
-              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
                 pathname.startsWith("/portfolio") ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
               Portfolio
+              <span className={`absolute bottom-0.5 left-3.5 right-3.5 h-0.5 rounded-full bg-indigo-600 transition-transform duration-200 origin-left ${ pathname.startsWith("/portfolio") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100" }`} />
             </Link>
 
             <Link
               href="/about"
-              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
                 pathname === "/about" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
               About
+              <span className={`absolute bottom-0.5 left-3.5 right-3.5 h-0.5 rounded-full bg-indigo-600 transition-transform duration-200 origin-left ${ pathname === "/about" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100" }`} />
             </Link>
 
             <Link
               href="/blog"
-              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
                 pathname.startsWith("/blog") ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
               Blog
+              <span className={`absolute bottom-0.5 left-3.5 right-3.5 h-0.5 rounded-full bg-indigo-600 transition-transform duration-200 origin-left ${ pathname.startsWith("/blog") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100" }`} />
             </Link>
 
             <Link
               href="/contact"
-              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all group ${
                 pathname === "/contact" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
               }`}
             >
               Contact
+              <span className={`absolute bottom-0.5 left-3.5 right-3.5 h-0.5 rounded-full bg-indigo-600 transition-transform duration-200 origin-left ${ pathname === "/contact" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100" }`} />
             </Link>
           </nav>
 
@@ -345,13 +351,13 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/request-a-quote?type=sample"
-              className="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-slate-900 bg-white border border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all shadow-sm"
+              className="btn-shimmer px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-slate-900 bg-white border border-slate-300 hover:border-indigo-400 hover:bg-slate-50 hover:scale-[1.02] transition-all shadow-sm"
             >
               Free Trial
             </Link>
             <Link
               href="/request-a-quote"
-              className="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-slate-900 hover:bg-slate-800 shadow-sm hover:shadow transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="btn-shimmer relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-slate-900 hover:bg-slate-800 shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-100"
             >
               <span>Get a Quote</span>
               <ArrowRight className="w-4 h-4 text-emerald-400" />

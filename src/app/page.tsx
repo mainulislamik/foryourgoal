@@ -95,6 +95,7 @@ export default async function HomePage() {
       />
       {/* 1. HERO SECTION */}
       <section className="relative flex items-center justify-center pt-20 sm:pt-24 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
+        <div className="absolute inset-0 bg-grid-subtle pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(79,70,229,0.06),rgba(255,255,255,0))] pointer-events-none" />
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
@@ -115,14 +116,14 @@ export default async function HomePage() {
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-1">
               <Link
                 href={hero.primaryCtaLink || "/request-a-quote"}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-base shadow-lg shadow-slate-900/10 hover:-translate-y-0.5 transition-all"
+                className="btn-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-base shadow-lg shadow-slate-900/10 hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.99] transition-all"
               >
                 <span>{hero.primaryCtaText}</span>
-                <ArrowRight className="w-4 h-4 text-emerald-400" />
+                <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href={hero.secondaryCtaLink || "/portfolio"}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 font-medium border border-slate-300 hover:border-slate-400 transition-all shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 font-medium border border-slate-300 hover:border-indigo-400 hover:scale-[1.02] active:scale-[0.99] transition-all shadow-sm"
               >
                 <span>{hero.secondaryCtaText}</span>
               </Link>
@@ -184,7 +185,7 @@ export default async function HomePage() {
       <section className="border-b border-slate-200 bg-slate-50 py-10 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
         <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col items-center justify-center p-4">
+            <div key={i} className="card-hover-elevated flex flex-col items-center justify-center p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
               <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
                 {stat.value}
               </div>
@@ -213,10 +214,10 @@ export default async function HomePage() {
           </div>
           <Link
             href="/services"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors shrink-0"
+            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors shrink-0"
           >
             <span>View all {services.length} services</span>
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
@@ -224,7 +225,7 @@ export default async function HomePage() {
           {services.slice(0, 8).map((service) => (
             <div
               key={service.slug}
-              className="group flex flex-col rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300"
+              className="card-hover-elevated group flex flex-col rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:border-indigo-400/80 transition-all duration-300"
             >
               <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
                 <BeforeAfterSlider
@@ -251,15 +252,15 @@ export default async function HomePage() {
 
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                   <span className="text-xs text-slate-500 font-medium flex items-center gap-1.5 font-mono">
-                    <Clock className="w-3.5 h-3.5 text-slate-400" />
-                    <span>~{service.turnaroundHours || 12}h Turnaround</span>
+                    <Clock className="w-3.5 h-3.5 text-indigo-500" />
+                    <span>~{service.turnaroundHours}h Turnaround</span>
                   </span>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 group-hover:text-indigo-700"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-indigo-600 group-hover:text-indigo-800 transition-colors"
                   >
                     <span>Details</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
