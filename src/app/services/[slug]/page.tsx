@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { servicesData, getServiceBySlug } from "@/data/services";
 import { getDynamicServiceBySlug, ServiceItem, ServiceSampleItem } from "@/lib/site-content";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
+import { FreeTrialDropzone } from "@/components/ui/FreeTrialDropzone";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -437,28 +438,23 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       )}
 
-      {/* CTA Bottom Banner */}
-      <div className="mt-16 p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 text-center shadow-sm">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-          Ready to scale your {service.title.toLowerCase()} volume?
-        </h2>
-        <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-          Submit 2 sample images today. We will process them according to your exact specifications at zero charge.
-        </p>
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href={`/request-a-quote?service=${service.slug}`}
-            className="px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all"
-          >
-            Start Free Sample Test
-          </Link>
-          <Link
-            href="/services"
-            className="px-6 py-3.5 rounded-xl bg-white text-slate-800 font-medium border border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-sm shadow-sm"
-          >
-            Back to All Services
-          </Link>
-        </div>
+      {/* Interactive Free Trial Dropzone for this specific service */}
+      <div className="mt-16 w-full" id="service-free-trial">
+        <FreeTrialDropzone
+          title={`Test Our Quality For ${service.title}`}
+          subtitle={`Send us up to 2 sample photos. We will process them according to your exact ${service.title.toLowerCase()} specifications at zero charge within ~${service.turnaroundHours} hours.`}
+          defaultService={service.title}
+        />
+      </div>
+
+      <div className="mt-12 text-center">
+        <Link
+          href="/services"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-slate-700 font-semibold border border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-sm shadow-xs transition-all"
+        >
+          <span>Back to All Specialized Services</span>
+          <ArrowRight className="w-4 h-4 text-slate-400" />
+        </Link>
       </div>
     </div>
   );

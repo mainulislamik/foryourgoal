@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { getSiteContent } from "@/lib/site-content";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
+import { FreeTrialDropzone } from "@/components/ui/FreeTrialDropzone";
 import {
   ArrowRight,
   ShieldCheck,
@@ -491,38 +492,9 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 9. FINAL QUOTE CTA BANNER */}
-      <section className="py-20 px-4 sm:px-6 lg:px-10 xl:px-12 bg-slate-50 border-t border-slate-200 w-full">
-        <div className="w-full p-8 sm:p-12 lg:p-16 rounded-3xl bg-white border border-slate-200 shadow-xl text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Test Us With 2 Free Images</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-            {cta?.heading || "Ready to Elevate Your Visual Output & Lower Costs?"}
-          </h2>
-
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
-            {cta?.description ||
-              "Send us your brief and sample photos today. We will return your completed sample within 4 hours, complete with your tailored project scope and zero obligation."}
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link
-              href="/request-a-quote"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-base shadow-lg transition-all"
-            >
-              {cta?.quoteBtnText || "Get Your Custom Quote Now"}
-            </Link>
-            <Link
-              href="/request-free-trial"
-              className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white text-slate-700 font-medium border border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all text-sm shadow-sm"
-            >
-              {cta?.trialBtnText || "Explore Our Free Trial"}
-            </Link>
-          </div>
-        </div>
+      {/* 9. INTERACTIVE FREE TRIAL ONBOARDING & CTA */}
+      <section className="py-20 px-4 sm:px-6 lg:px-10 xl:px-12 bg-slate-50 border-t border-slate-200 w-full" id="free-trial">
+        <FreeTrialDropzone />
       </section>
     </div>
   );
