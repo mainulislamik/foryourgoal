@@ -64,8 +64,8 @@
         "shortDesc": "Pixel-perfect hand-drawn Photoshop pen tool paths for crisp, sharp product isolation.",
         "fullDesc": "Our master retouchers use Adobe Photoshop's pen tool exclusively to create razor-sharp vector clipping paths around your products. Unlike automated AI magic wands that introduce ragged edge artifacts, hand-drawn paths isolate subjects with flawless curves, crisp geometry, and natural contours ready for any catalog or composite.",
         "turnaroundHours": 6,
-        "beforeImage": "/uploads/cms/1792416013922-bicycle.jpg",
-        "afterImage": "/uploads/cms/1792416028851-Clipping_Path.jpg",
+        "beforeImage": "/images/services/clipping-path-before.jpg",
+        "afterImage": "/images/services/clipping-path-after.jpg",
         "features": [
           "100% hand-drawn vector paths via Photoshop Pen Tool",
           "Zero halos, pixel fringing, or rough pixelated edges",
@@ -104,8 +104,8 @@
         "shortDesc": "Flawless cleanup, blemish elimination, dust removal, and texture preservation for premium brand aesthetics.",
         "fullDesc": "Transform studio raw captures into high-converting hero visuals. We eliminate micro-scratches, lint, sensor dust, uneven reflections, and manufacturing flaws while preserving authentic material textures such as brushed metals, leathers, and matte coatings.",
         "turnaroundHours": 12,
-        "beforeImage": "/images/portfolio/jewelry-retouch-before.jpg",
-        "afterImage": "/images/portfolio/jewelry-retouch-after.jpg",
+        "beforeImage": "/images/services/product-retouch-before.jpg",
+        "afterImage": "/images/services/product-retouch-after.jpg",
         "features": [
           "Comprehensive sensor dust, fingerprint, and scratch removal",
           "Surface smoothing without plastic over-softening",
@@ -139,8 +139,8 @@
         "shortDesc": "Combine multiple apparel shots to create seamless 3D hollow-body effects for apparel catalogs.",
         "fullDesc": "Display clothing with realistic volume and fit without the distraction or expense of live models or plastic mannequins. We seamlessly composite the exterior front, interior collar/neck label, and lining shots into a clean, dimensional floating garment.",
         "turnaroundHours": 12,
-        "beforeImage": "/images/portfolio/ghost-mannequin-before.jpg",
-        "afterImage": "/images/portfolio/ghost-mannequin-after.jpg",
+        "beforeImage": "/images/services/ghost-mannequin-before.jpg",
+        "afterImage": "/images/services/ghost-mannequin-after.jpg",
         "features": [
           "Seamless inner collar, tag, and lining composition",
           "Symmetry correction for sleeves, shoulders, and hems",
@@ -173,8 +173,8 @@
         "shortDesc": "High-magnification diamond sparkle enhancement, metal polishing, and reflection balancing.",
         "fullDesc": "Jewelry photography suffers from macro reflections, camera glare, and microscopic manufacturing abrasions. Our specialized jewelry retouching team restores precious metals to mirror-smooth brilliance, intensifies facet contrast in diamonds and colored gemstones, and creates luminous depth.",
         "turnaroundHours": 24,
-        "beforeImage": "/images/portfolio/jewelry-retouch-before.jpg",
-        "afterImage": "/images/portfolio/jewelry-retouch-after.jpg",
+        "beforeImage": "/images/services/jewelry-retouch-before.jpg",
+        "afterImage": "/images/services/jewelry-retouch-after.jpg",
         "features": [
           "Precision metal polishing (gold, platinum, silver, rose gold)",
           "Gemstone facet enhancement and fire intensification",
@@ -206,8 +206,8 @@
         "shortDesc": "Clean, consistent background cutouts on pure white, transparent, or custom branded backdrops.",
         "fullDesc": "Eliminate cluttered studio environments and standardize thousands of product photos to pure white (#FFFFFF), modern neutral gray (#F5F5F5), or transparent PNGs compliant with Amazon, Google Shopping, and marketplace standards.",
         "turnaroundHours": 6,
-        "beforeImage": "/images/portfolio/clipping-path-before.jpg",
-        "afterImage": "/images/portfolio/clipping-path-after.jpg",
+        "beforeImage": "/images/services/background-removal-before.jpg",
+        "afterImage": "/images/services/background-removal-after.jpg",
         "features": [
           "Pure White RGB (255, 255, 255) guarantee for Amazon & eBay",
           "Transparent PNG with zero background fringe",
@@ -238,8 +238,8 @@
         "shortDesc": "Natural drop shadows, cast shadows, and realistic glossy surface reflections for grounded product visuals.",
         "fullDesc": "Floating cutouts look artificial without believable grounding. We craft organic drop shadows, directional cast shadows, and mirror surface reflections that match the natural angle and color temperature of the product's lighting source.",
         "turnaroundHours": 12,
-        "beforeImage": "/images/portfolio/ghost-mannequin-before.jpg",
-        "afterImage": "/images/portfolio/ghost-mannequin-after.jpg",
+        "beforeImage": "/images/services/shadow-reflection-before.jpg",
+        "afterImage": "/images/services/shadow-reflection-after.jpg",
         "features": [
           "Natural existing shadow retention through soft masks",
           "Custom drop shadow creation with diffused feathering",
@@ -269,8 +269,8 @@
         "shortDesc": "Accurate Pantone matching, white-balance calibration, and color variant generation from a single master shot.",
         "fullDesc": "Save thousands on photography by shooting one master sample and letting us generate every colorway in your SKU lineup. We match physical Pantone swatches with calibrated digital accuracy, eliminating return rates caused by color discrepancies.",
         "turnaroundHours": 12,
-        "beforeImage": "/images/portfolio/jewelry-retouch-before.jpg",
-        "afterImage": "/images/portfolio/jewelry-retouch-after.jpg",
+        "beforeImage": "/images/services/color-correction-before.jpg",
+        "afterImage": "/images/services/color-correction-after.jpg",
         "features": [
           "Colorway replication across all product color options",
           "Pantone TCX / TPX / Coated color matching",
@@ -299,8 +299,8 @@
         "shortDesc": "Alpha channel, hair, fur, and transparent fabric isolation for hyper-complex edge geometries.",
         "fullDesc": "When pen-tool clipping paths cannot capture delicate flyaway hair, animal fur, translucent lace, or semi-transparent glass, our image masking specialists deploy multi-channel luminosity masks and refine-edge alpha selections to preserve every microscopic strand.",
         "turnaroundHours": 12,
-        "beforeImage": "/images/portfolio/clipping-path-before.jpg",
-        "afterImage": "/images/portfolio/clipping-path-after.jpg",
+        "beforeImage": "/images/services/image-masking-before.jpg",
+        "afterImage": "/images/services/image-masking-after.jpg",
         "features": [
           "Hair, wool, and fur preservation without jagged clumping",
           "Translucent and sheer fabric opacity masking",
@@ -337,8 +337,8 @@
         "title": "Luxury Chronograph Watch Macro Retouching",
         "category": "product-photo-retouching",
         "industry": "jewelry-luxury",
-        "beforeImage": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80&contrast=1.15&brightness=1.05",
+        "beforeImage": "/images/services/product-retouch-before.jpg",
+        "afterImage": "/images/services/product-retouch-after.jpg",
         "description": "High-end horology retouching removing fine micro-dust particles from sapphire crystal, evening dial reflections, and accentuating brushed steel bezel contrast.",
         "turnaroundTime": "12 Hours",
         "techniquesUsed": [
@@ -355,8 +355,8 @@
         "title": "Designer Athletic Sneaker Clipping & Cast Shadow",
         "category": "clipping-path",
         "industry": "ecommerce-marketplaces",
-        "beforeImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80&sat=-100",
+        "beforeImage": "/images/services/clipping-path-before.jpg",
+        "afterImage": "/images/services/clipping-path-after.jpg",
         "description": "Complex multi-layer pen path extraction around textured knit mesh, lacing system, and tread with natural drop shadow for Amazon A+ catalog.",
         "turnaroundTime": "6 Hours",
         "techniquesUsed": [
@@ -373,8 +373,8 @@
         "title": "Cashmere Overcoat 3D Ghost Mannequin",
         "category": "ghost-mannequin",
         "industry": "fashion-apparel",
-        "beforeImage": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80&sat=120",
+        "beforeImage": "/images/services/ghost-mannequin-before.jpg",
+        "afterImage": "/images/services/ghost-mannequin-after.jpg",
         "description": "Combined exterior jacket photo with separate inner satin lining and neck brand label to yield an organic 3D floating lookbook asset.",
         "turnaroundTime": "12 Hours",
         "techniquesUsed": [
@@ -391,8 +391,8 @@
         "title": "Solitaire Diamond Ring Facet Brilliance",
         "category": "jewelry-retouching",
         "industry": "jewelry-luxury",
-        "beforeImage": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80&contrast=1.2",
+        "beforeImage": "/images/services/jewelry-retouch-before.jpg",
+        "afterImage": "/images/services/jewelry-retouch-after.jpg",
         "description": "Eliminated camera reflection on white gold band, polished platinum prongs, and boosted diamond fire dispersion for luxury e-commerce carousel.",
         "turnaroundTime": "24 Hours",
         "techniquesUsed": [
@@ -409,8 +409,8 @@
         "title": "Artisan Perfume Bottle Glass & Liquid Retouch",
         "category": "product-photo-retouching",
         "industry": "advertising-agencies",
-        "beforeImage": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1200&q=80&contrast=1.1&brightness=1.05",
+        "beforeImage": "/images/services/product-retouch-before.jpg",
+        "afterImage": "/images/services/product-retouch-after.jpg",
         "description": "Preserved glass transparency, aligned embossed foil typography, corrected liquid color density, and created a sleek mirror reflection.",
         "turnaroundTime": "12 Hours",
         "techniquesUsed": [
@@ -427,8 +427,8 @@
         "title": "Winter Parka Faux Fur Hood Masking",
         "category": "image-masking",
         "industry": "fashion-apparel",
-        "beforeImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80&sat=-100",
+        "beforeImage": "/images/services/image-masking-before.jpg",
+        "afterImage": "/images/services/image-masking-after.jpg",
         "description": "Extracted intricate individual strands of faux fur around parka hood using channel separation masking without fringing or color bleeding.",
         "turnaroundTime": "12 Hours",
         "techniquesUsed": [
@@ -744,7 +744,7 @@
       "id": "faq-12",
       "category": "services",
       "question": "Can you follow proprietary brand style guides and custom cropping margins?",
-      "answer": "Absolutely. We maintain client-specific digital production dossiers detailing exact canvas dimensions, product alignment percentages (e.g. 85% vertical fill), drop shadow elevation angles (e.g. 120° light source at 25% opacity), and automated SKU metadata tagging to ensure 100% uniformity across your multi-channel catalog."
+      "answer": "Absolutely. We maintain client-specific digital production dossiers detailing exact canvas dimensions, product alignment percentages (e.g. 85% vertical fill), drop shadow elevation angles (e.g. 120\u00b0 light source at 25% opacity), and automated SKU metadata tagging to ensure 100% uniformity across your multi-channel catalog."
     }
   ],
   "testimonials": [
