@@ -166,7 +166,7 @@ export default async function HomePage() {
                 afterImage={hero.featuredAfterImage || "/images/portfolio/jewelry-retouch-after.jpg"}
                 beforeLabel="Original RAW"
                 afterLabel="Retouched Asset"
-                aspectRatio="square"
+                aspectRatio="aspect-square"
                 className="rounded-xl overflow-hidden shadow-inner"
               />
               <div className="mt-3 px-2 flex items-center justify-between text-xs text-slate-600">
@@ -292,7 +292,7 @@ export default async function HomePage() {
                   afterImage={item.afterImage}
                   beforeLabel="Raw Input"
                   afterLabel="Retouched"
-                  aspectRatio="square"
+                  aspectRatio="custom"
                   className="w-full h-full"
                 />
               </div>
