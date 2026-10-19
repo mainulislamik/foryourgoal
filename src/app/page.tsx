@@ -234,6 +234,8 @@ export default async function HomePage() {
                   afterImage={service.afterImage}
                   aspectRatio="custom"
                   className="w-full h-full"
+                  title={service.title}
+                  category="Commercial Photo Editing"
                 />
               </div>
 

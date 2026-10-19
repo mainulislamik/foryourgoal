@@ -2,7 +2,8 @@
 
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
-import { Sparkles, MoveHorizontal, ZoomIn, ZoomOut } from "lucide-react";
+import { Sparkles, MoveHorizontal, ZoomIn, ZoomOut, Maximize2 } from "lucide-react";
+import { BeforeAfterModal } from "./BeforeAfterModal";
 
 export interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -17,6 +18,7 @@ export interface BeforeAfterSliderProps {
   category?: string;
   showControls?: boolean;
   showFooter?: boolean;
+  allowFullscreen?: boolean;
 }
 
 export function BeforeAfterSlider({
@@ -28,12 +30,16 @@ export function BeforeAfterSlider({
   afterLabel = "Retouched / QA Passed",
   className = "",
   aspectRatio = "aspect-[4/3]",
+  title = "Before & After Quality Inspection",
+  category = "Commercial Photo Post-Production",
   showControls,
   showFooter,
+  allowFullscreen = true,
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Check if component is placed in a parent container meant to fill height or aspect
@@ -132,18 +138,37 @@ export function BeforeAfterSlider({
 
   return (
     <div className={`${baseContainerStyle} ${className}`}>
-      {/* Visual Controls Header */}
-      {effectiveShowControls && (
+      {/* Visual Controls Header (Zoom & Fullscreen) */}
+      {(effectiveShowControls || allowFullscreen) && (
         <div className="absolute top-3 right-3 z-30 flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setIsZoomed(!isZoomed)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 backdrop-blur-md border border-slate-300 text-slate-700 hover:text-slate-900 hover:border-indigo-500 shadow-sm transition-colors"
-            aria-label={isZoomed ? "Reset Zoom" : "Zoom in 1.5x"}
-          >
-            {isZoomed ? <ZoomOut className="w-3.5 h-3.5" /> : <ZoomIn className="w-3.5 h-3.5" />}
-            <span className="hidden sm:inline">{isZoomed ? "100%" : "Zoom 1.5x"}</span>
-          </button>
+          {effectiveShowControls && (
+            <button
+              type="button"
+              onClick={() => setIsZoomed(!isZoomed)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 backdrop-blur-md border border-slate-300 text-slate-700 hover:text-slate-900 hover:border-indigo-500 shadow-sm transition-colors"
+              aria-label={isZoomed ? "Reset Zoom" : "Zoom in 1.5x"}
+            >
+              {isZoomed ? <ZoomOut className="w-3.5 h-3.5" /> : <ZoomIn className="w-3.5 h-3.5" />}
+              <span className="hidden sm:inline">{isZoomed ? "100%" : "Zoom 1.5x"}</span>
+            </button>
+          )}
+
+          {allowFullscreen && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                setIsFullscreenOpen(true);
+              }}
+              className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold bg-white/95 backdrop-blur-md border border-slate-300 text-slate-700 hover:text-indigo-600 hover:border-indigo-500 shadow-md transition-all active:scale-95 group/fs"
+              aria-label="View Fullscreen Comparison"
+              title="View Fullscreen Comparison"
+            >
+              <Maximize2 className="w-3.5 h-3.5 text-slate-600 group-hover/fs:text-indigo-600 transition-colors" />
+              <span className="text-[11px] font-bold hidden sm:inline">Full Screen</span>
+            </button>
+          )}
         </div>
       )}
 
@@ -233,6 +258,22 @@ export function BeforeAfterSlider({
           </span>
           <span className="font-mono text-slate-500 font-medium">100% Hand-Crafted Paths</span>
         </div>
+      )}
+
+      {/* Fullscreen Lightbox Modal */}
+      {allowFullscreen && (
+        <BeforeAfterModal
+          isOpen={isFullscreenOpen}
+          onClose={() => setIsFullscreenOpen(false)}
+          beforeImage={beforeImage}
+          afterImage={afterImage}
+          beforeAlt={beforeAlt}
+          afterAlt={afterAlt}
+          beforeLabel={beforeLabel}
+          afterLabel={afterLabel}
+          title={title}
+          category={category}
+        />
       )}
     </div>
   );

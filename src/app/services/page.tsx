@@ -102,7 +102,7 @@ export default async function ServicesPage() {
                   beforeImage={service.beforeImage}
                   afterImage={service.afterImage}
                   title={service.title}
-                  category="Sample"
+                  category="Commercial Photo Editing"
                   className="w-full h-full"
                 />
               </div>
