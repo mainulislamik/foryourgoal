@@ -45,11 +45,31 @@ export default async function PortfolioPage() {
     ],
   };
 
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Commercial Photo Editing & Retouching Portfolio | Foryourgoal",
+    description:
+      "Explore our commercial photo editing portfolio: interactive before/after sliders of clipping path, high-end retouching, ghost mannequin, and jewelry.",
+    url: "https://foryourgoal.com/portfolio",
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: items.length,
+      itemListElement: items.map((item: any, idx: number) => ({
+        "@type": "CreativeWork",
+        position: idx + 1,
+        name: item.title,
+        description: item.description,
+        image: item.afterImage,
+      })),
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbJsonLd, collectionJsonLd]) }}
       />
       <PortfolioGallery initialItems={items} />
     </>

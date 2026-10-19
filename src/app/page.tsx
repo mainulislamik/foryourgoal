@@ -30,8 +30,68 @@ export default async function HomePage() {
   const faqs = content.faqs || [];
   const testimonials = content.testimonials || [];
 
+  const homeSchemasJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Foryourgoal | Commercial Photo Editing, Clipping Path & Retouching Studio",
+      description:
+        "High-volume commercial image editing, hand-drawn clipping paths, ghost mannequin, and high-end jewelry photo retouching for global e-commerce brands.",
+      url: "https://foryourgoal.com",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://foryourgoal.com",
+          },
+        ],
+      },
+    },
+    ...(howItWorks?.steps && howItWorks.steps.length > 0
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How The Foryourgoal Commercial Image Editing Pipeline Works",
+            description:
+              "Follow our 4-step secure workflow for enterprise image editing, from file upload to pixel-perfect delivery.",
+            step: howItWorks.steps.map((st, idx) => ({
+              "@type": "HowToStep",
+              position: idx + 1,
+              name: st.title,
+              text: st.desc,
+              url: `https://foryourgoal.com/how-it-works#step-${st.step.toLowerCase()}`,
+            })),
+          },
+        ]
+      : []),
+    ...(faqs && faqs.length > 0
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.slice(0, 10).map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.answer,
+              },
+            })),
+          },
+        ]
+      : []),
+  ];
+
   return (
     <div className="flex flex-col gap-0 overflow-hidden bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchemasJsonLd) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[85vh] flex items-center justify-center pt-24 pb-20 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(79,70,229,0.06),rgba(255,255,255,0))] pointer-events-none" />

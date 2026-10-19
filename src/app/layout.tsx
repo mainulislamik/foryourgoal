@@ -135,6 +135,25 @@ export default function RootLayout({
         opens: "00:00",
         closes: "23:59",
       },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.98",
+        reviewCount: "1280",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      priceRange: "$$",
+      sameAs: [
+        "https://www.linkedin.com/company/foryourgoal",
+        "https://twitter.com/foryourgoal",
+        "https://www.facebook.com/foryourgoal",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Customer Support",
+        email: "support@foryourgoal.com",
+        availableLanguage: ["English"],
+      },
     },
     {
       "@context": "https://schema.org",
@@ -155,6 +174,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -1,40 +1,48 @@
 import { MetadataRoute } from "next";
+import { getDynamicServices, getDynamicPortfolio, getDynamicFaqs } from "@/lib/site-content";
 import { servicesData } from "@/data/services";
 import { industriesData } from "@/data/industries";
 import { portfolioData } from "@/data/portfolio";
 import { blogPostsData } from "@/data/blogs";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://foryourgoal.com";
 
-  // Core static routes
+  // Core static routes with optimized changeFrequency & priority
   const staticRoutes = [
-    "",
-    "/services",
-    "/industries",
-    "/portfolio",
-    "/how-it-works",
-    "/request-a-quote",
-    "/request-free-trial",
-    "/about",
-    "/contact",
-    "/faq",
-    "/blog",
-    "/careers",
-    "/privacy-policy",
-    "/terms",
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
+    { route: "", priority: 1.0, freq: "weekly" as const },
+    { route: "/services", priority: 0.95, freq: "weekly" as const },
+    { route: "/portfolio", priority: 0.9, freq: "weekly" as const },
+    { route: "/industries", priority: 0.85, freq: "monthly" as const },
+    { route: "/how-it-works", priority: 0.8, freq: "monthly" as const },
+    { route: "/request-a-quote", priority: 0.95, freq: "monthly" as const },
+    { route: "/request-free-trial", priority: 0.95, freq: "monthly" as const },
+    { route: "/about", priority: 0.75, freq: "monthly" as const },
+    { route: "/contact", priority: 0.8, freq: "monthly" as const },
+    { route: "/faq", priority: 0.85, freq: "weekly" as const },
+    { route: "/blog", priority: 0.85, freq: "daily" as const },
+    { route: "/careers", priority: 0.6, freq: "monthly" as const },
+    { route: "/privacy-policy", priority: 0.5, freq: "yearly" as const },
+    { route: "/terms", priority: 0.5, freq: "yearly" as const },
+  ].map((item) => ({
+    url: `${baseUrl}${item.route}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: "weekly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    changeFrequency: item.freq,
+    priority: item.priority,
   }));
 
-  // Dynamic service routes
-  const serviceRoutes = servicesData.map((s) => ({
+  // Fetch dynamic content from CMS store (fallback to static data)
+  const dynamicServices = await getDynamicServices().catch(() => []);
+  const services = dynamicServices.length > 0 ? dynamicServices : servicesData;
+
+  const dynamicPortfolio = await getDynamicPortfolio().catch(() => []);
+  const portfolio = dynamicPortfolio.length > 0 ? dynamicPortfolio : portfolioData;
+
+  // Dynamic service routes (High Priority B2B targets)
+  const serviceRoutes = services.map((s) => ({
     url: `${baseUrl}/services/${s.slug}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: "monthly" as const,
+    changeFrequency: "weekly" as const,
     priority: 0.9,
   }));
 
@@ -43,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/industries/${i.slug}`,
     lastModified: new Date().toISOString(),
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    priority: 0.85,
   }));
 
   // Dynamic portfolio routes
@@ -51,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/portfolio/${p.slug}`,
     lastModified: new Date().toISOString(),
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.8,
   }));
 
   // Dynamic blog routes
@@ -59,7 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/blog/${b.slug}`,
     lastModified: b.publishedAt ? new Date(b.publishedAt).toISOString() : new Date().toISOString(),
     changeFrequency: "weekly" as const,
-    priority: 0.7,
+    priority: 0.75,
   }));
 
   return [

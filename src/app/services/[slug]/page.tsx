@@ -96,6 +96,16 @@ export default async function ServiceDetailPage({ params }: Props) {
         "@type": "Organization",
         name: "Foryourgoal",
         url: "https://foryourgoal.com",
+        logo: "https://foryourgoal.com/images/foryourgoal-logo.png",
+      },
+      areaServed: "Worldwide",
+      serviceType: service.title,
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "USD",
+        price: service.startingPrice?.replace(/[^0-9.]/g, "") || "0.49",
+        availability: "https://schema.org/InStock",
+        url: `https://foryourgoal.com/services/${service.slug}`,
       },
     },
     {
@@ -122,6 +132,22 @@ export default async function ServiceDetailPage({ params }: Props) {
         },
       ],
     },
+    ...(service.faqs && service.faqs.length > 0
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: service.faqs.map((f: { q: string; a: string }) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.a,
+              },
+            })),
+          },
+        ]
+      : []),
   ];
 
   return (

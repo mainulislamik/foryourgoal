@@ -47,11 +47,34 @@ export default async function ServicesPage() {
     ],
   };
 
+  const servicesListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Commercial Image Post-Production Services",
+    description: "Enterprise photo editing, clipping path, ghost mannequin, and retouching services.",
+    numberOfItems: services.length,
+    itemListElement: services.map((s, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      item: {
+        "@type": "Service",
+        name: s.title,
+        description: s.shortDesc,
+        url: `https://foryourgoal.com/services/${s.slug}`,
+        provider: {
+          "@type": "Organization",
+          name: "Foryourgoal",
+          url: "https://foryourgoal.com",
+        },
+      },
+    })),
+  };
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-10 xl:px-12 w-full bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbJsonLd, servicesListJsonLd]) }}
       />
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-16">

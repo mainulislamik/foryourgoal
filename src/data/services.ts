@@ -4,6 +4,7 @@ export interface ServiceItem {
   shortDesc: string;
   fullDesc: string;
   turnaroundHours: number;
+  startingPrice?: string;
   beforeImage: string;
   afterImage: string;
   features: string[];
