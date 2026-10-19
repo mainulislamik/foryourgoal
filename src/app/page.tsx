@@ -252,9 +252,10 @@ export default async function HomePage() {
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div className="text-xs text-slate-600 font-medium">
-                    From <span className="font-bold text-slate-900">{service.startingPrice}</span>
-                  </div>
+                  <span className="text-xs text-slate-500 font-medium flex items-center gap-1.5 font-mono">
+                    <Clock className="w-3.5 h-3.5 text-slate-400" />
+                    <span>~{service.turnaroundHours || 12}h Turnaround</span>
+                  </span>
                   <Link
                     href={`/services/${service.slug}`}
                     className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 group-hover:text-indigo-700"
