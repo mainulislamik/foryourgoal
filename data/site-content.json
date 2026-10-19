@@ -64,8 +64,8 @@
         "shortDesc": "Pixel-perfect hand-drawn Photoshop pen tool paths for crisp, sharp product isolation.",
         "fullDesc": "Our master retouchers use Adobe Photoshop's pen tool exclusively to create razor-sharp vector clipping paths around your products. Unlike automated AI magic wands that introduce ragged edge artifacts, hand-drawn paths isolate subjects with flawless curves, crisp geometry, and natural contours ready for any catalog or composite.",
         "turnaroundHours": 6,
-        "beforeImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80&sat=-100",
+        "beforeImage": "/images/portfolio/clipping-path-before.jpg",
+        "afterImage": "/images/portfolio/clipping-path-after.jpg",
         "features": [
           "100% hand-drawn vector paths via Photoshop Pen Tool",
           "Zero halos, pixel fringing, or rough pixelated edges",
@@ -93,7 +93,10 @@
             "q": "What is your daily capacity for clipping path orders?",
             "a": "We comfortably process 5,000+ images per day across our 24/7 dedicated production shifts."
           }
-        ]
+        ],
+        "startingPrice": "$0.49",
+        "metaTitle": "Hand-Drawn Clipping Path Services | ForYourGoal Studio",
+        "metaDesc": "Pixel-perfect hand-drawn Photoshop pen tool clipping paths for sharp product cutouts. Fast turnaround and dedicated retouching teams. Request a custom quote."
       },
       {
         "slug": "product-photo-retouching",
@@ -101,8 +104,8 @@
         "shortDesc": "Flawless cleanup, blemish elimination, dust removal, and texture preservation for premium brand aesthetics.",
         "fullDesc": "Transform studio raw captures into high-converting hero visuals. We eliminate micro-scratches, lint, sensor dust, uneven reflections, and manufacturing flaws while preserving authentic material textures such as brushed metals, leathers, and matte coatings.",
         "turnaroundHours": 12,
-        "beforeImage": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80&brightness=1.1&contrast=1.1",
+        "beforeImage": "/images/portfolio/jewelry-retouch-before.jpg",
+        "afterImage": "/images/portfolio/jewelry-retouch-after.jpg",
         "features": [
           "Comprehensive sensor dust, fingerprint, and scratch removal",
           "Surface smoothing without plastic over-softening",
@@ -125,7 +128,10 @@
             "q": "Do you keep the authentic material texture intact?",
             "a": "Yes. We use advanced frequency separation and dodge & burn techniques to clean surfaces while retaining 100% of the authentic tactile texture."
           }
-        ]
+        ],
+        "startingPrice": "$1.49",
+        "metaTitle": "Commercial Product Photo Retouching | ForYourGoal Studio",
+        "metaDesc": "High-end commercial product retouching: blemish cleanup, dust removal, color balance, and texture preservation for premium brands. Request your custom quote."
       },
       {
         "slug": "ghost-mannequin",
@@ -133,8 +139,8 @@
         "shortDesc": "Combine multiple apparel shots to create seamless 3D hollow-body effects for apparel catalogs.",
         "fullDesc": "Display clothing with realistic volume and fit without the distraction or expense of live models or plastic mannequins. We seamlessly composite the exterior front, interior collar/neck label, and lining shots into a clean, dimensional floating garment.",
         "turnaroundHours": 12,
-        "beforeImage": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80&sat=120",
+        "beforeImage": "/images/portfolio/ghost-mannequin-before.jpg",
+        "afterImage": "/images/portfolio/ghost-mannequin-after.jpg",
         "features": [
           "Seamless inner collar, tag, and lining composition",
           "Symmetry correction for sleeves, shoulders, and hems",
@@ -156,7 +162,10 @@
             "q": "What files do I need to send for ghost mannequin effect?",
             "a": "Provide the main photo on the mannequin plus a separate shot of the inner collar/neck label shot inside-out or flat on a table."
           }
-        ]
+        ],
+        "startingPrice": "$0.99",
+        "metaTitle": "Ghost Mannequin & Neck Joint Services | ForYourGoal Studio",
+        "metaDesc": "Expert invisible ghost mannequin and neck joint editing for apparel brands. Combine multi-angle shots into realistic 3D volume. Request your custom quote."
       },
       {
         "slug": "jewelry-retouching",
@@ -164,8 +173,8 @@
         "shortDesc": "High-magnification diamond sparkle enhancement, metal polishing, and reflection balancing.",
         "fullDesc": "Jewelry photography suffers from macro reflections, camera glare, and microscopic manufacturing abrasions. Our specialized jewelry retouching team restores precious metals to mirror-smooth brilliance, intensifies facet contrast in diamonds and colored gemstones, and creates luminous depth.",
         "turnaroundHours": 24,
-        "beforeImage": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80&contrast=1.2",
+        "beforeImage": "/images/portfolio/jewelry-retouch-before.jpg",
+        "afterImage": "/images/portfolio/jewelry-retouch-after.jpg",
         "features": [
           "Precision metal polishing (gold, platinum, silver, rose gold)",
           "Gemstone facet enhancement and fire intensification",
@@ -186,7 +195,10 @@
             "q": "Can you fix blurry areas in macro jewelry shots?",
             "a": "Yes, we can perform focus-stack compositing if you provide multiple focus bracket shots, or sharpen depth-of-field falloff manually."
           }
-        ]
+        ],
+        "startingPrice": "$3.99",
+        "metaTitle": "High-End Jewelry Photo Retouching | ForYourGoal Studio",
+        "metaDesc": "Master jewelry and gemstone photo retouching. Eliminate macro scratches, restore precious metal luster, and maximize diamond sparkle. Request a custom quote."
       },
       {
         "slug": "background-removal",
@@ -194,8 +206,8 @@
         "shortDesc": "Clean, consistent background cutouts on pure white, transparent, or custom branded backdrops.",
         "fullDesc": "Eliminate cluttered studio environments and standardize thousands of product photos to pure white (#FFFFFF), modern neutral gray (#F5F5F5), or transparent PNGs compliant with Amazon, Google Shopping, and marketplace standards.",
         "turnaroundHours": 6,
-        "beforeImage": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80&sat=-50",
+        "beforeImage": "/images/portfolio/clipping-path-before.jpg",
+        "afterImage": "/images/portfolio/clipping-path-after.jpg",
         "features": [
           "Pure White RGB (255, 255, 255) guarantee for Amazon & eBay",
           "Transparent PNG with zero background fringe",
@@ -215,7 +227,10 @@
             "q": "Can you match our custom background color hex code?",
             "a": "Absolutely. Provide your exact brand hex code (e.g., #F6F5F0) and margin rules, and every image will be formatted uniformly."
           }
-        ]
+        ],
+        "startingPrice": "$0.39",
+        "metaTitle": "E-Commerce Background Removal Services | ForYourGoal Studio",
+        "metaDesc": "High-volume background removal and cutout services for Amazon, Shopify, and catalogs. Pure white #FFFFFF, transparent PNGs, and backdrops. Get a custom quote."
       },
       {
         "slug": "shadow-reflection",
@@ -223,8 +238,8 @@
         "shortDesc": "Natural drop shadows, cast shadows, and realistic glossy surface reflections for grounded product visuals.",
         "fullDesc": "Floating cutouts look artificial without believable grounding. We craft organic drop shadows, directional cast shadows, and mirror surface reflections that match the natural angle and color temperature of the product's lighting source.",
         "turnaroundHours": 12,
-        "beforeImage": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1200&q=80&contrast=1.1",
+        "beforeImage": "/images/portfolio/ghost-mannequin-before.jpg",
+        "afterImage": "/images/portfolio/ghost-mannequin-after.jpg",
         "features": [
           "Natural existing shadow retention through soft masks",
           "Custom drop shadow creation with diffused feathering",
@@ -243,7 +258,10 @@
             "q": "What is the difference between drop shadow and cast shadow?",
             "a": "A drop shadow creates a soft diffused cushion directly underneath the item, whereas a cast shadow replicates directional lighting throwing a realistic elongated shadow across the floor."
           }
-        ]
+        ],
+        "startingPrice": "$0.79",
+        "metaTitle": "Shadow & Reflection Creation | ForYourGoal Studio",
+        "metaDesc": "Natural drop shadows, directional cast shadows, and mirror reflections for product cutouts. Ground your catalog visuals naturally. Request a custom quote."
       },
       {
         "slug": "color-correction",
@@ -251,8 +269,8 @@
         "shortDesc": "Accurate Pantone matching, white-balance calibration, and color variant generation from a single master shot.",
         "fullDesc": "Save thousands on photography by shooting one master sample and letting us generate every colorway in your SKU lineup. We match physical Pantone swatches with calibrated digital accuracy, eliminating return rates caused by color discrepancies.",
         "turnaroundHours": 12,
-        "beforeImage": "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=1200&q=80&hue=90",
+        "beforeImage": "/images/portfolio/jewelry-retouch-before.jpg",
+        "afterImage": "/images/portfolio/jewelry-retouch-after.jpg",
         "features": [
           "Colorway replication across all product color options",
           "Pantone TCX / TPX / Coated color matching",
@@ -270,7 +288,10 @@
             "q": "Can I provide Pantone codes for exact color replication?",
             "a": "Yes, send us your Pantone formulas or HEX/RGB swatches and we will calibrate the digital files to match."
           }
-        ]
+        ],
+        "startingPrice": "$0.99",
+        "metaTitle": "Color Correction & Color Matching | ForYourGoal Studio",
+        "metaDesc": "Accurate color correction and multi-colorway generation. Match physical Pantone swatches from one master capture. Consistent apparel and e-commerce colors."
       },
       {
         "slug": "image-masking",
@@ -278,8 +299,8 @@
         "shortDesc": "Alpha channel, hair, fur, and transparent fabric isolation for hyper-complex edge geometries.",
         "fullDesc": "When pen-tool clipping paths cannot capture delicate flyaway hair, animal fur, translucent lace, or semi-transparent glass, our image masking specialists deploy multi-channel luminosity masks and refine-edge alpha selections to preserve every microscopic strand.",
         "turnaroundHours": 12,
-        "beforeImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80",
-        "afterImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80&sat=-100",
+        "beforeImage": "/images/portfolio/clipping-path-before.jpg",
+        "afterImage": "/images/portfolio/clipping-path-after.jpg",
         "features": [
           "Hair, wool, and fur preservation without jagged clumping",
           "Translucent and sheer fabric opacity masking",
@@ -298,7 +319,10 @@
             "q": "How does image masking differ from a standard clipping path?",
             "a": "A clipping path is a hard vector outline ideal for solid smooth edges like shoes or electronics. Image masking uses pixel alpha values, making it essential for fine hair, fur, and semi-transparent objects."
           }
-        ]
+        ],
+        "startingPrice": "$1.29",
+        "metaTitle": "Advanced Image Masking Services | ForYourGoal Studio",
+        "metaDesc": "Advanced alpha channel, fur, flyaway hair, and translucent fabric masking. Flawless edge isolation where standard clipping paths fail. Request a custom quote."
       }
     ]
   },

@@ -106,6 +106,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       message: "Media uploaded successfully",
+      url: webUrl,
       mediaItem,
     });
   } catch (err: any) {

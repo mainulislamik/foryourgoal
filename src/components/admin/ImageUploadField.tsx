@@ -52,7 +52,13 @@ export function ImageUploadField({
         throw new Error(data.error || "Upload failed");
       }
 
-      onChange(data.url);
+      const uploadedUrl = data.url || data.mediaItem?.url;
+      if (!uploadedUrl) {
+        throw new Error("No URL returned from server");
+      }
+
+      setImgError(false);
+      onChange(uploadedUrl);
       if (onUploaded && data.mediaItem) {
         onUploaded(data.mediaItem);
       }

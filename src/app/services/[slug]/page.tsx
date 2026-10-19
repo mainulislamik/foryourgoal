@@ -59,16 +59,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const desc = serviceMetaDescriptions[service.slug] || service.shortDesc;
+  const desc = dynamicService?.metaDesc || serviceMetaDescriptions[service.slug] || service.shortDesc;
+  const title = dynamicService?.metaTitle || `${service.title} | Foryourgoal Studio`;
 
   return {
-    title: service.title,
+    title,
     description: desc,
     alternates: {
       canonical: `https://foryourgoal.com/services/${service.slug}`,
     },
     openGraph: {
-      title: `${service.title} | Foryourgoal Studio`,
+      title,
       description: desc,
       url: `https://foryourgoal.com/services/${service.slug}`,
       images: [{ url: service.afterImage }],

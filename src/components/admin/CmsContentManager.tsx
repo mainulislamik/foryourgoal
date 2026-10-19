@@ -796,14 +796,19 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                           <label className="text-xs font-bold text-slate-700 uppercase">Starting Price</label>
                           <input
                             type="text"
-                            value={service.startingPrice}
+                            value={service.startingPrice || ""}
+                            placeholder="$0.49"
                             onChange={(e) => {
                               const next = [...content.servicesSection.services];
-                              next[index].startingPrice = e.target.value;
-                              setContent({
-                                ...content,
-                                servicesSection: { ...content.servicesSection, services: next },
-                              });
+                              next[index] = { ...next[index], startingPrice: e.target.value };
+                              setContent((prev) =>
+                                !prev
+                                  ? prev
+                                  : {
+                                      ...prev,
+                                      servicesSection: { ...prev.servicesSection, services: next },
+                                    }
+                              );
                             }}
                             className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-sm font-bold text-emerald-700 bg-white"
                           />
@@ -817,11 +822,15 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                           value={service.shortDesc}
                           onChange={(e) => {
                             const next = [...content.servicesSection.services];
-                            next[index].shortDesc = e.target.value;
-                            setContent({
-                              ...content,
-                              servicesSection: { ...content.servicesSection, services: next },
-                            });
+                            next[index] = { ...next[index], shortDesc: e.target.value };
+                            setContent((prev) =>
+                              !prev
+                                ? prev
+                                : {
+                                    ...prev,
+                                    servicesSection: { ...prev.servicesSection, services: next },
+                                  }
+                            );
                           }}
                           className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-sm bg-white"
                         />
@@ -834,11 +843,15 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                           value={service.fullDesc}
                           onChange={(e) => {
                             const next = [...content.servicesSection.services];
-                            next[index].fullDesc = e.target.value;
-                            setContent({
-                              ...content,
-                              servicesSection: { ...content.servicesSection, services: next },
-                            });
+                            next[index] = { ...next[index], fullDesc: e.target.value };
+                            setContent((prev) =>
+                              !prev
+                                ? prev
+                                : {
+                                    ...prev,
+                                    servicesSection: { ...prev.servicesSection, services: next },
+                                  }
+                            );
                           }}
                           className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-sm leading-relaxed bg-white"
                         />
@@ -851,11 +864,15 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                           value={service.beforeImage}
                           onChange={(url) => {
                             const next = [...content.servicesSection.services];
-                            next[index].beforeImage = url;
-                            setContent({
-                              ...content,
-                              servicesSection: { ...content.servicesSection, services: next },
-                            });
+                            next[index] = { ...next[index], beforeImage: url };
+                            setContent((prev) =>
+                              !prev
+                                ? prev
+                                : {
+                                    ...prev,
+                                    servicesSection: { ...prev.servicesSection, services: next },
+                                  }
+                            );
                           }}
                           category="services"
                         />
@@ -864,11 +881,15 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                           value={service.afterImage}
                           onChange={(url) => {
                             const next = [...content.servicesSection.services];
-                            next[index].afterImage = url;
-                            setContent({
-                              ...content,
-                              servicesSection: { ...content.servicesSection, services: next },
-                            });
+                            next[index] = { ...next[index], afterImage: url };
+                            setContent((prev) =>
+                              !prev
+                                ? prev
+                                : {
+                                    ...prev,
+                                    servicesSection: { ...prev.servicesSection, services: next },
+                                  }
+                            );
                           }}
                           category="services"
                         />
@@ -881,29 +902,39 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                           <input
                             type="text"
                             value={service.metaTitle || ""}
+                            placeholder={`${service.title} | ForYourGoal Studio`}
                             onChange={(e) => {
                               const next = [...content.servicesSection.services];
-                              next[index].metaTitle = e.target.value;
-                              setContent({
-                                ...content,
-                                servicesSection: { ...content.servicesSection, services: next },
-                              });
+                              next[index] = { ...next[index], metaTitle: e.target.value };
+                              setContent((prev) =>
+                                !prev
+                                  ? prev
+                                  : {
+                                      ...prev,
+                                      servicesSection: { ...prev.servicesSection, services: next },
+                                    }
+                              );
                             }}
                             className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-xs bg-white"
                           />
                         </div>
                         <div>
                           <label className="text-xs font-bold text-slate-700 uppercase">SEO Meta Description</label>
-                          <input
-                            type="text"
+                          <textarea
+                            rows={2}
                             value={service.metaDesc || ""}
+                            placeholder="SEO description..."
                             onChange={(e) => {
                               const next = [...content.servicesSection.services];
-                              next[index].metaDesc = e.target.value;
-                              setContent({
-                                ...content,
-                                servicesSection: { ...content.servicesSection, services: next },
-                              });
+                              next[index] = { ...next[index], metaDesc: e.target.value };
+                              setContent((prev) =>
+                                !prev
+                                  ? prev
+                                  : {
+                                      ...prev,
+                                      servicesSection: { ...prev.servicesSection, services: next },
+                                    }
+                              );
                             }}
                             className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-xs bg-white"
                           />
