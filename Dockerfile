@@ -42,7 +42,9 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Ensure data storage directory exists with write permissions for nextjs user
-RUN mkdir -p /app/data && chown -R nextjs:nodejs /app/data
+RUN mkdir -p /app/data /app/public/uploads/cms && \
+    chown -R nextjs:nodejs /app/data /app/public/uploads && \
+    chmod -R 775 /app/data /app/public/uploads
 
 USER nextjs
 
