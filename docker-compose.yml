@@ -18,6 +18,7 @@ services:
       - SMTP_PORT=25
     volumes:
       - ./data:/app/data
+      - ./public/uploads:/app/public/uploads
     deploy:
       resources:
         limits:
