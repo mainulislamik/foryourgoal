@@ -24,6 +24,15 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/pricing",
+        destination: "/request-a-quote",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

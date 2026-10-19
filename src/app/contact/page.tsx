@@ -75,7 +75,7 @@ export default function ContactPage() {
               </div>
               <div className="text-xs text-slate-700 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-indigo-600" />
-                <span>Receive custom tiered volume pricing</span>
+                <span>Receive tailored project proposal & SLA</span>
               </div>
               <div className="text-xs text-slate-700 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-indigo-600" />

@@ -145,10 +145,10 @@ export default async function ServiceDetailPage({ params }: Props) {
               <ArrowRight className="w-4 h-4 text-indigo-400" />
             </Link>
             <Link
-              href="/pricing"
+              href="/how-it-works"
               className="w-full sm:w-auto px-6 py-4 rounded-xl bg-slate-50 text-slate-800 font-medium border border-slate-300 hover:border-slate-400 hover:bg-slate-100 text-sm text-center transition-colors"
             >
-              Interactive Price Calculator
+              Explore Our Workflow & SLAs
             </Link>
           </div>
         </div>

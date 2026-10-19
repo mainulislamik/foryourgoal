@@ -1,6 +1,6 @@
 export interface FAQItem {
   id: string;
-  category: "general" | "services" | "pricing" | "security";
+  category: "general" | "services" | "terms" | "security";
   question: string;
   answer: string;
 }
@@ -36,17 +36,17 @@ export const faqsData: FAQItem[] = [
   },
   {
     id: "faq-5",
-    category: "pricing",
-    question: "How does your volume pricing and discount structure work?",
+    category: "terms",
+    question: "How do you scope projects and calculate custom volume estimates?",
     answer:
-      "Pricing scales with monthly image volume. Clipping path starts from $0.49/image, with tier discounts starting at 50+ images, 500+ images, and enterprise rates for 2,000+ monthly photos. Custom monthly retainers are also available.",
+      "Every enterprise workflow is unique. We evaluate your sample images, complexity (simple straight edges vs. intricate jewelry/fur/hair), monthly throughput, and required turnaround speed to provide a tailored fixed-rate proposal and custom SLA. Request a quote or 2-image pilot to receive an exact estimate within 45 minutes.",
   },
   {
     id: "faq-6",
-    category: "pricing",
+    category: "terms",
     question: "Can we test your quality before committing to an order?",
     answer:
-      "Yes! We offer a completely free, no-obligation 2-image sample trial so you can inspect our path precision, edge quality, and turnaround speed before placing a paid order.",
+      "Yes! We offer a completely free, no-obligation 2-image sample trial so you can inspect our path precision, edge quality, and turnaround speed before placing a commercial order.",
   },
   {
     id: "faq-7",

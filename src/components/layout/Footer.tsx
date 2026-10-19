@@ -166,11 +166,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="hover:text-indigo-600 transition-colors">
-                  Pricing Matrix
-                </Link>
-              </li>
-              <li>
                 <Link href="/about" className="hover:text-indigo-600 transition-colors">
                   About Our Studio
                 </Link>

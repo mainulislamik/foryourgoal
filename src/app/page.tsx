@@ -200,7 +200,7 @@ export default function HomePage() {
                   href={`/services/${service.slug}`}
                   className="text-xs font-semibold text-slate-700 hover:text-indigo-600 inline-flex items-center gap-1.5 transition-colors"
                 >
-                  <span>Explore Specs & Pricing</span>
+                  <span>Explore Specs & Samples</span>
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
                 </Link>
                 <Link
@@ -392,7 +392,7 @@ export default function HomePage() {
             Frequently Asked Questions
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Everything you need to know about pricing, turnaround, file formats, and free trial samples.
+            Everything you need to know about turnaround speeds, quality control, file formats, and free trial samples.
           </p>
         </div>
 
@@ -439,7 +439,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
-            Send us your brief and sample photos today. We will return your completed sample within 4 hours, complete with custom pricing and zero obligation.
+            Send us your brief and sample photos today. We will return your completed sample within 4 hours, complete with your tailored project scope and zero obligation.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -450,10 +450,10 @@ export default function HomePage() {
               Get Your Custom Quote Now
             </Link>
             <Link
-              href="/pricing"
+              href="/how-it-works"
               className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white text-slate-700 font-medium border border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all text-sm shadow-sm"
             >
-              Interactive Price Calculator
+              Explore Our Workflow & SLAs
             </Link>
           </div>
         </div>

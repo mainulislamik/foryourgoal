@@ -299,15 +299,6 @@ export function Header() {
             </Link>
 
             <Link
-              href="/pricing"
-              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
-                pathname === "/pricing" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
-              }`}
-            >
-              Pricing
-            </Link>
-
-            <Link
               href="/about"
               className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                 pathname === "/about" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
@@ -421,13 +412,6 @@ export function Header() {
                   className="text-sm font-medium text-slate-700 hover:text-indigo-600"
                 >
                   Portfolio Gallery
-                </Link>
-                <Link
-                  href="/pricing"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-slate-700 hover:text-indigo-600"
-                >
-                  Pricing & Volume Calculator
                 </Link>
                 <Link
                   href="/about"

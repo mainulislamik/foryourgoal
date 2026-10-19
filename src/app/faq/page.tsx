@@ -13,7 +13,7 @@ export default function FAQPage() {
     { id: "all", label: "All Questions" },
     { id: "general", label: "General & Pilot" },
     { id: "services", label: "Services & Quality" },
-    { id: "pricing", label: "Pricing & Invoicing" },
+    { id: "terms", label: "Project Scoping & Invoicing" },
     { id: "security", label: "Security & NDA" },
   ];
 
