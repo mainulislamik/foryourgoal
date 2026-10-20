@@ -55,12 +55,22 @@ export function BeforeAfterSlider({
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
   const [activeMode, setActiveMode] = useState<ComparisonMode>(initialMode);
   const [isHeld, setIsHeld] = useState(false);
-  const [loupePos, setLoupePos] = useState<{ x: number; y: number; show: boolean; pctX: number; pctY: number }>({
+  const [loupePos, setLoupePos] = useState<{
+    x: number;
+    y: number;
+    show: boolean;
+    pctX: number;
+    pctY: number;
+    containerWidth: number;
+    containerHeight: number;
+  }>({
     x: 0,
     y: 0,
     show: false,
     pctX: 50,
     pctY: 50,
+    containerWidth: 600,
+    containerHeight: 600,
   });
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -150,7 +160,15 @@ export function BeforeAfterSlider({
     const y = e.clientY - rect.top;
     const pctX = Math.max(0, Math.min(100, (x / rect.width) * 100));
     const pctY = Math.max(0, Math.min(100, (y / rect.height) * 100));
-    setLoupePos({ x, y, show: true, pctX, pctY });
+    setLoupePos({
+      x,
+      y,
+      show: true,
+      pctX,
+      pctY,
+      containerWidth: rect.width,
+      containerHeight: rect.height,
+    });
   };
 
   // Keyboard navigation for accessibility
@@ -459,10 +477,12 @@ export function BeforeAfterSlider({
                 }}
               >
                 <div
-                  className="absolute w-[300%] h-[300%] pointer-events-none"
+                  className="absolute pointer-events-none"
                   style={{
-                    left: `-${loupePos.pctX * 3 - 50}%`,
-                    top: `-${loupePos.pctY * 3 - 50}%`,
+                    width: loupePos.containerWidth * 3,
+                    height: loupePos.containerHeight * 3,
+                    left: 80 - loupePos.x * 3,
+                    top: 80 - loupePos.y * 3,
                   }}
                 >
                   <Image
