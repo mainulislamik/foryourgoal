@@ -218,6 +218,7 @@ export function BeforeAfterModal({
               alt={afterAlt}
               fill
               sizes="100vw"
+              quality={95}
               className="object-contain pointer-events-none select-none"
               priority
             />
@@ -240,6 +241,7 @@ export function BeforeAfterModal({
               alt={beforeAlt}
               fill
               sizes="100vw"
+              quality={95}
               className="object-contain pointer-events-none select-none"
               priority
             />

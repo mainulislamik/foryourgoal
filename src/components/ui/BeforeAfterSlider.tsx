@@ -314,7 +314,8 @@ export function BeforeAfterSlider({
                 src={afterImage}
                 alt={afterAlt}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+                quality={95}
                 className="object-cover pointer-events-none select-none"
                 priority
               />
@@ -335,7 +336,8 @@ export function BeforeAfterSlider({
                 src={beforeImage}
                 alt={beforeAlt}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+                quality={95}
                 className="object-cover pointer-events-none select-none"
                 priority
               />
@@ -379,7 +381,8 @@ export function BeforeAfterSlider({
               src={afterImage}
               alt={afterAlt}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+              quality={95}
               className="object-cover pointer-events-none select-none"
               priority
             />
@@ -394,7 +397,8 @@ export function BeforeAfterSlider({
                 src={beforeImage}
                 alt={beforeAlt}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+                quality={95}
                 className="object-cover pointer-events-none select-none"
                 priority
               />
@@ -431,7 +435,8 @@ export function BeforeAfterSlider({
               src={afterImage}
               alt={afterAlt}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+              quality={95}
               className="object-cover pointer-events-none select-none"
               priority
             />
@@ -460,7 +465,8 @@ export function BeforeAfterSlider({
                     alt={afterAlt}
                     fill
                     className="object-cover"
-                    sizes="1200px"
+                    sizes="2560px"
+                    quality={95}
                   />
                 </div>
                 {/* Crosshair indicator */}
