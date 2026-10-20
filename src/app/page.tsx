@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { getSiteContent } from "@/lib/site-content";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
@@ -433,13 +434,25 @@ export default async function HomePage() {
                       &ldquo;{test.content}&rdquo;
                     </p>
                   </div>
-                  <div className="flex items-center gap-3 pt-4 border-t border-slate-200">
-                    <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center font-bold text-indigo-700 text-sm">
-                      {test.name.charAt(0)}
+                  <div className="flex items-center gap-3.5 pt-4 border-t border-slate-200">
+                    <div className="relative w-11 h-11 rounded-full overflow-hidden border border-slate-200 shadow-sm shrink-0 bg-slate-100">
+                      {test.avatar ? (
+                        <Image
+                          src={test.avatar}
+                          alt={test.name}
+                          fill
+                          sizes="44px"
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center font-bold text-indigo-700 text-sm bg-indigo-100">
+                          {test.name.charAt(0)}
+                        </div>
+                      )}
                     </div>
                     <div>
                       <div className="text-sm font-bold text-slate-900">{test.name}</div>
-                      <div className="text-xs text-slate-500">{test.role}, {test.company}</div>
+                      <div className="text-xs font-medium text-slate-500">{test.role}</div>
                     </div>
                   </div>
                 </HoverCard>

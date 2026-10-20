@@ -1032,8 +1032,8 @@
       "id": "test-1",
       "name": "Marcus Vance",
       "role": "Head of Creative Ops",
-      "company": "LuxGroup Europe",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+      "company": "",
+      "avatar": "/images/testimonials/marcus-vance.webp",
       "content": "Foryourgoal cut our product catalog production time by 60%. Their clipping path accuracy on jewelry and eyewear is unmatched.",
       "rating": 5
     },
@@ -1041,8 +1041,8 @@
       "id": "test-2",
       "name": "Elena Rostova",
       "role": "E-Commerce Director",
-      "company": "Nordic Apparel",
-      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+      "company": "",
+      "avatar": "/images/testimonials/elena-rostova.webp",
       "content": "During Q4 peak, we handed them 3,000 apparel SKUs weekly. Flawless ghost mannequin execution with zero re-shoots or missed SLAs.",
       "rating": 5
     },
@@ -1050,8 +1050,8 @@
       "id": "test-3",
       "name": "David Chen",
       "role": "Senior Art Producer",
-      "company": "Horizon Studios",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+      "company": "",
+      "avatar": "/images/testimonials/david-chen.webp",
       "content": "Their strict NDA enforcement and dedicated secure FTP made onboarding effortless for our client's unreleased fashion collection.",
       "rating": 5
     }
