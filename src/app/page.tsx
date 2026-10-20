@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { getSiteContent } from "@/lib/site-content";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
-import { FreeTrialDropzone } from "@/components/ui/FreeTrialDropzone";
 import {
   FadeIn,
   StaggerContainer,
@@ -36,7 +35,6 @@ export default async function HomePage() {
   const industries = content.industriesSection?.industries || [];
   const howItWorks = content.howItWorks;
   const security = content.securitySection;
-  const cta = content.ctaBanner;
   const faqs = content.faqs || [];
   const testimonials = content.testimonials || [];
 
@@ -492,13 +490,6 @@ export default async function HomePage() {
             <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
-      </section>
-
-      {/* 9. INTERACTIVE FREE TRIAL ONBOARDING & CTA */}
-      <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 bg-slate-50 border-t border-slate-200 w-full scroll-mt-24" id="free-trial">
-        <FadeIn>
-          <FreeTrialDropzone />
-        </FadeIn>
       </section>
     </div>
   );
