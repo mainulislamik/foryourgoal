@@ -33,7 +33,6 @@ export default async function HomePage() {
   const hero = content.hero;
   const stats = content.stats || [];
   const services = content.servicesSection?.services || [];
-  const portfolio = content.portfolioSection?.items || [];
   const industries = content.industriesSection?.industries || [];
   const howItWorks = content.howItWorks;
   const security = content.securitySection;
@@ -320,62 +319,8 @@ export default async function HomePage() {
         </StaggerContainer>
       </section>
 
-      {/* 4. BEFORE & AFTER SHOWCASE GALLERY */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
-        <div className="max-w-3xl mb-12">
-          <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
-            {content.portfolioSection?.badge || "Verified Client Work"}
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">
-            {content.portfolioSection?.heading || "Before & After Transformation Gallery"}
-          </h2>
-          <p className="mt-3 text-base text-slate-600">
-            {content.portfolioSection?.description ||
-              "Drag the slider on each showcase to inspect our pixel-level precision, hand-drawn vector paths, and micro-texture preservation."}
-          </p>
-        </div>
-
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {portfolio.slice(0, 3).map((item) => (
-            <StaggerItem key={item.id}>
-              <HoverCard className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3 h-full">
-                <div className="relative aspect-square rounded-xl overflow-hidden bg-slate-100">
-                  <BeforeAfterSlider
-                    beforeImage={item.beforeImage}
-                    afterImage={item.afterImage}
-                    beforeLabel="Raw Input"
-                    afterLabel="Retouched"
-                    aspectRatio="custom"
-                    className="w-full h-full group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="px-1 py-1">
-                  <div className="flex items-center justify-between text-xs mb-1">
-                    <span className="font-bold text-slate-900">{item.title}</span>
-                    <span className="font-mono text-[10px] text-slate-600 uppercase bg-slate-100 px-2 py-0.5 rounded">
-                      {item.category}
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-600 line-clamp-2">{item.description}</p>
-                </div>
-              </HoverCard>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-
-        <div className="mt-12 text-center">
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-slate-300 text-slate-800 text-sm font-semibold hover:bg-slate-50 transition-colors shadow-sm"
-          >
-            <span>Explore full portfolio ({portfolio.length} case studies)</span>
-            <ArrowRight className="w-4 h-4 text-indigo-600" />
-          </Link>
-        </div>
-      </section>
-
-      {/* 5. HOW IT WORKS / SLAS */}
-      <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 w-full" id="how-it-works">
+      {/* 4. HOW IT WORKS / SLAS */}
+      <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 w-full border-t border-slate-200/80 bg-slate-50/50" id="how-it-works">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
             {howItWorks?.badge || "Seamless Outsourcing"}
