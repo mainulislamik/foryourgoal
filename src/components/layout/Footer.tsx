@@ -51,7 +51,7 @@ export function Footer() {
               <Lock className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-bold text-slate-900">5,000+ Daily Capacity</div>
+              <div className="text-sm font-bold text-slate-900">1,000+ Daily Capacity</div>
               <div className="text-xs text-slate-500">Enterprise volume scalability</div>
             </div>
           </div>

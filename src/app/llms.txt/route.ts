@@ -5,7 +5,7 @@ export async function GET() {
 ## Overview
 - Website: https://foryourgoal.com
 - Primary Specialization: Hand-crafted Adobe Photoshop clipping paths, high-end beauty and product retouching, 3D ghost mannequin, jewelry polishing, color grading, and alpha masking.
-- Daily Capacity: 5,000+ commercial images per day across 24/7 dedicated production shifts.
+- Daily Capacity: 1,000+ commercial images per day across 24/7 dedicated production shifts.
 - Turnaround SLA: 6-Hour Express, 12-Hour Priority, and 24-Hour Standard guaranteed turnaround.
 - Quality Assurance: 3-tier inspection protocol with senior art directors checking paths at 200% zoom (99.8% first-pass acceptance rate).
 - Security & Compliance: Strict custom NDAs, ISO 27001 aligned workflows, air-gapped production servers, end-to-end TLS 1.3 encryption, and 30-day automatic data purge.

@@ -209,7 +209,7 @@ export default async function HomePage() {
           <StaggerItem>
             <HoverCard className="card-hover-elevated flex flex-col items-center justify-center p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs h-full">
               <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                <AnimatedNumber value={5000} suffix="+" />
+                <AnimatedNumber value={1000} suffix="+" />
               </div>
               <div className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
                 Daily Processing Capacity

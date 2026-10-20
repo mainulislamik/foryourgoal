@@ -12,7 +12,7 @@
     "craftSub": "Pixel-perfect pen paths",
     "ndaBadge": "Strict NDA & Privacy",
     "ndaSub": "Your images are never shared",
-    "capacityBadge": "5,000+ Daily Capacity",
+    "capacityBadge": "1,000+ Daily Capacity",
     "capacitySub": "Enterprise volume scalability"
   },
   "hero": {
@@ -37,7 +37,7 @@
   },
   "stats": [
     {
-      "value": "5,000+",
+      "value": "1,000+",
       "label": "Daily Processing Capacity"
     },
     {
@@ -91,7 +91,7 @@
           },
           {
             "q": "What is your daily capacity for clipping path orders?",
-            "a": "We comfortably process 5,000+ images per day across our 24/7 dedicated production shifts."
+            "a": "We comfortably process 1,000+ images per day across our 24/7 dedicated production shifts."
           }
         ],
         "metaTitle": "Hand-Drawn Clipping Path Services | Precision Photoshop Vector Cutouts",

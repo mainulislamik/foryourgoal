@@ -36,7 +36,7 @@ export const servicesData: ServiceItem[] = [
       },
       {
         "q": "What is your daily capacity for clipping path orders?",
-        "a": "We comfortably process 5,000+ images per day across our 24/7 dedicated production shifts."
+        "a": "We comfortably process 1,000+ images per day across our 24/7 dedicated production shifts."
       }
     ],
     "metaTitle": "Hand-Drawn Clipping Path Services | Precision Photoshop Vector Cutouts",

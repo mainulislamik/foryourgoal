@@ -13,7 +13,7 @@ export async function GET() {
 - Canonical URL: https://foryourgoal.com
 - Contact: support@foryourgoal.com
 - Core SLA: 6h / 12h / 24h guaranteed delivery
-- Capacity: 5,000+ daily images
+- Capacity: 1,000+ daily images
 - Quality Standard: 100% human-crafted vector paths via Adobe Photoshop pen tool. Zero destructive AI automation.
 
 ## Detailed Service Catalog

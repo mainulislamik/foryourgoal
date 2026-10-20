@@ -16,7 +16,7 @@
 - **Turnaround SLA**: Flexible 6-hour, 12-hour, and 24-hour turnaround windows.
 - **Quality Assurance**: 3-tier inspection protocol (Artist self-check, QA Supervisor review, Technical Director sign-off).
 - **Security & NDA**: Enterprise-grade confidentiality, encrypted file transit, 14-day automated file purge.
-- **High-Volume Capacity**: Scalable infrastructure supporting 5,000+ images per day.
+- **High-Volume Capacity**: Scalable infrastructure supporting 1,000+ images per day.
 
 ## Direct Links
 - Services Overview: https://foryourgoal.com/services

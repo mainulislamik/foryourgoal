@@ -307,7 +307,7 @@ export function getDefaultSiteContent(): SiteContent {
       craftSub: "Pixel-perfect pen paths",
       ndaBadge: "Strict NDA & Privacy",
       ndaSub: "Your images are never shared",
-      capacityBadge: "5,000+ Daily Capacity",
+      capacityBadge: "1,000+ Daily Capacity",
       capacitySub: "Enterprise volume scalability",
     },
     hero: {
@@ -331,7 +331,7 @@ export function getDefaultSiteContent(): SiteContent {
       featuredBadge: "100% Handcrafted",
     },
     stats: [
-      { value: "5,000+", label: "Daily Processing Capacity" },
+      { value: "1,000+", label: "Daily Processing Capacity" },
       { value: "99.8%", label: "First-Pass Acceptance Rate" },
       { value: "< 4 Hours", label: "Express Turnaround Available" },
       { value: "100%", label: "Hand-Crafted Vector Precision" },

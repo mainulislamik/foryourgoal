@@ -36,7 +36,7 @@ export default function HowItWorksPage() {
       num: "03",
       title: "Batch Production & Nightly Processing",
       desc: "Our production studio works 24/7 across multiple shift rotations. While your headquarters sleeps, our artists process hundreds or thousands of SKUs using 100% hand-drawn pen tool paths, avoiding jagged automated AI clipping artifacts.",
-      details: ["High-volume daily throughput (5,000+ files)", "Layered PSD with named paths", "Consistent lighting and color calibration"],
+      details: ["High-volume daily throughput (1,000+ files)", "Layered PSD with named paths", "Consistent lighting and color calibration"],
     },
     {
       num: "04",
