@@ -11,54 +11,57 @@ export function Footer() {
   if (pathname?.startsWith("/imon")) {
     return null;
   }
+  const isHomePage = pathname === '/';
   return (
     <footer className="bg-slate-50 border-t border-slate-200 text-slate-600 pt-16 pb-12 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-12">
         {/* Top Feature Badges Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pb-12 border-b border-slate-200">
-          <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-            <div className="p-2.5 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 shrink-0">
-              <Clock className="w-5 h-5" />
+        {!isHomePage && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pb-12 border-b border-slate-200">
+            <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <div className="p-2.5 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 shrink-0">
+                <Clock className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-900">6 to 24h Turnaround</div>
+                <div className="text-xs text-slate-500">Strict SLA delivery guarantee</div>
+              </div>
             </div>
-            <div>
-              <div className="text-sm font-bold text-slate-900">6 to 24h Turnaround</div>
-              <div className="text-xs text-slate-500">Strict SLA delivery guarantee</div>
-            </div>
-          </div>
 
-          <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-            <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 shrink-0">
-              <CheckCircle2 className="w-5 h-5" />
+            <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 shrink-0">
+                <CheckCircle2 className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-900">100% Hand-Crafted</div>
+                <div className="text-xs text-slate-500">Pixel-perfect pen paths</div>
+              </div>
             </div>
-            <div>
-              <div className="text-sm font-bold text-slate-900">100% Hand-Crafted</div>
-              <div className="text-xs text-slate-500">Pixel-perfect pen paths</div>
-            </div>
-          </div>
 
-          <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-            <div className="p-2.5 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 shrink-0">
-              <ShieldCheck className="w-5 h-5" />
+            <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <div className="p-2.5 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 shrink-0">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-900">Strict NDA & Privacy</div>
+                <div className="text-xs text-slate-500">Your images are never shared</div>
+              </div>
             </div>
-            <div>
-              <div className="text-sm font-bold text-slate-900">Strict NDA & Privacy</div>
-              <div className="text-xs text-slate-500">Your images are never shared</div>
-            </div>
-          </div>
 
-          <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-            <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 shrink-0">
-              <Lock className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-sm font-bold text-slate-900">1,000+ Daily Capacity</div>
-              <div className="text-xs text-slate-500">Enterprise volume scalability</div>
+            <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 shrink-0">
+                <Lock className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-sm font-bold text-slate-900">1,000+ Daily Capacity</div>
+                <div className="text-xs text-slate-500">Enterprise volume scalability</div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Main Footer Links Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 py-12">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 ${isHomePage ? 'pt-4 pb-12' : 'py-12'}`}>
           {/* Col 1: Brand & Bio */}
           <div className="lg:col-span-2 space-y-4">
             <Logo showTagline={true} />
