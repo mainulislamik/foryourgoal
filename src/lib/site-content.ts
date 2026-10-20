@@ -58,6 +58,7 @@ export interface SecuritySection {
   cardTitle: string;
   cardSubtitle: string;
   cardMetrics: { label: string; value: string }[];
+  image?: string;
 }
 
 export interface CtaBanner {
@@ -399,6 +400,7 @@ export function getDefaultSiteContent(): SiteContent {
         { label: "Encryption", value: "AES-256 at Rest" },
         { label: "Uptime SLA", value: "99.9% Uptime" },
       ],
+      image: "/images/security/enterprise-data-facility.webp",
     },
     ctaBanner: {
       heading: "Ready to Streamline Your Post-Production Workflow?",

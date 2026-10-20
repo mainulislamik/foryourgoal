@@ -945,7 +945,8 @@
         "label": "Uptime SLA",
         "value": "99.9% Uptime"
       }
-    ]
+    ],
+    "image": "/images/security/enterprise-data-facility.webp"
   },
   "ctaBanner": {
     "heading": "Ready to Streamline Your Post-Production Workflow?",

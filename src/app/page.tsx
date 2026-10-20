@@ -386,24 +386,30 @@ export default async function HomePage() {
           </div>
 
           <div className="lg:col-span-6">
-            <HoverCard className="p-8 rounded-2xl bg-white border border-slate-200 shadow-xl">
-              <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <Lock className="w-5 h-5 text-indigo-600" />
-                <span>{security?.cardTitle || "Enterprise SLA Guarantees"}</span>
-              </h3>
-              <StaggerContainer className="space-y-4 text-sm text-slate-600">
-                {(security?.cardMetrics || []).map((metric, i) => (
-                  <StaggerItem key={i}>
-                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
-                      <div className="font-semibold text-slate-900">{metric.label}</div>
-                      <div className="text-xs font-mono font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded border border-indigo-200">
-                        {metric.value}
-                      </div>
-                    </div>
-                  </StaggerItem>
-                ))}
-              </StaggerContainer>
-            </HoverCard>
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200/80 shadow-2xl bg-slate-900 group aspect-[4/3] w-full">
+              <Image
+                src={security?.image || "/images/security/enterprise-data-facility.webp"}
+                alt={security?.heading || "Enterprise Data Protection & Secure Facility"}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 650px"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                quality={90}
+                priority={false}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/10 text-xs font-medium text-slate-200 shadow-lg">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  </span>
+                  <span>Air-Gapped & ISO Compliant Facility</span>
+                </div>
+                <div className="text-[11px] font-mono tracking-wider uppercase text-slate-400 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded border border-white/10">
+                  TLS 1.3 / AES-256
+                </div>
+              </div>
+            </div>
           </div>
         </FadeIn>
       </section>

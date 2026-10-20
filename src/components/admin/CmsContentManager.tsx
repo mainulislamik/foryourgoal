@@ -710,6 +710,24 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
                 className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-sm leading-relaxed"
               />
             </div>
+
+            {/* Security Section Image */}
+            <div className="pt-4 border-t border-slate-100">
+              <ImageUploadField
+                label="Security Section Image"
+                value={content.securitySection.image || ""}
+                onChange={(url) =>
+                  setContent({
+                    ...content,
+                    securitySection: { ...content.securitySection, image: url },
+                  })
+                }
+                category="security"
+              />
+              <p className="text-xs text-slate-500 mt-1">
+                This photo is displayed on the homepage alongside the Data Protection & Compliance guarantees.
+              </p>
+            </div>
           </div>
 
           {/* CTA Banner */}
