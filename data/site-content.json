@@ -946,7 +946,10 @@
         "value": "99.9% Uptime"
       }
     ],
-    "image": "/images/security/enterprise-data-facility.webp"
+    "image": "/images/security/photoshop-editing.webp",
+    "video": "/videos/security/photoshop-editing.mp4",
+    "imageAlt": "Professional photo editing and retouching in Adobe Photoshop",
+    "imageCaption": "Air-Gapped Workstations & Live Photoshop Post-Production"
   },
   "ctaBanner": {
     "heading": "Ready to Streamline Your Post-Production Workflow?",

@@ -59,6 +59,9 @@ export interface SecuritySection {
   cardSubtitle: string;
   cardMetrics: { label: string; value: string }[];
   image?: string;
+  imageAlt?: string;
+  imageCaption?: string;
+  video?: string;
 }
 
 export interface CtaBanner {
@@ -400,7 +403,10 @@ export function getDefaultSiteContent(): SiteContent {
         { label: "Encryption", value: "AES-256 at Rest" },
         { label: "Uptime SLA", value: "99.9% Uptime" },
       ],
-      image: "/images/security/enterprise-data-facility.webp",
+      image: "/images/security/photoshop-editing.webp",
+      video: "/videos/security/photoshop-editing.mp4",
+      imageAlt: "Professional photo editing and retouching in Adobe Photoshop",
+      imageCaption: "Air-Gapped Workstations & Live Photoshop Post-Production",
     },
     ctaBanner: {
       heading: "Ready to Streamline Your Post-Production Workflow?",

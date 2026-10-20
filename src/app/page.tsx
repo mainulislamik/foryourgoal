@@ -36,6 +36,7 @@ export default async function HomePage() {
   const industries = content.industriesSection?.industries || [];
   const howItWorks = content.howItWorks;
   const security = content.securitySection;
+  const securitySection = content.securitySection;
   const faqs = content.faqs || [];
   const testimonials = content.testimonials || [];
 
@@ -387,26 +388,46 @@ export default async function HomePage() {
 
           <div className="lg:col-span-6">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200/80 shadow-2xl bg-slate-900 group aspect-[4/3] w-full">
-              <Image
-                src={security?.image || "/images/security/enterprise-data-facility.webp"}
-                alt={security?.heading || "Enterprise Data Protection & Secure Facility"}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 650px"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                quality={90}
-                priority={false}
-              />
+              {securitySection?.video ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  poster={securitySection?.image || "/images/security/photoshop-editing.webp"}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                >
+                  <source src={securitySection.video} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={securitySection?.image || "/images/security/photoshop-editing.webp"}
+                  alt={securitySection?.heading || "Enterprise Data Protection & Secure Facility"}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 650px"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  quality={90}
+                  priority={false}
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+              <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/10 text-xs font-medium text-slate-200 shadow-lg">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                   </span>
-                  <span>Air-Gapped & ISO Compliant Facility</span>
+                  <span>Air-Gapped & ISO 27001 Compliant</span>
                 </div>
-                <div className="text-[11px] font-mono tracking-wider uppercase text-slate-400 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded border border-white/10">
-                  TLS 1.3 / AES-256
+                <div className="flex items-center gap-2">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/10 text-xs font-medium text-slate-200 shadow-lg">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                    <span>Adobe Photoshop Workflow</span>
+                  </div>
+                  <div className="text-[11px] font-mono tracking-wider uppercase text-slate-400 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded border border-white/10">
+                    TLS 1.3 / AES-256
+                  </div>
                 </div>
               </div>
             </div>

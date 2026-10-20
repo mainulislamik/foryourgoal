@@ -711,22 +711,137 @@ export function CmsContentManager({ initialSubTab = "homepage" }: CmsContentMana
               />
             </div>
 
-            {/* Security Section Image */}
-            <div className="pt-4 border-t border-slate-100">
-              <ImageUploadField
-                label="Security Section Image"
-                value={content.securitySection.image || ""}
-                onChange={(url) =>
-                  setContent({
-                    ...content,
-                    securitySection: { ...content.securitySection, image: url },
-                  })
-                }
-                category="security"
-              />
-              <p className="text-xs text-slate-500 mt-1">
-                This photo is displayed on the homepage alongside the Data Protection & Compliance guarantees.
-              </p>
+            {/* Security Section Media (Video & Image) */}
+            <div className="pt-4 border-t border-slate-100 space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                  Security Visual Media (Motion Video & Photo)
+                </span>
+                {/* Quick Presets */}
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="text-xs text-slate-400 font-medium mr-1">Presets:</span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setContent({
+                        ...content,
+                        securitySection: {
+                          ...content.securitySection,
+                          video: "/videos/security/photoshop-editing.mp4",
+                          image: "/images/security/photoshop-editing.webp",
+                        },
+                      })
+                    }
+                    className="px-2.5 py-1 text-xs font-semibold rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition-colors"
+                  >
+                    🎬 Photoshop Video
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setContent({
+                        ...content,
+                        securitySection: {
+                          ...content.securitySection,
+                          video: "",
+                          image: "/images/security/photoshop-retouching.webp",
+                        },
+                      })
+                    }
+                    className="px-2.5 py-1 text-xs font-semibold rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 transition-colors"
+                  >
+                    📸 Retouch Photo
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setContent({
+                        ...content,
+                        securitySection: {
+                          ...content.securitySection,
+                          video: "",
+                          image: "/images/security/enterprise-data-facility.webp",
+                        },
+                      })
+                    }
+                    className="px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 transition-colors"
+                  >
+                    🏢 Data Facility
+                  </button>
+                </div>
+              </div>
+
+              {/* Video Field */}
+              <div>
+                <label className="text-xs font-bold text-slate-700 uppercase flex items-center justify-between">
+                  <span>Motion Video Path / URL (Auto-playing Loop)</span>
+                  {content.securitySection.video && (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setContent({
+                          ...content,
+                          securitySection: { ...content.securitySection, video: "" },
+                        })
+                      }
+                      className="text-[11px] text-red-500 hover:underline font-normal"
+                    >
+                      Clear Video (Use Photo Only)
+                    </button>
+                  )}
+                </label>
+                <input
+                  type="text"
+                  placeholder="/videos/security/photoshop-editing.mp4"
+                  value={content.securitySection.video || ""}
+                  onChange={(e) =>
+                    setContent({
+                      ...content,
+                      securitySection: { ...content.securitySection, video: e.target.value },
+                    })
+                  }
+                  className="w-full mt-1.5 px-3 py-2 border border-slate-300 rounded-xl text-sm font-mono text-slate-800"
+                />
+                <p className="text-xs text-slate-500 mt-1">
+                  Leave empty if you only want to display a static photo. When provided, this video plays on a muted continuous loop.
+                </p>
+
+                {/* Video Preview */}
+                {content.securitySection.video && (
+                  <div className="mt-2 relative rounded-xl overflow-hidden border border-slate-300 bg-slate-900 max-w-md aspect-video">
+                    <video
+                      key={content.securitySection.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                      src={content.securitySection.video}
+                    />
+                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/70 text-[10px] font-mono text-emerald-400">
+                      LIVE PREVIEW
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Image Upload Field */}
+              <div>
+                <ImageUploadField
+                  label="Security Section Poster / Fallback Image"
+                  value={content.securitySection.image || ""}
+                  onChange={(url) =>
+                    setContent({
+                      ...content,
+                      securitySection: { ...content.securitySection, image: url },
+                    })
+                  }
+                  category="security"
+                />
+                <p className="text-xs text-slate-500 mt-1">
+                  Used as the video poster frame, or as the main photo if no motion video is set.
+                </p>
+              </div>
             </div>
           </div>
 
