@@ -316,6 +316,7 @@ export function BeforeAfterSlider({
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
                 quality={95}
+                unoptimized
                 className="object-cover pointer-events-none select-none"
                 priority
               />
@@ -338,6 +339,7 @@ export function BeforeAfterSlider({
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
                 quality={95}
+                unoptimized
                 className="object-cover pointer-events-none select-none"
                 priority
               />
@@ -383,6 +385,7 @@ export function BeforeAfterSlider({
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
               quality={95}
+              unoptimized
               className="object-cover pointer-events-none select-none"
               priority
             />
@@ -399,6 +402,7 @@ export function BeforeAfterSlider({
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
                 quality={95}
+                unoptimized
                 className="object-cover pointer-events-none select-none"
                 priority
               />
@@ -437,6 +441,7 @@ export function BeforeAfterSlider({
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
               quality={95}
+              unoptimized
               className="object-cover pointer-events-none select-none"
               priority
             />
@@ -467,6 +472,7 @@ export function BeforeAfterSlider({
                     className="object-cover"
                     sizes="2560px"
                     quality={95}
+                    unoptimized
                   />
                 </div>
                 {/* Crosshair indicator */}

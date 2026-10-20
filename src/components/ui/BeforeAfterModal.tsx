@@ -219,6 +219,7 @@ export function BeforeAfterModal({
               fill
               sizes="100vw"
               quality={95}
+              unoptimized
               className="object-contain pointer-events-none select-none"
               priority
             />
@@ -242,6 +243,7 @@ export function BeforeAfterModal({
               fill
               sizes="100vw"
               quality={95}
+              unoptimized
               className="object-contain pointer-events-none select-none"
               priority
             />

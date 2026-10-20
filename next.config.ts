@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
   images: {
+    qualities: [75, 85, 90, 95, 100],
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
