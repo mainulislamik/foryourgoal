@@ -85,8 +85,8 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(true);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(true);
   const pathname = usePathname();
 
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -411,8 +411,8 @@ export function Header() {
 
       {/* Mobile Navigation Drawer — fixed to viewport, outside backdrop-blur container */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[64px] h-[calc(100dvh-64px)] max-h-[calc(100dvh-64px)] bg-white border-t border-slate-200 overflow-y-auto z-50 shadow-2xl flex flex-col justify-between">
-          <div className="p-6 flex flex-col space-y-4">
+        <div className="lg:hidden fixed inset-x-0 top-[64px] bottom-0 bg-white border-t border-slate-200 z-50 shadow-2xl flex flex-col">
+          <div className="flex-1 overflow-y-auto overscroll-contain p-5 space-y-6">
 
             {/* Services Accordion */}
             <div>
@@ -422,29 +422,36 @@ export function Header() {
                 className="w-full flex items-center justify-between py-2"
                 aria-expanded={mobileServicesOpen}
               >
-                <span className="font-semibold text-xs text-slate-500 uppercase tracking-wider">Services</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-xs text-slate-500 uppercase tracking-wider">Services</span>
+                  <span className="bg-indigo-50 text-indigo-700 text-xs font-bold px-2 py-0.5 rounded-full">8 Services</span>
+                </div>
                 <ChevronDown
                   className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
               {mobileServicesOpen && (
-                <div className="grid grid-cols-1 gap-1 pl-2 pt-1 pb-2">
-                  {servicesList.map((svc) => (
-                    <Link
-                      key={svc.href}
-                      href={svc.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center gap-2.5 text-sm text-slate-800 hover:text-indigo-600 py-2"
-                    >
-                      <svc.icon className="w-4 h-4 text-indigo-600 shrink-0" />
-                      <span>{svc.title}</span>
-                    </Link>
-                  ))}
+                <div className="pt-2 pb-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {servicesList.map((svc) => (
+                      <Link
+                        key={svc.href}
+                        href={svc.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-200 text-slate-800 hover:text-indigo-700 transition-all"
+                      >
+                        <div className="p-2 rounded-lg bg-white border border-slate-200 shrink-0">
+                          <svc.icon className="w-4 h-4 text-indigo-600" />
+                        </div>
+                        <span className="text-sm font-medium leading-tight">{svc.title}</span>
+                      </Link>
+                    ))}
+                  </div>
                   <Link
                     href="/services"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs text-indigo-600 font-bold py-1 flex items-center gap-1 mt-1"
+                    className="text-xs text-indigo-600 font-bold mt-3 flex items-center gap-1 hover:text-indigo-700"
                   >
                     <span>View all services</span>
                     <ArrowRight className="w-3 h-3" />
@@ -461,23 +468,26 @@ export function Header() {
                 className="w-full flex items-center justify-between py-2"
                 aria-expanded={mobileIndustriesOpen}
               >
-                <span className="font-semibold text-xs text-slate-500 uppercase tracking-wider">Industries</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-xs text-slate-500 uppercase tracking-wider">Industries</span>
+                  <span className="bg-slate-100 text-slate-700 text-xs font-bold px-2 py-0.5 rounded-full">5 Industries</span>
+                </div>
                 <ChevronDown
                   className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${mobileIndustriesOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
               {mobileIndustriesOpen && (
-                <div className="flex flex-col gap-1 pl-2 pt-1 pb-2">
+                <div className="flex flex-col gap-1.5 pt-2 pb-2">
                   {industriesList.map((ind) => (
                     <Link
                       key={ind.href}
                       href={ind.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between py-2 text-sm text-slate-800 hover:text-indigo-600"
+                      className="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-200 text-slate-800 hover:text-indigo-700 transition-all"
                     >
-                      <span>{ind.title}</span>
-                      <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">
+                      <span className="text-sm font-medium">{ind.title}</span>
+                      <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-white border border-slate-200 text-slate-600 shrink-0 ml-2">
                         {ind.tag}
                       </span>
                     </Link>
@@ -485,7 +495,7 @@ export function Header() {
                   <Link
                     href="/industries"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs text-indigo-600 font-bold py-1 flex items-center gap-1 mt-1"
+                    className="text-xs text-indigo-600 font-bold mt-1 flex items-center gap-1 hover:text-indigo-700"
                   >
                     <span>Explore all industries</span>
                     <ArrowRight className="w-3 h-3" />
@@ -494,68 +504,39 @@ export function Header() {
               )}
             </div>
 
-            {/* Navigation Links */}
-            <div className="border-t border-slate-200 pt-3">
-              <div className="font-semibold text-xs text-slate-500 uppercase tracking-wider mb-2">Navigation</div>
-              <div className="flex flex-col space-y-3 pl-2">
-                <Link
-                  href="/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm font-medium transition-colors ${
-                    pathname === "/" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600"
-                  }`}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/how-it-works"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-slate-700 hover:text-indigo-600"
-                >
-                  How It Works
-                </Link>
-                <Link
-                  href="/portfolio"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-slate-700 hover:text-indigo-600"
-                >
-                  Portfolio Gallery
-                </Link>
-                <Link
-                  href="/about"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-slate-700 hover:text-indigo-600"
-                >
-                  About Our Studio
-                </Link>
-                <Link
-                  href="/blog"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-slate-700 hover:text-indigo-600"
-                >
-                  Blog & Guides
-                </Link>
-                <Link
-                  href="/faq"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-slate-700 hover:text-indigo-600"
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-slate-700 hover:text-indigo-600"
-                >
-                  Contact Us
-                </Link>
+            {/* Quick Navigation */}
+            <div className="border-t border-slate-200 pt-3 pb-8">
+              <div className="font-semibold text-xs text-slate-500 uppercase tracking-wider mb-3">Quick Navigation</div>
+              <div className="flex flex-col gap-1">
+                {[
+                  { href: "/", label: "Home", active: pathname === "/" },
+                  { href: "/how-it-works", label: "How It Works", active: pathname === "/how-it-works" },
+                  { href: "/portfolio", label: "Portfolio Gallery", active: pathname.startsWith("/portfolio") },
+                  { href: "/about", label: "About Our Studio", active: pathname === "/about" },
+                  { href: "/blog", label: "Blog & Guides", active: pathname.startsWith("/blog") },
+                  { href: "/faq", label: "FAQ", active: pathname === "/faq" },
+                  { href: "/contact", label: "Contact Us", active: pathname === "/contact" },
+                ].map(({ href, label, active }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                      active
+                        ? "bg-indigo-50 text-indigo-700 font-semibold border border-indigo-200"
+                        : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50 border border-transparent"
+                    }`}
+                  >
+                    {active && <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 shrink-0" />}
+                    {label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
 
           {/* Sticky bottom CTA & contact */}
-          <div className="p-6 border-t border-slate-200 space-y-3 bg-white">
-            {/* Primary CTA */}
+          <div className="shrink-0 p-4 border-t border-slate-200 bg-white/95 backdrop-blur-sm shadow-[0_-4px_12px_rgba(0,0,0,0.05)] space-y-2.5">
             <Link
               href="/request-a-quote?type=sample"
               onClick={() => setMobileMenuOpen(false)}
@@ -565,7 +546,6 @@ export function Header() {
               <ArrowRight className="w-4 h-4 text-white/90 shrink-0" />
             </Link>
 
-            {/* Quick contact links */}
             <div className="flex items-center gap-3">
               <a
                 href="mailto:info@foryourgoal.com"
