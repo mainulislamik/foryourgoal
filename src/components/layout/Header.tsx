@@ -382,20 +382,22 @@ export function Header() {
 
             {/* Mobile Header Actions */}
             <div className="lg:hidden flex items-center gap-2">
-              {pathname === "/request-a-quote" || pathname === "/request-free-trial" ? (
-                <Link
-                  href="/contact"
-                  className="px-3 py-1.5 text-xs rounded-lg font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 shadow-sm"
-                >
-                  Contact
-                </Link>
-              ) : (
-                <Link
-                  href="/request-a-quote?type=sample"
-                  className="px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-xs rounded-lg font-bold text-white bg-red-600 hover:bg-red-700 shadow-sm"
-                >
-                  Free Trial
-                </Link>
+              {!mobileMenuOpen && (
+                pathname === "/request-a-quote" || pathname === "/request-free-trial" ? (
+                  <Link
+                    href="/contact"
+                    className="px-3 py-1.5 text-xs rounded-lg font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 shadow-sm"
+                  >
+                    Contact
+                  </Link>
+                ) : (
+                  <Link
+                    href="/request-a-quote?type=sample"
+                    className="px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-xs rounded-lg font-bold text-white bg-red-600 hover:bg-red-700 shadow-sm"
+                  >
+                    Free Trial
+                  </Link>
+                )
               )}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
