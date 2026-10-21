@@ -41,7 +41,7 @@ export default function HowItWorksPage() {
     {
       num: "04",
       title: "3-Tier Quality Control & Secure Delivery",
-      desc: "Every completed asset undergoes a 3-tier inspection: artist self-check, QA lead review at 300% zoom, and final spec audit against your naming convention. Assets are delivered to your private cloud storage with unlimited revision guarantees.",
+      desc: "Every completed asset undergoes a 3-tier inspection: artist self-check, QA lead review at 300% zoom, and final spec audit against your naming convention. Assets are delivered to your private cloud storage with 14 days of free revisions.",
       details: ["Zero-defect inspection protocol", "Instant download links", "Automated 14-day file purge for confidentiality"],
     },
   ];
@@ -153,9 +153,9 @@ export default function HowItWorksPage() {
 
         <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
           <ShieldCheck className="w-8 h-8 text-emerald-600 mb-4" />
-          <h3 className="text-lg font-bold text-slate-900 mb-2">Unlimited Free Revisions</h3>
+          <h3 className="text-lg font-bold text-slate-900 mb-2">14 Days Free Revisions</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            If any returned file does not 100% adhere to your calibration style guide, our QA leads revise it immediately at no additional charge.
+            Within 14 days of delivery, if any returned file does not 100% adhere to your calibration style guide, our QA leads revise it immediately at no additional charge.
           </p>
         </div>
       </div>

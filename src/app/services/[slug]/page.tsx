@@ -222,7 +222,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
             <div className="flex items-center gap-2 text-sm text-emerald-700 font-mono">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Unlimited Revisions</span>
+              <span>14 Days Free Revisions</span>
             </div>
 
             <div className="h-6 w-px bg-slate-200" />

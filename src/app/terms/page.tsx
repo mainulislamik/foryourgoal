@@ -4,14 +4,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Foryourgoal commercial terms of service: production scoping, client SLA standards, monthly Net-30 invoicing, copyright retention, and unlimited revisions.",
+    "Foryourgoal commercial terms of service: production scoping, client SLA standards, monthly Net-30 invoicing, copyright retention, and 14 days of free revisions.",
   alternates: {
     canonical: "/terms",
   },
   openGraph: {
     title: "Terms of Service | Foryourgoal",
     description:
-      "Foryourgoal commercial terms of service: production scoping, client SLA standards, monthly Net-30 invoicing, copyright retention, and unlimited revisions.",
+      "Foryourgoal commercial terms of service: production scoping, client SLA standards, monthly Net-30 invoicing, copyright retention, and 14 days of free revisions.",
     url: "https://foryourgoal.com/terms",
   },
 };
@@ -36,7 +36,7 @@ export default function TermsPage() {
 
       <h2 className="text-xl font-bold text-slate-900 pt-4">3. Turnaround SLA & Revisions</h2>
       <p>
-        Turnaround times commence upon complete receipt of all required source image files and designated styling instructions. If any deliverable deviates from the approved style guidelines, Foryourgoal provides unlimited revisions within fourteen (14) days of delivery at no extra cost.
+        Turnaround times commence upon complete receipt of all required source image files and designated styling instructions. If any deliverable deviates from the approved style guidelines, Foryourgoal provides 14 days of free revisions from delivery at no extra cost.
       </p>
 
       <h2 className="text-xl font-bold text-slate-900 pt-4">4. Intellectual Property</h2>

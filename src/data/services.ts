@@ -694,7 +694,7 @@ export const servicesData: ServiceItem[] = [
       },
       {
         "q": "What is your revision policy for neck joint orders?",
-        "a": "We offer unlimited revisions until you are fully satisfied. Our senior QC supervisors review every composite before delivery, achieving 99.5% first-pass acceptance on standard garment types."
+        "a": "We offer 14 days of free revisions until you are fully satisfied. Our senior QC supervisors review every composite before delivery, achieving 99.5% first-pass acceptance on standard garment types."
       }
     ],
     "metaTitle": "Ghost Mannequin Neck Joint Service | 3D Hollow Apparel Effect",
