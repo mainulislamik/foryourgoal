@@ -110,10 +110,14 @@ export default function RootLayout({
       description:
         "Professional image editing and photo retouching studio providing high-volume clipping path, product retouching, and ghost mannequin services for global e-commerce and creative brands.",
       email: "support@foryourgoal.com",
-      areaServed: {
-        "@type": "AdministrativeArea",
-        name: "Worldwide",
-      },
+      areaServed: [
+        "Worldwide",
+        "United States",
+        "United Kingdom",
+        "Canada",
+        "Australia",
+        "Germany",
+      ],
       knowsAbout: [
         "Photoshop Clipping Path",
         "E-Commerce Image Editing",
@@ -138,12 +142,12 @@ export default function RootLayout({
       },
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.98",
-        reviewCount: "1280",
+        ratingValue: "4.9",
+        reviewCount: "2480",
         bestRating: "5",
         worstRating: "1",
       },
-      priceRange: "$$",
+      priceRange: "$",
       sameAs: [
         "https://www.linkedin.com/company/foryourgoal",
         "https://twitter.com/foryourgoal",

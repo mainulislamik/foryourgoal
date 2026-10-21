@@ -548,6 +548,477 @@ export const servicesData: ServiceItem[] = [
       "Delivered with 16-bit alpha channel layer preserved in master PSD"
     ],
     "samples": []
+  },
+  {
+    "slug": "multi-clipping-path",
+    "title": "Multi Clipping Path Service | Color Separation & Vector Cutouts",
+    "shortDesc": "Precision multi-path clipping for color variant isolation, garment separation, and selective retouching with hand-drawn pen tool paths.",
+    "fullDesc": "Multi clipping path service goes beyond a single outline by dividing complex products into individually labelable sub-regions — body panels, straps, hardware, labels — each saved as a named Photoshop path. This granular segmentation lets downstream designers recolor components, apply different backgrounds per region, isolate accessories, and generate complete color-variant SKU libraries from a single photography session. Every sub-path is hand-drawn at 200% zoom by senior retouchers using Adobe Photoshop's Pen Tool, eliminating AI artifacts on multi-component garments, footwear, bags, and multi-piece product assemblies.",
+    "startingPrice": ".20",
+    "rating": "4.9",
+    "reviewCount": "980",
+    "turnaroundHours": 12,
+    "beforeImage": "/images/services/multi-clipping-path-before.jpg",
+    "afterImage": "/images/services/multi-clipping-path-after.jpg",
+    "features": [
+      "Unlimited named sub-paths per image for complete component segmentation",
+      "100% hand-drawn Pen Tool paths — zero AI magic-wand approximations",
+      "Selective color isolation for garment body, lining, zipper, buttons, and labels",
+      "Layered PSD delivery with each named path selectable independently",
+      "Configurable 0.2–0.5px inward boundary offset for zero-halo extraction",
+      "Compatible with Adobe InDesign, Illustrator, and online DAM platforms"
+    ],
+    "deliverables": [
+      "Original file with multiple named embedded clipping paths",
+      "Layered PSD with component layers activated per named path",
+      "Transparent PNG per isolated component on request",
+      "Pure white background JPEG for each color variant"
+    ],
+    "idealFor": [
+      "Fashion apparel brands needing full-garment color variant libraries",
+      "Footwear brands isolating sole, upper, tongue, and hardware independently",
+      "Bag and luggage manufacturers separating body, handles, and hardware"
+    ],
+    "faqs": [
+      {
+        "q": "What is multi clipping path and how does it differ from a standard clipping path?",
+        "a": "A standard clipping path creates one outline around the entire subject. A multi clipping path service creates multiple named paths — each around a separate component (e.g., garment body, buttons, lining) — allowing each region to be recolored, isolated, or hidden independently in Photoshop or InDesign."
+      },
+      {
+        "q": "How many sub-paths can you create per image?",
+        "a": "There is no hard limit. For complex garments we routinely create 8–15 named paths per image. Each additional named path is priced per our volume rate card."
+      },
+      {
+        "q": "Which file formats do you deliver multi-path files in?",
+        "a": "We deliver layered PSDs with all active named paths, original JPEG/TIFF with embedded paths, and optionally transparent PNGs for each isolated component."
+      },
+      {
+        "q": "Can I use multi clipping path files in Adobe InDesign for catalog production?",
+        "a": "Yes, named Photoshop paths are fully recognized in InDesign. You can select any named path from the clipping path dialog when placing images, enabling precise print-catalog component isolation."
+      },
+      {
+        "q": "What types of products are best suited for multi clipping path?",
+        "a": "Multi clipping path excels for apparel (jacket, trousers, shirt as separate paths), footwear (sole, upper, laces), handbags (body, handle, zipper, hardware), bicycles, furniture, and any multi-component product requiring regional editing."
+      },
+      {
+        "q": "What is your turnaround for multi-path orders?",
+        "a": "Standard multi-path orders are delivered within 12–24 hours. Express 6-hour delivery is available for urgent production batches at a premium rate."
+      }
+    ],
+    "metaTitle": "Multi Clipping Path Service | Color Separation & Vector Cutouts",
+    "metaDesc": "Professional multi clipping path services for color variant isolation, garment component segmentation, and selective retouching. Hand-drawn Photoshop Pen Tool paths from $0.20/image.",
+    "technicalWorkflow": [
+      {
+        "step": 1,
+        "title": "Component Architecture Mapping",
+        "desc": "Senior retouchers analyze each product at 200% zoom to plan named path taxonomy — body panels, hardware, labels, lining — creating a structured naming convention that matches the client's DAM or catalog workflow."
+      },
+      {
+        "step": 2,
+        "title": "Sequential Hand-Drawn Sub-Path Tracing",
+        "desc": "Each sub-component is traced with the Photoshop Pen Tool in isolation, maintaining intentional 0.3px inner boundary insets to guarantee zero background halo bleed between component layers."
+      },
+      {
+        "step": 3,
+        "title": "Named Path Layer Organization & Validation",
+        "desc": "All paths are exported as distinctly labeled Photoshop paths (e.g., 'Garment Body', 'Zipper', 'Collar') verified against original specifications to ensure no component overlap or gap."
+      },
+      {
+        "step": 4,
+        "title": "Multi-Background Stress QA at 300% Zoom",
+        "desc": "Extracted components are validated against high-contrast solid colors and lifestyle backgrounds to confirm immaculate boundary precision across every named sub-path."
+      }
+    ],
+    "industryUseCases": [
+      "Fashion Apparel Brands & Wholesale Lookbook Publishers",
+      "Footwear Manufacturers & Athletic Sneaker Retailers",
+      "Handbag, Luggage & Leather Goods Catalog Studios",
+      "Furniture & Home Décor Multi-Component SKU Libraries",
+      "Global Advertising Agencies & Commercial Photo Studios"
+    ],
+    "qualityAssuranceChecklist": [
+      "All named paths traceable without crossing, gaps, or stray anchor points",
+      "0.2–0.4px inward offset applied uniformly across every sub-component boundary",
+      "Closed vector bezier paths with optimal anchor density for smooth curves",
+      "Delivery verified against client's color variant workflow before dispatch"
+    ],
+    "samples": []
+  },
+  {
+    "slug": "neck-joint-service",
+    "title": "Ghost Mannequin Neck Joint Service | 3D Hollow Apparel Effect",
+    "shortDesc": "Seamless collar stitching and neck joint photo editing to give apparel an authentic 3D hollow mannequin look.",
+    "fullDesc": "The neck joint (ghost mannequin) service composites two separate apparel photographs — the exterior front-on mannequin shot and the inside-out collar/neck-label secondary exposure — into one seamlessly integrated floating garment visual. The result is a realistic three-dimensional hollow body effect: the collar opening is fully visible, interior size tags and brand labels are legible, and the garment appears to have authentic volume and drape without any mannequin or model interference. Our retouchers meticulously align collar seams at the sub-pixel level, blend interior fabric tones to match exterior lighting, and apply graduated ambient shadows to the interior collar rim for convincing anatomical depth.",
+    "startingPrice": ".80",
+    "rating": "4.9",
+    "reviewCount": "1150",
+    "turnaroundHours": 12,
+    "beforeImage": "/images/services/neck-joint-before.jpg",
+    "afterImage": "/images/services/neck-joint-after.jpg",
+    "features": [
+      "Sub-pixel precision collar seam stitching for invisible compositing joins",
+      "Interior neck label, size tag, and brand embroidery clearly visible",
+      "Bilateral shoulder and sleeve symmetry correction via micro warping",
+      "Graduated ambient occlusion shadow inside the collar for 3D depth",
+      "Bottom hem, cuff, and placket jointing for full-length garments and coats",
+      "Natural fabric drape and crease preservation without artificial flattening"
+    ],
+    "deliverables": [
+      "Transparent PNG with hollow neck opening on white background",
+      "Pure white RGB JPEG for Amazon, Shopify, and wholesale catalogs",
+      "Layered PSD with composited interior collar layer intact"
+    ],
+    "idealFor": [
+      "Fashion apparel brands and activewear lines avoiding model photography costs",
+      "Wholesale exporters requiring line-sheet product imagery at scale",
+      "E-commerce brands standardizing catalog visuals across hundreds of SKUs"
+    ],
+    "faqs": [
+      {
+        "q": "What photos do I need to send for the neck joint service?",
+        "a": "You need two shots: (1) the garment on the mannequin from the front, and (2) the collar/neck lining photographed inside-out or laid flat to reveal the inner neck label, seams, and fabric lining."
+      },
+      {
+        "q": "Can you handle neck joints for hoodies, turtlenecks, and dress shirts?",
+        "a": "Yes. We specialize in collared shirts, round-neck tees, hoodies, turtlenecks, V-necks, polo shirts, and structured blazer collars — each requiring different seam alignment and interior shadow techniques."
+      },
+      {
+        "q": "What if my inner-collar photo is slightly blurry or has a different lighting angle?",
+        "a": "Our retouchers use color grading and sharpening adjustments to match the inner-collar lighting to the exterior shot. Significant blur may require a reshoot, but minor discrepancies are routinely corrected."
+      },
+      {
+        "q": "Do you add natural shadows inside the collar opening?",
+        "a": "Yes. We apply graduated ambient occlusion shadows along the inner collar rim, deepening toward the garment interior, creating authentic three-dimensional depth rather than a flat cutout appearance."
+      },
+      {
+        "q": "Can I send bulk apparel batches for neck joint production?",
+        "a": "Absolutely. We process 500–5,000+ garments per day across our 24/7 production shifts. Volume pricing tiers are available starting from 100+ images."
+      },
+      {
+        "q": "What is your revision policy for neck joint orders?",
+        "a": "We offer unlimited revisions until you are fully satisfied. Our senior QC supervisors review every composite before delivery, achieving 99.5% first-pass acceptance on standard garment types."
+      }
+    ],
+    "metaTitle": "Ghost Mannequin Neck Joint Service | 3D Hollow Apparel Effect",
+    "metaDesc": "Professional ghost mannequin neck joint photo editing. Seamless collar compositing, interior label visibility, and 3D hollow body effect for apparel e-commerce from $0.80/image.",
+    "technicalWorkflow": [
+      {
+        "step": 1,
+        "title": "Bilateral Garment Alignment & Axis Calibration",
+        "desc": "Front mannequin capture and interior neck lining exposure are superimposed and aligned along the anatomical vertical axis and shoulder seam reference points for precise spatial registration."
+      },
+      {
+        "step": 2,
+        "title": "Collar Seam Stitching & Interior Integration",
+        "desc": "The inner collar lining, size tags, and interior fabric are seamlessly blended into the exterior garment using precision warping, clone-stamp refinement, and pen-tool joint boundary matching."
+      },
+      {
+        "step": 3,
+        "title": "3D Interior Shadow Simulation",
+        "desc": "Graduated ambient occlusion layers applied beneath the collar rim and along interior fabric edges simulate the natural shadow that an open collar casts inside a real garment."
+      },
+      {
+        "step": 4,
+        "title": "Hemline, Cuff & Symmetry Final QC",
+        "desc": "Micro-level warping and bilateral symmetry checks ensure sleeve openings, bottom hemlines, and button plackets maintain natural proportion and visual balance before delivery."
+      }
+    ],
+    "industryUseCases": [
+      "Fast-Fashion E-Commerce Brands & Department Store Retailers",
+      "Sports Performance, Athleisure & Activewear Catalog Studios",
+      "Swimwear, Lingerie & Undergarment Imagery Producers",
+      "Apparel Contract Manufacturers & Export Houses",
+      "Wholesale Trade Show Lookbooks & B2B Line Sheets"
+    ],
+    "qualityAssuranceChecklist": [
+      "Collar seam join invisible at 200% zoom with zero visible composite boundary",
+      "Interior size labels and brand tags sharp, readable, and correctly oriented",
+      "Ambient occlusion shadow gradient smooth with no banding or flat cutout effect",
+      "Shoulder seam, sleeve, and hemline bilateral symmetry verified along center axis"
+    ],
+    "samples": []
+  },
+  {
+    "slug": "shadow-creation",
+    "title": "Product Shadow Creation Service | Drop, Natural & Reflection Shadows",
+    "shortDesc": "Add realistic drop shadows, natural contact shadows, and luxury mirror reflection effects to ground your e-commerce products.",
+    "fullDesc": "Floating product cutouts on pure white backgrounds look artificial and unconvincing without a convincing shadow to anchor them to a surface. Our product shadow creation service engineers three primary shadow types: drop shadows (soft Gaussian blur shadows beneath the product), natural contact shadows (dense ambient occlusion that grounds the product base with authentic physical contact), and mirror reflections (a faded reversed duplicate of the product for luxury bottle, cosmetic, and electronics photography). Each shadow is crafted to exactly match the product's original studio lighting angle, color temperature, and edge softness for a result indistinguishable from a real studio capture.",
+    "startingPrice": ".45",
+    "rating": "4.9",
+    "reviewCount": "1420",
+    "turnaroundHours": 6,
+    "beforeImage": "/images/services/shadow-creation-before.jpg",
+    "afterImage": "/images/services/shadow-creation-after.jpg",
+    "features": [
+      "Natural contact shadow grounding for hard-edge and curved-base products",
+      "Custom drop shadow with calibrated softness, angle, distance, and opacity",
+      "Mirror and acrylic surface reflection for luxury product presentations",
+      "Directional cast shadows matching original studio light source angles",
+      "Shadow color temperature tuned to match warm, cool, or neutral lighting",
+      "Layered shadow delivery allowing client-side softness and opacity adjustments"
+    ],
+    "deliverables": [
+      "Transparent PNG with embedded soft shadow on alpha channel",
+      "White background JPEG with final composite shadow",
+      "Layered PSD with separate shadow layers for client control"
+    ],
+    "idealFor": [
+      "Footwear brands requiring grounded shoe photography on white backgrounds",
+      "Cosmetics, perfume, and skincare brands using mirror reflection effects",
+      "Electronics, appliances, and consumer goods on e-commerce hero pages"
+    ],
+    "faqs": [
+      {
+        "q": "What types of product shadows can you create?",
+        "a": "We create three primary types: (1) drop shadow — a soft blurred shadow beneath the product, (2) natural/contact shadow — a dense ambient occlusion at the product base, and (3) mirror/reflection shadow — an inverted product reflection for glossy surface effects."
+      },
+      {
+        "q": "How do you determine the correct shadow angle and direction?",
+        "a": "We analyze existing reflections on the product surface to determine the original studio lighting angle and elevation, then construct the shadow trajectory to match that light source exactly for a physically accurate result."
+      },
+      {
+        "q": "Can you add shadows to products that already have backgrounds removed?",
+        "a": "Yes. Simply send us your pre-cut transparent PNG and we will apply the requested shadow type directly, matching the product's proportions and base geometry."
+      },
+      {
+        "q": "Do you deliver the shadow on a separate layer?",
+        "a": "Yes. All deliveries include a layered PSD with the shadow isolated on its own adjustment layer group, allowing you to tune opacity, spread, or color without regenerating the file."
+      },
+      {
+        "q": "What is the turnaround for shadow creation orders?",
+        "a": "Standard product shadow creation is delivered within 6–12 hours. Complex mirror reflections or multi-shadow layering for lifestyle compositions have a 12–24 hour SLA."
+      },
+      {
+        "q": "Can you replicate a specific shadow style from a reference image I provide?",
+        "a": "Absolutely. Send us a reference image showing your desired shadow style and we will calibrate our approach to match the softness, angle, color, and opacity of your provided reference."
+      }
+    ],
+    "metaTitle": "Product Shadow Creation Service | Drop, Natural & Reflection Shadows",
+    "metaDesc": "Professional product shadow creation services. Realistic drop shadows, contact shadows, and luxury mirror reflection effects for e-commerce photography from $0.45/image.",
+    "technicalWorkflow": [
+      {
+        "step": 1,
+        "title": "Light Source Angle & Color Temperature Mapping",
+        "desc": "Internal product specular highlights and reflections are analyzed to precisely calculate the original studio light source angle, elevation, and color temperature before any shadow is constructed."
+      },
+      {
+        "step": 2,
+        "title": "Base Contact Shadow Rendering",
+        "desc": "Dense ambient occlusion shadow is hand-painted along the full product base perimeter, with varying density to match the pressure distribution of a real object resting on a surface."
+      },
+      {
+        "step": 3,
+        "title": "Progressive Gaussian Falloff Application",
+        "desc": "Outer drop shadow opacity and blur radius scale exponentially with distance from the product base, mimicking the natural atmospheric diffusion of real-world directional studio lighting."
+      },
+      {
+        "step": 4,
+        "title": "Mirror Reflection Compositing & Distortion",
+        "desc": "For glossy surface reflections, an inverted product duplicate is blended with a vertical perspective gradient and optional lens distortion to simulate an authentic acrylic or lacquered surface."
+      }
+    ],
+    "industryUseCases": [
+      "Footwear & Athletic Sneaker Brand Catalogs",
+      "Cosmetics, Perfume Flacon & Skincare Jar Photography",
+      "Consumer Electronics & Premium Desktop Peripheral Brands",
+      "Furniture, Lighting & Home Décor E-Commerce Retailers",
+      "Luxury Lifestyle Hero Banner & Campaign Designers"
+    ],
+    "qualityAssuranceChecklist": [
+      "Contact shadow density greatest at product base, fading smoothly outward",
+      "Shadow color temperature matches studio ambient to avoid cold or warm bias",
+      "Mirror reflection blends naturally with no sharp horizontal cutoff line",
+      "Shadow layers separated in PSD for independent opacity adjustments by client"
+    ],
+    "samples": []
+  },
+  {
+    "slug": "amazon-product-photo-editing",
+    "title": "Amazon Product Photo Editing Service | 100% White Background & Compliance",
+    "shortDesc": "100% compliant Amazon product image optimization: pure #FFFFFF white background, 85% frame fill ratio, and 2000px high-res zoom ready.",
+    "fullDesc": "Amazon's main product image requirements are strict: pure white backgrounds (RGB 255, 255, 255), products occupying 85% or more of the image frame, a minimum of 1,000 pixels on the longest side for zoom functionality, no watermarks, text, or borders. Non-compliant images are suppressed from search results, causing significant revenue loss. Our Amazon product photo editing service guarantees full technical compliance, optimizing every image for Amazon's A9 search algorithm while ensuring your products look their absolute best. Every image is inspected against Amazon's current image guidelines before delivery, covering main images, secondary lifestyle angles, and A+ content infographics.",
+    "startingPrice": ".39",
+    "rating": "5.0",
+    "reviewCount": "2100",
+    "turnaroundHours": 6,
+    "beforeImage": "/images/services/amazon-editing-before.jpg",
+    "afterImage": "/images/services/amazon-editing-after.jpg",
+    "features": [
+      "Pure #FFFFFF (RGB 255,255,255) white background guaranteed — zero gray gradient",
+      "85% frame fill ratio compliance for Amazon main image requirements",
+      "Minimum 2000×2000px output for full Amazon zoom functionality",
+      "Complete removal of watermarks, shadows, props, and non-product elements",
+      "Color accuracy preservation to reduce return rates from color mismatch",
+      "Amazon A+ content hero image preparation for brand-registered sellers"
+    ],
+    "deliverables": [
+      "Amazon-compliant JPEG at 2000×2000px on pure white background",
+      "High-resolution transparent PNG for multi-platform use",
+      "Optimized WebP version for Amazon international marketplace listings"
+    ],
+    "idealFor": [
+      "Amazon FBA sellers launching new ASIN listings requiring compliant main images",
+      "Brand-registered Amazon sellers creating A+ content and storefront visuals",
+      "Wholesale suppliers and distributors standardizing thousands of SKU images"
+    ],
+    "faqs": [
+      {
+        "q": "What are Amazon's current product image requirements?",
+        "a": "Amazon requires main images on a pure white background (RGB 255,255,255), product filling at least 85% of the frame, minimum 1,000px on the longest side (2,000px+ recommended for zoom), no watermarks, borders, text, or multiple products in a single main image."
+      },
+      {
+        "q": "Will my images pass Amazon's automated image quality check after your editing?",
+        "a": "Yes. We run every edited image against Amazon's stated technical guidelines checklist before delivery and have a 99.7% first-submission compliance rate across 100,000+ ASINs processed."
+      },
+      {
+        "q": "Can you also prepare secondary angles and lifestyle images for Amazon?",
+        "a": "Absolutely. Beyond the main white background image, we edit secondary product angles, infographic overlays, comparison charts, and lifestyle composites for the full 9-image Amazon gallery slot."
+      },
+      {
+        "q": "What is the minimum resolution you output for Amazon?",
+        "a": "We deliver at minimum 2,000×2,000 pixels (2000px shortest side) which activates Amazon's high-resolution zoom feature, significantly improving buyer conversion on product detail pages."
+      },
+      {
+        "q": "How do you handle products with transparent or reflective surfaces?",
+        "a": "Glass bottles, clear packaging, and reflective electronics receive specialized treatment: we retain natural product transparency, add subtle contact shadows, and ensure the background reads as true white without gray contamination through transparency."
+      },
+      {
+        "q": "Do you offer bulk pricing for Amazon seller accounts with large catalogs?",
+        "a": "Yes. Volume pricing tiers start at 50 images. Enterprise accounts with 500+ images monthly receive dedicated account management, priority processing queues, and locked SLA guarantees."
+      }
+    ],
+    "metaTitle": "Amazon Product Photo Editing Service | 100% White Background & Compliance",
+    "metaDesc": "Amazon-compliant product image editing: pure white #FFFFFF backgrounds, 85% frame fill, 2000px zoom ready. Guaranteed first-submission compliance from $0.39/image.",
+    "technicalWorkflow": [
+      {
+        "step": 1,
+        "title": "Amazon Compliance Audit & Pixel Budget Planning",
+        "desc": "Each submitted image is assessed against current Amazon image policy: background purity, frame fill ratio, minimum resolution, and absence of prohibited elements before retouching begins."
+      },
+      {
+        "step": 2,
+        "title": "Professional Background Removal & White Fill",
+        "desc": "Hand-drawn clipping paths isolate the product with crisp sub-pixel boundary precision, then pure #FFFFFF (RGB 255,255,255) is applied uniformly with zero gradient vignette or gray contamination."
+      },
+      {
+        "step": 3,
+        "title": "Frame Ratio Optimization & Canvas Calibration",
+        "desc": "Products are repositioned and scaled to occupy precisely 85–90% of the canvas area, centered with uniform border margins meeting Amazon's frame fill requirements."
+      },
+      {
+        "step": 4,
+        "title": "High-Resolution Export & Compliance Verification",
+        "desc": "Final images exported at 2000×2000px minimum, sRGB color profile preserved, and every image verified against Amazon's technical guidelines checklist before batch delivery."
+      }
+    ],
+    "industryUseCases": [
+      "Amazon FBA & FBM Private Label Sellers",
+      "Amazon Brand Registry & A+ Content Publishers",
+      "Wholesale Distributors & 3P Marketplace Aggregators",
+      "Consumer Electronics & Gadget Amazon Launch Campaigns",
+      "Grocery, Health & Personal Care Amazon Category Sellers"
+    ],
+    "qualityAssuranceChecklist": [
+      "Background pixel sampled at multiple locations confirming pure RGB 255,255,255",
+      "Product occupies minimum 85% of frame area with uniform border margins",
+      "Output resolution minimum 2000px on shortest side for Amazon zoom activation",
+      "Zero watermarks, text overlays, props, or multi-product compositions present"
+    ],
+    "samples": []
+  },
+  {
+    "slug": "shopify-image-editing",
+    "title": "Shopify Product Image Editing Service | WebP & Retina Optimization",
+    "shortDesc": "High-converting square crops, WebP compression, uniform margins, and retina-ready visuals tailored specifically for Shopify stores.",
+    "fullDesc": "Shopify's recommended product image specifications — 2048×2048px square format, 1:1 aspect ratio, WebP encoding, and consistent margins — directly impact both store loading performance and buyer conversion rates. Inconsistent image sizes, varying crop ratios, or unoptimized JPEG files create jarring visual inconsistency in Shopify collection grids and slow page load speeds that hurt SEO rankings. Our Shopify product image editing service delivers a complete optimization pipeline: background removal, square crop standardization, uniform padding, retina-quality output at 2048px, and WebP conversion, ensuring your store grid looks pixel-perfect across desktop and mobile Retina displays.",
+    "startingPrice": ".35",
+    "rating": "4.9",
+    "reviewCount": "1650",
+    "turnaroundHours": 6,
+    "beforeImage": "/images/services/shopify-editing-before.jpg",
+    "afterImage": "/images/services/shopify-editing-after.jpg",
+    "features": [
+      "Square 1:1 aspect ratio crop standardization for uniform Shopify collection grids",
+      "2048×2048px retina-ready output for crisp display on high-DPI screens",
+      "WebP format conversion for fast page loads and improved Shopify SEO scores",
+      "Consistent 8–10% uniform padding margins across your entire product catalog",
+      "Background removal to white, transparent, or custom Shopify theme color",
+      "Batch processing maintaining visual consistency across all collection pages"
+    ],
+    "deliverables": [
+      "2048×2048px WebP for Shopify primary product listing upload",
+      "2048×2048px JPEG fallback for browser compatibility",
+      "Transparent PNG for Shopify theme overlay and lifestyle composite use"
+    ],
+    "idealFor": [
+      "Shopify DTC brand founders standardizing catalog images for new store launches",
+      "Shopify Plus merchants optimizing large SKU collections for performance",
+      "Shopify dropshippers standardizing supplier images for consistent brand presence"
+    ],
+    "faqs": [
+      {
+        "q": "What image size does Shopify recommend for product photos?",
+        "a": "Shopify recommends 2048×2048px square images with consistent cropping and a 1:1 aspect ratio. This maximizes zoom quality, ensures consistent collection grid display, and supports Retina display clarity."
+      },
+      {
+        "q": "Why should I use WebP format for Shopify product images?",
+        "a": "WebP images are 25–35% smaller than equivalent JPEG files, reducing page load time. Shopify natively serves WebP images to compatible browsers, improving Core Web Vitals scores which directly affect Google search rankings."
+      },
+      {
+        "q": "Can you ensure consistent padding and margins across my entire product catalog?",
+        "a": "Yes. We apply a locked uniform margin template (typically 8–10% padding on all four sides) across your entire catalog batch, ensuring every product sits identically within its frame for a professional, cohesive collection grid."
+      },
+      {
+        "q": "Do you handle both main product images and variant swatches?",
+        "a": "Yes. We process both primary product images and variant shots (alternate colors, angles), applying consistent cropping and background treatment so all variants display uniformly in Shopify's variant selector."
+      },
+      {
+        "q": "Can you match my Shopify theme's background color instead of white?",
+        "a": "Yes. Provide your Shopify theme's background HEX code and we will apply it as the canvas color instead of white, ensuring seamless edge blending with your store's visual aesthetic."
+      },
+      {
+        "q": "What is the fastest turnaround for Shopify image editing?",
+        "a": "Standard Shopify image batches are completed in 6–12 hours. For new store launch deadlines, we offer 4-hour express delivery for batches up to 100 images with advance notice."
+      }
+    ],
+    "metaTitle": "Shopify Product Image Editing Service | WebP & Retina Optimization",
+    "metaDesc": "Shopify product image optimization: 2048px square crops, WebP conversion, uniform margins, and retina-ready quality for high-converting stores. From $0.35/image.",
+    "technicalWorkflow": [
+      {
+        "step": 1,
+        "title": "Shopify Theme & Grid Consistency Audit",
+        "desc": "Target Shopify theme layout, collection grid aspect ratios, and product page zoom requirements are reviewed to define the precise canvas dimensions, padding percentage, and background color specification."
+      },
+      {
+        "step": 2,
+        "title": "Background Removal & Edge Refinement",
+        "desc": "Hand-drawn clipping paths with sub-pixel edge precision isolate each product from its studio background, with decontamination to remove ambient color bounce on product edges."
+      },
+      {
+        "step": 3,
+        "title": "Square Canvas Standardization & Margin Lock",
+        "desc": "Products are centered on 2048×2048px square canvases with uniform locked padding margins, guaranteeing pixel-identical positioning across all SKUs in the collection grid."
+      },
+      {
+        "step": 4,
+        "title": "WebP Encoding & Retina Quality Export",
+        "desc": "Final images encoded to WebP at quality 85 (optimal file-size/quality balance for Shopify), with JPEG fallback and Retina verification at 2× pixel density for high-DPI screens."
+      }
+    ],
+    "industryUseCases": [
+      "Shopify DTC Apparel, Footwear & Accessories Brands",
+      "Shopify Plus Enterprise Merchants with 1,000+ SKU Catalogs",
+      "Shopify Dropshipping Stores Standardizing Supplier Assets",
+      "Health, Beauty & Wellness DTC Shopify Storefronts",
+      "Home Décor, Furniture & Lifestyle Product Shopify Brands"
+    ],
+    "qualityAssuranceChecklist": [
+      "All images confirmed square 1:1 at 2048×2048px with uniform padding margins",
+      "WebP encoding verified at quality 85 for optimal Shopify performance balance",
+      "Background color matches client specification with zero fringe or gradient bleed",
+      "Product centering and margin consistency verified across all batch images simultaneously"
+    ],
+    "samples": []
   }
 ];
 

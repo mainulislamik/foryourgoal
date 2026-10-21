@@ -90,6 +90,8 @@ export interface ServiceItem {
   afterImage: string;
   turnaroundHours: number;
   startingPrice?: string;
+  rating?: string;
+  reviewCount?: string;
   features: string[];
   deliverables?: string[];
   idealFor?: string[];

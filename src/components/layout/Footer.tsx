@@ -150,11 +150,15 @@ export function Footer() {
             <ul className="space-y-2 text-xs text-slate-400">
               {[
                 { href: "/services/clipping-path", label: "Clipping Path" },
+                { href: "/services/multi-clipping-path", label: "Multi-Clipping Path" },
                 { href: "/services/background-removal", label: "Background Removal" },
-                { href: "/services/product-photo-retouching", label: "Product Photo Retouching" },
+                { href: "/services/product-photo-retouching", label: "Product Retouching" },
                 { href: "/services/ghost-mannequin", label: "Ghost Mannequin" },
+                { href: "/services/neck-joint-service", label: "Neck Joint Service" },
                 { href: "/services/jewelry-retouching", label: "Jewelry Retouching" },
-                { href: "/services/color-correction", label: "Color Correction" },
+                { href: "/services/shadow-creation", label: "Shadow Creation" },
+                { href: "/services/amazon-product-photo-editing", label: "Amazon Image Editing" },
+                { href: "/services/shopify-image-editing", label: "Shopify Image Optimization" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className="hover:text-cyan-300 hover:translate-x-1 inline-block transition-all duration-200">

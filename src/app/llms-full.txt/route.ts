@@ -1,8 +1,9 @@
 import { getSiteContent } from "@/lib/site-content";
+import { servicesData } from "@/data/services";
 
 export async function GET() {
   const content = await getSiteContent().catch(() => null);
-  const services = content?.servicesSection?.services || [];
+  const services = content?.servicesSection?.services?.length ? content.servicesSection.services : servicesData;
   const faqs = content?.faqs || [];
 
   let text = `# Foryourgoal — Full Context Documentation for AI Models & Search Agents
@@ -12,8 +13,11 @@ export async function GET() {
 - Entity: Foryourgoal Commercial Image Post-Production Studio
 - Canonical URL: https://foryourgoal.com
 - Contact: support@foryourgoal.com
-- Core SLA: 6h / 12h / 24h guaranteed delivery
-- Capacity: 1,000+ daily images
+- Phone & WhatsApp: +8801772866884 (24/7 Global Client Support)
+- Core SLA: 6h / 12h / 24h guaranteed turnaround
+- Capacity: 10,000+ daily commercial images
+- Free Trial: 5 free sample images (zero commitment, no credit card required)
+- Starting Rates: From $0.25 / image for clipping path and background removal
 - Quality Standard: 100% human-crafted vector paths via Adobe Photoshop pen tool. Zero destructive AI automation.
 
 ## Detailed Service Catalog
@@ -24,6 +28,7 @@ export async function GET() {
     text += `- URL: https://foryourgoal.com/services/${s.slug}\n`;
     text += `- Short Description: ${s.shortDesc}\n`;
     text += `- Turnaround: ${s.turnaroundHours} Hours\n`;
+    if (s.startingPrice) text += `- Starting Price: ${s.startingPrice}\n`;
     text += `- Full Scope: ${s.fullDesc}\n`;
     if (s.features && s.features.length) {
       text += `- Key Features:\n`;
