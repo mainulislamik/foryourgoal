@@ -85,8 +85,8 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(true);
-  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(true);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const pathname = usePathname();
 
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -170,8 +170,8 @@ export function Header() {
                 href="/"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
                   pathname === "/"
-                    ? "text-indigo-600 font-semibold bg-indigo-50/60"
-                    : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
+                    ? "text-blue-600 font-semibold bg-blue-50/60"
+                    : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
                 }`}
               >
                 Home
@@ -193,8 +193,8 @@ export function Header() {
                   }}
                   className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                     servicesOpen || pathname.startsWith("/services")
-                      ? "text-indigo-600 font-semibold bg-indigo-50/60"
-                      : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
+                      ? "text-blue-600 font-semibold bg-blue-50/60"
+                      : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
                   }`}
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
@@ -202,7 +202,7 @@ export function Header() {
                   <span>Services</span>
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${
-                      servicesOpen ? "rotate-180 text-indigo-600" : "text-slate-400"
+                      servicesOpen ? "rotate-180 text-blue-600" : "text-slate-400"
                     }`}
                   />
                 </button>
@@ -216,13 +216,13 @@ export function Header() {
                             key={svc.href}
                             href={svc.href}
                             onClick={() => setServicesOpen(false)}
-                            className="flex items-start gap-3 p-3 rounded-xl hover:bg-indigo-50/50 border border-transparent hover:border-indigo-100 transition-all group"
+                            className="flex items-start gap-3 p-3 rounded-xl hover:bg-blue-50/50 border border-transparent hover:border-blue-100 transition-all group"
                           >
-                            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 group-hover:border-indigo-200 group-hover:bg-indigo-50 group-hover:text-indigo-600 text-slate-700 transition-colors shrink-0">
+                            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 group-hover:border-blue-200 group-hover:bg-blue-50 group-hover:text-blue-600 text-slate-700 transition-colors shrink-0">
                               <svc.icon className="w-4 h-4" />
                             </div>
                             <div className="min-w-0">
-                              <div className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors truncate">
+                              <div className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors truncate">
                                 {svc.title}
                               </div>
                               <div className="text-xs text-slate-500 line-clamp-1 mt-0.5">{svc.desc}</div>
@@ -238,7 +238,7 @@ export function Header() {
                         <Link
                           href="/services"
                           onClick={() => setServicesOpen(false)}
-                          className="text-indigo-600 hover:text-indigo-700 flex items-center gap-1 font-bold group"
+                          className="text-blue-600 hover:text-blue-700 flex items-center gap-1 font-bold group"
                         >
                           <span>View All 8 Services</span>
                           <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
@@ -263,8 +263,8 @@ export function Header() {
                   }}
                   className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                     industriesOpen || pathname.startsWith("/industries")
-                      ? "text-indigo-600 font-semibold bg-indigo-50/60"
-                      : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
+                      ? "text-blue-600 font-semibold bg-blue-50/60"
+                      : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
                   }`}
                   aria-expanded={industriesOpen}
                   aria-haspopup="true"
@@ -272,7 +272,7 @@ export function Header() {
                   <span>Industries</span>
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${
-                      industriesOpen ? "rotate-180 text-indigo-600" : "text-slate-400"
+                      industriesOpen ? "rotate-180 text-blue-600" : "text-slate-400"
                     }`}
                   />
                 </button>
@@ -284,12 +284,12 @@ export function Header() {
                           key={ind.href}
                           href={ind.href}
                           onClick={() => setIndustriesOpen(false)}
-                          className="flex items-center justify-between p-2.5 rounded-xl hover:bg-indigo-50/50 border border-transparent hover:border-indigo-100 transition-all group"
+                          className="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/50 border border-transparent hover:border-blue-100 transition-all group"
                         >
-                          <span className="text-sm font-medium text-slate-800 group-hover:text-indigo-600 transition-colors">
+                          <span className="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors">
                             {ind.title}
                           </span>
-                          <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200 group-hover:border-indigo-200 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                          <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200 group-hover:border-blue-200 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
                             {ind.tag}
                           </span>
                         </Link>
@@ -298,7 +298,7 @@ export function Header() {
                         <Link
                           href="/industries"
                           onClick={() => setIndustriesOpen(false)}
-                          className="text-xs text-indigo-600 hover:text-indigo-700 flex items-center gap-1 font-semibold group"
+                          className="text-xs text-blue-600 hover:text-blue-700 flex items-center gap-1 font-semibold group"
                         >
                           <span>Explore All Industries</span>
                           <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
@@ -311,7 +311,7 @@ export function Header() {
               <Link
                 href="/how-it-works"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
-                  pathname === "/how-it-works" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
+                  pathname === "/how-it-works" ? "text-blue-600 font-semibold" : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
                 }`}
               >
                 How It Works
@@ -321,7 +321,7 @@ export function Header() {
               <Link
                 href="/portfolio"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
-                  pathname.startsWith("/portfolio") ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
+                  pathname.startsWith("/portfolio") ? "text-blue-600 font-semibold" : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
                 }`}
               >
                 Portfolio
@@ -331,7 +331,7 @@ export function Header() {
               <Link
                 href="/about"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
-                  pathname === "/about" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
+                  pathname === "/about" ? "text-blue-600 font-semibold" : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
                 }`}
               >
                 About
@@ -341,7 +341,7 @@ export function Header() {
               <Link
                 href="/blog"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
-                  pathname.startsWith("/blog") ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
+                  pathname.startsWith("/blog") ? "text-blue-600 font-semibold" : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
                 }`}
               >
                 Blog
@@ -351,7 +351,7 @@ export function Header() {
               <Link
                 href="/contact"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group hover:scale-[1.03] ${
-                  pathname === "/contact" ? "text-indigo-600 font-semibold" : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50"
+                  pathname === "/contact" ? "text-blue-600 font-semibold" : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
                 }`}
               >
                 Contact
@@ -426,7 +426,7 @@ export function Header() {
               >
                 <div className="flex items-center gap-2">
                   <span className="font-semibold text-xs text-slate-500 uppercase tracking-wider">Services</span>
-                  <span className="bg-indigo-50 text-indigo-700 text-xs font-bold px-2 py-0.5 rounded-full">8 Services</span>
+                  <span className="bg-blue-50 text-blue-700 text-xs font-bold px-2 py-0.5 rounded-full">8 Services</span>
                 </div>
                 <ChevronDown
                   className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
@@ -441,10 +441,10 @@ export function Header() {
                         key={svc.href}
                         href={svc.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-200 text-slate-800 hover:text-indigo-700 transition-all"
+                        className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 text-slate-800 hover:text-blue-700 transition-all"
                       >
                         <div className="p-2 rounded-lg bg-white border border-slate-200 shrink-0">
-                          <svc.icon className="w-4 h-4 text-indigo-600" />
+                          <svc.icon className="w-4 h-4 text-blue-600" />
                         </div>
                         <span className="text-sm font-medium leading-tight">{svc.title}</span>
                       </Link>
@@ -453,7 +453,7 @@ export function Header() {
                   <Link
                     href="/services"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs text-indigo-600 font-bold mt-3 flex items-center gap-1 hover:text-indigo-700"
+                    className="text-xs text-blue-600 font-bold mt-3 flex items-center gap-1 hover:text-blue-700"
                   >
                     <span>View all services</span>
                     <ArrowRight className="w-3 h-3" />
@@ -486,7 +486,7 @@ export function Header() {
                       key={ind.href}
                       href={ind.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-200 text-slate-800 hover:text-indigo-700 transition-all"
+                      className="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 text-slate-800 hover:text-blue-700 transition-all"
                     >
                       <span className="text-sm font-medium">{ind.title}</span>
                       <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-white border border-slate-200 text-slate-600 shrink-0 ml-2">
@@ -497,7 +497,7 @@ export function Header() {
                   <Link
                     href="/industries"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs text-indigo-600 font-bold mt-1 flex items-center gap-1 hover:text-indigo-700"
+                    className="text-xs text-blue-600 font-bold mt-1 flex items-center gap-1 hover:text-blue-700"
                   >
                     <span>Explore all industries</span>
                     <ArrowRight className="w-3 h-3" />
@@ -525,8 +525,8 @@ export function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                       active
-                        ? "bg-indigo-50 text-indigo-700 font-semibold border border-indigo-200"
-                        : "text-slate-700 hover:text-indigo-600 hover:bg-slate-50 border border-transparent"
+                        ? "bg-blue-50 text-blue-700 font-semibold border border-blue-200"
+                        : "text-slate-700 hover:text-blue-600 hover:bg-slate-50 border border-transparent"
                     }`}
                   >
                     {active && <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 shrink-0" />}
@@ -554,7 +554,7 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-semibold transition-colors"
               >
-                <Mail className="w-4 h-4 text-indigo-500 shrink-0" />
+                <Mail className="w-4 h-4 text-blue-500 shrink-0" />
                 <span>Email Us</span>
               </a>
               <a
