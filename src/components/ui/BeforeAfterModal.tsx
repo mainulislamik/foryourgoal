@@ -26,6 +26,8 @@ export interface BeforeAfterModalProps {
   afterLabel?: string;
   title?: string;
   category?: string;
+  naturalAspectRatio?: number | null;
+  imageFit?: "contain" | "cover";
 }
 
 export function BeforeAfterModal({
@@ -39,16 +41,40 @@ export function BeforeAfterModal({
   afterLabel = "Retouched / QA Passed",
   title = "Before & After Quality Inspection",
   category = "Commercial Photo Post-Production",
+  naturalAspectRatio = null,
+  imageFit = "contain",
 }: BeforeAfterModalProps) {
   const [mounted, setMounted] = useState(false);
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [detectedRatio, setDetectedRatio] = useState<number | null>(naturalAspectRatio);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (naturalAspectRatio) {
+      setDetectedRatio(naturalAspectRatio);
+      return;
+    }
+    const targetSrc = beforeImage || afterImage;
+    if (!targetSrc) return;
+    const img = new window.Image();
+    img.src = targetSrc;
+    const updateRatio = () => {
+      if (img.naturalWidth > 0 && img.naturalHeight > 0) {
+        setDetectedRatio(img.naturalWidth / img.naturalHeight);
+      }
+    };
+    if (img.complete && img.naturalWidth > 0) {
+      updateRatio();
+    } else {
+      img.onload = updateRatio;
+    }
+  }, [beforeImage, afterImage, naturalAspectRatio]);
 
   // Lock background scroll when open
   useEffect(() => {

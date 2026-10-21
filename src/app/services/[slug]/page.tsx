@@ -258,7 +258,9 @@ export default async function ServiceDetailPage({ params }: Props) {
               afterImage={service.afterImage}
               title={service.title}
               category="Interactive Inspection"
-              className="w-full aspect-[4/3] rounded-xl overflow-hidden"
+              aspectRatio="auto"
+              imageFit="contain"
+              className="w-full rounded-xl overflow-hidden shadow-inner"
             />
             <div className="mt-3 text-center text-xs text-slate-500">
               Drag slider left or right to inspect edge quality and color accuracy.
@@ -303,7 +305,9 @@ export default async function ServiceDetailPage({ params }: Props) {
                       afterImage={sample.afterImage}
                       title={sample.categoryTitle || service.title}
                       category={service.title}
-                      className="w-full aspect-[4/3] rounded-xl overflow-hidden shadow-inner"
+                      aspectRatio="auto"
+                      imageFit="contain"
+                      className="w-full rounded-xl overflow-hidden shadow-inner"
                     />
                   </div>
                   <div className="mt-3 pt-2 text-center text-xs text-slate-500 border-t border-slate-200/60">

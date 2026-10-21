@@ -31,6 +31,8 @@ export interface BeforeAfterSliderProps {
   showFooter?: boolean;
   allowFullscreen?: boolean;
   initialMode?: ComparisonMode;
+  naturalAspectRatio?: number | null;
+  imageFit?: "contain" | "cover";
 }
 
 export function BeforeAfterSlider({
@@ -41,13 +43,15 @@ export function BeforeAfterSlider({
   beforeLabel = "Original / Raw",
   afterLabel = "Retouched / QA Passed",
   className = "",
-  aspectRatio = "aspect-[4/3]",
+  aspectRatio = "auto",
   title = "Before & After Quality Inspection",
   category = "Commercial Photo Post-Production",
   showControls,
   showFooter,
   allowFullscreen = true,
   initialMode = "slider",
+  naturalAspectRatio = null,
+  imageFit = "contain",
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -55,6 +59,7 @@ export function BeforeAfterSlider({
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
   const [activeMode, setActiveMode] = useState<ComparisonMode>(initialMode);
   const [isHeld, setIsHeld] = useState(false);
+  const [detectedRatio, setDetectedRatio] = useState<number | null>(naturalAspectRatio);
   const [loupePos, setLoupePos] = useState<{
     x: number;
     y: number;
@@ -75,6 +80,27 @@ export function BeforeAfterSlider({
 
   const containerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (naturalAspectRatio) {
+      setDetectedRatio(naturalAspectRatio);
+      return;
+    }
+    const targetSrc = beforeImage || afterImage;
+    if (!targetSrc) return;
+    const img = new window.Image();
+    img.src = targetSrc;
+    const updateRatio = () => {
+      if (img.naturalWidth > 0 && img.naturalHeight > 0) {
+        setDetectedRatio(img.naturalWidth / img.naturalHeight);
+      }
+    };
+    if (img.complete && img.naturalWidth > 0) {
+      updateRatio();
+    } else {
+      img.onload = updateRatio;
+    }
+  }, [beforeImage, afterImage, naturalAspectRatio]);
+
   // Check if component is placed in a parent container meant to fill height or aspect
   const isFillParent =
     className.includes("h-full") ||
@@ -84,8 +110,11 @@ export function BeforeAfterSlider({
 
   // Resolve canvas aspect ratio class safely
   const resolvedAspectClass = (() => {
-    if (!aspectRatio || aspectRatio === "custom" || aspectRatio === "full") {
+    if (!aspectRatio || aspectRatio === "custom" || aspectRatio === "full" || isFillParent) {
       return "w-full h-full min-h-0 flex-1";
+    }
+    if (aspectRatio === "auto") {
+      return "w-full";
     }
     if (aspectRatio === "square" || aspectRatio === "1/1") {
       return "w-full aspect-square";
@@ -282,7 +311,12 @@ export function BeforeAfterSlider({
       {/* Main Comparison Canvas */}
       <div
         ref={containerRef}
-        className={`relative ${resolvedAspectClass} overflow-hidden touch-none select-none ${
+        style={
+          aspectRatio === "auto" && detectedRatio && !isFillParent
+            ? { aspectRatio: `${detectedRatio}`, maxHeight: "min(72vh, 680px)" }
+            : undefined
+        }
+        className={`relative ${resolvedAspectClass} bg-slate-100/90 dark:bg-slate-950/70 overflow-hidden touch-none select-none mx-auto ${
           activeMode === "slider" ? "cursor-ew-resize" : activeMode === "hold" ? "cursor-pointer" : "cursor-crosshair"
         } ${isZoomed && activeMode === "slider" ? "scale-125 transition-transform duration-300" : ""}`}
         onMouseDown={(e) => {
@@ -335,7 +369,7 @@ export function BeforeAfterSlider({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
                 quality={95}
                 unoptimized
-                className="object-cover pointer-events-none select-none"
+                className={`${imageFit === "cover" ? "object-cover" : "object-contain"} pointer-events-none select-none`}
                 priority
               />
               {afterLabel && (
@@ -358,7 +392,7 @@ export function BeforeAfterSlider({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
                 quality={95}
                 unoptimized
-                className="object-cover pointer-events-none select-none"
+                className={`${imageFit === "cover" ? "object-cover" : "object-contain"} pointer-events-none select-none`}
                 priority
               />
               {beforeLabel && (
@@ -404,7 +438,7 @@ export function BeforeAfterSlider({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
               quality={95}
               unoptimized
-              className="object-cover pointer-events-none select-none"
+              className={`${imageFit === "cover" ? "object-cover" : "object-contain"} pointer-events-none select-none`}
               priority
             />
 
@@ -421,7 +455,7 @@ export function BeforeAfterSlider({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
                 quality={95}
                 unoptimized
-                className="object-cover pointer-events-none select-none"
+                className={`${imageFit === "cover" ? "object-cover" : "object-contain"} pointer-events-none select-none`}
                 priority
               />
             </div>
@@ -460,7 +494,7 @@ export function BeforeAfterSlider({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
               quality={95}
               unoptimized
-              className="object-cover pointer-events-none select-none"
+              className={`${imageFit === "cover" ? "object-cover" : "object-contain"} pointer-events-none select-none`}
               priority
             />
 
@@ -489,7 +523,7 @@ export function BeforeAfterSlider({
                     src={afterImage}
                     alt={afterAlt}
                     fill
-                    className="object-cover"
+                    className={imageFit === "cover" ? "object-cover" : "object-contain"}
                     sizes="2560px"
                     quality={95}
                     unoptimized
@@ -547,6 +581,8 @@ export function BeforeAfterSlider({
           afterLabel={afterLabel}
           title={title}
           category={category}
+          naturalAspectRatio={detectedRatio}
+          imageFit={imageFit}
         />
       )}
     </div>

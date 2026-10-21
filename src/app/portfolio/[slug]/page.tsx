@@ -148,7 +148,9 @@ export default async function PortfolioDetailPage({ params }: Props) {
               afterImage={item.afterImage}
               title={item.title}
               category="Before & After Comparison"
-              className="w-full aspect-[4/3] rounded-xl overflow-hidden"
+              aspectRatio="auto"
+              imageFit="contain"
+              className="w-full rounded-xl overflow-hidden shadow-inner"
             />
           </div>
         </div>
