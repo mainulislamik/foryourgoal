@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
       num: "01",
       title: "Upload & Style Guide Briefing",
       desc: "Send your raw images via our secure portal, FTP, Dropbox, WeTransfer, or Cloudflare R2 bucket. Provide your brand's style guide, target aspect ratios, file format preferences, and background color codes (Hex/CMYK).",
-      details: ["Accepted RAW, TIFF, PSD, JPEG", "Direct cloud folder synchronization", "Strict Non-Disclosure Agreement (NDA)"],
+      details: ["All Image Formats Accepted", "Direct cloud folder synchronization", "Strict Non-Disclosure Agreement (NDA)"],
     },
     {
       num: "02",
