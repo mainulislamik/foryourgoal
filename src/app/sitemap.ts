@@ -31,9 +31,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: item.priority,
   }));
 
-  // Fetch dynamic content from CMS store (fallback to static data)
+  // Fetch dynamic content from CMS store and merge with static definitions
   const dynamicServices = await getDynamicServices().catch(() => []);
-  const services = dynamicServices.length > 0 ? dynamicServices : servicesData;
+  const cmsSlugs = new Set(dynamicServices.map((s) => s.slug));
+  const missingServices = servicesData.filter((s) => !cmsSlugs.has(s.slug));
+  const services = [...dynamicServices, ...missingServices];
 
   const dynamicPortfolio = await getDynamicPortfolio().catch(() => []);
   const portfolio = dynamicPortfolio.length > 0 ? dynamicPortfolio : portfolioData;

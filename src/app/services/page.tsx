@@ -25,8 +25,10 @@ export const metadata: Metadata = {
 };
 
 export default async function ServicesPage() {
-  const dynamicServices = await getDynamicServices();
-  const services = dynamicServices.length > 0 ? dynamicServices : servicesData;
+  const dynamicServices = await getDynamicServices().catch(() => []);
+  const cmsSlugs = new Set(dynamicServices.map((s) => s.slug));
+  const missingServices = servicesData.filter((s) => !cmsSlugs.has(s.slug));
+  const services = [...dynamicServices, ...missingServices];
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
