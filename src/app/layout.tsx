@@ -147,7 +147,6 @@ export default function RootLayout({
         bestRating: "5",
         worstRating: "1",
       },
-      priceRange: "$",
       sameAs: [
         "https://www.linkedin.com/company/foryourgoal",
         "https://twitter.com/foryourgoal",

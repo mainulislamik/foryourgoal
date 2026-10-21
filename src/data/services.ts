@@ -554,7 +554,6 @@ export const servicesData: ServiceItem[] = [
     "title": "Multi Clipping Path Service | Color Separation & Vector Cutouts",
     "shortDesc": "Precision multi-path clipping for color variant isolation, garment separation, and selective retouching with hand-drawn pen tool paths.",
     "fullDesc": "Multi clipping path service goes beyond a single outline by dividing complex products into individually labelable sub-regions — body panels, straps, hardware, labels — each saved as a named Photoshop path. This granular segmentation lets downstream designers recolor components, apply different backgrounds per region, isolate accessories, and generate complete color-variant SKU libraries from a single photography session. Every sub-path is hand-drawn at 200% zoom by senior retouchers using Adobe Photoshop's Pen Tool, eliminating AI artifacts on multi-component garments, footwear, bags, and multi-piece product assemblies.",
-    "startingPrice": "$1.20",
     "rating": "4.9",
     "reviewCount": "980",
     "turnaroundHours": 12,
@@ -606,7 +605,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     "metaTitle": "Multi Clipping Path Service | Color Separation & Vector Cutouts",
-    "metaDesc": "Professional multi clipping path services for color variant isolation, garment component segmentation, and selective retouching. Hand-drawn Photoshop Pen Tool paths from $0.20/image.",
+    "metaDesc": "Professional multi clipping path services for color variant isolation, garment component segmentation, and selective retouching. Hand-drawn Photoshop Pen Tool paths with 5 free test images.",
     "technicalWorkflow": [
       {
         "step": 1,
@@ -649,7 +648,6 @@ export const servicesData: ServiceItem[] = [
     "title": "Ghost Mannequin Neck Joint Service | 3D Hollow Apparel Effect",
     "shortDesc": "Seamless collar stitching and neck joint photo editing to give apparel an authentic 3D hollow mannequin look.",
     "fullDesc": "The neck joint (ghost mannequin) service composites two separate apparel photographs — the exterior front-on mannequin shot and the inside-out collar/neck-label secondary exposure — into one seamlessly integrated floating garment visual. The result is a realistic three-dimensional hollow body effect: the collar opening is fully visible, interior size tags and brand labels are legible, and the garment appears to have authentic volume and drape without any mannequin or model interference. Our retouchers meticulously align collar seams at the sub-pixel level, blend interior fabric tones to match exterior lighting, and apply graduated ambient shadows to the interior collar rim for convincing anatomical depth.",
-    "startingPrice": "$0.80",
     "rating": "4.9",
     "reviewCount": "1150",
     "turnaroundHours": 12,
@@ -692,7 +690,7 @@ export const servicesData: ServiceItem[] = [
       },
       {
         "q": "Can I send bulk apparel batches for neck joint production?",
-        "a": "Absolutely. We process 500–5,000+ garments per day across our 24/7 production shifts. Volume pricing tiers are available starting from 100+ images."
+        "a": "Absolutely. We process 500–5,000+ garments per day across our 24/7 production shifts. Custom volume arrangements are tailored based on batch scope and turnaround requirements."
       },
       {
         "q": "What is your revision policy for neck joint orders?",
@@ -700,7 +698,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     "metaTitle": "Ghost Mannequin Neck Joint Service | 3D Hollow Apparel Effect",
-    "metaDesc": "Professional ghost mannequin neck joint photo editing. Seamless collar compositing, interior label visibility, and 3D hollow body effect for apparel e-commerce from $0.80/image.",
+    "metaDesc": "Professional ghost mannequin neck joint photo editing. Seamless collar compositing, interior label visibility, and 3D hollow body effect for apparel e-commerce with 5 free test images.",
     "technicalWorkflow": [
       {
         "step": 1,
@@ -743,7 +741,6 @@ export const servicesData: ServiceItem[] = [
     "title": "Product Shadow Creation Service | Drop, Natural & Reflection Shadows",
     "shortDesc": "Add realistic drop shadows, natural contact shadows, and luxury mirror reflection effects to ground your e-commerce products.",
     "fullDesc": "Floating product cutouts on pure white backgrounds look artificial and unconvincing without a convincing shadow to anchor them to a surface. Our product shadow creation service engineers three primary shadow types: drop shadows (soft Gaussian blur shadows beneath the product), natural contact shadows (dense ambient occlusion that grounds the product base with authentic physical contact), and mirror reflections (a faded reversed duplicate of the product for luxury bottle, cosmetic, and electronics photography). Each shadow is crafted to exactly match the product's original studio lighting angle, color temperature, and edge softness for a result indistinguishable from a real studio capture.",
-    "startingPrice": "$0.45",
     "rating": "4.9",
     "reviewCount": "1420",
     "turnaroundHours": 6,
@@ -794,7 +791,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     "metaTitle": "Product Shadow Creation Service | Drop, Natural & Reflection Shadows",
-    "metaDesc": "Professional product shadow creation services. Realistic drop shadows, contact shadows, and luxury mirror reflection effects for e-commerce photography from $0.45/image.",
+    "metaDesc": "Professional product shadow creation services. Realistic drop shadows, contact shadows, and luxury mirror reflection effects for e-commerce photography with 5 free test images.",
     "technicalWorkflow": [
       {
         "step": 1,
@@ -837,7 +834,6 @@ export const servicesData: ServiceItem[] = [
     "title": "Amazon Product Photo Editing Service | 100% White Background & Compliance",
     "shortDesc": "100% compliant Amazon product image optimization: pure #FFFFFF white background, 85% frame fill ratio, and 2000px high-res zoom ready.",
     "fullDesc": "Amazon's main product image requirements are strict: pure white backgrounds (RGB 255, 255, 255), products occupying 85% or more of the image frame, a minimum of 1,000 pixels on the longest side for zoom functionality, no watermarks, text, or borders. Non-compliant images are suppressed from search results, causing significant revenue loss. Our Amazon product photo editing service guarantees full technical compliance, optimizing every image for Amazon's A9 search algorithm while ensuring your products look their absolute best. Every image is inspected against Amazon's current image guidelines before delivery, covering main images, secondary lifestyle angles, and A+ content infographics.",
-    "startingPrice": "$0.39",
     "rating": "5.0",
     "reviewCount": "2100",
     "turnaroundHours": 6,
@@ -883,12 +879,12 @@ export const servicesData: ServiceItem[] = [
         "a": "Glass bottles, clear packaging, and reflective electronics receive specialized treatment: we retain natural product transparency, add subtle contact shadows, and ensure the background reads as true white without gray contamination through transparency."
       },
       {
-        "q": "Do you offer bulk pricing for Amazon seller accounts with large catalogs?",
-        "a": "Yes. Volume pricing tiers start at 50 images. Enterprise accounts with 500+ images monthly receive dedicated account management, priority processing queues, and locked SLA guarantees."
+        "q": "Do you offer custom volume rates for Amazon seller accounts with large catalogs?",
+        "a": "Yes. Custom volume arrangements start at 50 images. Enterprise accounts with 500+ images monthly receive dedicated account management, priority processing queues, and locked SLA guarantees following trial testing."
       }
     ],
     "metaTitle": "Amazon Product Photo Editing Service | 100% White Background & Compliance",
-    "metaDesc": "Amazon-compliant product image editing: pure white #FFFFFF backgrounds, 85% frame fill, 2000px zoom ready. Guaranteed first-submission compliance from $0.39/image.",
+    "metaDesc": "Amazon-compliant product image editing: pure white #FFFFFF backgrounds, 85% frame fill, 2000px zoom ready. Guaranteed first-submission compliance with 5 free test images.",
     "technicalWorkflow": [
       {
         "step": 1,
@@ -931,7 +927,6 @@ export const servicesData: ServiceItem[] = [
     "title": "Shopify Product Image Editing Service | WebP & Retina Optimization",
     "shortDesc": "High-converting square crops, WebP compression, uniform margins, and retina-ready visuals tailored specifically for Shopify stores.",
     "fullDesc": "Shopify's recommended product image specifications — 2048×2048px square format, 1:1 aspect ratio, WebP encoding, and consistent margins — directly impact both store loading performance and buyer conversion rates. Inconsistent image sizes, varying crop ratios, or unoptimized JPEG files create jarring visual inconsistency in Shopify collection grids and slow page load speeds that hurt SEO rankings. Our Shopify product image editing service delivers a complete optimization pipeline: background removal, square crop standardization, uniform padding, retina-quality output at 2048px, and WebP conversion, ensuring your store grid looks pixel-perfect across desktop and mobile Retina displays.",
-    "startingPrice": "$0.35",
     "rating": "4.9",
     "reviewCount": "1650",
     "turnaroundHours": 6,
@@ -982,7 +977,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     "metaTitle": "Shopify Product Image Editing Service | WebP & Retina Optimization",
-    "metaDesc": "Shopify product image optimization: 2048px square crops, WebP conversion, uniform margins, and retina-ready quality for high-converting stores. From $0.35/image.",
+    "metaDesc": "Shopify product image optimization: 2048px square crops, WebP conversion, uniform margins, and retina-ready quality for high-converting stores with 5 free test images.",
     "technicalWorkflow": [
       {
         "step": 1,

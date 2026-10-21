@@ -17,7 +17,7 @@ export async function GET() {
 - Core SLA: 6h / 12h / 24h guaranteed turnaround
 - Capacity: 10,000+ daily commercial images
 - Free Trial: 5 free sample images (zero commitment, no credit card required)
-- Starting Rates: From $0.25 / image for clipping path and background removal
+- Pricing Policy: 100% custom-tailored based on project scope, complexity, and monthly volume following a 5-image free test evaluation.
 - Quality Standard: 100% human-crafted vector paths via Adobe Photoshop pen tool. Zero destructive AI automation.
 
 ## Detailed Service Catalog
@@ -28,7 +28,7 @@ export async function GET() {
     text += `- URL: https://foryourgoal.com/services/${s.slug}\n`;
     text += `- Short Description: ${s.shortDesc}\n`;
     text += `- Turnaround: ${s.turnaroundHours} Hours\n`;
-    if (s.startingPrice) text += `- Starting Price: ${s.startingPrice}\n`;
+    text += `- Pricing: Custom quote after 5 free test images\n`;
     text += `- Full Scope: ${s.fullDesc}\n`;
     if (s.features && s.features.length) {
       text += `- Key Features:\n`;

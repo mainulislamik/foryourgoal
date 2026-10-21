@@ -49,15 +49,15 @@ const serviceMetaDescriptions: Record<string, string> = {
   "image-masking":
     "Advanced alpha channel, fur, flyaway hair, and translucent fabric masking. Flawless edge isolation where standard clipping paths fail. Request a custom quote.",
   "multi-clipping-path":
-    "Professional multi clipping path services for color variant isolation, garment component segmentation, and selective retouching. Hand-drawn Photoshop paths from $0.20/image.",
+    "Professional multi clipping path services for color variant isolation, garment component segmentation, and selective retouching. Hand-drawn Photoshop paths with 5 free test images.",
   "neck-joint-service":
-    "Seamless ghost mannequin neck joint editing for apparel — invisible collar compositing, interior label visibility, and authentic 3D hollow body effect. From $0.80/image.",
+    "Seamless ghost mannequin neck joint editing for apparel — invisible collar compositing, interior label visibility, and authentic 3D hollow body effect with 5 free test images.",
   "shadow-creation":
-    "Realistic product shadow creation: drop shadows, natural contact shadows, and luxury mirror reflection effects for e-commerce photography. From $0.45/image.",
+    "Realistic product shadow creation: drop shadows, natural contact shadows, and luxury mirror reflection effects for e-commerce photography with 5 free test images.",
   "amazon-product-photo-editing":
-    "Amazon-compliant product image editing: pure white #FFFFFF backgrounds, 85% frame fill, 2000px zoom-ready. Guaranteed first-submission compliance. From $0.39/image.",
+    "Amazon-compliant product image editing: pure white #FFFFFF backgrounds, 85% frame fill, 2000px zoom-ready. Guaranteed first-submission compliance with 5 free test images.",
   "shopify-image-editing":
-    "Shopify product image optimization: 2048px square crops, WebP conversion, uniform margins, and retina-ready quality for high-converting stores. From $0.35/image.",
+    "Shopify product image optimization: 2048px square crops, WebP conversion, uniform margins, and retina-ready quality for high-converting stores with 5 free test images.",
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -114,14 +114,6 @@ export default async function ServiceDetailPage({ params }: Props) {
       },
       areaServed: "Worldwide",
       serviceType: service.title,
-      offers: {
-        "@type": "Offer",
-        url: `https://foryourgoal.com/services/${service.slug}`,
-        price: service.startingPrice ? service.startingPrice.replace(/[^0-9.]/g, "") : "0.49",
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock",
-        priceValidUntil: "2027-12-31",
-      },
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: (service as any).rating || "4.9",
