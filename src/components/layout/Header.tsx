@@ -374,7 +374,8 @@ export function Header() {
                   href="/request-a-quote?type=sample"
                   className="btn-shimmer relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/20 hover:shadow-lg hover:shadow-red-600/35 transition-all transform hover:scale-105 active:scale-95 duration-200"
                 >
-                  <span>Free Trial</span>
+                  <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
+                  <span>Request Free Trial</span>
                   <ArrowRight className="w-4 h-4 text-white/90" />
                 </Link>
               )}
