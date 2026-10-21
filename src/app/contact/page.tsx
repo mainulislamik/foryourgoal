@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Mail, Clock, MapPin, ShieldCheck, ArrowRight, Phone } from "lucide-react";
+import { Mail, Clock, MapPin, ShieldCheck, ArrowRight, Phone, MessageSquare } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -79,6 +79,18 @@ export default function ContactPage() {
             <div className="text-base font-bold text-slate-900 mt-1">&lt; 45 Minute Response</div>
             <div className="text-xs text-slate-500 mt-1">All new business inquiries answered swiftly</div>
           </div>
+
+          <a
+            href="https://wa.me/8801772866884?text=Hello%20Foryourgoal%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-6 rounded-2xl bg-emerald-50 border border-emerald-200 shadow-sm hover:border-emerald-400 hover:bg-emerald-100 transition-colors"
+          >
+            <MessageSquare className="w-6 h-6 text-emerald-600 mb-3" />
+            <div className="text-xs uppercase font-mono text-emerald-700">WhatsApp Direct Chat</div>
+            <div className="text-base font-bold text-slate-900 mt-1">+880 1772-866884</div>
+            <div className="text-xs text-slate-500 mt-1">Instant response via WhatsApp</div>
+          </a>
         </div>
 
         {/* Action Callout */}

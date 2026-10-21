@@ -97,7 +97,7 @@ export function Footer() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="https://wa.me/8801711000000"
+              href="https://wa.me/8801772866884"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm border border-slate-700 transition-all text-center"
@@ -123,6 +123,12 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
                 <a href="mailto:support@foryourgoal.com" className="font-bold text-cyan-300 hover:text-cyan-200 transition-colors">
                   support@foryourgoal.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <MessageSquare className="w-4 h-4 text-emerald-400 shrink-0" />
+                <a href="https://wa.me/8801772866884" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-300 hover:text-emerald-200 transition-colors">
+                  +880 1772-866884 (WhatsApp)
                 </a>
               </div>
               <div className="flex items-center gap-2 text-slate-400">

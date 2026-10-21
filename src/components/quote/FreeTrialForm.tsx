@@ -12,6 +12,7 @@ import {
   Clock,
   ShieldCheck,
   Send,
+  MessageSquare,
 } from "lucide-react";
 
 export default function FreeTrialForm() {
@@ -155,6 +156,17 @@ export default function FreeTrialForm() {
         >
           Submit Another Request
         </button>
+        <a
+          href={`https://wa.me/8801772866884?text=${encodeURIComponent(
+            `Hello For Your Goal Team, I just submitted free trial request. My name is ${name} and my email is ${email}. Please check my submission.`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-600/30 transition-all hover:scale-[1.02]"
+        >
+          <MessageSquare className="w-4 h-4" />
+          Chat on WhatsApp
+        </a>
       </div>
     );
   }

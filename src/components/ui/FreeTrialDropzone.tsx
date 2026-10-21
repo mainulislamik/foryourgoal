@@ -228,7 +228,7 @@ export function FreeTrialDropzone({
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <a
-                href={`https://wa.me/8801613511887?text=${encodeURIComponent(
+                href={`https://wa.me/8801772866884?text=${encodeURIComponent(
                   `Hello For Your Goal Team, I just submitted free trial order ${successData.referenceId}. Please check my files.`
                 )}`}
                 target="_blank"

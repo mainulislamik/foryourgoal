@@ -360,7 +360,16 @@ export function Header() {
             </nav>
 
             {/* Desktop CTA Action Button */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden lg:flex items-center gap-2">
+              <a
+                href="https://wa.me/8801772866884?text=Hello%20Foryourgoal%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp: +880 1772-866884"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-xl text-emerald-600 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-all duration-200"
+              >
+                <MessageSquare className="w-4 h-4" />
+              </a>
               {pathname === "/request-a-quote" || pathname === "/request-free-trial" ? (
                 <Link
                   href="/contact"
@@ -559,7 +568,7 @@ export function Header() {
                 <span>Email Us</span>
               </a>
               <a
-                href="https://wa.me/8801711000000"
+                href="https://wa.me/8801772866884"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MainWrapper } from "@/components/layout/MainWrapper";
+import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -151,6 +152,7 @@ export default function RootLayout({
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "Customer Support",
+        telephone: "+8801772866884",
         email: "support@foryourgoal.com",
         availableLanguage: ["English"],
       },
@@ -193,6 +195,7 @@ export default function RootLayout({
           {children}
         </MainWrapper>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

@@ -6,6 +6,8 @@ export interface GlobalConfig {
   tagline: string;
   supportEmail: string;
   contactPhone: string;
+  whatsapp?: string;
+  whatsappUrl?: string;
   address: string;
   companyBio: string;
   turnaroundBadge: string;
@@ -302,7 +304,9 @@ export function getDefaultSiteContent(): SiteContent {
       brandName: "Foryourgoal",
       tagline: "Enterprise Image Post-Production & B2B Creative Studio",
       supportEmail: "support@foryourgoal.com",
-      contactPhone: "+1 (555) 019-2834",
+      contactPhone: "+880 1772-866884",
+      whatsapp: "+880 1772-866884",
+      whatsappUrl: "https://wa.me/8801772866884",
       address: "Global Production Hub & 24/7 Virtual Operations",
       companyBio: "Foryourgoal is an international B2B image editing and high-end photo retouching studio. We partner with e-commerce retailers, global brands, product photographers, and creative agencies to deliver flawless visual assets with guaranteed turnaround.",
       turnaroundBadge: "6 to 24h Turnaround",
