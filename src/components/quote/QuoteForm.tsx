@@ -374,7 +374,7 @@ export function QuoteForm() {
             {/* File Upload Box */}
             <div>
               <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                Optional: Upload 1-2 Sample Raw Images (Max 25MB each)
+                Optional: Upload up to 5 Sample Raw Images (Max 25MB each)
               </label>
               <div className="border-2 border-dashed border-slate-300 hover:border-indigo-400 rounded-2xl p-6 text-center bg-slate-50 transition-colors">
                 <input

@@ -902,7 +902,7 @@
       {
         "step": "02",
         "title": "Free Trial Sample",
-        "desc": "We process 2 of your complex images free of charge so you can benchmark our craft and delivery velocity."
+        "desc": "We process 5 of your complex images free of charge so you can benchmark our craft and delivery velocity."
       },
       {
         "step": "03",
@@ -953,9 +953,9 @@
   },
   "ctaBanner": {
     "heading": "Ready to Streamline Your Post-Production Workflow?",
-    "description": "Get started with 2 free sample images or an instant enterprise volume quotation. No minimum commitments, 100% confidential.",
+    "description": "Get started with 5 free sample images or an instant enterprise volume quotation. No minimum commitments, 100% confidential.",
     "quoteBtnText": "Instant Enterprise Quote",
-    "trialBtnText": "Request Free Trial (2 Images)"
+    "trialBtnText": "Request Free Trial (5 Images)"
   },
   "faqs": [
     {
@@ -986,13 +986,13 @@
       "id": "faq-5",
       "category": "terms",
       "question": "How do you scope projects and calculate custom volume estimates?",
-      "answer": "Every enterprise workflow is unique. We evaluate your sample images, complexity (simple straight edges vs. intricate jewelry/fur/hair), monthly throughput, and required turnaround speed to provide a tailored fixed-rate proposal and custom SLA. Request a quote or 2-image pilot to receive an exact estimate within 45 minutes."
+      "answer": "Every enterprise workflow is unique. We evaluate your sample images, complexity (simple straight edges vs. intricate jewelry/fur/hair), monthly throughput, and required turnaround speed to provide a tailored fixed-rate proposal and custom SLA. Request a quote or 5-image pilot to receive an exact estimate within 45 minutes."
     },
     {
       "id": "faq-6",
       "category": "terms",
       "question": "Can we test your quality before committing to an order?",
-      "answer": "Yes! We offer a completely free, no-obligation 2-image sample trial so you can inspect our path precision, edge quality, and turnaround speed before placing a commercial order."
+      "answer": "Yes! We offer a completely free, no-obligation 5-image sample trial so you can inspect our path precision, edge quality, and turnaround speed before placing a commercial order."
     },
     {
       "id": "faq-7",

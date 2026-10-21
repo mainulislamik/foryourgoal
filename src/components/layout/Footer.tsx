@@ -82,10 +82,10 @@ export function Footer() {
               Zero Risk Trial
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-              Test Our Studio Quality With 2 Free Images
+              Test Our Studio Quality With 5 Free Images
             </h2>
             <p className="text-slate-300 text-xs sm:text-sm">
-              Upload any 2 product photos. We&apos;ll process them within 24 hours with complete clipping paths and retouching — completely free, no credit card required.
+              Upload any 5 product photos. We&apos;ll process them within 24 hours with complete clipping paths and retouching — completely free, no credit card required.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 relative z-10 shrink-0 w-full sm:w-auto">
@@ -220,7 +220,7 @@ export function Footer() {
               href="/request-a-quote?type=sample"
               className="font-bold text-red-500 hover:text-red-400 flex items-center gap-1 hover:underline"
             >
-              Free Trial (2 Free Images) <ArrowRight className="w-3 h-3" />
+              Free Trial (5 Free Images) <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
         </div>

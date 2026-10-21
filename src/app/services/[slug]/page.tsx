@@ -442,7 +442,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       <div className="mt-16 w-full" id="service-free-trial">
         <FreeTrialDropzone
           title={`Test Our Quality For ${service.title}`}
-          subtitle={`Send us up to 2 sample photos. We will process them according to your exact ${service.title.toLowerCase()} specifications at zero charge within ~${service.turnaroundHours} hours.`}
+          subtitle={`Send us up to 5 sample photos. We will process them according to your exact ${service.title.toLowerCase()} specifications at zero charge within ~${service.turnaroundHours} hours.`}
           defaultService={service.title}
         />
       </div>

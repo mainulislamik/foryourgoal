@@ -9,7 +9,7 @@ export async function GET() {
 - Turnaround SLA: 6-Hour Express, 12-Hour Priority, and 24-Hour Standard guaranteed turnaround.
 - Quality Assurance: 3-tier inspection protocol with senior art directors checking paths at 200% zoom (99.8% first-pass acceptance rate).
 - Security & Compliance: Strict custom NDAs, ISO 27001 aligned workflows, air-gapped production servers, end-to-end TLS 1.3 encryption, and 30-day automatic data purge.
-- Free Trial: 2 free sample images processed with zero commitment (https://foryourgoal.com/request-free-trial).
+- Free Trial: 5 free sample images processed with zero commitment (https://foryourgoal.com/request-free-trial).
 
 ## Core Commercial Services
 - [Hand-Drawn Clipping Path Services](https://foryourgoal.com/services/clipping-path): 100% Photoshop pen tool vector cutouts with smooth bezier curves for e-commerce catalogs.
@@ -30,7 +30,7 @@ export async function GET() {
 
 ## Key Conversion & Resource Pages
 - [Instant Enterprise Quote Request](https://foryourgoal.com/request-a-quote): Custom SLA and transparent volume quotation delivered within 45 minutes.
-- [Free Sample Trial (2 Images)](https://foryourgoal.com/request-free-trial): Test our hand-crafted precision before placing commercial orders.
+- [Free Sample Trial (5 Images)](https://foryourgoal.com/request-free-trial): Test our hand-crafted precision before placing commercial orders.
 - [Before & After Transformation Gallery](https://foryourgoal.com/portfolio): Interactive before/after sliders showcasing real client deliverables.
 - [Comprehensive FAQ & Knowledge Base](https://foryourgoal.com/faq): Answers regarding turnaround, file formats, SFTP transfer, NDA, and color management.
 - [How The Production Pipeline Works](https://foryourgoal.com/how-it-works): 4-step workflow from file upload to 3-tier QC and batch delivery.

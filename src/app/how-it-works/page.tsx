@@ -28,8 +28,8 @@ export default function HowItWorksPage() {
     },
     {
       num: "02",
-      title: "Free Calibration Pilot (2 Images)",
-      desc: "Before you commit to volume invoicing, our senior retouching team executes up to 2 test files completely free. We calibrate clipping tolerance, skin smoothing, jewelry glare, and drop shadow angles until your creative director signs off.",
+      title: "Free Calibration Pilot (5 Images)",
+      desc: "Before you commit to volume invoicing, our senior retouching team executes up to 5 test files completely free. We calibrate clipping tolerance, skin smoothing, jewelry glare, and drop shadow angles until your creative director signs off.",
       details: ["4-Hour turnaround for pilot files", "Direct feedback iterations", "Style sheet lock-in"],
     },
     {
@@ -169,7 +169,7 @@ export default function HowItWorksPage() {
           Ready to experience the Foryourgoal advantage?
         </h2>
         <p className="mt-2 text-sm text-slate-600 max-w-lg mx-auto">
-          Start your free 2-image calibration test today. No credit card required.
+          Start your free 5-image calibration test today. No credit card required.
         </p>
         <div className="mt-6">
           <Link

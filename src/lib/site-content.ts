@@ -371,7 +371,7 @@ export function getDefaultSiteContent(): SiteContent {
         {
           step: "02",
           title: "Free Trial Sample",
-          desc: "We process 2 of your complex images free of charge so you can benchmark our craft and delivery velocity.",
+          desc: "We process 5 of your complex images free of charge so you can benchmark our craft and delivery velocity.",
         },
         {
           step: "03",
@@ -410,9 +410,9 @@ export function getDefaultSiteContent(): SiteContent {
     },
     ctaBanner: {
       heading: "Ready to Streamline Your Post-Production Workflow?",
-      description: "Get started with 2 free sample images or an instant enterprise volume quotation. No minimum commitments, 100% confidential.",
+      description: "Get started with 5 free sample images or an instant enterprise volume quotation. No minimum commitments, 100% confidential.",
       quoteBtnText: "Instant Enterprise Quote",
-      trialBtnText: "Request Free Trial (2 Images)",
+      trialBtnText: "Request Free Trial (5 Images)",
     },
     faqs: [],
     testimonials: [

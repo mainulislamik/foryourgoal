@@ -152,7 +152,7 @@ export default function AboutPage() {
       <div className="text-center p-10 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
         <h2 className="text-2xl font-bold text-slate-900">Want to partner with our production team?</h2>
         <p className="mt-2 text-sm text-slate-600 max-w-lg mx-auto">
-          Test our craftsmanship with 2 complimentary pilot images today.
+          Test our craftsmanship with 5 complimentary pilot images today.
         </p>
         <div className="mt-6">
           <Link

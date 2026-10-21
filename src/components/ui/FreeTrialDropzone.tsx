@@ -38,8 +38,8 @@ export interface FreeTrialDropzoneProps {
 export function FreeTrialDropzone({
   defaultService,
   className = "",
-  title = "Test Our Quality With 2 Free Images",
-  subtitle = "Upload up to 2 original RAW or high-res product photos. Our senior Photoshop retouchers will process them with 100% hand-drawn paths and return QA-passed deliverables within ~6 hours.",
+  title = "Test Our Quality With 5 Free Images",
+  subtitle = "Upload up to 5 original RAW or high-res product photos. Our senior Photoshop retouchers will process them with 100% hand-drawn paths and return QA-passed deliverables within ~6 hours.",
 }: FreeTrialDropzoneProps) {
   const [selectedServices, setSelectedServices] = useState<string[]>(
     defaultService ? [defaultService] : ["Commercial Product Retouching"]
@@ -69,12 +69,12 @@ export function FreeTrialDropzone({
     const validFiles: File[] = [];
     const validPreviews: { name: string; size: string; url: string }[] = [];
 
-    const totalAllowed = 2;
+    const totalAllowed = 5;
     const currentCount = files.length;
     const remainingSlots = totalAllowed - currentCount;
 
     if (remainingSlots <= 0) {
-      setError("You can upload a maximum of 2 sample images for the free trial.");
+      setError("You can upload a maximum of 5 sample images for the free trial.");
       return;
     }
 
@@ -299,7 +299,7 @@ export function FreeTrialDropzone({
             {/* Drag & Drop Upload Zone */}
             <div className="space-y-3">
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-300">
-                2. Upload 1 or 2 Test Photos (Tap to browse or drop files):
+                2. Upload up to 5 Test Photos (Tap to browse or drop files):
               </label>
 
               <div
@@ -344,7 +344,7 @@ export function FreeTrialDropzone({
                   Tap to select photos, or drop files here
                 </div>
                 <div className="text-xs text-slate-400 mt-1">
-                  JPG, PNG, WebP, TIFF, or PSD (Max 2 files, up to 3.5MB each)
+                  JPG, PNG, WebP, TIFF, or PSD (Max 5 files, up to 3.5MB each)
                 </div>
               </div>
 
@@ -488,7 +488,7 @@ export function FreeTrialDropzone({
                 ) : (
                   <>
                     <Send className="w-4 h-4" />
-                    <span>Submit 2 Free Test Images</span>
+                    <span>Submit 5 Free Test Images</span>
                   </>
                 )}
               </button>

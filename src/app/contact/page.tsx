@@ -94,7 +94,7 @@ export default function ContactPage() {
             <div className="space-y-3 mb-8">
               <div className="text-xs text-slate-700 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-indigo-600" />
-                <span>Upload up to 2 sample files for free calibration</span>
+                <span>Upload up to 5 sample files for free calibration</span>
               </div>
               <div className="text-xs text-slate-700 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-indigo-600" />

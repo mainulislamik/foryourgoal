@@ -162,7 +162,7 @@ export default async function ServicesPage() {
           </div>
           <h3 className="text-2xl font-bold text-slate-900">Want to test our quality on your own files?</h3>
           <p className="text-sm text-slate-600 mt-1 max-w-xl">
-            Upload up to 2 raw images. We will edit them free of charge within 4 hours to calibrate to your style guidelines.
+            Upload up to 5 raw images. We will edit them free of charge within 4 hours to calibrate to your style guidelines.
           </p>
         </div>
         <Link

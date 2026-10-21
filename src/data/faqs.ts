@@ -39,14 +39,14 @@ export const faqsData: FAQItem[] = [
     category: "terms",
     question: "How do you scope projects and calculate custom volume estimates?",
     answer:
-      "Every enterprise workflow is unique. We evaluate your sample images, complexity (simple straight edges vs. intricate jewelry/fur/hair), monthly throughput, and required turnaround speed to provide a tailored fixed-rate proposal and custom SLA. Request a quote or 2-image pilot to receive an exact estimate within 45 minutes.",
+      "Every enterprise workflow is unique. We evaluate your sample images, complexity (simple straight edges vs. intricate jewelry/fur/hair), monthly throughput, and required turnaround speed to provide a tailored fixed-rate proposal and custom SLA. Request a quote or 5-image pilot to receive an exact estimate within 45 minutes.",
   },
   {
     id: "faq-6",
     category: "terms",
     question: "Can we test your quality before committing to an order?",
     answer:
-      "Yes! We offer a completely free, no-obligation 2-image sample trial so you can inspect our path precision, edge quality, and turnaround speed before placing a commercial order.",
+      "Yes! We offer a completely free, no-obligation 5-image sample trial so you can inspect our path precision, edge quality, and turnaround speed before placing a commercial order.",
   },
   {
     id: "faq-7",

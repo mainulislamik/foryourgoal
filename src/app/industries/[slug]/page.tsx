@@ -193,7 +193,7 @@ export default async function IndustryDetailPage({ params }: Props) {
           Ready to streamline {ind.title} image workflows?
         </h2>
         <p className="mt-2 text-sm text-slate-600 max-w-lg mx-auto">
-          Contact our team for a custom SLA proposal and 2 free pilot test files.
+          Contact our team for a custom SLA proposal and 5 free pilot test files.
         </p>
         <div className="mt-6">
           <Link

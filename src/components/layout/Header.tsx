@@ -545,7 +545,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="btn-shimmer w-full inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-6 rounded-xl text-center shadow-md shadow-red-600/25 transition-all"
             >
-              <span>Request a Free Trial (2 Free Images)</span>
+              <span>Request a Free Trial (5 Free Images)</span>
               <ArrowRight className="w-4 h-4 text-white/90 shrink-0" />
             </Link>
 
