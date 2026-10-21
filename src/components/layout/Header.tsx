@@ -19,6 +19,7 @@ import {
   Zap,
   Mail,
   MessageSquare,
+  Phone,
 } from "lucide-react";
 
 const servicesList = [
@@ -362,6 +363,13 @@ export function Header() {
             {/* Desktop CTA Action Button */}
             <div className="hidden lg:flex items-center gap-2">
               <a
+                href="tel:+8801772866884"
+                aria-label="Call +880 1772-866884"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-xl text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-all duration-200"
+              >
+                <Phone className="w-4 h-4" />
+              </a>
+              <a
                 href="https://wa.me/8801772866884?text=Hello%20Foryourgoal%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -566,6 +574,14 @@ export function Header() {
               >
                 <Mail className="w-4 h-4 text-blue-500 shrink-0" />
                 <span>Email Us</span>
+              </a>
+              <a
+                href="tel:+8801772866884"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold transition-colors"
+              >
+                <Phone className="w-4 h-4 shrink-0" />
+                <span>Call Us</span>
               </a>
               <a
                 href="https://wa.me/8801772866884"

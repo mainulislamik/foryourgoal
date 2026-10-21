@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
-import { ArrowRight, Mail, MapPin, MessageSquare } from "lucide-react";
+import { ArrowRight, Mail, MapPin, MessageSquare, Phone } from "lucide-react";
 
 export function Footer() {
   const pathname = usePathname();
@@ -129,6 +129,12 @@ export function Footer() {
                 <MessageSquare className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a href="https://wa.me/8801772866884" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-300 hover:text-emerald-200 transition-colors">
                   +880 1772-866884 (WhatsApp)
+                </a>
+              </div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                <a href="tel:+8801772866884" className="font-bold text-blue-300 hover:text-blue-200 transition-colors">
+                  +880 1772-866884 (Call us)
                 </a>
               </div>
               <div className="flex items-center gap-2 text-slate-400">

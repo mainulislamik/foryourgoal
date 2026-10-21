@@ -81,6 +81,16 @@ export default function ContactPage() {
           </div>
 
           <a
+            href="tel:+8801772866884"
+            className="block p-6 rounded-2xl bg-blue-50 border border-blue-200 shadow-sm hover:border-blue-400 hover:bg-blue-100 transition-colors"
+          >
+            <Phone className="w-6 h-6 text-blue-600 mb-3" />
+            <div className="text-xs uppercase font-mono text-blue-700">Direct Phone Call</div>
+            <div className="text-base font-bold text-slate-900 mt-1">+880 1772-866884</div>
+            <div className="text-xs text-slate-500 mt-1">Call us directly</div>
+          </a>
+
+          <a
             href="https://wa.me/8801772866884?text=Hello%20Foryourgoal%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
             target="_blank"
             rel="noopener noreferrer"

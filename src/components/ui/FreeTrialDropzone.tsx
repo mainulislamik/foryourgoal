@@ -422,7 +422,7 @@ export function FreeTrialDropzone({
                 <input
                   type="text"
                   required
-                  placeholder="alex@brand.com or +1 555 019..."
+                  placeholder="alex@brand.com or +880 1772-866884"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
