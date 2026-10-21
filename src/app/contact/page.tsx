@@ -45,10 +45,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-3 py-1 rounded border border-indigo-200">
-          Direct Studio Communication
-        </span>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mt-3">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900">
           Get in Touch With Our Team
         </h1>
         <p className="mt-3 text-base text-slate-600">

@@ -57,11 +57,7 @@ export default function RequestQuotePage() {
 
       {/* Hero Section & Server-Rendered H1 */}
       <header className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
-        <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-          No Obligation • Test Our Quality
-        </span>
-        <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3 sm:mt-4 tracking-tight">
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
           Request Free Trial
         </h1>
         <p className="mt-2.5 sm:mt-3 text-xs sm:text-base text-slate-600 leading-relaxed px-2">

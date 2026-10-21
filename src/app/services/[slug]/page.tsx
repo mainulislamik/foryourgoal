@@ -14,7 +14,6 @@ import {
   CheckCircle2,
   ChevronRight,
   ShieldCheck,
-  Sparkles,
   Zap,
   HelpCircle,
   Layers,
@@ -205,11 +204,6 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* Hero Service Overview */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
         <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-            <span>Commercial Specification</span>
-          </div>
-
           <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             {service.title}
           </h1>
@@ -278,9 +272,6 @@ export default async function ServiceDetailPage({ params }: Props) {
         <div className="my-16 w-full">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-slate-200">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold uppercase tracking-wider mb-2">
-                <span>Interactive Client Portfolio Samples</span>
-              </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                 Category-Wise Production Samples
               </h2>
@@ -328,9 +319,6 @@ export default async function ServiceDetailPage({ params }: Props) {
       {service.technicalWorkflow && service.technicalWorkflow.length > 0 && (
         <div className="my-16 w-full">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-2">
-              <span>Engineered For Precision</span>
-            </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
               Technical Production Pipeline
             </h2>

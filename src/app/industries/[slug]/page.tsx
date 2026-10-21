@@ -109,10 +109,7 @@ export default async function IndustryDetailPage({ params }: Props) {
 
       {/* Hero */}
       <div className="max-w-3xl mb-16">
-        <span className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-3 py-1 rounded border border-indigo-200">
-          {ind.tagline}
-        </span>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mt-4 tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
           {ind.title} Photo Retouching & Post-Production
         </h1>
         <p className="mt-4 text-lg text-slate-600 leading-relaxed">
