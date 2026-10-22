@@ -224,7 +224,14 @@ export function BeforeAfterModal({
       >
         <div
           ref={containerRef}
-          className={`relative w-full max-w-6xl max-h-[78vh] aspect-[16/10] rounded-2xl overflow-hidden border border-white/15 bg-slate-900 shadow-2xl cursor-ew-resize select-none touch-none ${
+          style={
+            detectedRatio
+              ? { aspectRatio: `${detectedRatio}`, maxHeight: "min(82vh, 850px)" }
+              : { maxHeight: "78vh" }
+          }
+          className={`relative w-full max-w-6xl ${
+            detectedRatio ? "" : "aspect-[16/10]"
+          } rounded-2xl overflow-hidden border border-white/15 bg-slate-900 shadow-2xl cursor-ew-resize select-none touch-none ${
             isZoomed ? "scale-125 transition-transform duration-300" : ""
           }`}
           onMouseDown={(e) => {
@@ -237,6 +244,22 @@ export function BeforeAfterModal({
           }}
           onClick={(e) => e.stopPropagation()}
         >
+          {/* Ambient Blurred Backdrop: eliminates dead black bars while foreground image stays 100% complete */}
+          {afterImage && (
+            <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0" aria-hidden="true">
+              <Image
+                src={afterImage}
+                alt=""
+                fill
+                sizes="100vw"
+                quality={30}
+                unoptimized
+                className="object-cover blur-3xl scale-125 opacity-35 pointer-events-none select-none"
+              />
+              <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[2px]" />
+            </div>
+          )}
+
           {/* Layer 0: AFTER IMAGE (Background - Full width) */}
           <div className="absolute inset-0 w-full h-full">
             <Image

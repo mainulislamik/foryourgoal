@@ -313,7 +313,7 @@ export function BeforeAfterSlider({
         ref={containerRef}
         style={
           aspectRatio === "auto" && detectedRatio && !isFillParent
-            ? { aspectRatio: `${detectedRatio}`, maxHeight: "min(72vh, 680px)" }
+            ? { aspectRatio: detectedRatio, maxHeight: "min(75vh, 720px)" }
             : undefined
         }
         className={`relative ${resolvedAspectClass} bg-slate-100/90 dark:bg-slate-950/70 overflow-hidden touch-none select-none mx-auto ${
@@ -355,6 +355,21 @@ export function BeforeAfterSlider({
           }
         }}
       >
+        {/* Ambient Blurred Backdrop Layer for Contain-Fit Cards */}
+        {afterImage && (
+          <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
+            <Image
+              src={afterImage}
+              alt=""
+              fill
+              aria-hidden="true"
+              sizes="(max-width: 768px) 100vw, 800px"
+              quality={60}
+              unoptimized
+              className="object-cover blur-2xl scale-110 opacity-35 pointer-events-none select-none"
+            />
+          </div>
+        )}
         {/* =========================================================================
             MODE 1: SLIDER COMPARISON
            ========================================================================= */}

@@ -179,14 +179,15 @@ export default async function HomePage() {
 
           {/* Right Column: Interactive Before/After Visual Proof */}
           <FadeIn direction="left" delay={0.2} className="lg:col-span-5 flex flex-col items-center">
-            <div className="animate-float-slow w-full max-w-md lg:max-w-none rounded-2xl bg-white p-3 border border-slate-200/90 shadow-2xl shadow-indigo-200/40 [filter:drop-shadow(0_0_24px_rgba(99,102,241,0.18))]">
+            <div className="animate-float-slow w-full max-w-xl lg:max-w-none rounded-2xl bg-white p-3 border border-slate-200/90 shadow-2xl shadow-indigo-200/40 [filter:drop-shadow(0_0_24px_rgba(99,102,241,0.18))]">
               <BeforeAfterSlider
                 beforeImage={hero.featuredBeforeImage || "/images/services/color-correction-before.jpg"}
                 afterImage={hero.featuredAfterImage || "/images/services/color-correction-after.jpg"}
                 beforeLabel="Original RAW"
                 afterLabel="Retouched Asset"
-                aspectRatio="aspect-square"
-                className="rounded-xl overflow-hidden shadow-inner"
+                aspectRatio="auto"
+                naturalAspectRatio={1.5}
+                className="w-full rounded-xl overflow-hidden shadow-inner"
                 title={hero.featuredTitle || "Color Grading & White-Balance Correction"}
                 category="Color Correction & Grading"
               />
