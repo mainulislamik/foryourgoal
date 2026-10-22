@@ -23,6 +23,12 @@ import {
   Star,
   UploadCloud,
   Layers,
+  Scissors,
+  PersonStanding,
+  Wand2,
+  ShoppingBag,
+  Palette,
+  Sun,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -103,7 +109,7 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchemasJsonLd) }}
       />
       {/* 1. HERO SECTION */}
-      <section className="relative flex items-center justify-center pt-6 sm:pt-8 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
+      <section className="relative flex items-center justify-center pt-8 sm:pt-10 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
         <div className="absolute inset-0 bg-grid-subtle pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(79,70,229,0.06),rgba(255,255,255,0))] pointer-events-none" />
 
@@ -171,6 +177,112 @@ export default async function HomePage() {
                 <div className="text-left">
                   <div className="text-xs font-bold text-slate-900">{hero.trustPill3Title}</div>
                   <div className="text-[11px] text-slate-600">{hero.trustPill3Sub}</div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Production Capabilities Block */}
+            <FadeIn delay={0.45} className="mt-auto pt-5 border-t border-slate-200/80">
+              <div className="flex flex-col gap-4">
+                <div>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-indigo-600">
+                    Core Studio Services
+                  </span>
+                  <h2 className="text-sm font-bold text-slate-900 mt-0.5 leading-snug">
+                    Production Capabilities &amp; Specialized Workflows
+                  </h2>
+                  <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                    Hand-crafted image editing for e-commerce, fashion, and commercial studios worldwide.
+                  </p>
+                </div>
+
+                {/* Service links grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {[
+                    {
+                      icon: Scissors,
+                      label: "Clipping Path & Multi-Path",
+                      sub: "100% Vector Pen Tool · Multi-layer isolation",
+                      href: "/services/clipping-path",
+                      color: "text-indigo-600",
+                      bg: "bg-indigo-50",
+                    },
+                    {
+                      icon: PersonStanding,
+                      label: "Ghost Mannequin & Neck Joint",
+                      sub: "3D volume effect · Collar & sleeve joint",
+                      href: "/services/ghost-mannequin",
+                      color: "text-violet-600",
+                      bg: "bg-violet-50",
+                    },
+                    {
+                      icon: Wand2,
+                      label: "High-End Retouching",
+                      sub: "Frequency separation · Editorial skin & fabric",
+                      href: "/services/photo-retouching",
+                      color: "text-rose-600",
+                      bg: "bg-rose-50",
+                    },
+                    {
+                      icon: ShoppingBag,
+                      label: "E-Commerce Product Ready",
+                      sub: "Pure #FFFFFF · Amazon & Shopify compliant",
+                      href: "/services/ecommerce-photo-editing",
+                      color: "text-emerald-600",
+                      bg: "bg-emerald-50",
+                    },
+                    {
+                      icon: Palette,
+                      label: "Color Correction & Grading",
+                      sub: "Pantone swatch matching · RAW exposure",
+                      href: "/services/color-correction",
+                      color: "text-amber-600",
+                      bg: "bg-amber-50",
+                    },
+                    {
+                      icon: Sun,
+                      label: "Shadow Creation & Reflection",
+                      sub: "Natural drop shadow · Floating 3D depth",
+                      href: "/services/shadow-creation",
+                      color: "text-sky-600",
+                      bg: "bg-sky-50",
+                    },
+                  ].map(({ icon: Icon, label, sub, href, color, bg }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="group flex items-start gap-2.5 p-2.5 rounded-xl border border-slate-200/90 bg-white hover:border-indigo-400 hover:shadow-sm transition-all duration-200"
+                    >
+                      <span className={`shrink-0 mt-0.5 w-7 h-7 rounded-lg flex items-center justify-center ${bg}`}>
+                        <Icon className={`w-3.5 h-3.5 ${color}`} />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-[11px] font-semibold text-slate-900 group-hover:text-indigo-700 transition-colors leading-tight">
+                          {label}
+                        </span>
+                        <span className="block text-[10px] text-slate-500 leading-snug mt-0.5 truncate">
+                          {sub}
+                        </span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Assurance micro-badges */}
+                <div className="flex flex-wrap gap-1.5">
+                  {[
+                    "All Formats (RAW, PSD, TIFF, PNG)",
+                    "14-Day Free Revisions",
+                    "Free Trial — 5 Images",
+                  ].map((badge) => (
+                    <span
+                      key={badge}
+                      className="inline-flex items-center gap-1 text-[10px] font-semibold text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-2.5 py-0.5"
+                    >
+                      <CheckCircle2 className="w-3 h-3 text-emerald-500 shrink-0" />
+                      {badge}
+                    </span>
+                  ))}
                 </div>
               </div>
             </FadeIn>
