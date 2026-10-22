@@ -11,9 +11,7 @@ interface Props {
 
 export function FaqAccordion({ initialFaqs }: Props) {
   const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [openId, setOpenId] = useState<string | null>(
-    initialFaqs.length > 0 ? initialFaqs[0].id : null
-  );
+  const [openId, setOpenId] = useState<string | null>(null);
 
   const categories = [
     { id: "all", label: "All Questions" },

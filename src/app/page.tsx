@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getSiteContent } from "@/lib/site-content";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
+import { HomeFaqAccordion } from "@/components/faq/HomeFaqAccordion";
 import {
   FadeIn,
   StaggerContainer,
@@ -503,23 +504,9 @@ export default async function HomePage() {
           </p>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-          {faqs.slice(0, 6).map((faq) => (
-            <StaggerItem key={faq.id}>
-              <HoverCard className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm h-full">
-                <h3 className="text-base font-bold text-slate-900 flex items-center justify-between">
-                  <span>{faq.question}</span>
-                  <span className="text-indigo-700 text-xs uppercase font-mono px-2.5 py-0.5 rounded-full bg-indigo-50 border border-indigo-200 font-semibold">
-                    {faq.category}
-                  </span>
-                </h3>
-                <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </HoverCard>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        <FadeIn className="w-full">
+          <HomeFaqAccordion faqs={faqs.slice(0, 6)} />
+        </FadeIn>
 
         <div className="text-center mt-10">
           <Link
