@@ -20,6 +20,9 @@ import {
   Mail,
   MessageSquare,
   Phone,
+  Copy,
+  Check,
+  PhoneCall,
 } from "lucide-react";
 
 const servicesList = [
@@ -88,10 +91,13 @@ export function Header() {
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+  const [phoneMenuOpen, setPhoneMenuOpen] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
   const pathname = usePathname();
 
   const servicesRef = useRef<HTMLDivElement>(null);
   const industriesRef = useRef<HTMLDivElement>(null);
+  const phoneRef = useRef<HTMLDivElement>(null);
 
   if (pathname?.startsWith("/imon")) {
     return null;
@@ -120,6 +126,7 @@ export function Header() {
     setMobileMenuOpen(false);
     setServicesOpen(false);
     setIndustriesOpen(false);
+    setPhoneMenuOpen(false);
   }, [pathname]);
 
   // Click outside listener to reliably close dropdowns
@@ -132,6 +139,9 @@ export function Header() {
       if (industriesRef.current && !industriesRef.current.contains(target)) {
         setIndustriesOpen(false);
       }
+      if (phoneRef.current && !phoneRef.current.contains(target)) {
+        setPhoneMenuOpen(false);
+      }
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -139,6 +149,7 @@ export function Header() {
         setServicesOpen(false);
         setIndustriesOpen(false);
         setMobileMenuOpen(false);
+        setPhoneMenuOpen(false);
       }
     };
 
@@ -362,13 +373,75 @@ export function Header() {
 
             {/* Desktop CTA Action Button */}
             <div className="hidden lg:flex items-center gap-2">
-              <a
-                href="tel:+8801772866884"
-                aria-label="Call +880 1772-866884"
-                className="inline-flex items-center justify-center w-9 h-9 rounded-xl text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-all duration-200"
-              >
-                <Phone className="w-4 h-4" />
-              </a>
+              <div className="relative" ref={phoneRef}>
+                <button
+                  type="button"
+                  onClick={() => setPhoneMenuOpen(!phoneMenuOpen)}
+                  aria-label="View Phone Number"
+                  aria-expanded={phoneMenuOpen}
+                  className={`inline-flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-200 ${
+                    phoneMenuOpen
+                      ? "text-white bg-blue-600 shadow-md shadow-blue-500/20"
+                      : "text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200"
+                  }`}
+                >
+                  <Phone className="w-4 h-4" />
+                </button>
+
+                {/* Phone Dropdown Popup */}
+                {phoneMenuOpen && (
+                  <div className="absolute right-0 top-full mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 z-50 animate-in fade-in zoom-in-95 duration-150">
+                    <div className="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-100">
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+                        <PhoneCall className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-slate-800">Phone & WhatsApp</p>
+                        <p className="text-[11px] text-emerald-600 font-medium">Available 24/7 for Inquiries</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-slate-50 border border-slate-100 rounded-xl p-2.5 mb-3">
+                      <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider mb-0.5">Call / Direct Line</p>
+                      <p className="text-sm font-bold text-slate-900 tracking-wide font-mono">+880 1772-866884</p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2">
+                      <a
+                        href="tel:+8801772866884"
+                        className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-colors"
+                      >
+                        <Phone className="w-3.5 h-3.5" />
+                        <span>Call Now</span>
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (typeof navigator !== "undefined" && navigator.clipboard) {
+                            navigator.clipboard.writeText("+8801772866884");
+                            setCopiedPhone(true);
+                            setTimeout(() => setCopiedPhone(false), 2000);
+                          }
+                        }}
+                        className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors"
+                      >
+                        {copiedPhone ? (
+                          <>
+                            <Check className="w-3.5 h-3.5 text-emerald-600" />
+                            <span className="text-emerald-700 font-medium">Copied!</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3.5 h-3.5 text-slate-500" />
+                            <span>Copy</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+
               <a
                 href="https://wa.me/8801772866884?text=Hello%20Foryourgoal%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
                 target="_blank"
