@@ -213,8 +213,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div className="flex items-center gap-3">
+        <div className="pt-6 pb-20 sm:pb-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 sm:pr-28 lg:pr-32">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 font-bold border border-emerald-800/80">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -225,7 +225,7 @@ export function Footer() {
             <span className="text-slate-700 hidden sm:inline">·</span>
             <span>&copy; {new Date().getFullYear()} Foryourgoal. All rights reserved.</span>
           </div>
-          <div className="flex items-center gap-4 text-slate-300">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2 text-slate-300">
             <Link href="/privacy-policy" className="hover:text-cyan-300 transition-colors">
               Privacy Policy
             </Link>
@@ -234,9 +234,9 @@ export function Footer() {
             </Link>
             <Link
               href="/request-a-quote?type=sample"
-              className="font-bold text-red-500 hover:text-red-400 flex items-center gap-1 hover:underline"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-red-600 hover:bg-red-500 active:bg-red-700 text-white font-bold text-xs shadow-md shadow-red-950/40 transition-all hover:scale-105 active:scale-95 shrink-0"
             >
-              Free Trial (5 Free Images) <ArrowRight className="w-3 h-3" />
+              Free Trial (5 Free Images) <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
