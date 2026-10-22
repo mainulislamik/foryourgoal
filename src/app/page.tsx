@@ -115,7 +115,7 @@ export default async function HomePage() {
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start relative z-10">
           {/* Left Column: Editorial Value Proposition */}
-          <FadeIn className="lg:col-span-7 flex flex-col gap-6 lg:gap-7 text-center lg:text-left">
+          <div className="lg:col-span-7 flex flex-col gap-6 lg:gap-7 text-center lg:text-left">
             <FadeIn delay={0.05}>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] sm:leading-[1.12]">
                 {hero.headingPrefix}{" "}
@@ -286,10 +286,10 @@ export default async function HomePage() {
                 </div>
               </div>
             </FadeIn>
-          </FadeIn>
+          </div>
 
           {/* Right Column: Interactive Before/After Visual Proof */}
-          <FadeIn direction="left" delay={0.2} className="lg:col-span-5 flex flex-col items-center">
+          <div className="lg:col-span-5 flex flex-col items-center">
             <div className="animate-float-slow w-full max-w-md lg:max-w-none rounded-2xl bg-white p-3 border border-slate-200/90 shadow-2xl shadow-indigo-200/40 [filter:drop-shadow(0_0_24px_rgba(99,102,241,0.18))]">
               <BeforeAfterSlider
                 beforeImage={hero.featuredBeforeImage || "/images/services/color-correction-before.jpg"}
@@ -310,7 +310,7 @@ export default async function HomePage() {
                 </PulseBadge>
               </div>
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
