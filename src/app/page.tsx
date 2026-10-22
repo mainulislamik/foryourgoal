@@ -23,12 +23,6 @@ import {
   Star,
   UploadCloud,
   Layers,
-  Scissors,
-  PersonStanding,
-  Wand2,
-  ShoppingBag,
-  Palette,
-  Sun,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -109,13 +103,13 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchemasJsonLd) }}
       />
       {/* 1. HERO SECTION */}
-      <section className="relative flex items-center justify-center pt-8 sm:pt-10 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
+      <section className="relative flex items-center justify-center pt-20 sm:pt-24 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
         <div className="absolute inset-0 bg-grid-subtle pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(79,70,229,0.06),rgba(255,255,255,0))] pointer-events-none" />
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start relative z-10">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
           {/* Left Column: Editorial Value Proposition */}
-          <div className="lg:col-span-7 flex flex-col gap-6 lg:gap-7 text-center lg:text-left">
+          <FadeIn className="lg:col-span-7 flex flex-col gap-6 lg:gap-7 text-center lg:text-left">
             <FadeIn delay={0.05}>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] sm:leading-[1.12]">
                 {hero.headingPrefix}{" "}
@@ -180,116 +174,10 @@ export default async function HomePage() {
                 </div>
               </div>
             </FadeIn>
-
-            {/* Production Capabilities Block */}
-            <FadeIn delay={0.25} className="mt-auto pt-5 border-t border-slate-200/80">
-              <div className="rounded-2xl bg-slate-50/80 border border-slate-200/90 p-4 sm:p-4 shadow-xs flex flex-col gap-4">
-                <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-600">
-                    Core Studio Services
-                  </span>
-                  <h2 className="text-sm sm:text-base font-extrabold text-slate-900 mt-0.5 leading-snug">
-                    Production Capabilities &amp; Specialized Workflows
-                  </h2>
-                  <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
-                    Hand-crafted image editing for e-commerce, fashion, and commercial studios worldwide.
-                  </p>
-                </div>
-
-                {/* Service links grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {[
-                    {
-                      icon: Scissors,
-                      label: "Clipping Path & Multi-Path",
-                      sub: "100% Vector Pen Tool · Multi-layer isolation",
-                      href: "/services/clipping-path",
-                      color: "text-indigo-600",
-                      bg: "bg-indigo-50",
-                    },
-                    {
-                      icon: PersonStanding,
-                      label: "Ghost Mannequin & Neck Joint",
-                      sub: "3D volume effect · Collar & sleeve joint",
-                      href: "/services/ghost-mannequin",
-                      color: "text-violet-600",
-                      bg: "bg-violet-50",
-                    },
-                    {
-                      icon: Wand2,
-                      label: "High-End Retouching",
-                      sub: "Frequency separation · Editorial skin & fabric",
-                      href: "/services/photo-retouching",
-                      color: "text-rose-600",
-                      bg: "bg-rose-50",
-                    },
-                    {
-                      icon: ShoppingBag,
-                      label: "E-Commerce Product Ready",
-                      sub: "Pure #FFFFFF · Amazon & Shopify compliant",
-                      href: "/services/ecommerce-photo-editing",
-                      color: "text-emerald-600",
-                      bg: "bg-emerald-50",
-                    },
-                    {
-                      icon: Palette,
-                      label: "Color Correction & Grading",
-                      sub: "Pantone swatch matching · RAW exposure",
-                      href: "/services/color-correction",
-                      color: "text-amber-600",
-                      bg: "bg-amber-50",
-                    },
-                    {
-                      icon: Sun,
-                      label: "Shadow Creation & Reflection",
-                      sub: "Natural drop shadow · Floating 3D depth",
-                      href: "/services/shadow-creation",
-                      color: "text-sky-600",
-                      bg: "bg-sky-50",
-                    },
-                  ].map(({ icon: Icon, label, sub, href, color, bg }) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      className="group bg-white border border-slate-200/90 hover:border-indigo-500 hover:shadow-sm transition-all rounded-xl p-2.5 flex items-start gap-2.5"
-                    >
-                      <span className={`shrink-0 mt-0.5 w-7 h-7 rounded-lg flex items-center justify-center ${bg}`}>
-                        <Icon className={`w-3.5 h-3.5 ${color}`} />
-                      </span>
-                      <span className="min-w-0">
-                        <span className="block text-xs font-bold text-slate-900 group-hover:text-indigo-600 transition-colors leading-tight">
-                          {label}
-                        </span>
-                        <span className="block text-[11px] text-slate-600 leading-tight mt-0.5 truncate">
-                          {sub}
-                        </span>
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-
-                {/* Assurance micro-badges */}
-                <div className="flex flex-wrap gap-1.5">
-                  {[
-                    "All Formats (RAW, PSD, TIFF, PNG)",
-                    "14-Day Free Revisions",
-                    "Free Trial — 5 Images",
-                  ].map((badge) => (
-                    <span
-                      key={badge}
-                      className="inline-flex items-center gap-1 bg-white border border-slate-200/90 text-slate-800 font-medium text-[11px] px-2.5 py-1 rounded-full"
-                    >
-                      <CheckCircle2 className="w-3 h-3 text-emerald-500 shrink-0" />
-                      {badge}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          </div>
+          </FadeIn>
 
           {/* Right Column: Interactive Before/After Visual Proof */}
-          <div className="lg:col-span-5 flex flex-col items-center">
+          <FadeIn direction="left" delay={0.2} className="lg:col-span-5 flex flex-col items-center">
             <div className="animate-float-slow w-full max-w-md lg:max-w-none rounded-2xl bg-white p-3 border border-slate-200/90 shadow-2xl shadow-indigo-200/40 [filter:drop-shadow(0_0_24px_rgba(99,102,241,0.18))]">
               <BeforeAfterSlider
                 beforeImage={hero.featuredBeforeImage || "/images/services/color-correction-before.jpg"}
@@ -310,7 +198,7 @@ export default async function HomePage() {
                 </PulseBadge>
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
