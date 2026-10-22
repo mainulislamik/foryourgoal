@@ -182,16 +182,16 @@ export default async function HomePage() {
             </FadeIn>
 
             {/* Production Capabilities Block */}
-            <FadeIn delay={0.45} className="mt-auto pt-5 border-t border-slate-200/80">
-              <div className="flex flex-col gap-4">
+            <FadeIn delay={0.25} className="mt-auto pt-5 border-t border-slate-200/80">
+              <div className="rounded-2xl bg-slate-50/80 border border-slate-200/90 p-4 sm:p-4 shadow-xs flex flex-col gap-4">
                 <div>
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-indigo-600">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-600">
                     Core Studio Services
                   </span>
-                  <h2 className="text-sm font-bold text-slate-900 mt-0.5 leading-snug">
+                  <h2 className="text-sm sm:text-base font-extrabold text-slate-900 mt-0.5 leading-snug">
                     Production Capabilities &amp; Specialized Workflows
                   </h2>
-                  <p className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                  <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
                     Hand-crafted image editing for e-commerce, fashion, and commercial studios worldwide.
                   </p>
                 </div>
@@ -251,16 +251,16 @@ export default async function HomePage() {
                     <Link
                       key={href}
                       href={href}
-                      className="group flex items-start gap-2.5 p-2.5 rounded-xl border border-slate-200/90 bg-white hover:border-indigo-400 hover:shadow-sm transition-all duration-200"
+                      className="group bg-white border border-slate-200/90 hover:border-indigo-500 hover:shadow-sm transition-all rounded-xl p-2.5 flex items-start gap-2.5"
                     >
                       <span className={`shrink-0 mt-0.5 w-7 h-7 rounded-lg flex items-center justify-center ${bg}`}>
                         <Icon className={`w-3.5 h-3.5 ${color}`} />
                       </span>
                       <span className="min-w-0">
-                        <span className="block text-[11px] font-semibold text-slate-900 group-hover:text-indigo-700 transition-colors leading-tight">
+                        <span className="block text-xs font-bold text-slate-900 group-hover:text-indigo-600 transition-colors leading-tight">
                           {label}
                         </span>
-                        <span className="block text-[10px] text-slate-500 leading-snug mt-0.5 truncate">
+                        <span className="block text-[11px] text-slate-600 leading-tight mt-0.5 truncate">
                           {sub}
                         </span>
                       </span>
@@ -277,7 +277,7 @@ export default async function HomePage() {
                   ].map((badge) => (
                     <span
                       key={badge}
-                      className="inline-flex items-center gap-1 text-[10px] font-semibold text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-2.5 py-0.5"
+                      className="inline-flex items-center gap-1 bg-white border border-slate-200/90 text-slate-800 font-medium text-[11px] px-2.5 py-1 rounded-full"
                     >
                       <CheckCircle2 className="w-3 h-3 text-emerald-500 shrink-0" />
                       {badge}
