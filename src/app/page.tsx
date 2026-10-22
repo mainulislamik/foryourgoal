@@ -103,11 +103,11 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchemasJsonLd) }}
       />
       {/* 1. HERO SECTION */}
-      <section className="relative flex items-center justify-center pt-8 sm:pt-10 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
+      <section className="relative flex items-center justify-center pt-6 sm:pt-8 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-10 xl:px-12 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border-b border-slate-200/80 w-full">
         <div className="absolute inset-0 bg-grid-subtle pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(79,70,229,0.06),rgba(255,255,255,0))] pointer-events-none" />
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start relative z-10">
           {/* Left Column: Editorial Value Proposition */}
           <FadeIn className="lg:col-span-7 flex flex-col gap-6 lg:gap-7 text-center lg:text-left">
             <FadeIn delay={0.05}>
