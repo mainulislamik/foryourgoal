@@ -12,7 +12,7 @@ export function FloatingWhatsApp() {
   const [isOpen, setIsOpen] = useState(false);
   const [showBadge, setShowBadge] = useState(true);
 
-  // Proactively pop up subtle greeting after 3 seconds on first visit
+  // Proactively pop up subtle greeting after 3.5 seconds on first visit
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
@@ -21,12 +21,12 @@ export function FloatingWhatsApp() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans">
-      {/* Interactive Quick Chat Card */}
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans group">
+      {/* Interactive Quick Chat Card — Transparent by default so site content is unobstructed; fully visible on hover */}
       {isOpen && (
-        <div className="w-[310px] sm:w-[340px] bg-white rounded-2xl shadow-2xl border border-emerald-100 overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
+        <div className="w-[310px] sm:w-[340px] bg-white/80 group-hover:bg-white rounded-2xl shadow-lg group-hover:shadow-2xl border border-emerald-200/60 group-hover:border-emerald-300 overflow-hidden opacity-25 sm:opacity-30 group-hover:opacity-100 hover:opacity-100 focus-within:opacity-100 active:opacity-100 transition-all duration-300 ease-out animate-in fade-in slide-in-from-bottom-5">
           {/* Header */}
-          <div className="bg-gradient-to-r from-emerald-600 to-teal-700 p-4 text-white flex items-start justify-between">
+          <div className="bg-gradient-to-r from-emerald-600 to-teal-700 p-3.5 sm:p-4 text-white flex items-start justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center font-bold text-sm">
@@ -56,8 +56,8 @@ export function FloatingWhatsApp() {
           </div>
 
           {/* Body */}
-          <div className="p-4 bg-slate-50 space-y-3">
-            <div className="bg-white p-3 rounded-xl border border-slate-200/70 shadow-sm text-xs text-slate-700 space-y-1.5">
+          <div className="p-4 bg-slate-50/90 group-hover:bg-slate-50 space-y-3">
+            <div className="bg-white/90 group-hover:bg-white p-3 rounded-xl border border-slate-200/70 shadow-sm text-xs text-slate-700 space-y-1.5">
               <p className="font-medium text-slate-900 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                 Want to test our quality first?
@@ -79,7 +79,7 @@ export function FloatingWhatsApp() {
               className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all hover:-translate-y-0.5"
             >
               <Send className="w-3.5 h-3.5" />
-              Chat on WhatsApp (+880 1772-866884)
+              Chat on WhatsApp
             </a>
           </div>
         </div>
@@ -90,7 +90,7 @@ export function FloatingWhatsApp() {
         {!isOpen && showBadge && (
           <button
             onClick={() => setIsOpen(true)}
-            className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white text-slate-800 text-xs font-semibold shadow-lg border border-slate-200/80 hover:border-emerald-300 transition-all hover:shadow-md"
+            className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/90 hover:bg-white text-slate-800 text-xs font-semibold shadow-lg border border-slate-200/80 hover:border-emerald-300 transition-all hover:shadow-md opacity-80 group-hover:opacity-100"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Chat with Lead Retoucher</span>
@@ -103,7 +103,7 @@ export function FloatingWhatsApp() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle WhatsApp chat widget"
-          className="relative inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-xl shadow-emerald-500/40 hover:shadow-emerald-600/50 transition-all duration-300 hover:scale-105 active:scale-95"
+          className="relative inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-xl shadow-emerald-500/40 hover:shadow-emerald-600/50 transition-all duration-300 hover:scale-105 active:scale-95 opacity-80 group-hover:opacity-100"
         >
           {/* Pulse ping dot — online indicator */}
           <span className="absolute -top-0.5 -right-0.5 flex h-3.5 w-3.5">
