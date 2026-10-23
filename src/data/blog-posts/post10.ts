@@ -22,7 +22,7 @@ Worse yet, computer-aided manufacturing machines—such as laser cutters, vinyl 
 
 Professional [raster to vector conversion services](/services/raster-to-vector) bridge this gap by manually redrawing low-resolution bitmap graphics into clean, infinitely scalable vector artwork.
 
-![Vector bezier anchor points and precision graphic design paths](https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=1200&q=80)
+![Screen printing carousel press pulling ink through vector separation mesh](https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80)
 
 ---
 
@@ -53,7 +53,7 @@ For screen printing and heat-transfer vinyl, each color must be separated onto d
 | **Color Separation** | Random CMYK noise and thousands of muddy gradient shapes | Clean Pantone PMS spot colors, pure solid fills, and dedicated layer separations |
 | **Prepress & CNC Readiness** | 90% reject rate by commercial screen printers and CNC operators | 100% production-ready vector files (AI, EPS, SVG, PDF, DXF) |
 
-![Laser cutting, precision CNC fabrication and vector graphics workflow](https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1200&q=80)
+![High resolution CMYK color separation print alignment](https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?auto=format&fit=crop&w=1200&q=80)
 
 ---
 

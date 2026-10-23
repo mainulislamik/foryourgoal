@@ -8,7 +8,7 @@ export const blogPost2: BlogPost = {
   publishedAt: "2026-03-28",
   readingTime: "11 min read",
   category: "E-Commerce Strategy",
-  coverImage: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80",
+  coverImage: "/images/services/shopify-editing-after.jpg",
   author: {
     name: "Sabrina Chowdhury",
     role: "Senior Retouching Specialist",
@@ -22,7 +22,7 @@ Achieving the perfect equilibrium between **surgical visual fidelity** (razor-sh
 
 Whether you run a high-volume fashion brand, a bespoke jewelry boutique, or a consumer electronics catalog on Shopify Plus, this guide provides the exact pixel dimensions, aspect ratio formulas, compression settings, and batch retouching standards needed to maximize both user experience and organic search traffic.
 
-![Modern e-commerce product workspace with digital tablet and high-resolution product photography](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80)
+![Raw unoptimized product image before Shopify catalog sizing](/images/services/shopify-editing-before.jpg)
 
 ---
 
@@ -62,7 +62,7 @@ Consistency in aspect ratio across your entire collection page (PLP) is one of t
 | **3:4 Portrait** | 1536 x 2048 px | High Fashion, Editorial Lookbooks | Very High (80%) | Moderate (Requires Cropping) |
 | **16:9 Landscape** | 2560 x 1440 px | Furniture Sets, Horizontal Banners | Low (30%) | Specialized Only |
 
-![Clean square minimalist product photography setup with precise studio lighting](https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80)
+![Optimized 1:1 square aspect ratio product photography for Shopify](/images/services/shopify-editing-after.jpg)
 
 ---
 
@@ -119,8 +119,6 @@ Alt text serves two critical purposes: web accessibility compliance (WCAG 2.1 st
 
 ### 3. Integrated Schema.org Product Rich Snippets
 Ensure your Shopify theme injects valid JSON-LD metadata linking high-resolution image URLs directly to your product schema attributes (\`image\`, \`offers\`, \`sku\`, \`brand\`).
-
-![Professional e-commerce commercial photography camera gear and product lighting](https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80)
 
 ---
 

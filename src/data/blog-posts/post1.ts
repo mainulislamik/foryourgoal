@@ -8,7 +8,7 @@ export const blogPost1: BlogPost = {
   publishedAt: "2026-04-02",
   readingTime: "12 min read",
   category: "High-End Retouching",
-  coverImage: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80",
+  coverImage: "/images/services/jewelry-retouch-after.jpg",
   author: {
     name: "Tariqul Islam",
     role: "Lead Quality Director",
@@ -22,7 +22,7 @@ However, raw captures straight out of a macro camera setup tell an entirely diff
 
 This is where expert post-production and dedicated [jewelry retouching services](/services/jewelry-retouching) become non-negotiable. Converting macro captures into pristine, hyper-luxurious commercial imagery requires an orchestra of focus stacking, vector clipping paths, frequency separation, manual metal repainting, and diamond fire enhancement.
 
-![Macro photography studio setup for high-end diamond jewelry retouching](https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80)
+![Raw jewelry capture showing dust, metal scratches, and uneven reflection before retouching](/images/services/jewelry-retouch-before.jpg)
 
 ---
 
@@ -69,7 +69,7 @@ Metal Surface Retouching Stack:
 
 A flat or poorly lit diamond looks like cheap cut glass or acrylic. Real brilliance, dispersion, and scintillation require meticulous micro-contrast grading across individual pavilion and crown facets.
 
-![Sparkling diamond luxury engagement ring isolated on white backdrop](https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=80)
+![Precision jewelry macro retouching showing flawless sparkle and focus stacking](/images/services/jewelry-retouch-after.jpg)
 
 ### Enhancing Brilliance Without Sacrificing Authenticity
 
@@ -102,8 +102,6 @@ Managing jewelry photo editing internally quickly creates massive operational bo
 * **Keep Contact Shadows Grounded**: Completely cutting jewelry onto an RGB (255, 255, 255) pure white background without a contact shadow makes the ring look like it is floating in empty outer space. Combine a razor-sharp vector [clipping path service](/services/clipping-path) with a delicate, hand-painted [shadow and reflection service](/services/shadow-reflection) underneath the base shank.
 * **Isolate Chains and Mesh Links**: Delicate necklace chains and tennis bracelet links have hundreds of tiny negative spaces. Apply high-contrast channel masking combined with micro-clipping paths to avoid ugly gray halos between gemstone baskets.
 * **Export in sRGB Color Profile**: When preparing assets for Shopify, WooCommerce, or luxury marketplaces, always convert from Adobe RGB or ProPhoto RGB to sRGB IEC61966-2.1 with Relative Colorimetric intent and Black Point Compensation to ensure colors do not look dull on mobile OLED screens.
-
-![Close up macro view of gold craftsmanship and luxury watch details](https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80)
 
 ---
 

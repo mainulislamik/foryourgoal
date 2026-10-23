@@ -8,7 +8,7 @@ export const blogPost6: BlogPost = {
   publishedAt: "2026-03-04",
   readingTime: "10 min read",
   category: "Technical Editing",
-  coverImage: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80",
+  coverImage: "/images/services/shadow-creation-after.jpg",
   author: {
     name: "Tariqul Islam",
     role: "Lead Quality Director",
@@ -26,7 +26,7 @@ However, constructing photorealistic shadows is one of the most misunderstood di
 
 This comprehensive masterclass dissects the physics of real-world light behavior, the anatomy of contact shadows, stepwise mathematical Gaussian blur calculations, color decontamination science, mirror reflection engineering, and enterprise workflows used by high-end [shadow creation services](/services/shadow-creation) to ground thousands of SKUs daily.
 
-![Minimalist electronic wireless headphones grounded with soft directional studio contact shadow](https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=1200&q=80)
+![Product isolated on pure white before natural shadow creation](/images/services/shadow-creation-before.jpg)
 
 ---
 
@@ -136,7 +136,7 @@ By setting your shadow layers to **Multiply**, the shadow pixels mathematically 
 
 Different product categories and digital marketplaces require distinct shadow styles. Below are the precise technical production workflows for executing the three core commercial shadow types in Adobe Photoshop.
 
-![Designer luxury sunglasses reflecting on a dark glossy surface](https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1200&q=80)
+![Flawless acrylic glass mirror reflection shadow on luxury cosmetic product](/images/services/shadow-reflection-after.jpg)
 
 ---
 

@@ -58,7 +58,7 @@ Automated background remover tools often produce "fringing"—microscopic halos 
 
 By using 100% hand-drawn Photoshop pen paths, our retouchers ensure razor-sharp boundaries, realistic contact shadows, and perfect 85% frame centering.
     `,
-    coverImage: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/amazon-editing-after.jpg",
     publishedAt: "2026-03-15",
     readingTime: "5 min read",
     category: "E-Commerce Strategy",
@@ -101,7 +101,7 @@ Image masking is a raster technique that manipulates pixel transparency through 
 
 At Foryourgoal, many enterprise projects use both: a vector clipping path for the solid product body (such as a winter parka coat) combined with an alpha channel mask for the faux fur hood.
     `,
-    coverImage: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/image-masking-after.jpg",
     publishedAt: "2026-02-28",
     readingTime: "6 min read",
     category: "Technical Editing",
@@ -140,7 +140,7 @@ To create a flawless ghost mannequin composite, you must provide your retouching
 - **Use Low-Cut White or Matte Gray Mannequins**: Avoid shiny black plastic mannequins whose reflections bleed into the fabric.
 - **Steam Creases Before Shooting**: While our retouchers smooth wrinkles, pre-steaming ensures natural fabric drape.
     `,
-    coverImage: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/neck-joint-after.jpg",
     publishedAt: "2026-01-20",
     readingTime: "7 min read",
     category: "Studio Workflow",

@@ -22,7 +22,7 @@ However, "natural" beauty imagery does not mean "un-retouched." High-resolution 
 
 The secret lies in the mastery of two non-destructive retouching methodologies: **Frequency Separation** and **Micro Dodge & Burn**.
 
-![High-end fashion portrait and natural commercial beauty retouching](https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80)
+![Commercial beauty portrait preserving delicate freckles and authentic skin tone](https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80)
 
 ---
 
@@ -67,7 +67,7 @@ Dodge & Burn alters the perceived smoothness of skin without ever touching a blu
 * A temporary **Visual Aid Layer Stack**: A Black & White adjustment layer paired with a high-contrast Curves layer to strip away distracting color, allowing the retoucher to focus purely on luminance transitions.
 * A soft round brush set to **1% Flow and 100% Opacity**, delicately painted with a pressure-sensitive Wacom tablet.
 
-![Fashion model portrait with flawless natural skin texture preservation](https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80)
+![Professional high-end photo retouching workstation with color calibrated display](/images/security/photoshop-retouching.jpg)
 
 ---
 

@@ -24,7 +24,7 @@ To make matters more challenging, modern furniture buyers expect to see products
 
 Professional [furniture and commercial product retouching](/services/commercial-retouching) provides the digital toolkit that transforms imperfect, cramped studio captures into multimillion-dollar catalog assets.
 
-![Contemporary interior design staging and Scandinavian furniture photography](https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80)
+![Wood grain craft and surface texture detail on luxury furniture](https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80)
 
 ---
 
@@ -52,7 +52,7 @@ Furniture requires a sophisticated combination of three distinct shadow layers:
 2. **Form (Ambient) Shadow:** A soft, graduated blur extending beneath the body of the piece, simulating the blockage of ambient overhead light.
 3. **Directional Cast Shadow:** A soft feathered shadow trailing away from the primary key light source, establishing depth, angle, and physical scale.
 
-![Minimalist modern armchair isolated with natural floor shadow gradient](https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80)
+![Large commercial photography studio with overhead softbox lighting rig](https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?auto=format&fit=crop&w=1200&q=80)
 
 ---
 

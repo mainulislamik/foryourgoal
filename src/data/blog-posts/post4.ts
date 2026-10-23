@@ -8,7 +8,7 @@ export const blogPost4: BlogPost = {
   publishedAt: "2026-03-16",
   readingTime: "11 min read",
   category: "Commercial Photography",
-  coverImage: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
+  coverImage: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1200&q=80",
   author: {
     name: "Sabrina Chowdhury",
     role: "Senior Retouching Specialist",
@@ -22,7 +22,7 @@ At the same time, physical shoe samples provided to commercial photography studi
 
 Transforming these imperfect physical samples into striking, high-converting commercial assets requires specialized [product photo retouching services](/services/product-photo-retouching). This guide outlines the exact production workflows used by premier athletic brands (Nike, Adidas, New Balance) and luxury footwear ateliers to achieve symmetrical perfection while preserving authentic material textures.
 
-![Red athletic running sneaker showing detailed sole texture and upper mesh craftsmanship](https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80)
+![Sneaker material macro detailing showing clean leather stitching and texture](https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80)
 
 ---
 
@@ -61,7 +61,7 @@ Photoshop Footwear Retouching Layer Hierarchy:
 
 When a pair of sneakers is displayed on a collection page, the left and right shoes must exhibit balanced harmony. Physical shoes, however, bend and warp naturally.
 
-![Pair of classic athletic sneakers highlighting collar alignment and clean soles](https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1200&q=80)
+![Studio suspension wire rig setup for multi-angle footwear photography](https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=1200&q=80)
 
 ### Photoshop Liquify & Puppet Warp Best Practices
 * **Ankle Collar Sculpting**: Use \`Filter > Liquify\` with a large brush size (300px to 500px) and low pressure (30%) to gently pull distorted ankle openings into a crisp, smooth, oval contour.
@@ -99,7 +99,7 @@ Our specialized [shadow creation services](/services/shadow-creation) construct 
 | **Ground Presentation** | Floating in void or harsh artificial drop shadow | Multi-layer contact occlusion + diffused soft cast shadow |
 | **Turnaround Scalability**| 40–60 minutes per SKU in-house | 1,000+ pairs per day via dedicated production teams |
 
-![Close-up shot of leather footwear craftsmanship and hand-stitched detailing](https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80)
+
 
 ---
 

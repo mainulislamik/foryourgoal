@@ -8,7 +8,7 @@ export const blogPost3: BlogPost = {
   publishedAt: "2026-03-22",
   readingTime: "10 min read",
   category: "Industry Analysis",
-  coverImage: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1200&q=80",
+  coverImage: "/images/services/clipping-path-after.jpg",
   author: {
     name: "Tariqul Islam",
     role: "Lead Quality Director",
@@ -22,7 +22,7 @@ However, commercial retail production does not operate on simple test subjects. 
 
 This quality audit breaks down the structural, geometric, and commercial differences between automated AI background removal and 100% **hand-drawn vector clipping paths** executed by expert Adobe Photoshop production artists.
 
-![Digital designer working with graphics tablet and precision vector pen tools](https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1200&q=80)
+![Complex product background requiring manual vector pen tool isolation](/images/services/clipping-path-before.jpg)
 
 ---
 
@@ -60,7 +60,7 @@ Result: Razor-sharp lines, perfectly preserved angles, pristine catalog presenta
 
 When enterprise quality assurance (QA) teams audit automated AI batch runs, the same four critical defects account for over 92% of rejections:
 
-![Close-up of precise product manufacturing and edge geometry](https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80)
+![Clean hand-drawn clipping path with razor sharp edge isolation](/images/services/clipping-path-after.jpg)
 
 ### 1. Low-Contrast Boundary Dissolution
 When the subject's luminosity matches the background—such as a white wedding dress shot on an off-white backdrop, or a stainless steel knife blade reflecting a white studio diffuser—AI algorithms cannot distinguish where the product ends and the backdrop begins. Entire chunks of the product are erased, leaving visible notches in the silhouette.
@@ -103,7 +103,7 @@ In practice, the studio workflow degrades:
 
 By partnering directly with a dedicated [clipping path service](/services/clipping-path), every single asset is delivered 100% defect-free within 12 to 24 hours. The cost per image is predictable, fixed, and far lower than the blended hourly wage of in-house creatives.
 
-![Creative designer workspace reviewing digital catalog assets](https://images.unsplash.com/photo-1542744094-3a3172720a8a?auto=format&fit=crop&w=1200&q=80)
+![Precision multi-clipping path vector segmentation for component color adjustments](/images/services/multi-clipping-path-after.jpg)
 
 ---
 

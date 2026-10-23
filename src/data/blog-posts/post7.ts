@@ -22,7 +22,7 @@ The underlying culprit is rarely the garment itself; it is the absence of rigoro
 
 Professional [color correction and color variant services](/services/color-correction) provide the engineering rigor needed to guarantee that on-screen pixels match physical Pantone swatches and real-world textile samples with laboratory precision.
 
-![Studio apparel photography color calibration setup with fabric swatches](https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1200&q=80)
+![Raw camera capture before color temperature and fabric matching](/images/services/color-correction-before.jpg)
 
 ---
 
@@ -84,7 +84,7 @@ Subjective visual evaluation by human eye is inherently flawed due to retinal ey
 
 By measuring the L*a*b* coordinates of the physical garment using a handheld spectrophotometer (or referencing the brand's official Pantone TCX code) and comparing it against the Photoshop Info Palette, retouchers can mathematically verify that Delta E (the distance between two colors) remains under 2.0—the threshold where the human eye cannot perceive any difference.
 
-![Color matching and digital garment recoloring workflow](https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80)
+![Pantone color swatch matching and spectral calibration](https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?auto=format&fit=crop&w=1200&q=80)
 
 ---
 

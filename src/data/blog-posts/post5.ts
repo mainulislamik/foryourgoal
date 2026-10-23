@@ -8,7 +8,7 @@ export const blogPost5: BlogPost = {
   publishedAt: "2026-03-10",
   readingTime: "12 min read",
   category: "Apparel Photography",
-  coverImage: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80",
+  coverImage: "/images/services/ghost-mannequin-after.jpg",
   author: {
     name: "Kazi Mahbubur Rahman",
     role: "Head of Operations",
@@ -24,7 +24,7 @@ Every visual presentation method carries distinct cost drivers, studio footprint
 
 This comprehensive guide delivers a rigorous, data-backed operational and financial comparison between **Ghost Mannequin**, **Flat Lay**, and **Live Model** photography. We analyze exact cost-per-SKU metrics, conversion performance, studio workflows, step-by-step composite post-production techniques, and strategic hybrid frameworks to help your brand optimize its visual merchandising return on investment.
 
-![Modern high-end clothing boutique retail display showcasing apparel presentation and collection curation](https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80)
+![Ghost mannequin apparel hero shot before neck-joint assembly](/images/services/ghost-mannequin-before.jpg)
 
 ---
 
@@ -94,7 +94,7 @@ When scaling from a boutique collection to an enterprise catalog, the divergence
 
 While live model photography is essential for campaign lookbooks and homepage hero banners, deploying it across every single basic SKU in a 2,500-product catalog burns massive capital that rarely delivers proportional revenue lift. Ghost mannequin photography provides the optimal balance of dimensional realism, professional authority, and lean operational expenditure.
 
-![High fashion apparel design studio with garment racks, mannequins, and pattern drafting tables](https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80)
+![Seamless 3D hollow ghost mannequin composite with brand collar tag](/images/services/neck-joint-after.jpg)
 
 ---
 

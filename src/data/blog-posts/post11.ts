@@ -27,7 +27,7 @@ If even one frame exhibits slight color variation, lighting flicker, or wobbles 
 
 Mastering [360-degree product image retouching](/services/product-retouching) requires specialized batch-processing protocols, optical axis stabilization, and meticulous frame-to-frame normalization.
 
-![Interactive 360 degree footwear product spin photography setup](https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1200&q=80)
+![Studio camera setup with dual diffused softboxes for consistent spin lighting](https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?auto=format&fit=crop&w=1200&q=80)
 
 ---
 
@@ -81,7 +81,7 @@ Digital colorists measure RGB sample points across the background and a steady m
 ### Step 3: Consistent Contact Shadow Synthesis
 On a rotating turntable, the physical shadow cast by the product changes shape dynamically with every degree of rotation. Rather than leaving messy, jumping studio shadows, retouchers recreate a consistent, smooth synthetic [cast shadow](/services/shadow-creation) directly below the product pivot point, maintaining physical weight and realism.
 
-![Digital photo editing and studio post-production workspace](https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1200&q=80)
+![Turntable axis calibration for 360-degree interactive product viewer](https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?auto=format&fit=crop&w=1200&q=80)
 
 ---
 

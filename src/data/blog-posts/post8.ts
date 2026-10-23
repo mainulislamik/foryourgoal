@@ -22,7 +22,7 @@ However, poorly designed A+ Content can actually depress sales. Misaligned dimen
 
 Here is the definitive studio design guide for mastering Amazon A+ Content image specifications, responsive mobile slicing, and conversion-optimized module architecture.
 
-![Amazon e-commerce product packaging and premium brand showcase](https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80)
+![Amazon main hero image compliance with 85% frame fill on pure white background](/images/services/amazon-editing-after.jpg)
 
 ---
 
@@ -65,7 +65,7 @@ To prevent Amazon's asset ingestion system from stretching or fuzzily interpolat
 * **Dimensions:** 150 x 300 pixels per product column (up to 6 ASINs)
 * **Usage:** Cross-selling related products in your catalog, preventing shoppers from clicking competitor ads.
 
-![Digital analytics dashboard showing e-commerce conversion optimization metrics](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80)
+![Amazon A+ Content brand story and visual product layout](https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80)
 
 ---
 
