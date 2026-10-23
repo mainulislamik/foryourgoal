@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
+import { GlobalJsonLd } from "@/components/seo/GlobalJsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,8 @@ export const metadata: Metadata = {
   },
   description:
     "Expert hand-drawn clipping paths, high-end product retouching, ghost mannequin, and jewelry photo editing for global e-commerce brands and studios.",
+  category: "Photo Editing & Commercial Retouching Studio",
+  classification: "Commercial Photography & E-Commerce Post-Production",
   keywords: [
     "clipping path service",
     "photo retouching services",
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
   creator: "Foryourgoal",
   publisher: "Foryourgoal",
   alternates: {
-    canonical: "/",
+    canonical: "https://foryourgoal.com",
   },
   icons: {
     icon: [
@@ -102,80 +105,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      name: "Foryourgoal",
-      url: "https://foryourgoal.com",
-      logo: "https://foryourgoal.com/images/foryourgoal-logo.png",
-      image: "https://foryourgoal.com/images/og-image.jpg",
-      description:
-        "Professional image editing and photo retouching studio providing high-volume clipping path, product retouching, and ghost mannequin services for global e-commerce and creative brands.",
-      email: "support@foryourgoal.com",
-      areaServed: [
-        "Worldwide",
-        "United States",
-        "United Kingdom",
-        "Canada",
-        "Australia",
-        "Germany",
-      ],
-      knowsAbout: [
-        "Photoshop Clipping Path",
-        "E-Commerce Image Editing",
-        "High-End Jewelry Retouching",
-        "Ghost Mannequin Composite",
-        "Alpha Channel Masking",
-        "Color Correction & Grading",
-      ],
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ],
-        opens: "00:00",
-        closes: "23:59",
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "2480",
-        bestRating: "5",
-        worstRating: "1",
-      },
-      sameAs: [
-        "https://www.linkedin.com/company/foryourgoal",
-        "https://twitter.com/foryourgoal",
-        "https://www.facebook.com/foryourgoal",
-      ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "Customer Support",
-        telephone: "+8801772866884",
-        email: "support@foryourgoal.com",
-        availableLanguage: ["English"],
-      },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Foryourgoal",
-      url: "https://foryourgoal.com",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://foryourgoal.com/services?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
-    },
-  ];
-
   return (
     <html
       lang="en"
@@ -184,10 +113,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <GlobalJsonLd />
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-800 font-sans selection:bg-indigo-600 selection:text-white">
         <a

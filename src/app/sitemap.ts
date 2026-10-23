@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { getDynamicServices, getDynamicPortfolio, getDynamicFaqs } from "@/lib/site-content";
+import { getDynamicServices } from "@/lib/site-content";
 import { servicesData } from "@/data/services";
 import { industriesData } from "@/data/industries";
 import { portfolioData } from "@/data/portfolio";
@@ -8,9 +8,21 @@ import { blogPostsData } from "@/data/blogs";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://foryourgoal.com";
 
+  const toAbsoluteUrl = (img?: string): string | null => {
+    if (!img) return null;
+    return img.startsWith("http")
+      ? img
+      : `${baseUrl}${img.startsWith("/") ? "" : "/"}${img}`;
+  };
+
   // Core static routes with optimized changeFrequency & priority
   const staticRoutes = [
-    { route: "", priority: 1.0, freq: "weekly" as const },
+    {
+      route: "",
+      priority: 1.0,
+      freq: "weekly" as const,
+      images: [`${baseUrl}/images/og-image.jpg`],
+    },
     { route: "/services", priority: 0.95, freq: "weekly" as const },
     { route: "/portfolio", priority: 0.9, freq: "weekly" as const },
     { route: "/industries", priority: 0.85, freq: "monthly" as const },
@@ -29,6 +41,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date().toISOString(),
     changeFrequency: item.freq,
     priority: item.priority,
+    ...(item.images ? { images: item.images } : {}),
   }));
 
   // Fetch dynamic content from CMS store and merge with static definitions
@@ -37,16 +50,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const missingServices = servicesData.filter((s) => !cmsSlugs.has(s.slug));
   const services = [...dynamicServices, ...missingServices];
 
-  const dynamicPortfolio = await getDynamicPortfolio().catch(() => []);
-  const portfolio = dynamicPortfolio.length > 0 ? dynamicPortfolio : portfolioData;
-
   // Dynamic service routes (High Priority B2B targets)
-  const serviceRoutes = services.map((s) => ({
-    url: `${baseUrl}/services/${s.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: "weekly" as const,
-    priority: 0.9,
-  }));
+  const serviceRoutes = services.map((s) => {
+    const images: string[] = [];
+    const before = toAbsoluteUrl(s.beforeImage);
+    const after = toAbsoluteUrl(s.afterImage);
+    if (before) images.push(before);
+    if (after) images.push(after);
+
+    return {
+      url: `${baseUrl}/services/${s.slug}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      ...(images.length > 0 ? { images } : {}),
+    };
+  });
 
   // Dynamic industry routes
   const industryRoutes = industriesData.map((i) => ({
@@ -57,20 +76,36 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Dynamic portfolio routes
-  const portfolioRoutes = portfolioData.map((p) => ({
-    url: `${baseUrl}/portfolio/${p.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  const portfolioRoutes = portfolioData.map((item) => {
+    const images: string[] = [];
+    const before = toAbsoluteUrl(item.beforeImage);
+    const after = toAbsoluteUrl(item.afterImage);
+    if (before) images.push(before);
+    if (after) images.push(after);
 
-  // Dynamic blog routes (All 15 in-depth technical guides)
-  const blogRoutes = blogPostsData.map((b) => ({
-    url: `${baseUrl}/blog/${b.slug}`,
-    lastModified: b.publishedAt ? new Date(b.publishedAt).toISOString() : new Date().toISOString(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
+    return {
+      url: `${baseUrl}/portfolio/${item.slug}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      ...(images.length > 0 ? { images } : {}),
+    };
+  });
+
+  // Dynamic blog routes (All in-depth technical guides)
+  const blogRoutes = blogPostsData.map((b) => {
+    const images: string[] = [];
+    const cover = toAbsoluteUrl(b.coverImage);
+    if (cover) images.push(cover);
+
+    return {
+      url: `${baseUrl}/blog/${b.slug}`,
+      lastModified: b.publishedAt ? new Date(b.publishedAt).toISOString() : new Date().toISOString(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+      ...(images.length > 0 ? { images } : {}),
+    };
+  });
 
   return [
     ...staticRoutes,

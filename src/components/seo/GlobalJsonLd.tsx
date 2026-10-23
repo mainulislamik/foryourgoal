@@ -23,6 +23,22 @@ export function GlobalJsonLd() {
     priceRange: "$$",
     currenciesAccepted: "USD, EUR, GBP, CAD, AUD",
     paymentAccepted: "Credit Card, PayPal, Wire Transfer",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "2480",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    areaServed: [
+      "Worldwide",
+      "United States",
+      "United Kingdom",
+      "Germany",
+      "Canada",
+      "Australia",
+      "Europe",
+    ],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -75,16 +91,6 @@ export function GlobalJsonLd() {
         opens: "00:00",
         closes: "23:59",
       },
-    ],
-    areaServed: [
-      { "@type": "Country", name: "United States" },
-      { "@type": "Country", name: "United Kingdom" },
-      { "@type": "Country", name: "Canada" },
-      { "@type": "Country", name: "Germany" },
-      { "@type": "Country", name: "Australia" },
-      { "@type": "Country", name: "France" },
-      { "@type": "Country", name: "Netherlands" },
-      { "@type": "Country", name: "Global" },
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -232,7 +238,7 @@ export function GlobalJsonLd() {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://foryourgoal.com/services?q={search_term_string}",
+        urlTemplate: "https://foryourgoal.com/blog?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },

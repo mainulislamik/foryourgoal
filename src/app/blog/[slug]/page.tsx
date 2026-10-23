@@ -191,9 +191,8 @@ export default async function BlogPostDetailPage({ params }: Props) {
       datePublished: post.publishedAt,
       dateModified: post.publishedAt,
       author: {
-        "@type": "Person",
-        name: post.author.name,
-        jobTitle: post.author.role,
+        "@type": "Organization",
+        name: "Foryourgoal Production Team",
         url: "https://foryourgoal.com/about",
       },
       publisher: {
@@ -211,7 +210,7 @@ export default async function BlogPostDetailPage({ params }: Props) {
       },
       speakable: {
         "@type": "SpeakableSpecification",
-        cssSelector: ["#quick-takeaway-box", ".post-title", ".blog-hero-excerpt"],
+        cssSelector: ["h1", "article p:first-of-type", ".blog-content > p:first-of-type"],
       },
     },
     {

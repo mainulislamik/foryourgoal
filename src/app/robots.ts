@@ -12,13 +12,15 @@ export default function robots(): MetadataRoute.Robots {
   const searchAndAiAgents = [
     "Googlebot",
     "Bingbot",
+    "Applebot",
     "GPTBot",
     "OAI-SearchBot",
     "PerplexityBot",
     "ClaudeBot",
-    "Applebot",
+    "Claude-Web",
     "meta-externalagent",
     "anthropic-ai",
+    "cohere-ai",
   ];
 
   return {
