@@ -57,6 +57,22 @@ On Amazon, your main search result image (MAIN) is the single most critical fact
 Automated background remover tools often produce "fringing"—microscopic halos of the original background color around product edges. When placed against Amazon's pure white background, these fringes make the product look blurry and untrustworthy.
 
 By using 100% hand-drawn Photoshop pen paths, our retouchers ensure razor-sharp boundaries, realistic contact shadows, and perfect 85% frame centering.
+
+---
+
+## Frequently Asked Questions
+
+### What is Amazon's exact background color requirement for main images?
+Amazon strictly requires pure white RGB (255, 255, 255) / hex #FFFFFF. Any off-white, light gray, or studio ambient backdrops will trigger automated search suppression.
+
+### What is the recommended image resolution for Amazon zoom?
+Amazon requires a minimum of 1600 pixels on the longest side to trigger the dynamic zoom loupe, with 2000px to 2500px recommended for maximum clarity on desktop and mobile.
+
+### Can I include promotional badges, logos, or text on Amazon main images?
+No. Amazon listing policy strictly prohibits promotional badges, seller watermarks, text overlays, or accessories not included with the product on the main hero image.
+
+### What frame percentage should the product occupy on Amazon?
+The product must occupy at least 85% of the total canvas frame area to ensure maximum visibility and optimal click-through rates in search results.
     `,
     coverImage: "/images/services/amazon-editing-after.jpg",
     publishedAt: "2026-03-15",
@@ -100,6 +116,19 @@ Image masking is a raster technique that manipulates pixel transparency through 
 ### The Hybrid Approach
 
 At Foryourgoal, many enterprise projects use both: a vector clipping path for the solid product body (such as a winter parka coat) combined with an alpha channel mask for the faux fur hood.
+
+---
+
+## Frequently Asked Questions
+
+### When should I choose a clipping path instead of image masking?
+Use clipping paths for products with crisp, solid, and clearly defined boundaries like footwear, watches, consumer electronics, and hard-surface goods. Choose image masking for soft edges like fur, fine flyaway hair, semi-transparent glass, and delicate mesh fabrics.
+
+### What is the mathematical difference between clipping paths and image masking?
+Clipping paths are resolution-independent vector bezier curves drawn manually using the Photoshop Pen Tool. Image masking is a raster technique that calculates pixel-level opacity using 8-bit or 16-bit Alpha Channels.
+
+### Can clipping paths and image masking be combined on the same product?
+Yes. Commercial fashion catalogs frequently combine both: a vector clipping path isolates the solid structure of a winter coat, while an alpha channel mask isolates the delicate faux-fur collar trim.
     `,
     coverImage: "/images/services/image-masking-after.jpg",
     publishedAt: "2026-02-28",
@@ -139,6 +168,19 @@ To create a flawless ghost mannequin composite, you must provide your retouching
 - **Match Lighting Angles**: Use diffused softboxes on both sides to prevent hard shadows inside the collar.
 - **Use Low-Cut White or Matte Gray Mannequins**: Avoid shiny black plastic mannequins whose reflections bleed into the fabric.
 - **Steam Creases Before Shooting**: While our retouchers smooth wrinkles, pre-steaming ensures natural fabric drape.
+
+---
+
+## Frequently Asked Questions
+
+### What two captures are required for a ghost mannequin composite?
+You need an on-mannequin hero shot showing the exterior fit, drape, and silhouette, plus an interior neck/collar shot showing the inside neckline, lining, and brand tag captured under identical lighting.
+
+### Why should apparel studios avoid shiny black mannequins?
+Shiny plastic mannequins reflect specular studio lights and cast dark color contamination onto the interior fabric edges, requiring extra time-consuming color correction during post-production.
+
+### Does ghost mannequin photography improve apparel sales conversion?
+Yes. Studies consistently indicate that hollow-man 3D compositing increases buyer trust and conversion rates by 25% to 40% compared to flat-lay photography by helping customers visualize real garment drape and fit.
     `,
     coverImage: "/images/services/neck-joint-after.jpg",
     publishedAt: "2026-01-20",

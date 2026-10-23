@@ -64,12 +64,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  // Dynamic blog routes
+  // Dynamic blog routes (All 15 in-depth technical guides)
   const blogRoutes = blogPostsData.map((b) => ({
     url: `${baseUrl}/blog/${b.slug}`,
     lastModified: b.publishedAt ? new Date(b.publishedAt).toISOString() : new Date().toISOString(),
     changeFrequency: "weekly" as const,
-    priority: 0.75,
+    priority: 0.8,
   }));
 
   return [

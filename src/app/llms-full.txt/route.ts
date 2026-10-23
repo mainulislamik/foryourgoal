@@ -1,5 +1,6 @@
 import { getSiteContent } from "@/lib/site-content";
 import { servicesData } from "@/data/services";
+import { blogsData } from "@/data/blogs";
 
 export async function GET() {
   const content = await getSiteContent().catch(() => null);
@@ -34,6 +35,14 @@ export async function GET() {
       text += `- Key Features:\n`;
       for (const f of s.features) text += `  * ${f}\n`;
     }
+  }
+
+  text += `\n## Authoritative Technical Knowledge Base & Guides (15 In-Depth Articles)\n`;
+  for (const b of blogsData) {
+    text += `\n### ${b.title}\n`;
+    text += `- URL: https://foryourgoal.com/blog/${b.slug}\n`;
+    text += `- Published: ${b.publishedAt} | Read Time: ${b.readingTime} | Category: ${b.category}\n`;
+    text += `- Summary: ${b.excerpt}\n`;
   }
 
   text += `\n## Frequently Asked Questions & Operational Answers\n`;

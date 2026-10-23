@@ -2,13 +2,120 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { blogPostsData, getBlogPostBySlug } from "@/data/blogs";
+import { blogPostsData, getBlogPostBySlug, BlogPost } from "@/data/blogs";
 import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
-import { Clock, Calendar, ArrowLeft, ArrowRight, Share2, Sparkles, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, ArrowRight, Sparkles, ChevronRight, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+function extractFAQsFromMarkdown(content: string): FAQItem[] {
+  const faqs: FAQItem[] = [];
+  const faqSectionRegex =
+    /##\s*(?:Frequently Asked Questions|FAQ[s]?|Questions & Answers|Q&A)([\s\S]*?)(?=\n##\s|\n---\s*\n\s*(?:Ready|\[)|$)/i;
+  const match = content.match(faqSectionRegex);
+  const targetText = match ? match[1] : content;
+
+  if (match) {
+    const qRegex = /###\s+(.+?)\n([\s\S]*?)(?=(?:\n###\s+)|\n---\s*|\n##\s*|$)/g;
+    let qMatch;
+    while ((qMatch = qRegex.exec(targetText)) !== null) {
+      const question = qMatch[1].trim().replace(/\*\*/g, "");
+      const answer = qMatch[2]
+        .replace(/!\[.*?\]\(.*?\)/g, "")
+        .replace(/\[(.*?)\]\(.*?\)/g, "$1")
+        .replace(/[*_`]/g, "")
+        .trim();
+      if (question && answer) {
+        faqs.push({ question, answer });
+      }
+    }
+  }
+
+  if (faqs.length === 0) {
+    const genericQRegex = /###\s+(.+?\?)\n([\s\S]*?)(?=(?:\n###\s+)|\n---\s*|\n##\s*|$)/g;
+    let qMatch;
+    while ((qMatch = genericQRegex.exec(content)) !== null) {
+      const question = qMatch[1].trim().replace(/\*\*/g, "");
+      const answer = qMatch[2]
+        .replace(/!\[.*?\]\(.*?\)/g, "")
+        .replace(/\[(.*?)\]\(.*?\)/g, "$1")
+        .replace(/[*_`]/g, "")
+        .trim();
+      if (question && answer && answer.length > 20) {
+        faqs.push({ question, answer });
+      }
+    }
+  }
+
+  return faqs;
+}
+
+function getQuickTakeaways(post: BlogPost): { points: string[] } {
+  const points: string[] = [];
+  const introExcerpt = post.content.slice(0, 3500);
+
+  const bulletRegex = /(?:^|\n)[*-]\s+\*\*?([^\n*]+)\*\*?:?\s*([^\n]+)/g;
+  let match;
+  while ((match = bulletRegex.exec(introExcerpt)) !== null) {
+    const title = match[1].trim();
+    const desc = match[2].trim();
+    const combined = `${title}: ${desc}`.replace(/[*_`]/g, "");
+    if (
+      combined.length > 25 &&
+      !combined.toLowerCase().includes("request a free") &&
+      !combined.toLowerCase().includes("explore our")
+    ) {
+      points.push(combined);
+      if (points.length >= 3) break;
+    }
+  }
+
+  if (points.length < 3) {
+    const numberedRegex = /(?:^|\n)\d+\.\s+\*\*?([^\n*]+)\*\*?:?\s*([^\n]+)/g;
+    let nMatch;
+    while ((nMatch = numberedRegex.exec(introExcerpt)) !== null) {
+      const title = nMatch[1].trim();
+      const desc = nMatch[2].trim();
+      const combined = `${title}: ${desc}`.replace(/[*_`]/g, "");
+      if (combined.length > 25) {
+        points.push(combined);
+        if (points.length >= 3) break;
+      }
+    }
+  }
+
+  if (points.length === 0) {
+    points.push(
+      "Guaranteed compliance with marketplace guidelines prevents listing suppression and boosts product click-through rates."
+    );
+    points.push(
+      "Human-crafted vector pen paths provide pixel-accurate subject isolation without automated AI edge halos."
+    );
+    points.push(
+      "Standardized multi-tier quality control ensures uniform lighting, colors, and margins across thousands of SKUs."
+    );
+  } else if (points.length === 1) {
+    points.push(
+      "Human-crafted vector pen paths provide pixel-accurate subject isolation without automated AI edge halos."
+    );
+    points.push(
+      "Standardized multi-tier quality control ensures uniform lighting, colors, and margins across thousands of SKUs."
+    );
+  } else if (points.length === 2) {
+    points.push(
+      "Standardized multi-tier quality control ensures uniform lighting, colors, and margins across thousands of SKUs."
+    );
+  }
+
+  return { points: points.slice(0, 3) };
 }
 
 export async function generateStaticParams() {
@@ -66,19 +173,28 @@ export default async function BlogPostDetailPage({ params }: Props) {
     notFound();
   }
 
-  // Schema.org BlogPosting & BreadcrumbList
-  const schemasJsonLd = [
+  const fullCoverImageUrl = post.coverImage.startsWith("http")
+    ? post.coverImage
+    : `https://foryourgoal.com${post.coverImage}`;
+
+  const faqs = extractFAQsFromMarkdown(post.content);
+  const quickTakeaways = getQuickTakeaways(post);
+
+  // Schema.org BlogPosting, BreadcrumbList, and FAQPage (AEO/GEO enriched)
+  const schemasJsonLd: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: post.title,
       description: post.excerpt,
-      image: post.coverImage,
+      image: fullCoverImageUrl,
       datePublished: post.publishedAt,
+      dateModified: post.publishedAt,
       author: {
         "@type": "Person",
         name: post.author.name,
         jobTitle: post.author.role,
+        url: "https://foryourgoal.com/about",
       },
       publisher: {
         "@type": "Organization",
@@ -92,6 +208,10 @@ export default async function BlogPostDetailPage({ params }: Props) {
       mainEntityOfPage: {
         "@type": "WebPage",
         "@id": `https://foryourgoal.com/blog/${post.slug}`,
+      },
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["#quick-takeaway-box", ".post-title", ".blog-hero-excerpt"],
       },
     },
     {
@@ -119,6 +239,21 @@ export default async function BlogPostDetailPage({ params }: Props) {
       ],
     },
   ];
+
+  if (faqs.length > 0) {
+    schemasJsonLd.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
 
   return (
     <article className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8 dark:bg-slate-950">
@@ -164,11 +299,11 @@ export default async function BlogPostDetailPage({ params }: Props) {
             </span>
           </div>
 
-          <h1 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white leading-[1.15]">
+          <h1 className="post-title mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white leading-[1.15]">
             {post.title}
           </h1>
 
-          <p className="mt-5 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+          <p className="blog-hero-excerpt mt-5 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
             {post.excerpt}
           </p>
 
@@ -194,6 +329,34 @@ export default async function BlogPostDetailPage({ params }: Props) {
           </div>
         </header>
 
+        {/* AEO Quick Takeaway / Direct Answer Card */}
+        <section
+          id="quick-takeaway-box"
+          aria-label="Key Takeaways and Direct Answer"
+          className="aeo-quick-takeaway mb-10 rounded-2xl border-2 border-indigo-200/80 bg-gradient-to-br from-indigo-50/90 via-blue-50/60 to-purple-50/40 p-6 sm:p-7 shadow-sm dark:border-indigo-800/60 dark:from-indigo-950/40 dark:via-slate-900 dark:to-slate-900"
+        >
+          <div className="flex items-center gap-2.5 text-base sm:text-lg font-bold text-indigo-950 dark:text-indigo-200 mb-3.5">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-600 text-white shadow-sm text-sm font-black">
+              ⚡
+            </span>
+            <h2 className="text-base sm:text-lg font-bold">Key Takeaways / Quick Summary</h2>
+          </div>
+
+          <p className="aeo-direct-answer text-sm sm:text-base leading-relaxed text-slate-700 dark:text-slate-200 font-medium mb-4 pb-3.5 border-b border-indigo-100/80 dark:border-indigo-900/50">
+            <strong className="text-slate-900 dark:text-white">Direct Answer: </strong>
+            {post.excerpt}
+          </p>
+
+          <ul className="space-y-2.5 text-sm text-slate-700 dark:text-slate-300">
+            {quickTakeaways.points.map((point, idx) => (
+              <li key={idx} className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5 shrink-0" />
+                <span className="leading-relaxed">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Hero Cover Image */}
         <div className="relative mb-12 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md dark:border-slate-800 dark:bg-slate-900">
           <Image
@@ -204,28 +367,6 @@ export default async function BlogPostDetailPage({ params }: Props) {
             sizes="(max-width: 1024px) 100vw, 896px"
             className="object-cover"
           />
-        </div>
-
-        {/* Key Takeaways Callout */}
-        <div className="mb-10 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/70 to-blue-50/50 p-6 shadow-sm dark:border-indigo-900/40 dark:from-indigo-950/20 dark:to-slate-900">
-          <h2 className="flex items-center gap-2 text-base font-bold text-indigo-950 dark:text-indigo-200 mb-3">
-            <CheckCircle2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-            <span>Key Takeaways for Studio & E-Commerce Leads</span>
-          </h2>
-          <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-            <li className="flex items-start gap-2">
-              <span className="text-indigo-600 font-bold">&bull;</span>
-              <span>Consistent image specifications and clean isolation directly elevate conversion rates and reduce marketplace rejection risk.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-indigo-600 font-bold">&bull;</span>
-              <span>Handcrafted Photoshop paths ensure razor-sharp subject isolation without the fuzzy halos common in automated AI tools.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-indigo-600 font-bold">&bull;</span>
-              <span>Streamlined batch production workflows allow commercial studios to scale throughput while maintaining enterprise quality standards.</span>
-            </li>
-          </ul>
         </div>
 
         {/* Markdown Rendered Content */}

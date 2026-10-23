@@ -1,38 +1,38 @@
 import { MetadataRoute } from "next";
 
+/**
+ * Robots.txt configuration for Foryourgoal Commercial Studio
+ * AI Context Documentation:
+ * - https://foryourgoal.com/llms.txt
+ * - https://foryourgoal.com/llms-full.txt
+ */
 export default function robots(): MetadataRoute.Robots {
+  const protectedRoutes = ["/api/", "/imon", "/imon/*", "/admin/"];
+
+  const searchAndAiAgents = [
+    "Googlebot",
+    "Bingbot",
+    "GPTBot",
+    "OAI-SearchBot",
+    "PerplexityBot",
+    "ClaudeBot",
+    "Applebot",
+    "meta-externalagent",
+    "anthropic-ai",
+  ];
+
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/imon", "/imon/*", "/admin/"],
+        disallow: protectedRoutes,
       },
-      {
-        userAgent: "GPTBot",
+      ...searchAndAiAgents.map((agent) => ({
+        userAgent: agent,
         allow: "/",
-        disallow: ["/api/", "/imon", "/imon/*"],
-      },
-      {
-        userAgent: "OAI-SearchBot",
-        allow: "/",
-        disallow: ["/api/", "/imon", "/imon/*"],
-      },
-      {
-        userAgent: "PerplexityBot",
-        allow: "/",
-        disallow: ["/api/", "/imon", "/imon/*"],
-      },
-      {
-        userAgent: "Google-Extended",
-        allow: "/",
-        disallow: ["/api/", "/imon", "/imon/*"],
-      },
-      {
-        userAgent: "ClaudeBot",
-        allow: "/",
-        disallow: ["/api/", "/imon", "/imon/*"],
-      },
+        disallow: protectedRoutes,
+      })),
       {
         userAgent: "CCBot",
         disallow: "/",
@@ -41,3 +41,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: "https://foryourgoal.com/sitemap.xml",
   };
 }
+

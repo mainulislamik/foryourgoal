@@ -1,4 +1,13 @@
+import { blogsData } from "@/data/blogs";
+
 export async function GET() {
+  const blogList = blogsData
+    .map(
+      (b) =>
+        `- [${b.title}](https://foryourgoal.com/blog/${b.slug}): ${b.excerpt} (Published: ${b.publishedAt}, Read Time: ${b.readingTime})`
+    )
+    .join("\n");
+
   const content = `# Foryourgoal — Enterprise Image Post-Production & B2B Creative Studio
 > High-volume, pixel-perfect commercial image editing, clipping path, and high-end photo retouching for international e-commerce retailers, global brands, commercial studios, and creative agencies.
 
@@ -11,7 +20,7 @@ export async function GET() {
 - Quality Assurance: 3-tier inspection protocol with senior art directors checking paths at 200% zoom (99.8% first-pass acceptance rate).
 - Security & Compliance: Strict custom NDAs, ISO 27001 aligned workflows, air-gapped production servers, end-to-end TLS 1.3 encryption, and 30-day automatic data purge.
 - Free Trial: 5 free sample images processed with zero commitment (https://foryourgoal.com/request-free-trial).
-- Phone & WhatsApp: +880****6884 (available 24/7)
+- Phone & WhatsApp: +8801772866884 (available 24/7)
 - Email: support@foryourgoal.com
 
 ## All 13 Commercial Services
@@ -57,7 +66,10 @@ export async function GET() {
 - [Comprehensive FAQ & Knowledge Base](https://foryourgoal.com/faq): Answers regarding turnaround, file formats, SFTP transfer, NDA, and color management.
 - [How The Production Pipeline Works](https://foryourgoal.com/how-it-works): 4-step workflow from file upload to 3-tier QC and batch delivery.
 - [Blog & Industry Guides](https://foryourgoal.com/blog): In-depth technical articles on e-commerce image standards, clipping path techniques, and studio workflows.
-- [Contact & Global Operations](https://foryourgoal.com/contact): WhatsApp & Phone: +880****6884 (24/7), Email: support@foryourgoal.com.
+- [Contact & Global Operations](https://foryourgoal.com/contact): WhatsApp & Phone: +8801772866884 (24/7), Email: support@foryourgoal.com.
+
+## Technical Knowledge Base & Authoritative Guides (15 In-Depth Articles)
+${blogList}
 
 ## Service Capacity & SLA Summary
 | Service | Pricing Model | Turnaround | Daily Capacity |
