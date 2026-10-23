@@ -1,3 +1,16 @@
+import { blogPost1 } from "./blog-posts/post1";
+import { blogPost2 } from "./blog-posts/post2";
+import { blogPost3 } from "./blog-posts/post3";
+import { blogPost4 } from "./blog-posts/post4";
+import { blogPost5 } from "./blog-posts/post5";
+import { blogPost6 } from "./blog-posts/post6";
+import { blogPost7 } from "./blog-posts/post7";
+import { blogPost8 } from "./blog-posts/post8";
+import { blogPost9 } from "./blog-posts/post9";
+import { blogPost10 } from "./blog-posts/post10";
+import { blogPost11 } from "./blog-posts/post11";
+import { blogPost12 } from "./blog-posts/post12";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -13,7 +26,7 @@ export interface BlogPost {
   };
 }
 
-export const blogsData: BlogPost[] = [
+export const originalBlogs: BlogPost[] = [
   {
     slug: "amazon-product-image-requirements-2026",
     title: "The 2026 Amazon Product Image Guidelines: How to Avoid Listing Suppression",
@@ -23,6 +36,8 @@ export const blogsData: BlogPost[] = [
 ## Why Amazon Main Image Compliance Dictates Your Sales Velocity
 
 On Amazon, your main search result image (MAIN) is the single most critical factor influencing your Click-Through-Rate (CTR). Amazon's automated machine-vision algorithms continuously scan product listings. If your image fails compliance, your ASIN can be silently suppressed from search results without an email notification.
+
+![Pure white background commercial product photography on Amazon](https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80)
 
 ### Core Amazon Main Image Specifications
 
@@ -34,6 +49,8 @@ On Amazon, your main search result image (MAIN) is the single most critical fact
    The main image cannot contain promotional badges ("Best Seller", "100% Organic"), watermarks, inset illustrations, or accessories not included in the purchase.
 4. **Minimum Resolution for Dynamic Zoom (1600px+ on longest side)**:
    To activate Amazon's high-converting hover-to-zoom feature, images must have a minimum dimension of 1600 pixels on the longest side (with 2000px to 2500px recommended).
+
+![High resolution product zoom showing clean edge isolation and reflection](https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=1200&q=80)
 
 ### How Hand-Drawn Clipping Paths Protect Your Store
 
@@ -60,6 +77,8 @@ By using 100% hand-drawn Photoshop pen paths, our retouchers ensure razor-sharp 
 
 When outsourcing image editing, one of the most common questions from creative directors is whether their assets require a **Clipping Path** or **Image Masking**. While both techniques isolate subjects from their backgrounds, they operate on completely different mathematical principles.
 
+![Vector pen clipping path applied to luxury product with defined boundaries](https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80)
+
 ### What is a Clipping Path?
 
 A clipping path is a closed vector bezier curve drawn manually using Photoshop's Pen Tool.
@@ -75,6 +94,8 @@ Image masking is a raster technique that manipulates pixel transparency through 
 - **Best For**: Soft, irregular, and translucent edges (fashion models with flyaway hair, pet photography, knitwear, sheer lace, smoke, glassware).
 - **Advantage**: Retains individual pixel opacities, allowing background colors to show through semi-transparent materials naturally.
 - **Limitation**: Requires higher-resolution source captures to ensure pixel data integrity.
+
+![Alpha channel masking for complex flyaway hair and delicate textiles](https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80)
 
 ### The Hybrid Approach
 
@@ -99,6 +120,8 @@ At Foryourgoal, many enterprise projects use both: a vector clipping path for th
 
 Ghost mannequin photography (also known as hollow man or invisible mannequin) creates the illusion that an invisible figure is wearing the garment. It gives apparel realistic 3D volume, showcases inner lining craftsmanship, and keeps shopper focus strictly on the clothing.
 
+![Studio lighting setup for ghost mannequin apparel photography](https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1200&q=80)
+
 ### The Two Required Shots
 
 To create a flawless ghost mannequin composite, you must provide your retouching team with two distinct photographs taken under identical lighting conditions:
@@ -107,6 +130,8 @@ To create a flawless ghost mannequin composite, you must provide your retouching
    Photograph the garment dressed onto a static mannequin or bust. Ensure the garment is steamed, pinned for symmetry, and aligned straight to the lens.
 2. **The Inner Neck / Tag Shot**:
    Turn the garment inside out or unzip/unbutton the top section. Hang or lay the garment flat and photograph the interior back collar, size tag, and brand label.
+
+![Detailed collar stitching and brand tag alignment](https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1200&q=80)
 
 ### 4 Pro Studio Tips for Faster Retouching
 
@@ -125,6 +150,26 @@ To create a flawless ghost mannequin composite, you must provide your retouching
     },
   },
 ];
+
+export const newBlogs: BlogPost[] = [
+  blogPost1,
+  blogPost2,
+  blogPost3,
+  blogPost4,
+  blogPost5,
+  blogPost6,
+  blogPost7,
+  blogPost8,
+  blogPost9,
+  blogPost10,
+  blogPost11,
+  blogPost12,
+];
+
+// All 15 articles sorted chronologically by publishedAt descending
+export const blogsData: BlogPost[] = [...newBlogs, ...originalBlogs].sort(
+  (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+);
 
 export const blogPostsData = blogsData;
 
