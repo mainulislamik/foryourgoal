@@ -262,15 +262,20 @@ export function BeforeAfterSlider({
             e.stopPropagation();
             setActiveMode("loupe");
           }}
-          className={`flex items-center gap-1 px-2.5 py-1 rounded-full transition-all ${
+          className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all text-xs font-semibold ${
             activeMode === "loupe"
-              ? "bg-indigo-600 text-white shadow-sm font-bold"
-              : "text-slate-300 hover:text-white hover:bg-white/10"
+              ? "bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md shadow-indigo-600/40 ring-2 ring-indigo-400"
+              : "text-slate-200 hover:text-white hover:bg-white/15"
           }`}
           title="300% Zoom Micro Inspection Loupe"
         >
-          <Search className="w-3 h-3" />
-          <span className="hidden sm:inline">300% Loupe</span>
+          <Search className="w-3.5 h-3.5 text-indigo-300" />
+          <span>300% Zoom Loupe</span>
+          {activeMode !== "loupe" && (
+            <span className="inline-flex items-center px-1 py-0.2 rounded text-[9px] font-bold bg-amber-400/90 text-slate-900 ml-0.5">
+              Inspect
+            </span>
+          )}
         </button>
       </div>
 

@@ -197,7 +197,8 @@ export function Footer() {
               {[
                 { href: "/how-it-works", label: "How It Works" },
                 { href: "/terms", label: "SLA Guarantee" },
-                { href: "/privacy-policy", label: "NDA & Data Protection" },
+                { href: "/nda", label: "Enterprise NDA & IP Protection" },
+                { href: "/privacy-policy", label: "Privacy Policy" },
                 { href: "/careers", label: "Careers & Studio Culture" },
                 { href: "/terms", label: "Terms of Service" },
                 { href: "/contact", label: "Client Helpdesk" },

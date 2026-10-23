@@ -36,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { route: "/careers", priority: 0.6, freq: "monthly" as const },
     { route: "/privacy-policy", priority: 0.5, freq: "yearly" as const },
     { route: "/terms", priority: 0.5, freq: "yearly" as const },
+    { route: "/nda", priority: 0.7, freq: "monthly" as const },
   ].map((item) => ({
     url: `${baseUrl}${item.route}`,
     lastModified: new Date().toISOString(),

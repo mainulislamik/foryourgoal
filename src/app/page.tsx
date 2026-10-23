@@ -24,6 +24,9 @@ import {
   Star,
   UploadCloud,
   Layers,
+  FileCheck,
+  Send,
+  Eye,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -250,6 +253,101 @@ export default async function HomePage() {
         </StaggerContainer>
       </section>
 
+      {/* 2.5 ZERO-RISK 5-IMAGE CLIENT PILOT */}
+      <section className="py-16 bg-gradient-to-b from-white to-slate-50 border-b border-slate-200 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
+        <div className="max-w-6xl mx-auto rounded-3xl bg-slate-900 text-white p-8 sm:p-12 shadow-2xl relative overflow-hidden border border-slate-800">
+          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
+
+          <div className="relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-8 border-b border-slate-800/80">
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                  Zero-Risk Commercial Pilot
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-3 tracking-tight">
+                  Test Our Edge Quality with 5 Free Sample Images
+                </h2>
+                <p className="mt-2 text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+                  No credit card. No obligation. Send 5 of your most demanding raw catalog shots and inspect our 100% hand-drawn vector paths and natural retouching before committing a single dollar.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 shrink-0">
+                <Link
+                  href="/request-free-trial"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-sm shadow-lg shadow-red-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                >
+                  <span>Start 5-Image Free Trial</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="https://wa.me/8801772866884?text=Hello%20Foryourgoal%20Studio,%20I'd%20like%20to%20send%205%20free%20sample%20images%20to%20test%20your%20quality."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-md shadow-emerald-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                >
+                  <Send className="w-4 h-4" />
+                  <span>Send via WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/60 backdrop-blur-sm space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-indigo-400 font-mono font-bold text-sm">
+                  01
+                </div>
+                <h3 className="text-base font-bold text-white flex items-center gap-2">
+                  <UploadCloud className="w-4 h-4 text-indigo-400" />
+                  Send Your Raw Files
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Drop a WeTransfer, Dropbox, or Google Drive link in our form or send directly on WhatsApp. Any format: RAW, CR3, NEF, TIFF, or PSD.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/60 backdrop-blur-sm space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400 font-mono font-bold text-sm">
+                  02
+                </div>
+                <h3 className="text-base font-bold text-white flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-emerald-400" />
+                  4–24 Hour Retouch & QA
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Our master retouchers execute 100% hand-drawn vector paths, micro-dust cleanup, and color grading. Every file passes two rounds of QA.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/60 backdrop-blur-sm space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-400 font-mono font-bold text-sm">
+                  03
+                </div>
+                <h3 className="text-base font-bold text-white flex items-center gap-2">
+                  <Eye className="w-4 h-4 text-amber-400" />
+                  Inspect at 300% & Decide
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Inspect the layered PSDs at 300% magnification. If you love the output, discuss production pricing. If not, walk away with zero charge.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-4">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <span>Protected by Standard Bilateral NDA & Air-Gapped Storage</span>
+              </div>
+              <Link href="/nda" className="text-emerald-400 hover:text-emerald-300 font-medium underline underline-offset-4">
+                Read our complete Enterprise NDA terms &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. CORE SERVICES GRID */}
       <section className="py-24 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -386,6 +484,23 @@ export default async function HomePage() {
                 </StaggerItem>
               ))}
             </StaggerContainer>
+
+            <div className="pt-4 flex flex-wrap items-center gap-3">
+              <Link
+                href="/nda"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm shadow-md shadow-slate-900/20 transition-all hover:-translate-y-0.5"
+              >
+                <Lock className="w-4 h-4 text-emerald-400" />
+                <span>View Standard NDA & IP Guarantee</span>
+                <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+              </Link>
+              <Link
+                href="/request-free-trial"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs sm:text-sm border border-slate-300 transition-all"
+              >
+                <span>Request 5-Image Trial</span>
+              </Link>
+            </div>
           </div>
 
           <div className="lg:col-span-6">
