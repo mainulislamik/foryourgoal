@@ -334,10 +334,10 @@ export default async function HomePage() {
             <div className="mt-8 pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-4">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Protected by Standard Bilateral NDA & Air-Gapped Storage</span>
+                <span>Enterprise Confidentiality: Bilateral NDA Available Upon Request</span>
               </div>
-              <Link href="/nda" className="text-emerald-400 hover:text-emerald-300 font-medium underline underline-offset-4">
-                Read our complete Enterprise NDA terms &rarr;
+              <Link href="/contact" className="text-emerald-400 hover:text-emerald-300 font-medium underline underline-offset-4">
+                Request Custom NDA &rarr;
               </Link>
             </div>
           </div>
@@ -483,18 +483,18 @@ export default async function HomePage() {
 
             <div className="pt-4 flex flex-wrap items-center gap-3">
               <Link
-                href="/nda"
+                href="/request-free-trial"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm shadow-md shadow-slate-900/20 transition-all hover:-translate-y-0.5"
               >
-                <Lock className="w-4 h-4 text-emerald-400" />
-                <span>View Standard NDA & IP Guarantee</span>
+                <span>Request 5-Image Trial</span>
                 <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
               </Link>
               <Link
-                href="/request-free-trial"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs sm:text-sm border border-slate-300 transition-all"
               >
-                <span>Request 5-Image Trial</span>
+                <Lock className="w-4 h-4 text-emerald-600" />
+                <span>Request Custom NDA</span>
               </Link>
             </div>
           </div>
