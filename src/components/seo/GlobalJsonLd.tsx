@@ -23,13 +23,6 @@ export function GlobalJsonLd() {
     priceRange: "$$",
     currenciesAccepted: "USD, EUR, GBP, CAD, AUD",
     paymentAccepted: "Credit Card, PayPal, Wire Transfer",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "2480",
-      bestRating: "5",
-      worstRating: "1",
-    },
     areaServed: [
       "Worldwide",
       "United States",

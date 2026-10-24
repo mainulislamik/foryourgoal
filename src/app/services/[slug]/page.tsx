@@ -113,13 +113,6 @@ export default async function ServiceDetailPage({ params }: Props) {
       },
       areaServed: "Worldwide",
       serviceType: service.title,
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: (service as any).rating || "4.9",
-        reviewCount: (service as any).reviewCount || "1250",
-        bestRating: "5",
-        worstRating: "1",
-      },
     },
     {
       "@context": "https://schema.org",
