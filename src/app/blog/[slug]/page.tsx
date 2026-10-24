@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogPostsData, getBlogPostBySlug, BlogPost } from "@/data/blogs";
 import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
+import { SocialShare } from "@/components/blog/SocialShare";
 import { Clock, Calendar, ArrowLeft, ArrowRight, Sparkles, ChevronRight, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -173,6 +174,8 @@ export default async function BlogPostDetailPage({ params }: Props) {
     notFound();
   }
 
+  const postUrl = `https://foryourgoal.com/blog/${post.slug}`;
+
   const fullCoverImageUrl = post.coverImage.startsWith("http")
     ? post.coverImage
     : `https://foryourgoal.com${post.coverImage}`;
@@ -261,7 +264,19 @@ export default async function BlogPostDetailPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemasJsonLd) }}
       />
 
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl relative">
+        {/* Desktop Sticky Floating Share Bar */}
+        <div className="hidden xl:block absolute -left-16 top-72 z-20">
+          <div className="sticky top-28">
+            <SocialShare
+              url={postUrl}
+              title={post.title}
+              description={post.excerpt}
+              variant="floating"
+            />
+          </div>
+        </div>
+
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs text-slate-500 font-medium">
           <Link href="/" className="hover:text-indigo-600 transition-colors">
@@ -306,10 +321,10 @@ export default async function BlogPostDetailPage({ params }: Props) {
             {post.excerpt}
           </p>
 
-          {/* Author Box */}
-          <div className="mt-6 flex items-center justify-between border-y border-slate-100 py-4 dark:border-slate-800">
+          {/* Author Box & Inline Social Share */}
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-y border-slate-100 py-4 dark:border-slate-800">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-indigo-600 font-bold text-white shadow-sm">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-indigo-600 font-bold text-white shadow-sm shrink-0">
                 {post.author.name.charAt(0)}
               </div>
               <div>
@@ -318,13 +333,12 @@ export default async function BlogPostDetailPage({ params }: Props) {
               </div>
             </div>
 
-            <Link
-              href="/request-free-trial"
-              className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-indigo-50 px-3.5 py-2 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 transition-colors dark:bg-indigo-950/50 dark:text-indigo-300 dark:hover:bg-indigo-900/50"
-            >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Test 5 Images Free</span>
-            </Link>
+            <SocialShare
+              url={postUrl}
+              title={post.title}
+              description={post.excerpt}
+              variant="inline"
+            />
           </div>
         </header>
 
@@ -371,6 +385,16 @@ export default async function BlogPostDetailPage({ params }: Props) {
         {/* Markdown Rendered Content */}
         <div className="prose-content">
           <MarkdownRenderer content={post.content} />
+        </div>
+
+        {/* Bottom Social Share Card */}
+        <div className="my-10">
+          <SocialShare
+            url={postUrl}
+            title={post.title}
+            description={post.excerpt}
+            variant="bottom"
+          />
         </div>
 
         {/* Bottom Call to Action Banner */}
