@@ -130,38 +130,44 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
-    return { title: "Article Not Found | Foryourgoal" };
+    return { title: "Article Not Found" };
   }
 
-  const title = `${post.title} | Foryourgoal`;
+  const postUrl = `https://foryourgoal.com/blog/${post.slug}`;
+  const ogImageUrl = `https://foryourgoal.com/blog/${post.slug}/opengraph-image`;
 
   return {
-    title,
+    title: post.title,
     description: post.excerpt,
     alternates: {
-      canonical: `https://foryourgoal.com/blog/${post.slug}`,
+      canonical: postUrl,
     },
     openGraph: {
-      title,
+      title: post.title,
       description: post.excerpt,
       type: "article",
-      url: `https://foryourgoal.com/blog/${post.slug}`,
+      url: postUrl,
+      siteName: "Foryourgoal",
+      locale: "en_US",
       publishedTime: post.publishedAt,
+      modifiedTime: post.publishedAt,
       authors: [post.author.name],
       images: [
         {
-          url: post.coverImage,
+          url: ogImageUrl,
+          secureUrl: ogImageUrl,
           width: 1200,
           height: 630,
+          type: "image/png",
           alt: post.title,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: post.title,
       description: post.excerpt,
-      images: [post.coverImage],
+      images: [ogImageUrl],
     },
   };
 }
